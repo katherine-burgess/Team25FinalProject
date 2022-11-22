@@ -47,10 +47,10 @@ public class WorkoutComponent {
 	}
 		
 		
-	// gets the duration length of workout in seconds 
-	public long durationInSeconds() {
-			
-		return 0;
+	// gets the duration length of workout in hours 
+	public long durationInHours() {
+		long hours = getDuration() / 60;
+		return hours;
 			
 	}
 		
