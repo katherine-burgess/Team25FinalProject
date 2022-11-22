@@ -19,7 +19,7 @@ public class GoalComponent {
 			
 			// Duration of workout cannot be longer than 12 hours 
 			if (this.duration < 0 || this.duration > durationInHours()) {
-				throw new InvalidEntryException(String.format("Duration of workout can only be between 0 and %d ", durationInHours()));
+				throw new InvalidEntryException(String.format("Duration of workout can only be between 0 and %d hours. ", durationInHours()));
 				
 			}
 			
