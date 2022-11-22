@@ -71,28 +71,32 @@ public class WorkoutAppController {
     		viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(), workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue());
     		
     	} catch (InvalidEntryException e) {
-    		userErrorLabel.setText(e.getMessage());
-    		error = true;
-    		// add an error message label 
-    		// make own exception class 
+    		userErrorLabel.setText(e.getMessage()); // shows error message to the user 
+    		error = true; 
     	}
     	if (!error) {
     		applicationStage.setScene(returnUserScene);
     	}
     }
     
-    void calculateGoals(Scene returnUserScene ) {
+    // This method will enter the user's goals
+    void calculateGoals(Scene returnUserScene, TextField durationTextfield, TextField targetWeightTextfield, TextField upperBodyPRTextfield, TextField lowerBodyPRTextfield ) throws InvalidEntryException {
     
+    	// creation of new user object 
+    	User viewUser = new User(chooseUserChoiceBox.getValue());
+    	
     	boolean error = false;
-    	
+    	viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), upperBodyPRTextfield.getText(), lowerBodyPRTextfield.getText());
     	
     	if (!error) {
     		applicationStage.setScene(returnUserScene);
     	}
     
     }
+    
    /**
-    * This method changes the scene for the user to input their workout stats.
+    * Scene change for the returning user to input their workout stats. 
+    * This method will create the containers for user input.
     * 
     * @param event
     * @param returnUserScene
@@ -214,7 +218,16 @@ public class WorkoutAppController {
 	   Button submitGoals = new Button("Done");
 	   VBox.setMargin(submitGoals, new Insets(10,10,10,10));
 	   workoutGoalsContainer.getChildren().addAll(durationGoalContainer, targetWeightContainer, upperBodyPRContainer, lowerBodyPRContainer, submitGoals);
-	   submitGoals.setOnAction(doneEvent ->  applicationStage.setScene(returnUserScene));
+	   
+	   workoutGoalsContainer.getChildren().add(userErrorLabel);
+	   submitGoals.setOnAction(doneEvent -> {
+		try {
+			calculateGoals(returnUserScene, durationTextfield,targetWeightTextfield,upperBodyPRTextfield, lowerBodyPRTextfield );
+		} catch (InvalidEntryException e) {
+			userErrorLabel.setText(e.getMessage());
+			}
+	   	}
+	   );
 	  
 	   Scene workoutGoalScene = new Scene(workoutGoalsContainer);  
 	   applicationStage.setScene(workoutGoalScene);
