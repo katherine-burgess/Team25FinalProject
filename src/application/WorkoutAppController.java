@@ -80,7 +80,17 @@ public class WorkoutAppController {
     		applicationStage.setScene(returnUserScene);
     	}
     }
-
+    
+    void calculateGoals(Scene returnUserScene ) {
+    
+    	boolean error = false;
+    	
+    	
+    	if (!error) {
+    		applicationStage.setScene(returnUserScene);
+    	}
+    
+    }
    /**
     * This method changes the scene for the user to input their workout stats.
     * 
