@@ -15,7 +15,7 @@ public class Main extends Application {
 		try {
 			
 			FXMLLoader loader = new FXMLLoader();
-			VBox root = loader.load(new FileInputStream("src/application/ProjectWorkoutApp.fxml"));
+			VBox root = loader.load(new FileInputStream("src/application/ProjectWorkoutAppFXML.fxml"));
 			// main class gives the stage to the controller
 			WorkoutAppController controller = (WorkoutAppController)loader.getController();
 			controller.applicationStage = primaryStage; // gives the stage to the controller

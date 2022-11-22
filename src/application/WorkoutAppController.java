@@ -25,7 +25,7 @@ public class WorkoutAppController {
     @FXML
     private ChoiceBox<String> chooseUserChoiceBox;
 
-    Label newUserErrorLabel = new Label();
+    Label userErrorLabel = new Label();
     
     
     // Get a randomly generated quote and returns the string at the random index
@@ -43,7 +43,7 @@ public class WorkoutAppController {
     
     
     void setAddNewUser(Scene mainScene, TextField newUserTextfield) {
-    	newUserErrorLabel.setText(" ");
+    	userErrorLabel.setText(" ");
     	
     	// creates a new user object	
     	User newUser = new User(" ");
@@ -56,11 +56,30 @@ public class WorkoutAppController {
     		chooseUserChoiceBox.getItems().add(newUser.getName());     // https://jenkov.com/tutorials/javafx/choicebox.html
     		applicationStage.setScene(mainScene);
     	} else {
-    		newUserErrorLabel.setText(errorMessage);
+    		userErrorLabel.setText(errorMessage);
     	}
     		
     }
    
+    void calculateWorkout(Scene returnUserScene, TextField caloriesTextfield, TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> workoutTypeChoiceBox)  {
+    	// creation of user object
+    	User viewUser = new User(chooseUserChoiceBox.getValue());
+    	
+    	boolean error = false;
+    	try {
+    	// associate the workout stats with the use
+    		viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(), workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue());
+    		
+    	} catch (InvalidEntryException e) {
+    		userErrorLabel.setText(e.getMessage());
+    		error = true;
+    		// add an error message label 
+    		// make own exception class 
+    	}
+    	if (!error) {
+    		applicationStage.setScene(returnUserScene);
+    	}
+    }
 
    /**
     * This method changes the scene for the user to input their workout stats.
@@ -121,8 +140,10 @@ public class WorkoutAppController {
 	   VBox.setMargin(submitStats, new Insets(10,10,10,10));
 	   workoutStatsContainer.getChildren().addAll(workoutTypeContainer, durationContainer, workoutIntensityContainer, caloriesContainer, submitStats);
 	   
+	   workoutStatsContainer.getChildren().add(userErrorLabel);
+	   
 	   // when user is done inputting stats, return to user's home page
-	   submitStats.setOnAction(doneEvent ->  applicationStage.setScene(returnUserScene));
+	   submitStats.setOnAction(doneEvent ->  calculateWorkout(returnUserScene, caloriesTextfield, durationTextfield, workoutIntensityChoiceBox, workoutTypeChoiceBox ));
 	  
 	   Scene workoutStatsScene = new Scene(workoutStatsContainer);  
 	   applicationStage.setScene(workoutStatsScene);
@@ -232,7 +253,7 @@ public class WorkoutAppController {
     		
     		newUserContainer.getChildren().addAll(newUserTitle, userNameContainer, doneButton);
     		
-    		newUserContainer.getChildren().add(newUserErrorLabel);
+    		newUserContainer.getChildren().add(userErrorLabel);
     		Scene addUserScene = new Scene(newUserContainer);
     		applicationStage.setScene(addUserScene); // places the new scene on the stage
     		

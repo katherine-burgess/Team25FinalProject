@@ -48,7 +48,8 @@ public class User {
 	}
 	
 	// This method will call the WorkoutComponent() to get the stats from the user
-	public void logWorkout() {
+	public void logWorkout(String calories, String duration, String intensity, String type) throws InvalidEntryException {
+		WorkoutComponent dur_cal = new WorkoutComponent(duration, calories);
 		
 	}
 	
