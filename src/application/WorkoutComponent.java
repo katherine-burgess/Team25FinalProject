@@ -14,7 +14,7 @@ public class WorkoutComponent {
 			duration = Long.parseLong(dur);
 			caloriesBurned = Integer.parseInt(calories);
 		} catch (NumberFormatException nfe) {
-			throw new InvalidEntryException(String.format("Invalid Workout Entry: %l . Enter a number."));
+			throw new InvalidEntryException(String.format("Invalid Workout Entry. Enter a number."));
 				
 		}
 	}
@@ -23,7 +23,7 @@ public class WorkoutComponent {
 		try {
 			duration = Long.parseLong(dur);
 		} catch (NumberFormatException nfe) {
-			throw new InvalidEntryException(String.format("Invalid Duration Entry: %l . Enter a number."));
+			throw new InvalidEntryException(String.format("Invalid Duration Entry. Enter a number."));
 		}
 	}
 		
@@ -38,7 +38,7 @@ public class WorkoutComponent {
 		try {
 			caloriesBurned = Integer.parseInt(calories);
 		} catch (NumberFormatException nfe) {
-			throw new InvalidEntryException(String.format("Invalid Calorie Entry: %i . Enter a number."));
+			throw new InvalidEntryException(String.format("Invalid Calorie Entry. Enter a number."));
 		}
 	}
 		
