@@ -92,7 +92,7 @@ public class WorkoutAppController {
     	
     	if (!error) {
     		applicationStage.setScene(returnUserScene);
-    		userGoalLabel.setText(viewUser);
+    		userGoalLabel.setText("");
     	}
     
     }

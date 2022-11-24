@@ -55,7 +55,7 @@ public class User {
 	// This method will call the GoalComponent() to get the goals 
 	public void logGoals(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
 		GoalComponent goals = new GoalComponent(duration, weight, upperBody, lowerBody);
-		goals.getToString();
+		System.out.println(goals.getToString());
 		
 	}
 	
