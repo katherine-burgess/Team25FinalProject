@@ -9,8 +9,6 @@ public class User {
 	private double height;
 	
 	
-	// constructor that will take the user's name and set the instance variable
-	
 	
 	User(String name, double weight, double height){
 		this.name = name;
@@ -56,6 +54,16 @@ public class User {
 	// This method will call the GoalComponent() to get the goals 
 	public void logGoals(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
 		GoalComponent goals = new GoalComponent(duration, weight, upperBody, lowerBody);
+		
+	}
+	
+	// This method will compare the workout stats to the user's goals
+	public void compareTo(WorkoutComponent workoutstat, GoalComponent goals) {
+		
+		if ( workoutstat.getDuration() >= (goals.getDurationGoal())) {
+			System.out.println("Duration Goal has been met!");
+		} 
+		
 		
 	}
 }
