@@ -27,6 +27,7 @@ public class WorkoutAppController {
 
     Label userErrorLabel = new Label();
     
+    Label userGoalLabel = new Label();
     
     // Get a randomly generated quote and returns the string at the random index
     // https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
@@ -88,8 +89,10 @@ public class WorkoutAppController {
     	boolean error = false;
     	viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), upperBodyPRTextfield.getText(), lowerBodyPRTextfield.getText());
     	
+    	
     	if (!error) {
     		applicationStage.setScene(returnUserScene);
+    		userGoalLabel.setText(viewUser);
     	}
     
     }
@@ -315,6 +318,8 @@ public class WorkoutAppController {
     		
     		workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
     		returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, workoutContainer, workoutGoalsContainer);
+    		
+    		workoutGoalsContainer.getChildren().addAll(userGoalLabel);
     		
     		applicationStage.setScene(returnUserScene);
     	}

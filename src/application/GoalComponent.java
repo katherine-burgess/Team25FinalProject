@@ -7,6 +7,7 @@ public class GoalComponent {
 	private long durationGoal = 720;
 	private double lowerBodyPR;
 	private double upperBodyPR;
+	private String goals;
 	
 	
 	// This constructor takes in the four goal components and validates the input 
@@ -33,6 +34,10 @@ public class GoalComponent {
 		return this.durationGoal;
 	}
 	
+	public double getTargetWeight() {
+		return targetWeight;
+	}
+	
 	public double getLowerBody() {
 		return lowerBodyPR;
 	}
@@ -48,6 +53,15 @@ public class GoalComponent {
 	}
 	
 	
+	
+	// Will create a string containing all of the inputed goals 
+	public String getToString() {
+		goals += "Duration: " + getDurationGoal() + '\n' + "Target Weight: " + getTargetWeight() + '\n' 
+				+ "Upper Body PR: " + getUpperBody() + '\n' + "Lower Body PR: " + getLowerBody();
+ 		
+		
+		return goals;
+	}
 	
 	
 	

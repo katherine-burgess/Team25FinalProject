@@ -49,11 +49,13 @@ public class User {
 	public void logWorkout(String calories, String duration, String intensity, String type) throws InvalidEntryException {
 		WorkoutComponent workoutstat = new WorkoutComponent(duration, calories);
 		
+		
 	}
 	
 	// This method will call the GoalComponent() to get the goals 
 	public void logGoals(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
 		GoalComponent goals = new GoalComponent(duration, weight, upperBody, lowerBody);
+		goals.getToString();
 		
 	}
 	
