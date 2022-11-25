@@ -42,8 +42,14 @@ public class WorkoutAppController {
     
     
     
-    
-    void setAddNewUser(Scene mainScene, TextField newUserTextfield) {
+    /** 
+     * This method will set up a new user in the application. The method will validate that the user name is alphabetic, 
+     * if the user has entered a proper user name the application will add the new user to the ChoiceBox. 
+     * 
+     * @param mainScene
+     * @param newUserTextfield
+     */
+    void setNewUser(Scene mainScene, TextField newUserTextfield) {
     	userErrorLabel.setText(" ");
     	
     	// creates a new user object	
@@ -62,6 +68,17 @@ public class WorkoutAppController {
     		
     }
    
+    /**
+     * This method will take in the user's input from the GUI and check if the user has entered a number. The method will check if 
+     * the user has entered a number, if not the GUI will return a specific error message to the user. If there are no error's in input 
+     * the scene will change back to the user's main welcome screen. 
+     * 
+     * @param returnUserScene
+     * @param caloriesTextfield
+     * @param durationTextfield
+     * @param workoutIntensityChoiceBox
+     * @param workoutTypeChoiceBox
+     */
     void calculateWorkout(Scene returnUserScene, TextField caloriesTextfield, TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> workoutTypeChoiceBox)  {
     	// creation of user object
     	User viewUser = new User(chooseUserChoiceBox.getValue());
@@ -80,7 +97,17 @@ public class WorkoutAppController {
     	}
     }
     
-    // This method will enter the user's goals
+    /**
+     * This method will return the user's goals and print the goals to the user. This method will create a new Goal Component Object, 
+     * and check to make sure that the user has entered a number. 
+     * 
+     * @param returnUserScene
+     * @param durationTextfield
+     * @param targetWeightTextfield
+     * @param upperBodyPRTextfield
+     * @param lowerBodyPRTextfield
+     * @throws InvalidEntryException
+     */
     void calculateGoals(Scene returnUserScene, TextField durationTextfield, TextField targetWeightTextfield, TextField upperBodyPRTextfield, TextField lowerBodyPRTextfield ) throws InvalidEntryException {
     
     	// creation of new user object 
@@ -98,7 +125,7 @@ public class WorkoutAppController {
     }
     
    /**
-    * Scene change for the returning user to input their workout stats. 
+    * This method will generate a scene change for the returning user to input their workout stats. 
     * This method will create the containers for user input.
     * 
     * @param event
@@ -169,7 +196,8 @@ public class WorkoutAppController {
    
    
    /**
-    * This method generates the scene for goal input 
+    * This method generates the scene change for goal input. The user will be able to enter in their workout goals
+    * onto the GUI interface.
     * 
     * @param event
     * @param returnUserScene
@@ -223,14 +251,15 @@ public class WorkoutAppController {
 	   workoutGoalsContainer.getChildren().addAll(durationGoalContainer, targetWeightContainer, upperBodyPRContainer, lowerBodyPRContainer, submitGoals);
 	   
 	   workoutGoalsContainer.getChildren().add(userErrorLabel);
+	   
+	   // Validates and Changes Scene if the user enters proper input 
 	   submitGoals.setOnAction(doneEvent -> {
 		try {
 			calculateGoals(returnUserScene, durationTextfield,targetWeightTextfield,upperBodyPRTextfield, lowerBodyPRTextfield );
 		} catch (InvalidEntryException e) {
 			userErrorLabel.setText(e.getMessage());
 			}
-	   	}
-	   );
+	   	});
 	  
 	   Scene workoutGoalScene = new Scene(workoutGoalsContainer);  
 	   applicationStage.setScene(workoutGoalScene);
@@ -240,7 +269,7 @@ public class WorkoutAppController {
    
    
    /** 
-    * This method generates a new scene based on the users interaction with the ChoiceBox. Depending on the choice, the user can 
+    * This method generates a new scene based on the users interaction with the Welcome Page ChoiceBox. Depending on the choice, the user can 
     * generate a new user that will be added to the ChoiceBox for later entry or sign in as a previous user. 
     *  
     * @param event 
@@ -266,16 +295,14 @@ public class WorkoutAppController {
     		Label newUserLabel = new Label("Add a New User");
     		newUserTitle.getChildren().add(newUserLabel);
     		
+    		// Container for entering user name 
     		HBox userNameContainer = new HBox();
     		Label userNameLabel = new Label("Enter New Username:");
     		TextField newUserTextfield = new TextField();
     		userNameContainer.getChildren().addAll(userNameLabel, newUserTextfield);
     		
-    		
     		Button doneButton = new Button("Enter Here");
-    		doneButton.setOnAction(doneEvent -> setAddNewUser(mainScene, newUserTextfield));
-    		
-    		
+    		doneButton.setOnAction(doneEvent -> setNewUser(mainScene, newUserTextfield));
     		
     		newUserContainer.getChildren().addAll(newUserTitle, userNameContainer, doneButton);
     		
@@ -285,7 +312,7 @@ public class WorkoutAppController {
     		
     	} else {
     		
-    		// returning the user welcome page
+    		// will generate the returning user welcome page
     		VBox returnUserContainer = new VBox();
 
     		// Title changes based on the user that is entered

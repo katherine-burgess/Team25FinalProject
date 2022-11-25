@@ -17,7 +17,7 @@ public class User {
 		
 	}
 	
-	public User(String newName) {
+	User(String newName) {
 		name = newName;
 	}
 
@@ -41,6 +41,7 @@ public class User {
 		
 	}
 	
+	
 	public String getName() {
 		return name;
 	}
@@ -55,7 +56,7 @@ public class User {
 	// This method will call the GoalComponent() to get the goals 
 	public void logGoals(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
 		GoalComponent goals = new GoalComponent(duration, weight, upperBody, lowerBody);
-		System.out.println(goals.getToString());
+		System.out.println(goals.toString());
 		
 	}
 	
