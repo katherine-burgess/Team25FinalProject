@@ -60,4 +60,9 @@ public class GoalComponent {
 		return goals;
 	}
 
+//	public char[] compareTo(WorkoutComponent workoutStats) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 }

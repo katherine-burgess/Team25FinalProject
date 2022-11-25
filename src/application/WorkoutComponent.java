@@ -71,14 +71,22 @@ public class WorkoutComponent {
 		return hours;
 
 	}
-
+	
 	// Takes users workout stats and returns them as a string
 	public String toString() {
 		String workout = new String();
 		workout += "Workout Type: " +  getWorkoutType() + '\t' + "Duration:" + getDuration() + '\t' + "Intensity: " 
-				+ getIntensity() + '\t' + "Calories Burned: " + getCalories();
+				+ getIntensity() + '\t' + " Calories Burned: " + getCalories();
 
 		return workout;
+	}
+
+	// This method will compare the user's newest workout stats to their goals 
+	public void compareTo(GoalComponent goals) {
+		if ( getDuration() >= (goals.getDurationGoal())) {
+			System.out.println("Duration Goal has been met!");
+		}
+		
 	}
 
 	

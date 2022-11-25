@@ -17,6 +17,9 @@ public class User {
 	private double height;
 	private ArrayList<User> users; 
 	
+	private WorkoutComponent workoutStats;
+	private GoalComponent goals;
+	
 	// This constructor will set the instance variables for each new user 
 	User(String name, double weight, double height) {
 		this.name = name;
@@ -59,25 +62,37 @@ public class User {
 	// This method will take in a workoutComponent
 	public void logWorkout(String calories, String duration, String intensity, String type)
 			throws InvalidEntryException {
-		WorkoutComponent workoutstat = new WorkoutComponent(duration, calories);
-
+		workoutStats = new WorkoutComponent(duration, calories);
+		System.out.println(workoutStats);
+		
+		// check if the instance variable is null
+		if (goals != null) {
+			workoutStats.compareTo(goals); // will compare newly entered data to the goals (if user has entered goals previously)
+		}
+		
 	}
 
 	// This method will create a new Goal Component
 	// This method will take in a goalComponent
 	public void logGoals(String duration, String weight, String upperBody, String lowerBody)
 			throws InvalidEntryException {
-		GoalComponent goals = new GoalComponent(duration, weight, upperBody, lowerBody);
-		System.out.println(goals.toString());
+		
+		// create a new goal component and save in instance variable
+		goals = new GoalComponent(duration, weight, upperBody, lowerBody);
+		
+		// check if the instance variable is null
+		if (workoutStats != null) {
+			workoutStats.compareTo(goals);
+		}
 
 	}
 
 	// This method will compare the workout stats to the user's goals
-	public void compareTo(WorkoutComponent workoutstat, GoalComponent goals) {
-
-		if (workoutstat.getDuration() >= (goals.getDurationGoal())) {
+	public void compareTo(WorkoutComponent workoutStat) {
+		if (workoutStat.getDuration() >= (goals.getDurationGoal())) {
 			System.out.println("Duration Goal has been met!");
 		}
+		
 
 	}
 }

@@ -75,21 +75,21 @@ public class WorkoutAppController {
 	 * screen.
 	 * 
 	 * @param returnUserScene
+	 * @param viewUser2 
 	 * @param caloriesTextfield
 	 * @param durationTextfield
 	 * @param workoutIntensityChoiceBox
 	 * @param workoutTypeChoiceBox
 	 */
-	void calculateWorkout(Scene returnUserScene, TextField caloriesTextfield, TextField durationTextfield,
+	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield, TextField durationTextfield,
 			ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> workoutTypeChoiceBox) {
-		// creation of user object
-		User viewUser = new User(chooseUserChoiceBox.getValue());
 
 		boolean error = false;
 		try {
 			// associate the workout stats with the user
 			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
 					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue());
+			
 
 		} catch (InvalidEntryException e) {
 			userErrorLabel.setText(e.getMessage()); // shows error message to the user
@@ -106,17 +106,15 @@ public class WorkoutAppController {
 	 * that the user has entered a number.
 	 * 
 	 * @param returnUserScene
+	 * @param viewUser 
 	 * @param durationTextfield
 	 * @param targetWeightTextfield
 	 * @param upperBodyPRTextfield
 	 * @param lowerBodyPRTextfield
 	 * @throws InvalidEntryException
 	 */
-	void calculateGoals(Scene returnUserScene, TextField durationTextfield, TextField targetWeightTextfield,
+	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield, TextField targetWeightTextfield,
 			TextField upperBodyPRTextfield, TextField lowerBodyPRTextfield) throws InvalidEntryException {
-
-		// creation of new user object
-		User viewUser = new User(chooseUserChoiceBox.getValue());
 
 		boolean error = false;
 		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), upperBodyPRTextfield.getText(),
@@ -135,8 +133,9 @@ public class WorkoutAppController {
 	 * 
 	 * @param event
 	 * @param returnUserScene
+	 * @param viewUser 
 	 */
-	void getWorkoutLog(ActionEvent event, Scene returnUserScene) {
+	void getWorkoutLog(ActionEvent event, Scene returnUserScene, User viewUser) {
 
 		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Workout Stats");
 
@@ -192,7 +191,7 @@ public class WorkoutAppController {
 		workoutStatsContainer.getChildren().add(userErrorLabel);
 
 		// when user is done inputting stats, return to user's home page
-		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, caloriesTextfield, durationTextfield,
+		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, viewUser, caloriesTextfield, durationTextfield,
 				workoutIntensityChoiceBox, workoutTypeChoiceBox));
 
 		Scene workoutStatsScene = new Scene(workoutStatsContainer);
@@ -206,8 +205,9 @@ public class WorkoutAppController {
 	 * 
 	 * @param event
 	 * @param returnUserScene
+	 * @param viewUser 
 	 */
-	void getGoalLog(ActionEvent event, Scene returnUserScene) {
+	void getGoalLog(ActionEvent event, Scene returnUserScene, User viewUser) {
 
 		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Goals");
 
@@ -261,7 +261,7 @@ public class WorkoutAppController {
 		// Validates and Changes Scene if the user enters proper input
 		submitGoals.setOnAction(doneEvent -> {
 			try {
-				calculateGoals(returnUserScene, durationTextfield, targetWeightTextfield, upperBodyPRTextfield,
+				calculateGoals(returnUserScene, viewUser, durationTextfield, targetWeightTextfield, upperBodyPRTextfield,
 						lowerBodyPRTextfield);
 			} catch (InvalidEntryException e) {
 				userErrorLabel.setText(e.getMessage());
@@ -318,6 +318,8 @@ public class WorkoutAppController {
 
 		} else {
 
+			User viewUser = new User(chooseUserChoiceBox.getValue());
+			
 			// will generate the returning user welcome page
 			VBox returnUserContainer = new VBox();
 
@@ -338,7 +340,7 @@ public class WorkoutAppController {
 			HBox.setMargin(logWorkoutLabel, new Insets(10, 10, 10, 10));
 			Button doneButton = new Button("Enter Here");
 			HBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
-			doneButton.setOnAction(doneEvent -> getWorkoutLog(event, returnUserScene));
+			doneButton.setOnAction(doneEvent -> getWorkoutLog(event, returnUserScene, viewUser));
 
 			workoutContainer.getChildren().addAll(logWorkoutLabel, doneButton);
 
@@ -348,8 +350,13 @@ public class WorkoutAppController {
 			HBox.setMargin(logGoalsLabel, new Insets(10, 10, 10, 10));
 			Button goalsButton = new Button("Enter Goals Here");
 			HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
-			goalsButton.setOnAction(goalsEvent -> getGoalLog(event, returnUserScene));
+			goalsButton.setOnAction(goalsEvent -> getGoalLog(event, returnUserScene, viewUser));
 
+			
+			Button compareButton = new Button();
+			VBox.setMargin(compareButton, new Insets(10, 10, 10, 10) );
+			
+			
 			workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
 			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, workoutContainer,
 					workoutGoalsContainer);
