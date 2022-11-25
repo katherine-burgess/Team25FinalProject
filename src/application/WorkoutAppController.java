@@ -87,7 +87,7 @@ public class WorkoutAppController {
 
 		boolean error = false;
 		try {
-			// associate the workout stats with the use
+			// associate the workout stats with the user
 			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
 					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue());
 

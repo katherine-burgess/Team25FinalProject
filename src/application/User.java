@@ -1,10 +1,12 @@
 
 package application;
 
+import java.util.ArrayList;
+
 /**
- * This class 
+ * This class will generate a new user. 
  * 
- * @author CS219-user
+ * @author CS219-user Katie Burgess
  *
  */
 public class User {
@@ -13,6 +15,7 @@ public class User {
 	private String name;
 	private double weight;
 	private double height;
+	private ArrayList<User> users; 
 	
 	// This constructor will set the instance variables for each new user 
 	User(String name, double weight, double height) {
@@ -25,6 +28,7 @@ public class User {
 	// This constructor sets the name of a new User
 	User(String newName) {
 		name = newName;
+		
 	}
 
 	// This method checks if the user name is an alphabetical letter
@@ -52,6 +56,7 @@ public class User {
 	}
 
 	// This method will create a new workoutComponent
+	// This method will take in a workoutComponent
 	public void logWorkout(String calories, String duration, String intensity, String type)
 			throws InvalidEntryException {
 		WorkoutComponent workoutstat = new WorkoutComponent(duration, calories);
@@ -59,6 +64,7 @@ public class User {
 	}
 
 	// This method will create a new Goal Component
+	// This method will take in a goalComponent
 	public void logGoals(String duration, String weight, String upperBody, String lowerBody)
 			throws InvalidEntryException {
 		GoalComponent goals = new GoalComponent(duration, weight, upperBody, lowerBody);

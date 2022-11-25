@@ -4,10 +4,12 @@ public class GoalComponent {
 
 	// Instance Variables
 	private double targetWeight;
-	private long durationGoal = 720;
+	private long durationGoal;
 	private double lowerBodyPR;
 	private double upperBodyPR;
 	private String goals;
+	
+	private int durationGoalMax = 300;
 
 	// This constructor takes in the four goal components and validates the input
 	GoalComponent(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
@@ -18,10 +20,10 @@ public class GoalComponent {
 			upperBodyPR = Double.parseDouble(upperBody);
 
 			// Duration of workout cannot be longer than 12 hours
-//			if (this.durationGoal < 0 || this.durationGoal > durationInHours()) {
-//				throw new InvalidEntryException(String.format("Duration of workout can only be between 0 and %d hours. ", durationInHours()));
-//				
-//			}
+			if (this.durationGoal < 0 || this.durationGoal > durationGoalMax) {
+				throw new InvalidEntryException(String.format("Duration of workout can only be between 0 and %d hours. ", durationInHours()));
+				
+			}
 
 		} catch (NumberFormatException e) {
 			throw new InvalidEntryException(String.format("Invalid Goal Entry. Make sure to enter a number."));
@@ -44,7 +46,8 @@ public class GoalComponent {
 		return upperBodyPR;
 	}
 
-	private long durationInHours() {
+	// polymorphic call 
+	public long durationInHours() {
 		long hours = durationGoal / 60;
 		return hours;
 	}
