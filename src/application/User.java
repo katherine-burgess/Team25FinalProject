@@ -1,13 +1,20 @@
 
 package application;
 
+/**
+ * This class 
+ * 
+ * @author CS219-user
+ *
+ */
 public class User {
 
 	// Instance variables
 	private String name;
 	private double weight;
 	private double height;
-
+	
+	// This constructor will set the instance variables for each new user 
 	User(String name, double weight, double height) {
 		this.name = name;
 		this.weight = weight;
@@ -15,11 +22,12 @@ public class User {
 
 	}
 
+	// This constructor sets the name of a new User
 	User(String newName) {
 		name = newName;
 	}
 
-	// sets the user's name
+	// This method checks if the user name is an alphabetical letter
 	public String setName(String nameAsString) {
 		String errorMessage = " ";
 		boolean validName = true;
@@ -36,21 +44,21 @@ public class User {
 		}
 
 		return errorMessage;
-
 	}
 
+	
 	public String getName() {
 		return name;
 	}
 
-	// This method will call the WorkoutComponent() to get the stats from the user
+	// This method will create a new workoutComponent
 	public void logWorkout(String calories, String duration, String intensity, String type)
 			throws InvalidEntryException {
 		WorkoutComponent workoutstat = new WorkoutComponent(duration, calories);
 
 	}
 
-	// This method will call the GoalComponent() to get the goals
+	// This method will create a new Goal Component
 	public void logGoals(String duration, String weight, String upperBody, String lowerBody)
 			throws InvalidEntryException {
 		GoalComponent goals = new GoalComponent(duration, weight, upperBody, lowerBody);

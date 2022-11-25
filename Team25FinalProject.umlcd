@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_fA15oGziEe2h8Ngmez5xlQ">
+  <modelElement href="Team25FinalProject.uml#_f7Y2UGziEe2h8Ngmez5xlQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_gdUesGziEe2h8Ngmez5xlQ" targetItem="_gdsSQ2ziEe2h8Ngmez5xlQ" sourceItem="_gdT3oGziEe2h8Ngmez5xlQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_gdWT4GziEe2h8Ngmez5xlQ" targetItem="_gdsSTGziEe2h8Ngmez5xlQ" sourceItem="_gdVs0GziEe2h8Ngmez5xlQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_gdYwIGziEe2h8Ngmez5xlQ" targetItem="_gdsSXmziEe2h8Ngmez5xlQ" sourceItem="_gdYJEGziEe2h8Ngmez5xlQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_gdZXMWziEe2h8Ngmez5xlQ" targetItem="_gdsScGziEe2h8Ngmez5xlQ" sourceItem="_gdZXMGziEe2h8Ngmez5xlQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_gdZ-QWziEe2h8Ngmez5xlQ" targetItem="_gdsSeWziEe2h8Ngmez5xlQ" sourceItem="_gdZ-QGziEe2h8Ngmez5xlQ"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gdkWUGziEe2h8Ngmez5xlQ" source="_gdrrEGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gFJ2UGziEe2h8Ngmez5xlQ"/>
+    <stereotypes xmi:id="_gdk9YGziEe2h8Ngmez5xlQ" name="Reference">
+      <modelElement href="Team25FinalProject.uml#_gFLEcGziEe2h8Ngmez5xlQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gdk9YWziEe2h8Ngmez5xlQ" text=""/>
+    <sourceRole xmi:id="_gdk9YmziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="">
+      <modelElement href="Team25FinalProject.uml#_gFJ2UWziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdk9Y2ziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gdk9ZGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gdk9ZWziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="applicationStage" navigable="true">
+      <modelElement href="Team25FinalProject.uml#_gD-KkWziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdk9ZmziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdk9Z2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gdmLgGziEe2h8Ngmez5xlQ" source="_gdrrEGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gFLrgGziEe2h8Ngmez5xlQ"/>
+    <stereotypes xmi:id="_gdmLgWziEe2h8Ngmez5xlQ" name="Reference">
+      <modelElement href="Team25FinalProject.uml#_gFMSkGziEe2h8Ngmez5xlQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gdmLgmziEe2h8Ngmez5xlQ" text=""/>
+    <sourceRole xmi:id="_gdmLg2ziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="">
+      <modelElement href="Team25FinalProject.uml#_gFLrgWziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdmLhGziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gdmLhWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gdmLhmziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="inspirationQuoteLabel" navigable="true">
+      <modelElement href="Team25FinalProject.uml#_gD_YsGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdmLh2ziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gdmLiGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gdnZoGziEe2h8Ngmez5xlQ" source="_gdrrEGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gFMSkWziEe2h8Ngmez5xlQ"/>
+    <stereotypes xmi:id="_gdnZoWziEe2h8Ngmez5xlQ" name="Reference">
+      <modelElement href="Team25FinalProject.uml#_gFM5oGziEe2h8Ngmez5xlQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gdnZomziEe2h8Ngmez5xlQ" text=""/>
+    <sourceRole xmi:id="_gdnZo2ziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="">
+      <modelElement href="Team25FinalProject.uml#_gFMSkmziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdnZpGziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gdnZpWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gdnZpmziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="chooseUserChoiceBox" navigable="true">
+      <modelElement href="Team25FinalProject.uml#_gEB08GziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdnZp2ziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gdnZqGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gdonwGziEe2h8Ngmez5xlQ" source="_gdrrEGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gFM5oWziEe2h8Ngmez5xlQ"/>
+    <stereotypes xmi:id="_gdonwWziEe2h8Ngmez5xlQ" name="Reference">
+      <modelElement href="Team25FinalProject.uml#_gFNgsGziEe2h8Ngmez5xlQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gdonwmziEe2h8Ngmez5xlQ" text=""/>
+    <sourceRole xmi:id="_gdonw2ziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="">
+      <modelElement href="Team25FinalProject.uml#_gFM5omziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdonxGziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gdonxWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gdonxmziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="userErrorLabel" navigable="true">
+      <modelElement href="Team25FinalProject.uml#_gEDDEmziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdonx2ziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdonyGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gdrEAGziEe2h8Ngmez5xlQ" source="_gdrrEGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gFNgsWziEe2h8Ngmez5xlQ"/>
+    <stereotypes xmi:id="_gdrEAWziEe2h8Ngmez5xlQ" name="Reference">
+      <modelElement href="Team25FinalProject.uml#_gFOHwGziEe2h8Ngmez5xlQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gdrEAmziEe2h8Ngmez5xlQ" text=""/>
+    <sourceRole xmi:id="_gdrEA2ziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="">
+      <modelElement href="Team25FinalProject.uml#_gFNgsmziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdrEBGziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gdrEBWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gdrEBmziEe2h8Ngmez5xlQ" aggregationKind="NONE" name="userGoalLabel" navigable="true">
+      <modelElement href="Team25FinalProject.uml#_gEDqIWziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdrEB2ziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdrECGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_gegxgGziEe2h8Ngmez5xlQ" sourceAnchor="623.0,27.0" targetAnchor="322.0,232.0" superClass="_gcszoGziEe2h8Ngmez5xlQ" subClass="_gelC8GziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gClqgGziEe2h8Ngmez5xlQ"/>
+    <bendpoints xmi:id="_g_jCAGziEe2h8Ngmez5xlQ" sourceX="591" targetY="82"/>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_gdT3oGziEe2h8Ngmez5xlQ" sourceConnectionVisual="_gdUesGziEe2h8Ngmez5xlQ" text="This method will set up a new user in the application. The method will&#xD;&#xA;&#x9; * validate that the user name is alphabetic, if the user has entered a proper&#xD;&#xA;&#x9; * user name the application will add the new user to the ChoiceBox.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param mainScene&#xD;&#xA;&#x9; * @param newUserTextfield" item="_gdsSQ2ziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gE_eQGziEe2h8Ngmez5xlQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_gdVs0GziEe2h8Ngmez5xlQ" sourceConnectionVisual="_gdWT4GziEe2h8Ngmez5xlQ" text="This method will take in the user's input from the GUI and check if the user&#xD;&#xA;&#x9; * has entered a number. The method will check if the user has entered a number,&#xD;&#xA;&#x9; * if not the GUI will return a specific error message to the user. If there are&#xD;&#xA;&#x9; * no error's in input the scene will change back to the user's main welcome&#xD;&#xA;&#x9; * screen.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param returnUserScene&#xD;&#xA;&#x9; * @param caloriesTextfield&#xD;&#xA;&#x9; * @param durationTextfield&#xD;&#xA;&#x9; * @param workoutIntensityChoiceBox&#xD;&#xA;&#x9; * @param workoutTypeChoiceBox" item="_gdsSTGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gE_eQWziEe2h8Ngmez5xlQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_gdYJEGziEe2h8Ngmez5xlQ" sourceConnectionVisual="_gdYwIGziEe2h8Ngmez5xlQ" text="This method will return the user's goals and print the goals to the user.&#xD;&#xA;&#x9; * This method will create a new Goal Component Object, and check to make sure&#xD;&#xA;&#x9; * that the user has entered a number.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param returnUserScene&#xD;&#xA;&#x9; * @param durationTextfield&#xD;&#xA;&#x9; * @param targetWeightTextfield&#xD;&#xA;&#x9; * @param upperBodyPRTextfield&#xD;&#xA;&#x9; * @param lowerBodyPRTextfield&#xD;&#xA;&#x9; * @throws InvalidEntryException" item="_gdsSXmziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gE_eQmziEe2h8Ngmez5xlQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_gdZXMGziEe2h8Ngmez5xlQ" sourceConnectionVisual="_gdZXMWziEe2h8Ngmez5xlQ" text="This method will generate a scene change for the returning user to input&#xD;&#xA;&#x9; * their workout stats. This method will create the containers for user input.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param event&#xD;&#xA;&#x9; * @param returnUserScene" item="_gdsScGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gE_eQ2ziEe2h8Ngmez5xlQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_gdZ-QGziEe2h8Ngmez5xlQ" sourceConnectionVisual="_gdZ-QWziEe2h8Ngmez5xlQ" text="This method generates the scene change for goal input. The user will be able&#xD;&#xA;&#x9; * to enter in their workout goals onto the GUI interface.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param event&#xD;&#xA;&#x9; * @param returnUserScene" item="_gdsSeWziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_gE_eRGziEe2h8Ngmez5xlQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gbKikGziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+    <modelElement href="Team25FinalProject.uml#_f9-3UGziEe2h8Ngmez5xlQ"/>
+    <visualProperties xmi:id="_gbKikWziEe2h8Ngmez5xlQ" position="30.0,30.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gbKikmziEe2h8Ngmez5xlQ" label="+"/>
+    <operations xmi:id="_gbKik2ziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+      <modelElement href="Team25FinalProject.uml#_f-AsgGziEe2h8Ngmez5xlQ"/>
+      <keywords xmi:id="_gbKilGziEe2h8Ngmez5xlQ" keyword="create"/>
+      <visibility xmi:id="_gbKilWziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gbLJoGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gbLJoWziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f-B6oGziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gbLJomziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+          <modelElement href="Team25FinalProject.uml#_f9-3UGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gbLJo2ziEe2h8Ngmez5xlQ" name="msg">
+        <modelElement href="Team25FinalProject.uml#_f-AsgWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gbLJpGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gbLJpWziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gbLJpmziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+      <modelElement href="Team25FinalProject.uml#_gDfpcWziEe2h8Ngmez5xlQ"/>
+      <keywords xmi:id="_gbLJp2ziEe2h8Ngmez5xlQ" keyword="create"/>
+      <visibility xmi:id="_gbLJqGziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gbLJqWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gbLJqmziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_gDgQgmziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gbLJq2ziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+          <modelElement href="Team25FinalProject.uml#_f9-3UGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gbLJrGziEe2h8Ngmez5xlQ" name="cause">
+        <modelElement href="Team25FinalProject.uml#_gDfpcmziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gbLJrWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gbLJrmziEe2h8Ngmez5xlQ" name="Throwable">
+          <modelElement href="Team25FinalProject.uml#_gDfCYGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gbLJr2ziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+      <modelElement href="Team25FinalProject.uml#_gDg3kGziEe2h8Ngmez5xlQ"/>
+      <keywords xmi:id="_gbLJsGziEe2h8Ngmez5xlQ" keyword="create"/>
+      <visibility xmi:id="_gbLJsWziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gbLJsmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gbLJs2ziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_gDiFsmziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gbLJtGziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+          <modelElement href="Team25FinalProject.uml#_f9-3UGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gbLJtWziEe2h8Ngmez5xlQ" name="msg">
+        <modelElement href="Team25FinalProject.uml#_gDg3kWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gbLJtmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gbLJt2ziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gbLJuGziEe2h8Ngmez5xlQ" name="cause">
+        <modelElement href="Team25FinalProject.uml#_gDheoGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gbLJuWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gbLJumziEe2h8Ngmez5xlQ" name="Throwable">
+          <modelElement href="Team25FinalProject.uml#_gDfCYGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gbLJu2ziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+      <modelElement href="Team25FinalProject.uml#_gDiswGziEe2h8Ngmez5xlQ"/>
+      <keywords xmi:id="_gbLJvGziEe2h8Ngmez5xlQ" keyword="create"/>
+      <visibility xmi:id="_gbLJvWziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gbLJvmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gbLJv2ziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_gDjT02ziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gbLJwGziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+          <modelElement href="Team25FinalProject.uml#_f9-3UGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gbLJwWziEe2h8Ngmez5xlQ" name="msg">
+        <modelElement href="Team25FinalProject.uml#_gDiswWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gbLJwmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gbLJw2ziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gbLJxGziEe2h8Ngmez5xlQ" name="cause">
+        <modelElement href="Team25FinalProject.uml#_gDiswmziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gbLJxWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gbLJxmziEe2h8Ngmez5xlQ" name="Throwable">
+          <modelElement href="Team25FinalProject.uml#_gDfCYGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gbLJx2ziEe2h8Ngmez5xlQ" name="enableSupression">
+        <modelElement href="Team25FinalProject.uml#_gDisw2ziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gbLJyGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gbLJyWziEe2h8Ngmez5xlQ" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gbLJymziEe2h8Ngmez5xlQ" name="writableStackTrace">
+        <modelElement href="Team25FinalProject.uml#_gDjT0GziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gbLJy2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gbLJzGziEe2h8Ngmez5xlQ" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gcszoGziEe2h8Ngmez5xlQ" name="GoalComponent" subclassedBy="_gegxgGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_f9vmwGziEe2h8Ngmez5xlQ"/>
+    <visualProperties xmi:id="_gcszoWziEe2h8Ngmez5xlQ" position="1005.0,577.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gcszomziEe2h8Ngmez5xlQ" label="+"/>
+    <attributes xmi:id="_gcszo2ziEe2h8Ngmez5xlQ" name="targetWeight">
+      <modelElement href="Team25FinalProject.uml#_gD4rAGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gcszpGziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gcszpWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gcuBwGziEe2h8Ngmez5xlQ" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gcuBwWziEe2h8Ngmez5xlQ" defaultValue="720" name="durationGoal">
+      <modelElement href="Team25FinalProject.uml#_gD4rAWziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gcuBwmziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gcuBw2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gcuBxGziEe2h8Ngmez5xlQ" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gcuBxWziEe2h8Ngmez5xlQ" name="lowerBodyPR">
+      <modelElement href="Team25FinalProject.uml#_gD55IGziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gcuBxmziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gD6gMGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gcuBx2ziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gcuByGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gcuByWziEe2h8Ngmez5xlQ" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gcuBymziEe2h8Ngmez5xlQ" name="upperBodyPR">
+      <modelElement href="Team25FinalProject.uml#_gD6gMWziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gcuBy2ziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gD7HQGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gcuBzGziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gcuBzWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gcuBzmziEe2h8Ngmez5xlQ" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gcuBz2ziEe2h8Ngmez5xlQ" name="goals">
+      <modelElement href="Team25FinalProject.uml#_gD7HQWziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gcuB0GziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gD7uUGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gcuB0WziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gcuB0mziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gcuB02ziEe2h8Ngmez5xlQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gcuB1GziEe2h8Ngmez5xlQ" name="GoalComponent">
+      <modelElement href="Team25FinalProject.uml#_f90fQGziEe2h8Ngmez5xlQ"/>
+      <keywords xmi:id="_gcuB1WziEe2h8Ngmez5xlQ" keyword="create"/>
+      <visibility xmi:id="_gcuB1mziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gcuB12ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gcuB2GziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f92UcGziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gcuB2WziEe2h8Ngmez5xlQ" name="GoalComponent">
+          <modelElement href="Team25FinalProject.uml#_f9vmwGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gcuB2mziEe2h8Ngmez5xlQ" name="duration">
+        <modelElement href="Team25FinalProject.uml#_f90fQWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gcuB22ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gcuB3GziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gcuB3WziEe2h8Ngmez5xlQ" name="weight">
+        <modelElement href="Team25FinalProject.uml#_f90fQmziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gcuB3mziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gcuB32ziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gcuB4GziEe2h8Ngmez5xlQ" name="upperBody">
+        <modelElement href="Team25FinalProject.uml#_f90fQ2ziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gcuB4WziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gcuB4mziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gcuB42ziEe2h8Ngmez5xlQ" name="lowerBody">
+        <modelElement href="Team25FinalProject.uml#_f91GUGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gcuB5GziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gcuo0GziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gcuo0WziEe2h8Ngmez5xlQ" name="getLowerBody">
+      <modelElement href="Team25FinalProject.uml#_f927gGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gcuo0mziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gcuo02ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gcuo1GziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f93ikGziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gcuo1WziEe2h8Ngmez5xlQ" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_gcuo1mziEe2h8Ngmez5xlQ" name="getUpperBody">
+      <modelElement href="Team25FinalProject.uml#_f93ikWziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gcuo12ziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gcuo2GziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gcuo2WziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f94JoGziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gcuo2mziEe2h8Ngmez5xlQ" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_gcuo22ziEe2h8Ngmez5xlQ" name="durationInHours">
+      <modelElement href="Team25FinalProject.uml#_f94wsGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gcuo3GziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gcuo3WziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gcuo3mziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f94wsWziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gcuo32ziEe2h8Ngmez5xlQ" name="long">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_gcuo4GziEe2h8Ngmez5xlQ" name="toString">
+      <modelElement href="Team25FinalProject.uml#_f95XwGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gcuo4WziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gcuo4mziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gcuo42ziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f96l4GziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gcuo5GziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gdrrEGziEe2h8Ngmez5xlQ" name="WorkoutAppController" associationsOut="_gdkWUGziEe2h8Ngmez5xlQ _gdmLgGziEe2h8Ngmez5xlQ _gdnZoGziEe2h8Ngmez5xlQ _gdonwGziEe2h8Ngmez5xlQ _gdrEAGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_f-wTYGziEe2h8Ngmez5xlQ"/>
+    <visualProperties xmi:id="_gdsSIGziEe2h8Ngmez5xlQ" position="-89.0,263.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gdsSIWziEe2h8Ngmez5xlQ" label="+"/>
+    <attributes xmi:id="_gdsSImziEe2h8Ngmez5xlQ" name="applicationStage">
+      <modelElement href="Team25FinalProject.uml#_gD-KkWziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gdsSI2ziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gD-xoGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gdsSJGziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdsSJWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gdsSJmziEe2h8Ngmez5xlQ" name="Stage">
+        <modelElement href="Team25FinalProject.uml#_gCu0cGziEe2h8Ngmez5xlQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gdsSJ2ziEe2h8Ngmez5xlQ" name="inspirationQuoteLabel">
+      <modelElement href="Team25FinalProject.uml#_gD_YsGziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gdsSKGziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gEAm0GziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gdsSKWziEe2h8Ngmez5xlQ" name="Annotations">
+        <modelElement href="Team25FinalProject.uml#_gEBN4GziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gdsSKmziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gdsSK2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gdsSLGziEe2h8Ngmez5xlQ" name="Label">
+        <modelElement href="Team25FinalProject.uml#_gDJrMWziEe2h8Ngmez5xlQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gdsSLWziEe2h8Ngmez5xlQ" name="chooseUserChoiceBox">
+      <modelElement href="Team25FinalProject.uml#_gEB08GziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gdsSLmziEe2h8Ngmez5xlQ" name="Generics">
+        <modelElement href="Team25FinalProject.uml#_gECcAGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gdsSL2ziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gECcAWziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gdsSMGziEe2h8Ngmez5xlQ" name="Annotations">
+        <modelElement href="Team25FinalProject.uml#_gEDDEGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gdsSMWziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gdsSMmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gdsSM2ziEe2h8Ngmez5xlQ" name="ChoiceBox">
+        <modelElement href="Team25FinalProject.uml#_gDJEIWziEe2h8Ngmez5xlQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gdsSNGziEe2h8Ngmez5xlQ" defaultValue="new Label()" name="userErrorLabel">
+      <modelElement href="Team25FinalProject.uml#_gEDDEmziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gdsSNWziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gEDqIGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gdsSNmziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdsSN2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gdsSOGziEe2h8Ngmez5xlQ" name="Label">
+        <modelElement href="Team25FinalProject.uml#_gDJrMWziEe2h8Ngmez5xlQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gdsSOWziEe2h8Ngmez5xlQ" defaultValue="new Label()" name="userGoalLabel">
+      <modelElement href="Team25FinalProject.uml#_gEDqIWziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gdsSOmziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gEERMGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gdsSO2ziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdsSPGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gdsSPWziEe2h8Ngmez5xlQ" name="Label">
+        <modelElement href="Team25FinalProject.uml#_gDJrMWziEe2h8Ngmez5xlQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gdsSPmziEe2h8Ngmez5xlQ" name="getRandomQuote" staticOperation="true">
+      <modelElement href="Team25FinalProject.uml#_f-z9wGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdsSP2ziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gdsSQGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gdsSQWziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f-0k0GziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gdsSQmziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_gdsSQ2ziEe2h8Ngmez5xlQ" comments="_gdT3oGziEe2h8Ngmez5xlQ" targetConnectionVisual="_gdUesGziEe2h8Ngmez5xlQ" name="setNewUser">
+      <modelElement href="Team25FinalProject.uml#_gDtr4GziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdsSRGziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdsSRWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gdsSRmziEe2h8Ngmez5xlQ" name="mainScene">
+        <modelElement href="Team25FinalProject.uml#_gDtr4WziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSR2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSSGziEe2h8Ngmez5xlQ" name="Scene">
+          <modelElement href="Team25FinalProject.uml#_gCxQsWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSSWziEe2h8Ngmez5xlQ" name="newUserTextfield">
+        <modelElement href="Team25FinalProject.uml#_gDtr4mziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSSmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSS2ziEe2h8Ngmez5xlQ" name="TextField">
+          <modelElement href="Team25FinalProject.uml#_gDNVkGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gdsSTGziEe2h8Ngmez5xlQ" comments="_gdVs0GziEe2h8Ngmez5xlQ" targetConnectionVisual="_gdWT4GziEe2h8Ngmez5xlQ" name="calculateWorkout">
+      <modelElement href="Team25FinalProject.uml#_gDu6AGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdsSTWziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdsSTmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gdsST2ziEe2h8Ngmez5xlQ" name="returnUserScene">
+        <modelElement href="Team25FinalProject.uml#_gDu6AWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSUGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSUWziEe2h8Ngmez5xlQ" name="Scene">
+          <modelElement href="Team25FinalProject.uml#_gCxQsWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSUmziEe2h8Ngmez5xlQ" name="caloriesTextfield">
+        <modelElement href="Team25FinalProject.uml#_gDu6AmziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSU2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSVGziEe2h8Ngmez5xlQ" name="TextField">
+          <modelElement href="Team25FinalProject.uml#_gDNVkGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSVWziEe2h8Ngmez5xlQ" name="durationTextfield">
+        <modelElement href="Team25FinalProject.uml#_gDu6A2ziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSVmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSV2ziEe2h8Ngmez5xlQ" name="TextField">
+          <modelElement href="Team25FinalProject.uml#_gDNVkGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSWGziEe2h8Ngmez5xlQ" name="workoutIntensityChoiceBox">
+        <modelElement href="Team25FinalProject.uml#_gDu6BGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSWWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSWmziEe2h8Ngmez5xlQ" name="ChoiceBox">
+          <modelElement href="Team25FinalProject.uml#_gDJEIWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSW2ziEe2h8Ngmez5xlQ" name="workoutTypeChoiceBox">
+        <modelElement href="Team25FinalProject.uml#_gDvhEGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSXGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSXWziEe2h8Ngmez5xlQ" name="ChoiceBox">
+          <modelElement href="Team25FinalProject.uml#_gDJEIWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gdsSXmziEe2h8Ngmez5xlQ" comments="_gdYJEGziEe2h8Ngmez5xlQ" targetConnectionVisual="_gdYwIGziEe2h8Ngmez5xlQ" name="calculateGoals">
+      <modelElement href="Team25FinalProject.uml#_gDxWQWziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdsSX2ziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdsSYGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gdsSYWziEe2h8Ngmez5xlQ" name="returnUserScene">
+        <modelElement href="Team25FinalProject.uml#_gDx9UGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSYmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSY2ziEe2h8Ngmez5xlQ" name="Scene">
+          <modelElement href="Team25FinalProject.uml#_gCxQsWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSZGziEe2h8Ngmez5xlQ" name="durationTextfield">
+        <modelElement href="Team25FinalProject.uml#_gDx9UWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSZWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSZmziEe2h8Ngmez5xlQ" name="TextField">
+          <modelElement href="Team25FinalProject.uml#_gDNVkGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSZ2ziEe2h8Ngmez5xlQ" name="targetWeightTextfield">
+        <modelElement href="Team25FinalProject.uml#_gDx9UmziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSaGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSaWziEe2h8Ngmez5xlQ" name="TextField">
+          <modelElement href="Team25FinalProject.uml#_gDNVkGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSamziEe2h8Ngmez5xlQ" name="upperBodyPRTextfield">
+        <modelElement href="Team25FinalProject.uml#_gDx9U2ziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSa2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSbGziEe2h8Ngmez5xlQ" name="TextField">
+          <modelElement href="Team25FinalProject.uml#_gDNVkGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSbWziEe2h8Ngmez5xlQ" name="lowerBodyPRTextfield">
+        <modelElement href="Team25FinalProject.uml#_gDx9VGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSbmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSb2ziEe2h8Ngmez5xlQ" name="TextField">
+          <modelElement href="Team25FinalProject.uml#_gDNVkGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gdsScGziEe2h8Ngmez5xlQ" comments="_gdZXMGziEe2h8Ngmez5xlQ" targetConnectionVisual="_gdZXMWziEe2h8Ngmez5xlQ" name="getWorkoutLog">
+      <modelElement href="Team25FinalProject.uml#_gDzLcGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdsScWziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdsScmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gdsSc2ziEe2h8Ngmez5xlQ" name="event">
+        <modelElement href="Team25FinalProject.uml#_gDzLcWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSdGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSdWziEe2h8Ngmez5xlQ" name="ActionEvent">
+          <modelElement href="Team25FinalProject.uml#_gC5zkWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSdmziEe2h8Ngmez5xlQ" name="returnUserScene">
+        <modelElement href="Team25FinalProject.uml#_gDzLcmziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSd2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSeGziEe2h8Ngmez5xlQ" name="Scene">
+          <modelElement href="Team25FinalProject.uml#_gCxQsWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gdsSeWziEe2h8Ngmez5xlQ" comments="_gdZ-QGziEe2h8Ngmez5xlQ" targetConnectionVisual="_gdZ-QWziEe2h8Ngmez5xlQ" name="getGoalLog">
+      <modelElement href="Team25FinalProject.uml#_gDzygGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gdsSemziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdsSe2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gdsSfGziEe2h8Ngmez5xlQ" name="event">
+        <modelElement href="Team25FinalProject.uml#_gDzygWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSfWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSfmziEe2h8Ngmez5xlQ" name="ActionEvent">
+          <modelElement href="Team25FinalProject.uml#_gC5zkWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gdsSf2ziEe2h8Ngmez5xlQ" name="returnUserScene">
+        <modelElement href="Team25FinalProject.uml#_gDzygmziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSgGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSgWziEe2h8Ngmez5xlQ" name="Scene">
+          <modelElement href="Team25FinalProject.uml#_gCxQsWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gdsSgmziEe2h8Ngmez5xlQ" name="chooseUser">
+      <modelElement href="Team25FinalProject.uml#_gD0ZkGziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gdsSg2ziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gD1nsGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gdsShGziEe2h8Ngmez5xlQ" name="Annotations">
+        <modelElement href="Team25FinalProject.uml#_gD1nsWziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gdsShWziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gdsShmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gdsSh2ziEe2h8Ngmez5xlQ" name="event">
+        <modelElement href="Team25FinalProject.uml#_gD0ZkWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gdsSiGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gdsSiWziEe2h8Ngmez5xlQ" name="ActionEvent">
+          <modelElement href="Team25FinalProject.uml#_gC5zkWziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_geTWIGziEe2h8Ngmez5xlQ" name="WorkoutComponent">
+    <modelElement href="Team25FinalProject.uml#_f_PbkGziEe2h8Ngmez5xlQ"/>
+    <visualProperties xmi:id="_geTWIWziEe2h8Ngmez5xlQ" position="199.0,595.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_geTWImziEe2h8Ngmez5xlQ" label="+"/>
+    <attributes xmi:id="_geTWI2ziEe2h8Ngmez5xlQ" name="workoutType">
+      <modelElement href="Team25FinalProject.uml#_gEE4QGziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_geTWJGziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gEFfUGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_geTWJWziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_geTWJmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_geTWJ2ziEe2h8Ngmez5xlQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_geTWKGziEe2h8Ngmez5xlQ" name="duration">
+      <modelElement href="Team25FinalProject.uml#_gEFfUWziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_geTWKWziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gEGGYGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_geTWKmziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_geTWK2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_geTWLGziEe2h8Ngmez5xlQ" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_geTWLWziEe2h8Ngmez5xlQ" name="intensity">
+      <modelElement href="Team25FinalProject.uml#_gEH7kGziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_geTWLmziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gEIioGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_geTWL2ziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_geTWMGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_geTWMWziEe2h8Ngmez5xlQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_geTWMmziEe2h8Ngmez5xlQ" name="caloriesBurned">
+      <modelElement href="Team25FinalProject.uml#_gEIioWziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_geTWM2ziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gEJJsGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_geTWNGziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_geTWNWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_geTWNmziEe2h8Ngmez5xlQ" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_geTWN2ziEe2h8Ngmez5xlQ" name="WorkoutComponent">
+      <modelElement href="Team25FinalProject.uml#_f_RQwGziEe2h8Ngmez5xlQ"/>
+      <keywords xmi:id="_geTWOGziEe2h8Ngmez5xlQ" keyword="create"/>
+      <visibility xmi:id="_geTWOWziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_geTWOmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_geTWO2ziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f_R302ziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_geTWPGziEe2h8Ngmez5xlQ" name="WorkoutComponent">
+          <modelElement href="Team25FinalProject.uml#_f_PbkGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_geTWPWziEe2h8Ngmez5xlQ" name="dur">
+        <modelElement href="Team25FinalProject.uml#_f_RQwWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_geTWPmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_geTWP2ziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_geTWQGziEe2h8Ngmez5xlQ" name="calories">
+        <modelElement href="Team25FinalProject.uml#_f_R30GziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_geTWQWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_geTWQmziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_geTWQ2ziEe2h8Ngmez5xlQ" name="setCalories">
+      <modelElement href="Team25FinalProject.uml#_f_TF8GziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_geTWRGziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_geTWRWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_geTWRmziEe2h8Ngmez5xlQ" name="calories">
+        <modelElement href="Team25FinalProject.uml#_f_TF8WziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_geTWR2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_geTWSGziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_geTWSWziEe2h8Ngmez5xlQ" name="getCalories">
+      <modelElement href="Team25FinalProject.uml#_f_TtAGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_geTWSmziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_geTWS2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_geTWTGziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f_TtAWziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_geTWTWziEe2h8Ngmez5xlQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_geTWTmziEe2h8Ngmez5xlQ" name="durationInHours">
+      <modelElement href="Team25FinalProject.uml#_f_UUEGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_geTWT2ziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_geTWUGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_geTWUWziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f_bo0GziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_geTWUmziEe2h8Ngmez5xlQ" name="long">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_geTWU2ziEe2h8Ngmez5xlQ" name="toString">
+      <modelElement href="Team25FinalProject.uml#_f_c28GziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_geTWVGziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_geTWVWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_geTWVmziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f_deAGziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_geTWV2ziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gelC8GziEe2h8Ngmez5xlQ" name="AchievedGoals" generalizations="_gegxgGziEe2h8Ngmez5xlQ">
+    <modelElement href="Team25FinalProject.uml#_f9gWMGziEe2h8Ngmez5xlQ"/>
+    <visualProperties xmi:id="_gelC8WziEe2h8Ngmez5xlQ" position="113.0,864.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gelC8mziEe2h8Ngmez5xlQ" label="+"/>
+    <operations xmi:id="_gelC82ziEe2h8Ngmez5xlQ" name="AchievedGoals">
+      <modelElement href="Team25FinalProject.uml#_f9oSAGziEe2h8Ngmez5xlQ"/>
+      <keywords xmi:id="_gelC9GziEe2h8Ngmez5xlQ" keyword="create"/>
+      <visibility xmi:id="_gelC9WziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gelC9mziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gelC92ziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f9rVUmziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gelC-GziEe2h8Ngmez5xlQ" name="AchievedGoals">
+          <modelElement href="Team25FinalProject.uml#_f9gWMGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gelC-WziEe2h8Ngmez5xlQ" name="duration">
+        <modelElement href="Team25FinalProject.uml#_f9o5EGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gelC-mziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gelC-2ziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gelC_GziEe2h8Ngmez5xlQ" name="weight">
+        <modelElement href="Team25FinalProject.uml#_f9pgIGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gelC_WziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gelC_mziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gelC_2ziEe2h8Ngmez5xlQ" name="upperBody">
+        <modelElement href="Team25FinalProject.uml#_f9pgIWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gelDAGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gelDAWziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gelDAmziEe2h8Ngmez5xlQ" name="lowerBody">
+        <modelElement href="Team25FinalProject.uml#_f9pgImziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gelDA2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gelDBGziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gfSNkGziEe2h8Ngmez5xlQ" name="User">
+    <modelElement href="Team25FinalProject.uml#_f-RyQGziEe2h8Ngmez5xlQ"/>
+    <visualProperties xmi:id="_gfSNkWziEe2h8Ngmez5xlQ" position="893.0,-15.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gfSNkmziEe2h8Ngmez5xlQ" label="+"/>
+    <attributes xmi:id="_gfSNk2ziEe2h8Ngmez5xlQ" name="name">
+      <modelElement href="Team25FinalProject.uml#_gD8VYGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gfSNlGziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gfSNlWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gfSNlmziEe2h8Ngmez5xlQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gfSNl2ziEe2h8Ngmez5xlQ" name="weight">
+      <modelElement href="Team25FinalProject.uml#_gD8VYWziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gfSNmGziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gD88cGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gfSNmWziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gfSNmmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gfSNm2ziEe2h8Ngmez5xlQ" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gfSNnGziEe2h8Ngmez5xlQ" name="height">
+      <modelElement href="Team25FinalProject.uml#_gD88cWziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gfSNnWziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gD-KkGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gfSNnmziEe2h8Ngmez5xlQ" label="-"/>
+      <cardinality xmi:id="_gfSNn2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <type xmi:id="_gfSNoGziEe2h8Ngmez5xlQ" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gfSNoWziEe2h8Ngmez5xlQ" name="User">
+      <modelElement href="Team25FinalProject.uml#_f-XR0GziEe2h8Ngmez5xlQ"/>
+      <keywords xmi:id="_gfSNomziEe2h8Ngmez5xlQ" keyword="create"/>
+      <visibility xmi:id="_gfSNo2ziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gfSNpGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gfSNpWziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f-Yf8mziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gfSNpmziEe2h8Ngmez5xlQ" name="User">
+          <modelElement href="Team25FinalProject.uml#_f-RyQGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gfSNp2ziEe2h8Ngmez5xlQ" name="name">
+        <modelElement href="Team25FinalProject.uml#_f-XR0WziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSNqGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSNqWziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gfSNqmziEe2h8Ngmez5xlQ" name="weight">
+        <modelElement href="Team25FinalProject.uml#_f-XR0mziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSNq2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSNrGziEe2h8Ngmez5xlQ" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gfSNrWziEe2h8Ngmez5xlQ" name="height">
+        <modelElement href="Team25FinalProject.uml#_f-X44GziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSNrmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSNr2ziEe2h8Ngmez5xlQ" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gfSNsGziEe2h8Ngmez5xlQ" name="User">
+      <modelElement href="Team25FinalProject.uml#_f-ZuEGziEe2h8Ngmez5xlQ"/>
+      <keywords xmi:id="_gfSNsWziEe2h8Ngmez5xlQ" keyword="create"/>
+      <visibility xmi:id="_gfSNsmziEe2h8Ngmez5xlQ" label="~"/>
+      <cardinality xmi:id="_gfSNs2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gfSNtGziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f-aVImziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gfSNtWziEe2h8Ngmez5xlQ" name="User">
+          <modelElement href="Team25FinalProject.uml#_f-RyQGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gfSNtmziEe2h8Ngmez5xlQ" name="newName">
+        <modelElement href="Team25FinalProject.uml#_f-ZuEWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSNt2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSNuGziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gfSNuWziEe2h8Ngmez5xlQ" name="setName">
+      <modelElement href="Team25FinalProject.uml#_f-cxYGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gfSNumziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gfSNu2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gfSNvGziEe2h8Ngmez5xlQ">
+        <modelElement href="Team25FinalProject.uml#_f-cxYmziEe2h8Ngmez5xlQ"/>
+        <type xmi:id="_gfSNvWziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gfSNvmziEe2h8Ngmez5xlQ" name="nameAsString">
+        <modelElement href="Team25FinalProject.uml#_f-cxYWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSNv2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSNwGziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gfSNwWziEe2h8Ngmez5xlQ" name="logWorkout">
+      <modelElement href="Team25FinalProject.uml#_f-jfEGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gfSNwmziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gfSNw2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gfSNxGziEe2h8Ngmez5xlQ" name="calories">
+        <modelElement href="Team25FinalProject.uml#_f-jfEWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSNxWziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSNxmziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gfSNx2ziEe2h8Ngmez5xlQ" name="duration">
+        <modelElement href="Team25FinalProject.uml#_f-kGIGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSNyGziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSNyWziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gfSNymziEe2h8Ngmez5xlQ" name="intensity">
+        <modelElement href="Team25FinalProject.uml#_f-kGIWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSNy2ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSNzGziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gfSNzWziEe2h8Ngmez5xlQ" name="type">
+        <modelElement href="Team25FinalProject.uml#_f-kGImziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSNzmziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSNz2ziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gfSN0GziEe2h8Ngmez5xlQ" name="logGoals">
+      <modelElement href="Team25FinalProject.uml#_f-nJcGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gfSN0WziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gfSN0mziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gfSN02ziEe2h8Ngmez5xlQ" name="duration">
+        <modelElement href="Team25FinalProject.uml#_f-nJcWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSN1GziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSN1WziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gfSN1mziEe2h8Ngmez5xlQ" name="weight">
+        <modelElement href="Team25FinalProject.uml#_f-nJcmziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSN12ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSN2GziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gfSN2WziEe2h8Ngmez5xlQ" name="upperBody">
+        <modelElement href="Team25FinalProject.uml#_f-nJc2ziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSN2mziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSN22ziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gfSN3GziEe2h8Ngmez5xlQ" name="lowerBody">
+        <modelElement href="Team25FinalProject.uml#_f-nwgGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSN3WziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSN3mziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gfSN32ziEe2h8Ngmez5xlQ" name="compareTo">
+      <modelElement href="Team25FinalProject.uml#_gC3XUGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gfSN4GziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gfSN4WziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gfSN4mziEe2h8Ngmez5xlQ" name="workoutstat">
+        <modelElement href="Team25FinalProject.uml#_gC3XUWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSN42ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSN5GziEe2h8Ngmez5xlQ" name="WorkoutComponent">
+          <modelElement href="Team25FinalProject.uml#_f_PbkGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gfSN5WziEe2h8Ngmez5xlQ" name="goals">
+        <modelElement href="Team25FinalProject.uml#_gC3XUmziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfSN5mziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfSN52ziEe2h8Ngmez5xlQ" name="GoalComponent">
+          <modelElement href="Team25FinalProject.uml#_f9vmwGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gfBu4GziEe2h8Ngmez5xlQ" name="Main">
+    <modelElement href="Team25FinalProject.uml#_f-J2cGziEe2h8Ngmez5xlQ"/>
+    <visualProperties xmi:id="_gfBu4WziEe2h8Ngmez5xlQ" position="-230.0,143.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gfBu4mziEe2h8Ngmez5xlQ" label="+"/>
+    <operations xmi:id="_gfBu42ziEe2h8Ngmez5xlQ" name="main" staticOperation="true">
+      <modelElement href="Team25FinalProject.uml#_f-LroGziEe2h8Ngmez5xlQ"/>
+      <visibility xmi:id="_gfBu5GziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gfBu5WziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gfBu5mziEe2h8Ngmez5xlQ" name="args">
+        <modelElement href="Team25FinalProject.uml#_f-MSsGziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfBu52ziEe2h8Ngmez5xlQ" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_gfBu6GziEe2h8Ngmez5xlQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gfBu6WziEe2h8Ngmez5xlQ" name="start">
+      <modelElement href="Team25FinalProject.uml#_gDlwEGziEe2h8Ngmez5xlQ"/>
+      <stereotypes xmi:id="_gfBu6mziEe2h8Ngmez5xlQ" name="LegacyStyledElement">
+        <modelElement href="Team25FinalProject.uml#_gDmXIGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gfBu62ziEe2h8Ngmez5xlQ" name="Annotations">
+        <modelElement href="Team25FinalProject.uml#_gDqBgGziEe2h8Ngmez5xlQ"/>
+      </stereotypes>
+      <visibility xmi:id="_gfBu7GziEe2h8Ngmez5xlQ" label="+"/>
+      <cardinality xmi:id="_gfBu7WziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gfBu7mziEe2h8Ngmez5xlQ" name="primaryStage">
+        <modelElement href="Team25FinalProject.uml#_gDlwEWziEe2h8Ngmez5xlQ"/>
+        <cardinality xmi:id="_gfBu72ziEe2h8Ngmez5xlQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gfBu8GziEe2h8Ngmez5xlQ" name="Stage">
+          <modelElement href="Team25FinalProject.uml#_gCu0cGziEe2h8Ngmez5xlQ"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
