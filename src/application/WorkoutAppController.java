@@ -41,9 +41,8 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method will set up a new user in the application. The method will
-	 * validate that the user name is alphabetic, if the user has entered a proper
-	 * user name the application will add the new user to the ChoiceBox.
+	 * This method will set up a new user in the application. The method will validate that the user name is alphabetic, 
+	 * if the user has entered a proper user name the application will add the new user to the ChoiceBox.
 	 * 
 	 * @param mainScene
 	 * @param newUserTextfield
@@ -68,14 +67,12 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method will take in the user's input from the GUI and check if the user
-	 * has entered a number. The method will check if the user has entered a number,
-	 * if not the GUI will return a specific error message to the user. If there are
-	 * no error's in input the scene will change back to the user's main welcome
-	 * screen.
+	 * This method will take in the user's input from the GUI and check if the user has entered a number. The method will 
+	 * check if the user has entered a number, if not the GUI will return a specific error message to the user. If there are
+	 * no error's in input the scene will change back to the user's main welcome screen.
 	 * 
-	 * @param returnUserScene
-	 * @param viewUser2 
+	 * @param returnUserScene 
+	 * @param viewUser 
 	 * @param caloriesTextfield
 	 * @param durationTextfield
 	 * @param workoutIntensityChoiceBox
@@ -90,7 +87,6 @@ public class WorkoutAppController {
 			// associate the workout stats with the user
 			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
 					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
-			
 
 		} catch (InvalidEntryException e) {
 			userErrorLabel.setText(e.getMessage()); // shows error message to the user
@@ -102,9 +98,8 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method will return the user's goals and print the goals to the user.
-	 * This method will create a new Goal Component Object, and check to make sure
-	 * that the user has entered a number.
+	 * This method will return the user's goals and print the goals to the user. This method will create a new Goal 
+	 * Component Object, and check to make sure that the user has entered a number.
 	 * 
 	 * @param returnUserScene
 	 * @param viewUser 
@@ -130,7 +125,7 @@ public class WorkoutAppController {
 
 	/**
 	 * This method will generate a scene change for the returning user to input
-	 * their workout stats. This method will create the containers for user input.
+	 * their workout statistics. This method will create the containers for user input.
 	 * 
 	 * @param event
 	 * @param returnUserScene
@@ -282,10 +277,8 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method generates a new scene based on the users interaction with the
-	 * Welcome Page ChoiceBox. Depending on the choice, the user can generate a new
-	 * user that will be added to the ChoiceBox for later entry or sign in as a
-	 * previous user.
+	 * This method generates a new scene based on the users interaction with the Welcome Page ChoiceBox. Depending on the choice,
+	 * the user can generate a new user that will be added to the ChoiceBox for later entry or sign in as a previous user.
 	 * 
 	 * @param event
 	 */
@@ -360,15 +353,14 @@ public class WorkoutAppController {
 			Button goalsButton = new Button("Enter Goals Here");
 			HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
 			goalsButton.setOnAction(goalsEvent -> getGoalLog(event, returnUserScene, viewUser));
-
-			
-			Button compareButton = new Button();
-			VBox.setMargin(compareButton, new Insets(10, 10, 10, 10) );
-			
-			
 			workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
+			
+			Button logOutButton = new Button("Log Out");
+			VBox.setMargin(logOutButton, new Insets(10, 10, 10, 10) );
+			logOutButton.setOnAction(logOutEvent -> applicationStage.setScene(mainScene));
+			
 			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, workoutContainer,
-					workoutGoalsContainer);
+					workoutGoalsContainer, logOutButton);
 
 			workoutGoalsContainer.getChildren().addAll(userGoalLabel);
 

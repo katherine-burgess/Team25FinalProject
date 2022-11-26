@@ -46,13 +46,13 @@ public class GoalComponent {
 		return upperBodyPR;
 	}
 
-	// polymorphic call 
+	// polymorphism 
 	public long durationInHours() {
 		long hours = durationGoal / 60;
 		return hours;
 	}
 
-	// Will create a string containing all of the inputed goals
+	// Will create a string containing all of the inputed goals (polymorphism)
 	public String toString() {
 		goals = "Duration: " + getDurationGoal() + '\n' + "Target Weight: " + getTargetWeight() + '\n'
 				+ "Upper Body PR: " + getUpperBody() + '\n' + "Lower Body PR: " + getLowerBody();
@@ -60,9 +60,6 @@ public class GoalComponent {
 		return goals;
 	}
 
-//	public char[] compareTo(WorkoutComponent workoutStats) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
+	
+		
 }

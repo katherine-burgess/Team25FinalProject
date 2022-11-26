@@ -2,6 +2,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * This class will generate a new user. 
@@ -31,6 +32,7 @@ public class User {
 	// This constructor sets the name of a new User
 	User(String newName) {
 		name = newName;
+		users = new ArrayList<User>();
 		
 	}
 
@@ -57,12 +59,13 @@ public class User {
 	public String getName() {
 		return name;
 	}
+	
 
 	// This method will create a new workoutComponent
 	// This method will take in a workoutComponent
 	public void logWorkout(String calories, String duration, String intensity, String type, String newWeight)
 			throws InvalidEntryException {
-		workoutStats = new WorkoutComponent(duration, calories, newWeight);
+		workoutStats = new WorkoutComponent(duration, calories, newWeight, intensity, type);
 		System.out.println(workoutStats);
 		
 		// check if the instance variable is null
@@ -91,8 +94,10 @@ public class User {
 	public void compareTo(WorkoutComponent workoutStat) {
 		if (workoutStat.getDuration() >= (goals.getDurationGoal())) {
 			System.out.println("Duration Goal has been met!");
+		} else if (workoutStat.getWeight() < goals.getTargetWeight()) {
+			System.out.println("Target Weight has been achieved, way to go!");
 		}
-		
-
 	}
+	
+	
 }
