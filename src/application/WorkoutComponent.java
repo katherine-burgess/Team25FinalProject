@@ -6,15 +6,17 @@ public class WorkoutComponent {
 	private long duration;
 	private String intensity;
 	private int caloriesBurned;
+	private double weight;
 	
 	// Maximum duration for a workout is 300 minutes or 5 hours
 	private double durationMax = 300;
 	private int calorieMax = 1000;
 
-	WorkoutComponent(String dur, String calories) throws InvalidEntryException {
+	public WorkoutComponent(String dur, String calories, String weight) throws InvalidEntryException {
 		try {
 			duration = Long.parseLong(dur);
 			caloriesBurned = Integer.parseInt(calories);
+			this.weight = Double.parseDouble(weight);
 			
 			if (duration < 0 || duration > durationMax) {
 				throw new InvalidEntryException(String.format("Invalid workout duration entry. Enter a number between 0 and %d ", durationMax));
@@ -29,6 +31,8 @@ public class WorkoutComponent {
 
 		}
 	}
+
+	
 
 	public void setDuration(String dur) throws InvalidEntryException {
 		try {
@@ -65,6 +69,11 @@ public class WorkoutComponent {
 		return workoutType;
 	}
 	
+	public double getWeight() {
+		return weight;
+	}
+	
+	
 	// gets the duration length of workout in hours
 	public long durationInHours() {
 		long hours = getDuration() / 60;
@@ -85,7 +94,7 @@ public class WorkoutComponent {
 	public void compareTo(GoalComponent goals) {
 		if ( getDuration() >= (goals.getDurationGoal())) {
 			System.out.println("Duration Goal has been met!");
-		}
+		} 
 		
 	}
 

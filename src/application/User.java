@@ -60,9 +60,9 @@ public class User {
 
 	// This method will create a new workoutComponent
 	// This method will take in a workoutComponent
-	public void logWorkout(String calories, String duration, String intensity, String type)
+	public void logWorkout(String calories, String duration, String intensity, String type, String newWeight)
 			throws InvalidEntryException {
-		workoutStats = new WorkoutComponent(duration, calories);
+		workoutStats = new WorkoutComponent(duration, calories, newWeight);
 		System.out.println(workoutStats);
 		
 		// check if the instance variable is null

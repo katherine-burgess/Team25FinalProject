@@ -80,15 +80,16 @@ public class WorkoutAppController {
 	 * @param durationTextfield
 	 * @param workoutIntensityChoiceBox
 	 * @param workoutTypeChoiceBox
+	 * @param weightTextfield 
 	 */
 	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield, TextField durationTextfield,
-			ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> workoutTypeChoiceBox) {
+			ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> workoutTypeChoiceBox, TextField weightTextfield) {
 
 		boolean error = false;
 		try {
 			// associate the workout stats with the user
 			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
-					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue());
+					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
 			
 
 		} catch (InvalidEntryException e) {
@@ -183,16 +184,24 @@ public class WorkoutAppController {
 		HBox.setMargin(caloriesLabel, new Insets(10, 10, 10, 10));
 		caloriesContainer.getChildren().addAll(caloriesBurnedLabel, caloriesTextfield, caloriesLabel);
 
+		// Container for weight entry
+		HBox weightContainer = new HBox();
+		Label weightLabel = new Label("Weight :");
+		HBox.setMargin(weightLabel, new Insets(10, 10, 10, 10));
+		TextField weightTextfield = new TextField();
+		HBox.setMargin(weightTextfield, new Insets(10, 10, 10, 10));
+		weightContainer.getChildren().addAll(weightLabel, weightTextfield);
+		
 		Button submitStats = new Button("Done");
 		VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
 		workoutStatsContainer.getChildren().addAll(workoutTypeContainer, durationContainer, workoutIntensityContainer,
-				caloriesContainer, submitStats);
+				caloriesContainer, weightContainer, submitStats);
 
 		workoutStatsContainer.getChildren().add(userErrorLabel);
 
 		// when user is done inputting stats, return to user's home page
 		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, viewUser, caloriesTextfield, durationTextfield,
-				workoutIntensityChoiceBox, workoutTypeChoiceBox));
+				workoutIntensityChoiceBox, workoutTypeChoiceBox,weightTextfield));
 
 		Scene workoutStatsScene = new Scene(workoutStatsContainer);
 		applicationStage.setScene(workoutStatsScene);
