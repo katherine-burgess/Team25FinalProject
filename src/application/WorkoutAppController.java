@@ -16,6 +16,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * This class will control the scene changes of the application.
+ * 
+ * @author CS219-user Katie Burgess
+ *
+ */
 public class WorkoutAppController {
 	Stage applicationStage;
 
@@ -41,8 +47,9 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method will set up a new user in the application. The method will validate that the user name is alphabetic, 
-	 * if the user has entered a proper user name the application will add the new user to the ChoiceBox.
+	 * This method will set up a new user in the application. The method will
+	 * validate that the user name is alphabetic, if the user has entered a proper
+	 * user name the application will add the new user to the ChoiceBox.
 	 * 
 	 * @param mainScene
 	 * @param newUserTextfield
@@ -67,20 +74,23 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method will take in the user's input from the GUI and check if the user has entered a number. The method will 
-	 * check if the user has entered a number, if not the GUI will return a specific error message to the user. If there are
-	 * no error's in input the scene will change back to the user's main welcome screen.
+	 * This method will take in the user's input from the GUI and check if the user
+	 * has entered a number. The method will check if the user has entered a number,
+	 * if not the GUI will return a specific error message to the user. If there are
+	 * no error's in input the scene will change back to the user's main welcome
+	 * screen.
 	 * 
-	 * @param returnUserScene 
-	 * @param viewUser 
+	 * @param returnUserScene
+	 * @param viewUser
 	 * @param caloriesTextfield
 	 * @param durationTextfield
 	 * @param workoutIntensityChoiceBox
 	 * @param workoutTypeChoiceBox
-	 * @param weightTextfield 
+	 * @param weightTextfield
 	 */
-	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield, TextField durationTextfield,
-			ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> workoutTypeChoiceBox, TextField weightTextfield) {
+	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield,
+			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox,
+			ChoiceBox<String> workoutTypeChoiceBox, TextField weightTextfield) {
 
 		boolean error = false;
 		try {
@@ -98,19 +108,21 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method will return the user's goals and print the goals to the user. This method will create a new Goal 
-	 * Component Object, and check to make sure that the user has entered a number.
+	 * This method will return the user's goals and print the goals to the user.
+	 * This method will create a new Goal Component Object, and check to make sure
+	 * that the user has entered a number.
 	 * 
 	 * @param returnUserScene
-	 * @param viewUser 
+	 * @param viewUser
 	 * @param durationTextfield
 	 * @param targetWeightTextfield
 	 * @param upperBodyPRTextfield
 	 * @param lowerBodyPRTextfield
 	 * @throws InvalidEntryException
 	 */
-	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield, TextField targetWeightTextfield,
-			TextField upperBodyPRTextfield, TextField lowerBodyPRTextfield) throws InvalidEntryException {
+	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield,
+			TextField targetWeightTextfield, TextField upperBodyPRTextfield, TextField lowerBodyPRTextfield)
+			throws InvalidEntryException {
 
 		boolean error = false;
 		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), upperBodyPRTextfield.getText(),
@@ -125,11 +137,12 @@ public class WorkoutAppController {
 
 	/**
 	 * This method will generate a scene change for the returning user to input
-	 * their workout statistics. This method will create the containers for user input.
+	 * their workout statistics. This method will create the containers for user
+	 * input.
 	 * 
 	 * @param event
 	 * @param returnUserScene
-	 * @param viewUser 
+	 * @param viewUser
 	 */
 	void getWorkoutLog(ActionEvent event, Scene returnUserScene, User viewUser) {
 
@@ -186,7 +199,7 @@ public class WorkoutAppController {
 		TextField weightTextfield = new TextField();
 		HBox.setMargin(weightTextfield, new Insets(10, 10, 10, 10));
 		weightContainer.getChildren().addAll(weightLabel, weightTextfield);
-		
+
 		Button submitStats = new Button("Done");
 		VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
 		workoutStatsContainer.getChildren().addAll(workoutTypeContainer, durationContainer, workoutIntensityContainer,
@@ -195,8 +208,8 @@ public class WorkoutAppController {
 		workoutStatsContainer.getChildren().add(userErrorLabel);
 
 		// when user is done inputting stats, return to user's home page
-		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, viewUser, caloriesTextfield, durationTextfield,
-				workoutIntensityChoiceBox, workoutTypeChoiceBox,weightTextfield));
+		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, viewUser, caloriesTextfield,
+				durationTextfield, workoutIntensityChoiceBox, workoutTypeChoiceBox, weightTextfield));
 
 		Scene workoutStatsScene = new Scene(workoutStatsContainer);
 		applicationStage.setScene(workoutStatsScene);
@@ -209,7 +222,7 @@ public class WorkoutAppController {
 	 * 
 	 * @param event
 	 * @param returnUserScene
-	 * @param viewUser 
+	 * @param viewUser
 	 */
 	void getGoalLog(ActionEvent event, Scene returnUserScene, User viewUser) {
 
@@ -265,8 +278,8 @@ public class WorkoutAppController {
 		// Validates and Changes Scene if the user enters proper input
 		submitGoals.setOnAction(doneEvent -> {
 			try {
-				calculateGoals(returnUserScene, viewUser, durationTextfield, targetWeightTextfield, upperBodyPRTextfield,
-						lowerBodyPRTextfield);
+				calculateGoals(returnUserScene, viewUser, durationTextfield, targetWeightTextfield,
+						upperBodyPRTextfield, lowerBodyPRTextfield);
 			} catch (InvalidEntryException e) {
 				userErrorLabel.setText(e.getMessage());
 			}
@@ -277,8 +290,10 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method generates a new scene based on the users interaction with the Welcome Page ChoiceBox. Depending on the choice,
-	 * the user can generate a new user that will be added to the ChoiceBox for later entry or sign in as a previous user.
+	 * This method generates a new scene based on the users interaction with the
+	 * Welcome Page ChoiceBox. Depending on the choice, the user can generate a new
+	 * user that will be added to the ChoiceBox for later entry or sign in as a
+	 * previous user.
 	 * 
 	 * @param event
 	 */
@@ -321,7 +336,7 @@ public class WorkoutAppController {
 		} else {
 
 			User viewUser = new User(chooseUserChoiceBox.getValue());
-			
+
 			// will generate the returning user welcome page
 			VBox returnUserContainer = new VBox();
 
@@ -354,11 +369,11 @@ public class WorkoutAppController {
 			HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
 			goalsButton.setOnAction(goalsEvent -> getGoalLog(event, returnUserScene, viewUser));
 			workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
-			
+
 			Button logOutButton = new Button("Log Out");
-			VBox.setMargin(logOutButton, new Insets(10, 10, 10, 10) );
+			VBox.setMargin(logOutButton, new Insets(10, 10, 10, 10));
 			logOutButton.setOnAction(logOutEvent -> applicationStage.setScene(mainScene));
-			
+
 			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, workoutContainer,
 					workoutGoalsContainer, logOutButton);
 

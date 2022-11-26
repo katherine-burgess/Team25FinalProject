@@ -1,5 +1,15 @@
 package application;
 
+/**
+ * This class will take in the user's goals and save them. The goals will be
+ * compared to the workout statistics entered and validate user goal entry. If
+ * the user achieves a goal, the goal will be saved into an ArrayList of
+ * achieved goals. This class will keep count of how many goals the user has
+ * achieved and how many goals the user is working towards.
+ * 
+ * @author CS219-user Katie Burgess
+ *
+ */
 public class GoalComponent {
 
 	// Instance Variables
@@ -8,8 +18,10 @@ public class GoalComponent {
 	private double lowerBodyPR;
 	private double upperBodyPR;
 	private String goals;
-	
+
+	// Maximum entry for each numerical input
 	private int durationGoalMax = 300;
+	private int targetWeightMax = 300;
 
 	// This constructor takes in the four goal components and validates the input
 	GoalComponent(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
@@ -19,10 +31,16 @@ public class GoalComponent {
 			lowerBodyPR = Double.parseDouble(lowerBody);
 			upperBodyPR = Double.parseDouble(upperBody);
 
-			// Duration of workout cannot be longer than 12 hours
 			if (this.durationGoal < 0 || this.durationGoal > durationGoalMax) {
-				throw new InvalidEntryException(String.format("Duration of workout can only be between 0 and %d hours. ", durationInHours()));
-				
+				throw new InvalidEntryException(
+						String.format("Duration of workout can only be between 0 and %d hours. ", durationGoalMax));
+			}
+			if (targetWeight < 0 || targetWeight > targetWeightMax) {
+				throw new InvalidEntryException(
+						String.format("Target weight can only be between 0 and %d lbs. ", targetWeightMax));
+			}
+			if (lowerBodyPR < 0 || upperBodyPR < 0) {
+				throw new InvalidEntryException(String.format("A new personal record can't be less than 0 lbs. "));
 			}
 
 		} catch (NumberFormatException e) {
@@ -46,13 +64,13 @@ public class GoalComponent {
 		return upperBodyPR;
 	}
 
-	// polymorphism 
+	// Will get the duration goal length in hours
 	public long durationInHours() {
 		long hours = durationGoal / 60;
 		return hours;
 	}
 
-	// Will create a string containing all of the inputed goals (polymorphism)
+	// Will create a string containing all of the inputed goals
 	public String toString() {
 		goals = "Duration: " + getDurationGoal() + '\n' + "Target Weight: " + getTargetWeight() + '\n'
 				+ "Upper Body PR: " + getUpperBody() + '\n' + "Lower Body PR: " + getLowerBody();
@@ -60,6 +78,4 @@ public class GoalComponent {
 		return goals;
 	}
 
-	
-		
 }
