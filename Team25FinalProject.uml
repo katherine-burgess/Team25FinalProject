@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_epyEgGziEe2h8Ngmez5xlQ" name="Team25FinalProject">
+    <eAnnotations xmi:id="_fbXScGziEe2h8Ngmez5xlQ" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_fbXScWziEe2h8Ngmez5xlQ" source="codegen">
+        <details xmi:id="_fbXScmziEe2h8Ngmez5xlQ" key="codegenDirectory" value="/Team25FinalProject/src"/>
+        <details xmi:id="_gakssGziEe2h8Ngmez5xlQ" key="AssociatedSourceCode" value="/Team25FinalProject/src/application/AchievedGoals.java;3717437714/1;/Team25FinalProject/src/application/GoalComponent.java;355941080/1;/Team25FinalProject/src/application/InvalidEntryException.java;775170678/1;/Team25FinalProject/src/application/Main.java;3569415159/1;/Team25FinalProject/src/application/User.java;337526508/1;/Team25FinalProject/src/application/WorkoutAppController.java;579847962/1;/Team25FinalProject/src/application/WorkoutComponent.java;1162936239/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_f6-moGziEe2h8Ngmez5xlQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_f6_0wGziEe2h8Ngmez5xlQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_f7Ab0GziEe2h8Ngmez5xlQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_f7Ab0WziEe2h8Ngmez5xlQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_f7Ab0mziEe2h8Ngmez5xlQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_f7Ab02ziEe2h8Ngmez5xlQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_f7BC4GziEe2h8Ngmez5xlQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_f7BC4WziEe2h8Ngmez5xlQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_f7Bp8GziEe2h8Ngmez5xlQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_f7Y2UGziEe2h8Ngmez5xlQ" name="application">
+      <packagedElement xmi:type="uml:Class" xmi:id="_f9gWMGziEe2h8Ngmez5xlQ" name="AchievedGoals">
+        <generalization xmi:id="_gClqgGziEe2h8Ngmez5xlQ" general="_f9vmwGziEe2h8Ngmez5xlQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEV-AGziEe2h8Ngmez5xlQ" name="AchievedGoals" specification="_f9oSAGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEV-AWziEe2h8Ngmez5xlQ" name="duration">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEV-AmziEe2h8Ngmez5xlQ" name="weight">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEV-A2ziEe2h8Ngmez5xlQ" name="upperBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEV-BGziEe2h8Ngmez5xlQ" name="lowerBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEV-BWziEe2h8Ngmez5xlQ" type="_f9gWMGziEe2h8Ngmez5xlQ" direction="return"/>
+          <language>java</language>
+          <body>super(duration, weight, upperBody, lowerBody);&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_f9oSAGziEe2h8Ngmez5xlQ" name="AchievedGoals" visibility="package" method="_gEV-AGziEe2h8Ngmez5xlQ" raisedException="_f9-3UGziEe2h8Ngmez5xlQ">
+          <eAnnotations xmi:id="_f9rVUGziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_f9rVUWziEe2h8Ngmez5xlQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_f9o5EGziEe2h8Ngmez5xlQ" name="duration">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f9pgIGziEe2h8Ngmez5xlQ" name="weight">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f9pgIWziEe2h8Ngmez5xlQ" name="upperBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f9pgImziEe2h8Ngmez5xlQ" name="lowerBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f9rVUmziEe2h8Ngmez5xlQ" type="_f9gWMGziEe2h8Ngmez5xlQ" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_f9vmwGziEe2h8Ngmez5xlQ" name="GoalComponent">
+        <ownedAttribute xmi:id="_gD4rAGziEe2h8Ngmez5xlQ" name="targetWeight" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gD4rAWziEe2h8Ngmez5xlQ" name="durationGoal" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_gD5SEGziEe2h8Ngmez5xlQ" value="720"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gD55IGziEe2h8Ngmez5xlQ" name="lowerBodyPR" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gD6gMWziEe2h8Ngmez5xlQ" name="upperBodyPR" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gD7HQWziEe2h8Ngmez5xlQ" name="goals" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEgWEGziEe2h8Ngmez5xlQ" name="GoalComponent" specification="_f90fQGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEgWEWziEe2h8Ngmez5xlQ" name="duration">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEgWEmziEe2h8Ngmez5xlQ" name="weight">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEgWE2ziEe2h8Ngmez5xlQ" name="upperBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEgWFGziEe2h8Ngmez5xlQ" name="lowerBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEgWFWziEe2h8Ngmez5xlQ" type="_f9vmwGziEe2h8Ngmez5xlQ" direction="return"/>
+          <language>java</language>
+          <body>try {&#xD;
+			this.durationGoal = Long.parseLong(duration);&#xD;
+			targetWeight = Double.parseDouble(weight);&#xD;
+			lowerBodyPR = Double.parseDouble(lowerBody);&#xD;
+			upperBodyPR = Double.parseDouble(upperBody);&#xD;
+&#xD;
+			// Duration of workout cannot be longer than 12 hours&#xD;
+//			if (this.durationGoal &lt; 0 || this.durationGoal > durationInHours()) {&#xD;
+//				throw new InvalidEntryException(String.format(&quot;Duration of workout can only be between 0 and %d hours. &quot;, durationInHours()));&#xD;
+//				&#xD;
+//			}&#xD;
+&#xD;
+		} catch (NumberFormatException e) {&#xD;
+			throw new InvalidEntryException(String.format(&quot;Invalid Goal Entry. Make sure to enter a number.&quot;));&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEg9IGziEe2h8Ngmez5xlQ" name="getLowerBody" specification="_f927gGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEg9IWziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return lowerBodyPR;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gElOkGziEe2h8Ngmez5xlQ" name="getUpperBody" specification="_f93ikWziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gElOkWziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return upperBodyPR;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEl1oGziEe2h8Ngmez5xlQ" name="durationInHours" specification="_f94wsGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEl1oWziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>long hours = durationGoal / 60;&#xD;
+		return hours;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEl1omziEe2h8Ngmez5xlQ" name="toString" specification="_f95XwGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEl1o2ziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>goals = &quot;Duration: &quot; + getDurationGoal() + '\n' + &quot;Target Weight: &quot; + getTargetWeight() + '\n'&#xD;
+				+ &quot;Upper Body PR: &quot; + getUpperBody() + '\n' + &quot;Lower Body PR: &quot; + getLowerBody();&#xD;
+&#xD;
+		return goals;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_f90fQGziEe2h8Ngmez5xlQ" name="GoalComponent" visibility="package" method="_gEgWEGziEe2h8Ngmez5xlQ" raisedException="_f9-3UGziEe2h8Ngmez5xlQ">
+          <eAnnotations xmi:id="_f91GUWziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_f91GUmziEe2h8Ngmez5xlQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_f90fQWziEe2h8Ngmez5xlQ" name="duration">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f90fQmziEe2h8Ngmez5xlQ" name="weight">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f90fQ2ziEe2h8Ngmez5xlQ" name="upperBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f91GUGziEe2h8Ngmez5xlQ" name="lowerBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f92UcGziEe2h8Ngmez5xlQ" type="_f9vmwGziEe2h8Ngmez5xlQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f927gGziEe2h8Ngmez5xlQ" name="getLowerBody" method="_gEg9IGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f93ikGziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f93ikWziEe2h8Ngmez5xlQ" name="getUpperBody" method="_gElOkGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f94JoGziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f94wsGziEe2h8Ngmez5xlQ" name="durationInHours" visibility="private" method="_gEl1oGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f94wsWziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f95XwGziEe2h8Ngmez5xlQ" name="toString" method="_gEl1omziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f96l4GziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_f9-3UGziEe2h8Ngmez5xlQ" name="InvalidEntryException">
+        <generalization xmi:id="_gDlJAGziEe2h8Ngmez5xlQ" general="_gDcmIWziEe2h8Ngmez5xlQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEmcsGziEe2h8Ngmez5xlQ" name="InvalidEntryException" specification="_f-AsgGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEmcsWziEe2h8Ngmez5xlQ" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEmcsmziEe2h8Ngmez5xlQ" type="_f9-3UGziEe2h8Ngmez5xlQ" direction="return"/>
+          <language>java</language>
+          <body>super(msg);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEnq0GziEe2h8Ngmez5xlQ" name="InvalidEntryException" specification="_gDfpcWziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEnq0WziEe2h8Ngmez5xlQ" name="cause" type="_gDfCYGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gEnq0mziEe2h8Ngmez5xlQ" type="_f9-3UGziEe2h8Ngmez5xlQ" direction="return"/>
+          <language>java</language>
+          <body>super(cause);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEnq02ziEe2h8Ngmez5xlQ" name="InvalidEntryException" specification="_gDg3kGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEnq1GziEe2h8Ngmez5xlQ" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEnq1WziEe2h8Ngmez5xlQ" name="cause" type="_gDfCYGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gEnq1mziEe2h8Ngmez5xlQ" type="_f9-3UGziEe2h8Ngmez5xlQ" direction="return"/>
+          <language>java</language>
+          <body>super(msg, cause);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEo48GziEe2h8Ngmez5xlQ" name="InvalidEntryException" specification="_gDiswGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEo48WziEe2h8Ngmez5xlQ" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEo48mziEe2h8Ngmez5xlQ" name="cause" type="_gDfCYGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gEo482ziEe2h8Ngmez5xlQ" name="enableSupression">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEo49GziEe2h8Ngmez5xlQ" name="writableStackTrace">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEo49WziEe2h8Ngmez5xlQ" type="_f9-3UGziEe2h8Ngmez5xlQ" direction="return"/>
+          <language>java</language>
+          <body>super(msg, cause, enableSupression, writableStackTrace);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_f-AsgGziEe2h8Ngmez5xlQ" name="InvalidEntryException" method="_gEmcsGziEe2h8Ngmez5xlQ">
+          <eAnnotations xmi:id="_f-AsgmziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_f-BTkGziEe2h8Ngmez5xlQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_f-AsgWziEe2h8Ngmez5xlQ" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-B6oGziEe2h8Ngmez5xlQ" type="_f9-3UGziEe2h8Ngmez5xlQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gDfpcWziEe2h8Ngmez5xlQ" name="InvalidEntryException" method="_gEnq0GziEe2h8Ngmez5xlQ">
+          <eAnnotations xmi:id="_gDgQgGziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_gDgQgWziEe2h8Ngmez5xlQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_gDfpcmziEe2h8Ngmez5xlQ" name="cause" type="_gDfCYGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDgQgmziEe2h8Ngmez5xlQ" type="_f9-3UGziEe2h8Ngmez5xlQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gDg3kGziEe2h8Ngmez5xlQ" name="InvalidEntryException" method="_gEnq02ziEe2h8Ngmez5xlQ">
+          <eAnnotations xmi:id="_gDiFsGziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_gDiFsWziEe2h8Ngmez5xlQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_gDg3kWziEe2h8Ngmez5xlQ" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gDheoGziEe2h8Ngmez5xlQ" name="cause" type="_gDfCYGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDiFsmziEe2h8Ngmez5xlQ" type="_f9-3UGziEe2h8Ngmez5xlQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gDiswGziEe2h8Ngmez5xlQ" name="InvalidEntryException" method="_gEo48GziEe2h8Ngmez5xlQ">
+          <eAnnotations xmi:id="_gDjT0WziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_gDjT0mziEe2h8Ngmez5xlQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_gDiswWziEe2h8Ngmez5xlQ" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gDiswmziEe2h8Ngmez5xlQ" name="cause" type="_gDfCYGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDisw2ziEe2h8Ngmez5xlQ" name="enableSupression">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gDjT0GziEe2h8Ngmez5xlQ" name="writableStackTrace">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gDjT02ziEe2h8Ngmez5xlQ" type="_f9-3UGziEe2h8Ngmez5xlQ" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_f-J2cGziEe2h8Ngmez5xlQ" name="Main">
+        <generalization xmi:id="_gDqBgmziEe2h8Ngmez5xlQ" general="_gCrKEGziEe2h8Ngmez5xlQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEo49mziEe2h8Ngmez5xlQ" name="start" specification="_gDlwEGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEo492ziEe2h8Ngmez5xlQ" name="primaryStage" type="_gCu0cGziEe2h8Ngmez5xlQ"/>
+          <language>java</language>
+          <body>try {&#xD;
+&#xD;
+			FXMLLoader loader = new FXMLLoader();&#xD;
+			VBox root = loader.load(new FileInputStream(&quot;src/application/ProjectWorkoutAppFXML.fxml&quot;));&#xD;
+			// main class gives the stage to the controller&#xD;
+			WorkoutAppController controller = (WorkoutAppController) loader.getController();&#xD;
+			controller.applicationStage = primaryStage; // gives the stage to the controller&#xD;
+&#xD;
+			Scene scene = new Scene(root, 300, 250);&#xD;
+&#xD;
+			// scene.getStylesheets().add(getClass().getResource(&quot;application.css&quot;).toExternalForm());&#xD;
+			primaryStage.setScene(scene);&#xD;
+			primaryStage.setTitle(&quot;Get Fit&quot;);&#xD;
+			primaryStage.show();&#xD;
+		} catch (Exception e) {&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEpgAGziEe2h8Ngmez5xlQ" name="main" specification="_f-LroGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEpgAWziEe2h8Ngmez5xlQ" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gEpgAmziEe2h8Ngmez5xlQ" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>launch(args);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_f-LroGziEe2h8Ngmez5xlQ" name="main" isStatic="true" method="_gEpgAGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f-MSsGziEe2h8Ngmez5xlQ" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f-M5wGziEe2h8Ngmez5xlQ" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gDlwEGziEe2h8Ngmez5xlQ" name="start" method="_gEo49mziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gDlwEWziEe2h8Ngmez5xlQ" name="primaryStage" type="_gCu0cGziEe2h8Ngmez5xlQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_f-RyQGziEe2h8Ngmez5xlQ" name="User">
+        <ownedAttribute xmi:id="_gD8VYGziEe2h8Ngmez5xlQ" name="name" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gD8VYWziEe2h8Ngmez5xlQ" name="weight" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gD88cWziEe2h8Ngmez5xlQ" name="height" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEr8QGziEe2h8Ngmez5xlQ" name="User" specification="_f-XR0GziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEr8QWziEe2h8Ngmez5xlQ" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEr8QmziEe2h8Ngmez5xlQ" name="weight">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEr8Q2ziEe2h8Ngmez5xlQ" name="height">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEr8RGziEe2h8Ngmez5xlQ" type="_f-RyQGziEe2h8Ngmez5xlQ" direction="return"/>
+          <language>java</language>
+          <body>this.name = name;&#xD;
+		this.weight = weight;&#xD;
+		this.height = height;&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEtKYGziEe2h8Ngmez5xlQ" name="User" specification="_f-ZuEGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEtKYWziEe2h8Ngmez5xlQ" name="newName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEtKYmziEe2h8Ngmez5xlQ" type="_f-RyQGziEe2h8Ngmez5xlQ" direction="return"/>
+          <language>java</language>
+          <body>name = newName;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEtxcGziEe2h8Ngmez5xlQ" name="setName" specification="_f-cxYGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEtxcWziEe2h8Ngmez5xlQ" name="nameAsString">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEtxcmziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>String errorMessage = &quot; &quot;;&#xD;
+		boolean validName = true;&#xD;
+&#xD;
+		for (char n : nameAsString.toCharArray()) {&#xD;
+			if (!Character.isAlphabetic(n)) {&#xD;
+				validName = false;&#xD;
+				errorMessage = String.format(&quot;Your username must use only letters&quot;, n);&#xD;
+			}&#xD;
+		}&#xD;
+&#xD;
+		if (validName) {&#xD;
+			name = nameAsString;&#xD;
+		}&#xD;
+&#xD;
+		return errorMessage;&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEuYgGziEe2h8Ngmez5xlQ" name="logWorkout" specification="_f-jfEGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEuYgWziEe2h8Ngmez5xlQ" name="calories">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEuYgmziEe2h8Ngmez5xlQ" name="duration">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEuYg2ziEe2h8Ngmez5xlQ" name="intensity">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEuYhGziEe2h8Ngmez5xlQ" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>WorkoutComponent workoutstat = new WorkoutComponent(duration, calories);&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEyp8GziEe2h8Ngmez5xlQ" name="logGoals" specification="_f-nJcGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEyp8WziEe2h8Ngmez5xlQ" name="duration">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEyp8mziEe2h8Ngmez5xlQ" name="weight">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEyp82ziEe2h8Ngmez5xlQ" name="upperBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gEyp9GziEe2h8Ngmez5xlQ" name="lowerBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>GoalComponent goals = new GoalComponent(duration, weight, upperBody, lowerBody);&#xD;
+		System.out.println(goals.toString());&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEzRAGziEe2h8Ngmez5xlQ" name="compareTo" specification="_gC3XUGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEzRAWziEe2h8Ngmez5xlQ" name="workoutstat" type="_f_PbkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gEzRAmziEe2h8Ngmez5xlQ" name="goals" type="_f9vmwGziEe2h8Ngmez5xlQ"/>
+          <language>java</language>
+          <body>if (workoutstat.getDuration() >= (goals.getDurationGoal())) {&#xD;
+			System.out.println(&quot;Duration Goal has been met!&quot;);&#xD;
+		}&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_f-XR0GziEe2h8Ngmez5xlQ" name="User" visibility="package" method="_gEr8QGziEe2h8Ngmez5xlQ">
+          <eAnnotations xmi:id="_f-Yf8GziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_f-Yf8WziEe2h8Ngmez5xlQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_f-XR0WziEe2h8Ngmez5xlQ" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-XR0mziEe2h8Ngmez5xlQ" name="weight">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-X44GziEe2h8Ngmez5xlQ" name="height">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-Yf8mziEe2h8Ngmez5xlQ" type="_f-RyQGziEe2h8Ngmez5xlQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f-ZuEGziEe2h8Ngmez5xlQ" name="User" visibility="package" method="_gEtKYGziEe2h8Ngmez5xlQ">
+          <eAnnotations xmi:id="_f-aVIGziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_f-aVIWziEe2h8Ngmez5xlQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_f-ZuEWziEe2h8Ngmez5xlQ" name="newName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-aVImziEe2h8Ngmez5xlQ" type="_f-RyQGziEe2h8Ngmez5xlQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f-cxYGziEe2h8Ngmez5xlQ" name="setName" method="_gEtxcGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f-cxYWziEe2h8Ngmez5xlQ" name="nameAsString">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-cxYmziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f-jfEGziEe2h8Ngmez5xlQ" name="logWorkout" method="_gEuYgGziEe2h8Ngmez5xlQ" raisedException="_f9-3UGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f-jfEWziEe2h8Ngmez5xlQ" name="calories">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-kGIGziEe2h8Ngmez5xlQ" name="duration">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-kGIWziEe2h8Ngmez5xlQ" name="intensity">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-kGImziEe2h8Ngmez5xlQ" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f-nJcGziEe2h8Ngmez5xlQ" name="logGoals" method="_gEyp8GziEe2h8Ngmez5xlQ" raisedException="_f9-3UGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f-nJcWziEe2h8Ngmez5xlQ" name="duration">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-nJcmziEe2h8Ngmez5xlQ" name="weight">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-nJc2ziEe2h8Ngmez5xlQ" name="upperBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f-nwgGziEe2h8Ngmez5xlQ" name="lowerBody">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gC3XUGziEe2h8Ngmez5xlQ" name="compareTo" method="_gEzRAGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gC3XUWziEe2h8Ngmez5xlQ" name="workoutstat" type="_f_PbkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gC3XUmziEe2h8Ngmez5xlQ" name="goals" type="_f9vmwGziEe2h8Ngmez5xlQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_f-wTYGziEe2h8Ngmez5xlQ" name="WorkoutAppController">
+        <ownedAttribute xmi:id="_gD-KkWziEe2h8Ngmez5xlQ" name="applicationStage" visibility="package" type="_gCu0cGziEe2h8Ngmez5xlQ" association="_gFJ2UGziEe2h8Ngmez5xlQ"/>
+        <ownedAttribute xmi:id="_gD_YsGziEe2h8Ngmez5xlQ" name="inspirationQuoteLabel" visibility="private" type="_gDJrMWziEe2h8Ngmez5xlQ" association="_gFLrgGziEe2h8Ngmez5xlQ"/>
+        <ownedAttribute xmi:id="_gEB08GziEe2h8Ngmez5xlQ" name="chooseUserChoiceBox" visibility="private" type="_gDJEIWziEe2h8Ngmez5xlQ" association="_gFMSkWziEe2h8Ngmez5xlQ"/>
+        <ownedAttribute xmi:id="_gEDDEmziEe2h8Ngmez5xlQ" name="userErrorLabel" visibility="package" type="_gDJrMWziEe2h8Ngmez5xlQ" association="_gFM5oWziEe2h8Ngmez5xlQ">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_gEDDE2ziEe2h8Ngmez5xlQ" value="new Label()"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gEDqIWziEe2h8Ngmez5xlQ" name="userGoalLabel" visibility="package" type="_gDJrMWziEe2h8Ngmez5xlQ" association="_gFNgsWziEe2h8Ngmez5xlQ">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_gEDqImziEe2h8Ngmez5xlQ" value="new Label()"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEz4EGziEe2h8Ngmez5xlQ" name="getRandomQuote" specification="_f-z9wGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEz4EWziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>String[] quoteArray = new String[] { &quot;Progress, not perfection.&quot;,&#xD;
+				&quot;It's our choices that show what we truly are, far more than our abilities.&quot;,&#xD;
+				&quot;Goal setting is the secret to a compelling future.&quot; };&#xD;
+		int rndQuote = new Random().nextInt(quoteArray.length);&#xD;
+		return quoteArray[rndQuote];&#xD;
+		// this function could be placed in a new class (inheritance call)&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gEz4EmziEe2h8Ngmez5xlQ" name="setNewUser" specification="_gDtr4GziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gEz4E2ziEe2h8Ngmez5xlQ" name="mainScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gEz4FGziEe2h8Ngmez5xlQ" name="newUserTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <language>java</language>
+          <body>userErrorLabel.setText(&quot; &quot;);&#xD;
+&#xD;
+		// creates a new user object&#xD;
+		User newUser = new User(&quot; &quot;);&#xD;
+&#xD;
+		// validate that the user has entered a name&#xD;
+		String errorMessage = newUser.setName(newUserTextfield.getText());&#xD;
+&#xD;
+		// Check if error message (if so show an error message to the user)&#xD;
+		if (errorMessage.equals(&quot; &quot;)) {&#xD;
+			chooseUserChoiceBox.getItems().add(newUser.getName()); // https://jenkov.com/tutorials/javafx/choicebox.html&#xD;
+			applicationStage.setScene(mainScene);&#xD;
+		} else {&#xD;
+			userErrorLabel.setText(errorMessage);&#xD;
+		}&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE0fIGziEe2h8Ngmez5xlQ" name="calculateWorkout" specification="_gDu6AGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE0fIWziEe2h8Ngmez5xlQ" name="returnUserScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE0fImziEe2h8Ngmez5xlQ" name="caloriesTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE1GMGziEe2h8Ngmez5xlQ" name="durationTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE1GMWziEe2h8Ngmez5xlQ" name="workoutIntensityChoiceBox" type="_gDJEIWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE1GMmziEe2h8Ngmez5xlQ" name="workoutTypeChoiceBox" type="_gDJEIWziEe2h8Ngmez5xlQ"/>
+          <language>java</language>
+          <body>// creation of user object&#xD;
+		User viewUser = new User(chooseUserChoiceBox.getValue());&#xD;
+&#xD;
+		boolean error = false;&#xD;
+		try {&#xD;
+			// associate the workout stats with the use&#xD;
+			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),&#xD;
+					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue());&#xD;
+&#xD;
+		} catch (InvalidEntryException e) {&#xD;
+			userErrorLabel.setText(e.getMessage()); // shows error message to the user&#xD;
+			error = true;&#xD;
+		}&#xD;
+		if (!error) {&#xD;
+			applicationStage.setScene(returnUserScene);&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE3icGziEe2h8Ngmez5xlQ" name="calculateGoals" specification="_gDxWQWziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE3icWziEe2h8Ngmez5xlQ" name="returnUserScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE3icmziEe2h8Ngmez5xlQ" name="durationTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE3ic2ziEe2h8Ngmez5xlQ" name="targetWeightTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE3idGziEe2h8Ngmez5xlQ" name="upperBodyPRTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE3idWziEe2h8Ngmez5xlQ" name="lowerBodyPRTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <language>java</language>
+          <body>// creation of new user object&#xD;
+		User viewUser = new User(chooseUserChoiceBox.getValue());&#xD;
+&#xD;
+		boolean error = false;&#xD;
+		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), upperBodyPRTextfield.getText(),&#xD;
+				lowerBodyPRTextfield.getText());&#xD;
+&#xD;
+		if (!error) {&#xD;
+			applicationStage.setScene(returnUserScene);&#xD;
+			userGoalLabel.setText(&quot;&quot;);&#xD;
+		}&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE3idmziEe2h8Ngmez5xlQ" name="getWorkoutLog" specification="_gDzLcGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE3id2ziEe2h8Ngmez5xlQ" name="event" type="_gC5zkWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE3ieGziEe2h8Ngmez5xlQ" name="returnUserScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+          <language>java</language>
+          <body>applicationStage.setTitle(&quot;Log&quot; + &quot; &quot; + chooseUserChoiceBox.getValue() + &quot; &quot; + &quot;Workout Stats&quot;);&#xD;
+&#xD;
+		// main container&#xD;
+		VBox workoutStatsContainer = new VBox();&#xD;
+&#xD;
+		// Container for choosing a workout type&#xD;
+		HBox workoutTypeContainer = new HBox();&#xD;
+		Label workoutTypeLabel = new Label(&quot;Workout Type : &quot;);&#xD;
+		HBox.setMargin(workoutTypeLabel, new Insets(10, 10, 10, 10));&#xD;
+		ChoiceBox&lt;String> workoutTypeChoiceBox = new ChoiceBox&lt;String>(); // add padding to the ChoiceBox&#xD;
+		HBox.setMargin(workoutTypeChoiceBox, new Insets(10, 10, 10, 10));&#xD;
+		workoutTypeChoiceBox.getItems().add(&quot;Cardio&quot;);&#xD;
+		workoutTypeChoiceBox.getItems().add(&quot;Weight Training&quot;);&#xD;
+		workoutTypeContainer.getChildren().addAll(workoutTypeLabel, workoutTypeChoiceBox);&#xD;
+&#xD;
+		// Container for duration of workout&#xD;
+		HBox durationContainer = new HBox();&#xD;
+		Label durationLabel = new Label(&quot;Duration : &quot;);&#xD;
+		HBox.setMargin(durationLabel, new Insets(10, 10, 10, 10));&#xD;
+		TextField durationTextfield = new TextField();&#xD;
+		HBox.setMargin(durationTextfield, new Insets(10, 10, 10, 10));&#xD;
+		Label durationMinLabel = new Label(&quot;minutes&quot;);&#xD;
+		HBox.setMargin(durationMinLabel, new Insets(10, 10, 10, 10));&#xD;
+		durationContainer.getChildren().addAll(durationLabel, durationTextfield, durationMinLabel);&#xD;
+&#xD;
+		// Container for workout intensity&#xD;
+		HBox workoutIntensityContainer = new HBox();&#xD;
+		Label workoutIntensityLabel = new Label(&quot;Intensity : &quot;);&#xD;
+		HBox.setMargin(workoutIntensityLabel, new Insets(10, 10, 10, 10));&#xD;
+		ChoiceBox&lt;String> workoutIntensityChoiceBox = new ChoiceBox&lt;String>(); // add padding to the ChoiceBox&#xD;
+		HBox.setMargin(workoutIntensityChoiceBox, new Insets(10, 10, 10, 10));&#xD;
+		workoutIntensityChoiceBox.getItems().add(&quot;Easy&quot;);&#xD;
+		workoutIntensityChoiceBox.getItems().add(&quot;Medium&quot;);&#xD;
+		workoutIntensityChoiceBox.getItems().add(&quot;Hard&quot;);&#xD;
+		workoutIntensityContainer.getChildren().addAll(workoutIntensityLabel, workoutIntensityChoiceBox);&#xD;
+&#xD;
+		// Container for calories burned&#xD;
+		HBox caloriesContainer = new HBox();&#xD;
+		Label caloriesBurnedLabel = new Label(&quot;Calories Burned :&quot;);&#xD;
+		HBox.setMargin(caloriesBurnedLabel, new Insets(10, 10, 10, 10));&#xD;
+		TextField caloriesTextfield = new TextField();&#xD;
+		HBox.setMargin(caloriesTextfield, new Insets(10, 10, 10, 10));&#xD;
+		Label caloriesLabel = new Label(&quot;calories&quot;);&#xD;
+		HBox.setMargin(caloriesLabel, new Insets(10, 10, 10, 10));&#xD;
+		caloriesContainer.getChildren().addAll(caloriesBurnedLabel, caloriesTextfield, caloriesLabel);&#xD;
+&#xD;
+		Button submitStats = new Button(&quot;Done&quot;);&#xD;
+		VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));&#xD;
+		workoutStatsContainer.getChildren().addAll(workoutTypeContainer, durationContainer, workoutIntensityContainer,&#xD;
+				caloriesContainer, submitStats);&#xD;
+&#xD;
+		workoutStatsContainer.getChildren().add(userErrorLabel);&#xD;
+&#xD;
+		// when user is done inputting stats, return to user's home page&#xD;
+		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, caloriesTextfield, durationTextfield,&#xD;
+				workoutIntensityChoiceBox, workoutTypeChoiceBox));&#xD;
+&#xD;
+		Scene workoutStatsScene = new Scene(workoutStatsContainer);&#xD;
+		applicationStage.setScene(workoutStatsScene);&#xD;
+		;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE4JgGziEe2h8Ngmez5xlQ" name="getGoalLog" specification="_gDzygGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE4JgWziEe2h8Ngmez5xlQ" name="event" type="_gC5zkWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gE4JgmziEe2h8Ngmez5xlQ" name="returnUserScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+          <language>java</language>
+          <body>applicationStage.setTitle(&quot;Log&quot; + &quot; &quot; + chooseUserChoiceBox.getValue() + &quot; &quot; + &quot;Goals&quot;);&#xD;
+&#xD;
+		// main container&#xD;
+		VBox workoutGoalsContainer = new VBox();&#xD;
+&#xD;
+		// User can enter goals for target body weight, duration, personal weight record&#xD;
+		// for upper and lower body&#xD;
+&#xD;
+		// Container for entering duration target goals&#xD;
+		HBox durationGoalContainer = new HBox();&#xD;
+		Label durationGoalLabel = new Label(&quot;Workout Duration Goal&quot;);&#xD;
+		HBox.setMargin(durationGoalLabel, new Insets(10, 10, 10, 10));&#xD;
+		TextField durationTextfield = new TextField();&#xD;
+		HBox.setMargin(durationTextfield, new Insets(10, 10, 10, 10));&#xD;
+		Label durationMinLabel = new Label(&quot;minutes&quot;);&#xD;
+		HBox.setMargin(durationMinLabel, new Insets(10, 10, 10, 10));&#xD;
+		durationGoalContainer.getChildren().addAll(durationGoalLabel, durationTextfield, durationMinLabel);&#xD;
+&#xD;
+		// Container for entering target body weight&#xD;
+		HBox targetWeightContainer = new HBox();&#xD;
+		Label targetWeightLabel = new Label(&quot;Target Weight Goal&quot;);&#xD;
+		HBox.setMargin(targetWeightLabel, new Insets(10, 10, 10, 10));&#xD;
+		TextField targetWeightTextfield = new TextField();&#xD;
+		HBox.setMargin(targetWeightTextfield, new Insets(10, 10, 10, 10));&#xD;
+		targetWeightContainer.getChildren().addAll(targetWeightLabel, targetWeightTextfield);&#xD;
+&#xD;
+		// Container for entering personal weight record upper body&#xD;
+		HBox upperBodyPRContainer = new HBox();&#xD;
+		Label upperBodyPRLabel = new Label(&quot;Upper Body PR Goal&quot;);&#xD;
+		HBox.setMargin(upperBodyPRLabel, new Insets(10, 10, 10, 10));&#xD;
+		TextField upperBodyPRTextfield = new TextField();&#xD;
+		HBox.setMargin(upperBodyPRTextfield, new Insets(10, 10, 10, 10));&#xD;
+		upperBodyPRContainer.getChildren().addAll(upperBodyPRLabel, upperBodyPRTextfield);&#xD;
+&#xD;
+		// Container for entering personal weight record lower body&#xD;
+		HBox lowerBodyPRContainer = new HBox();&#xD;
+		Label lowerBodyPRLabel = new Label(&quot;Lower Body PR Goal&quot;);&#xD;
+		HBox.setMargin(lowerBodyPRLabel, new Insets(10, 10, 10, 10));&#xD;
+		TextField lowerBodyPRTextfield = new TextField();&#xD;
+		HBox.setMargin(lowerBodyPRTextfield, new Insets(10, 10, 10, 10));&#xD;
+		lowerBodyPRContainer.getChildren().addAll(lowerBodyPRLabel, lowerBodyPRTextfield);&#xD;
+&#xD;
+		Button submitGoals = new Button(&quot;Done&quot;);&#xD;
+		VBox.setMargin(submitGoals, new Insets(10, 10, 10, 10));&#xD;
+		workoutGoalsContainer.getChildren().addAll(durationGoalContainer, targetWeightContainer, upperBodyPRContainer,&#xD;
+				lowerBodyPRContainer, submitGoals);&#xD;
+&#xD;
+		workoutGoalsContainer.getChildren().add(userErrorLabel);&#xD;
+&#xD;
+		// Validates and Changes Scene if the user enters proper input&#xD;
+		submitGoals.setOnAction(doneEvent -> {&#xD;
+			try {&#xD;
+				calculateGoals(returnUserScene, durationTextfield, targetWeightTextfield, upperBodyPRTextfield,&#xD;
+						lowerBodyPRTextfield);&#xD;
+			} catch (InvalidEntryException e) {&#xD;
+				userErrorLabel.setText(e.getMessage());&#xD;
+			}&#xD;
+		});&#xD;
+&#xD;
+		Scene workoutGoalScene = new Scene(workoutGoalsContainer);&#xD;
+		applicationStage.setScene(workoutGoalScene);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE4Jg2ziEe2h8Ngmez5xlQ" name="chooseUser" specification="_gD0ZkGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE4JhGziEe2h8Ngmez5xlQ" name="event" type="_gC5zkWziEe2h8Ngmez5xlQ"/>
+          <language>java</language>
+          <body>Scene mainScene = applicationStage.getScene();&#xD;
+&#xD;
+		String inspirationQuote = getRandomQuote();&#xD;
+		inspirationQuoteLabel.setText(inspirationQuote);&#xD;
+&#xD;
+		// Get the input from the user&#xD;
+		String user = chooseUserChoiceBox.getValue();&#xD;
+&#xD;
+		// Change the scene to add a new user to the ChoiceBox&#xD;
+		if (user.equals(&quot;Add a User&quot;)) {&#xD;
+			applicationStage.setTitle(&quot;Get Fit&quot;);&#xD;
+&#xD;
+			VBox newUserContainer = new VBox();&#xD;
+&#xD;
+			HBox newUserTitle = new HBox();&#xD;
+			Label newUserLabel = new Label(&quot;Add a New User&quot;);&#xD;
+			newUserTitle.getChildren().add(newUserLabel);&#xD;
+&#xD;
+			// Container for entering user name&#xD;
+			HBox userNameContainer = new HBox();&#xD;
+			Label userNameLabel = new Label(&quot;Enter New Username:&quot;);&#xD;
+			TextField newUserTextfield = new TextField();&#xD;
+			userNameContainer.getChildren().addAll(userNameLabel, newUserTextfield);&#xD;
+&#xD;
+			Button doneButton = new Button(&quot;Enter Here&quot;);&#xD;
+			doneButton.setOnAction(doneEvent -> setNewUser(mainScene, newUserTextfield));&#xD;
+&#xD;
+			newUserContainer.getChildren().addAll(newUserTitle, userNameContainer, doneButton);&#xD;
+&#xD;
+			newUserContainer.getChildren().add(userErrorLabel);&#xD;
+			Scene addUserScene = new Scene(newUserContainer);&#xD;
+			applicationStage.setScene(addUserScene); // places the new scene on the stage&#xD;
+&#xD;
+		} else {&#xD;
+&#xD;
+			// will generate the returning user welcome page&#xD;
+			VBox returnUserContainer = new VBox();&#xD;
+&#xD;
+			// Title changes based on the user that is entered&#xD;
+			applicationStage.setTitle(user);&#xD;
+&#xD;
+			Scene returnUserScene = new Scene(returnUserContainer);&#xD;
+&#xD;
+			Label returnUserLabel = new Label(&quot;Welcome &quot; + user + &quot; !&quot;); // this will change will change based on what&#xD;
+																			// user is chosen&#xD;
+			VBox.setMargin(returnUserLabel, new Insets(10, 10, 10, 10));&#xD;
+			Label activityLabel = new Label(&quot;How were you active today?&quot;);&#xD;
+			VBox.setMargin(activityLabel, new Insets(10, 10, 10, 10));&#xD;
+&#xD;
+			// Container for logging workout&#xD;
+			HBox workoutContainer = new HBox();&#xD;
+			Label logWorkoutLabel = new Label(&quot;Log your new workout&quot;);&#xD;
+			HBox.setMargin(logWorkoutLabel, new Insets(10, 10, 10, 10));&#xD;
+			Button doneButton = new Button(&quot;Enter Here&quot;);&#xD;
+			HBox.setMargin(doneButton, new Insets(10, 10, 10, 10));&#xD;
+			doneButton.setOnAction(doneEvent -> getWorkoutLog(event, returnUserScene));&#xD;
+&#xD;
+			workoutContainer.getChildren().addAll(logWorkoutLabel, doneButton);&#xD;
+&#xD;
+			// Container for workout goals&#xD;
+			HBox workoutGoalsContainer = new HBox();&#xD;
+			Label logGoalsLabel = new Label(&quot;Log your workout goals&quot;);&#xD;
+			HBox.setMargin(logGoalsLabel, new Insets(10, 10, 10, 10));&#xD;
+			Button goalsButton = new Button(&quot;Enter Goals Here&quot;);&#xD;
+			HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));&#xD;
+			goalsButton.setOnAction(goalsEvent -> getGoalLog(event, returnUserScene));&#xD;
+&#xD;
+			workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);&#xD;
+			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, workoutContainer,&#xD;
+					workoutGoalsContainer);&#xD;
+&#xD;
+			workoutGoalsContainer.getChildren().addAll(userGoalLabel);&#xD;
+&#xD;
+			applicationStage.setScene(returnUserScene);&#xD;
+		}&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_f-z9wGziEe2h8Ngmez5xlQ" name="getRandomQuote" isStatic="true" method="_gEz4EGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f-0k0GziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gDtr4GziEe2h8Ngmez5xlQ" name="setNewUser" visibility="package" method="_gEz4EmziEe2h8Ngmez5xlQ">
+          <ownedComment xmi:id="_gE_eQGziEe2h8Ngmez5xlQ">
+            <body>This method will set up a new user in the application. The method will&#xD;
+	 * validate that the user name is alphabetic, if the user has entered a proper&#xD;
+	 * user name the application will add the new user to the ChoiceBox.&#xD;
+	 * &#xD;
+	 * @param mainScene&#xD;
+	 * @param newUserTextfield</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_gDtr4WziEe2h8Ngmez5xlQ" name="mainScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDtr4mziEe2h8Ngmez5xlQ" name="newUserTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gDu6AGziEe2h8Ngmez5xlQ" name="calculateWorkout" visibility="package" method="_gE0fIGziEe2h8Ngmez5xlQ">
+          <ownedComment xmi:id="_gE_eQWziEe2h8Ngmez5xlQ">
+            <body>This method will take in the user's input from the GUI and check if the user&#xD;
+	 * has entered a number. The method will check if the user has entered a number,&#xD;
+	 * if not the GUI will return a specific error message to the user. If there are&#xD;
+	 * no error's in input the scene will change back to the user's main welcome&#xD;
+	 * screen.&#xD;
+	 * &#xD;
+	 * @param returnUserScene&#xD;
+	 * @param caloriesTextfield&#xD;
+	 * @param durationTextfield&#xD;
+	 * @param workoutIntensityChoiceBox&#xD;
+	 * @param workoutTypeChoiceBox</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_gDu6AWziEe2h8Ngmez5xlQ" name="returnUserScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDu6AmziEe2h8Ngmez5xlQ" name="caloriesTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDu6A2ziEe2h8Ngmez5xlQ" name="durationTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDu6BGziEe2h8Ngmez5xlQ" name="workoutIntensityChoiceBox" type="_gDJEIWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDvhEGziEe2h8Ngmez5xlQ" name="workoutTypeChoiceBox" type="_gDJEIWziEe2h8Ngmez5xlQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gDxWQWziEe2h8Ngmez5xlQ" name="calculateGoals" visibility="package" method="_gE3icGziEe2h8Ngmez5xlQ" raisedException="_f9-3UGziEe2h8Ngmez5xlQ">
+          <ownedComment xmi:id="_gE_eQmziEe2h8Ngmez5xlQ">
+            <body>This method will return the user's goals and print the goals to the user.&#xD;
+	 * This method will create a new Goal Component Object, and check to make sure&#xD;
+	 * that the user has entered a number.&#xD;
+	 * &#xD;
+	 * @param returnUserScene&#xD;
+	 * @param durationTextfield&#xD;
+	 * @param targetWeightTextfield&#xD;
+	 * @param upperBodyPRTextfield&#xD;
+	 * @param lowerBodyPRTextfield&#xD;
+	 * @throws InvalidEntryException</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_gDx9UGziEe2h8Ngmez5xlQ" name="returnUserScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDx9UWziEe2h8Ngmez5xlQ" name="durationTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDx9UmziEe2h8Ngmez5xlQ" name="targetWeightTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDx9U2ziEe2h8Ngmez5xlQ" name="upperBodyPRTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDx9VGziEe2h8Ngmez5xlQ" name="lowerBodyPRTextfield" type="_gDNVkGziEe2h8Ngmez5xlQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gDzLcGziEe2h8Ngmez5xlQ" name="getWorkoutLog" visibility="package" method="_gE3idmziEe2h8Ngmez5xlQ">
+          <ownedComment xmi:id="_gE_eQ2ziEe2h8Ngmez5xlQ">
+            <body>This method will generate a scene change for the returning user to input&#xD;
+	 * their workout stats. This method will create the containers for user input.&#xD;
+	 * &#xD;
+	 * @param event&#xD;
+	 * @param returnUserScene</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_gDzLcWziEe2h8Ngmez5xlQ" name="event" type="_gC5zkWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDzLcmziEe2h8Ngmez5xlQ" name="returnUserScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gDzygGziEe2h8Ngmez5xlQ" name="getGoalLog" visibility="package" method="_gE4JgGziEe2h8Ngmez5xlQ">
+          <ownedComment xmi:id="_gE_eRGziEe2h8Ngmez5xlQ">
+            <body>This method generates the scene change for goal input. The user will be able&#xD;
+	 * to enter in their workout goals onto the GUI interface.&#xD;
+	 * &#xD;
+	 * @param event&#xD;
+	 * @param returnUserScene</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_gDzygWziEe2h8Ngmez5xlQ" name="event" type="_gC5zkWziEe2h8Ngmez5xlQ"/>
+          <ownedParameter xmi:id="_gDzygmziEe2h8Ngmez5xlQ" name="returnUserScene" type="_gCxQsWziEe2h8Ngmez5xlQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_gD0ZkGziEe2h8Ngmez5xlQ" name="chooseUser" visibility="package" method="_gE4Jg2ziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gD0ZkWziEe2h8Ngmez5xlQ" name="event" type="_gC5zkWziEe2h8Ngmez5xlQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_f_PbkGziEe2h8Ngmez5xlQ" name="WorkoutComponent">
+        <ownedAttribute xmi:id="_gEE4QGziEe2h8Ngmez5xlQ" name="workoutType" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gEFfUWziEe2h8Ngmez5xlQ" name="duration">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gEH7kGziEe2h8Ngmez5xlQ" name="intensity" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_gEIioWziEe2h8Ngmez5xlQ" name="caloriesBurned" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE7z42ziEe2h8Ngmez5xlQ" name="WorkoutComponent" specification="_f_RQwGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE7z5GziEe2h8Ngmez5xlQ" name="dur">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gE7z5WziEe2h8Ngmez5xlQ" name="calories">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_gE7z5mziEe2h8Ngmez5xlQ" type="_f_PbkGziEe2h8Ngmez5xlQ" direction="return"/>
+          <language>java</language>
+          <body>try {&#xD;
+			duration = Long.parseLong(dur);&#xD;
+			caloriesBurned = Integer.parseInt(calories);&#xD;
+		} catch (NumberFormatException nfe) {&#xD;
+			throw new InvalidEntryException(String.format(&quot;Invalid Workout Entry. Enter a number.&quot;));&#xD;
+&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE8a8GziEe2h8Ngmez5xlQ" name="setCalories" specification="_f_TF8GziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE8a8WziEe2h8Ngmez5xlQ" name="calories">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>try {&#xD;
+			caloriesBurned = Integer.parseInt(calories);&#xD;
+		} catch (NumberFormatException nfe) {&#xD;
+			throw new InvalidEntryException(String.format(&quot;Invalid Calorie Entry. Enter a number.&quot;));&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE8a8mziEe2h8Ngmez5xlQ" name="getCalories" specification="_f_TtAGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE8a82ziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return caloriesBurned;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE8a9GziEe2h8Ngmez5xlQ" name="durationInHours" specification="_f_UUEGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE8a9WziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>long hours = getDuration() / 60;&#xD;
+		return hours;&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gE8a9mziEe2h8Ngmez5xlQ" name="toString" specification="_f_c28GziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_gE9CAGziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>String workout = new String();&#xD;
+&#xD;
+		return &quot; &quot;;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_f_RQwGziEe2h8Ngmez5xlQ" name="WorkoutComponent" visibility="package" method="_gE7z42ziEe2h8Ngmez5xlQ" raisedException="_f9-3UGziEe2h8Ngmez5xlQ">
+          <eAnnotations xmi:id="_f_R30WziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_f_R30mziEe2h8Ngmez5xlQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_f_RQwWziEe2h8Ngmez5xlQ" name="dur">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f_R30GziEe2h8Ngmez5xlQ" name="calories">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_f_R302ziEe2h8Ngmez5xlQ" type="_f_PbkGziEe2h8Ngmez5xlQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f_TF8GziEe2h8Ngmez5xlQ" name="setCalories" method="_gE8a8GziEe2h8Ngmez5xlQ" raisedException="_f9-3UGziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f_TF8WziEe2h8Ngmez5xlQ" name="calories">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f_TtAGziEe2h8Ngmez5xlQ" name="getCalories" method="_gE8a8mziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f_TtAWziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f_UUEGziEe2h8Ngmez5xlQ" name="durationInHours" method="_gE8a9GziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f_bo0GziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_f_c28GziEe2h8Ngmez5xlQ" name="toString" method="_gE8a9mziEe2h8Ngmez5xlQ">
+          <ownedParameter xmi:id="_f_deAGziEe2h8Ngmez5xlQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_gFJ2UGziEe2h8Ngmez5xlQ" name="" memberEnd="_gFJ2UWziEe2h8Ngmez5xlQ _gD-KkWziEe2h8Ngmez5xlQ">
+        <ownedEnd xmi:id="_gFJ2UWziEe2h8Ngmez5xlQ" name="" type="_f-wTYGziEe2h8Ngmez5xlQ" association="_gFJ2UGziEe2h8Ngmez5xlQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_gFLrgGziEe2h8Ngmez5xlQ" name="" memberEnd="_gFLrgWziEe2h8Ngmez5xlQ _gD_YsGziEe2h8Ngmez5xlQ">
+        <ownedEnd xmi:id="_gFLrgWziEe2h8Ngmez5xlQ" name="" type="_f-wTYGziEe2h8Ngmez5xlQ" association="_gFLrgGziEe2h8Ngmez5xlQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_gFMSkWziEe2h8Ngmez5xlQ" name="" memberEnd="_gFMSkmziEe2h8Ngmez5xlQ _gEB08GziEe2h8Ngmez5xlQ">
+        <ownedEnd xmi:id="_gFMSkmziEe2h8Ngmez5xlQ" name="" type="_f-wTYGziEe2h8Ngmez5xlQ" association="_gFMSkWziEe2h8Ngmez5xlQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_gFM5oWziEe2h8Ngmez5xlQ" name="" memberEnd="_gFM5omziEe2h8Ngmez5xlQ _gEDDEmziEe2h8Ngmez5xlQ">
+        <ownedEnd xmi:id="_gFM5omziEe2h8Ngmez5xlQ" name="" type="_f-wTYGziEe2h8Ngmez5xlQ" association="_gFM5oWziEe2h8Ngmez5xlQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_gFNgsWziEe2h8Ngmez5xlQ" name="" memberEnd="_gFNgsmziEe2h8Ngmez5xlQ _gEDqIWziEe2h8Ngmez5xlQ">
+        <ownedEnd xmi:id="_gFNgsmziEe2h8Ngmez5xlQ" name="" type="_f-wTYGziEe2h8Ngmez5xlQ" association="_gFNgsWziEe2h8Ngmez5xlQ"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_f7-FIGziEe2h8Ngmez5xlQ" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_f7-FIWziEe2h8Ngmez5xlQ" name="io">
+        <packagedElement xmi:type="uml:Class" xmi:id="_gCnfsGziEe2h8Ngmez5xlQ" name="FileInputStream"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_f8N8wGziEe2h8Ngmez5xlQ" name="util">
+        <packagedElement xmi:type="uml:Class" xmi:id="_gC5MgGziEe2h8Ngmez5xlQ" name="Random"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_gDcmIGziEe2h8Ngmez5xlQ" name="lang">
+        <packagedElement xmi:type="uml:Class" xmi:id="_gDcmIWziEe2h8Ngmez5xlQ" name="Exception"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_gDfCYGziEe2h8Ngmez5xlQ" name="Throwable"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_f7-sMGziEe2h8Ngmez5xlQ" name="javafx">
+      <packagedElement xmi:type="uml:Package" xmi:id="_f7-sMWziEe2h8Ngmez5xlQ" name="application">
+        <packagedElement xmi:type="uml:Class" xmi:id="_gCrKEGziEe2h8Ngmez5xlQ" name="Application"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_f7_TQGziEe2h8Ngmez5xlQ" name="fxml">
+        <packagedElement xmi:type="uml:Class" xmi:id="_gCsYMGziEe2h8Ngmez5xlQ" name="FXMLLoader"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_gC7BsWziEe2h8Ngmez5xlQ" name="FXML"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_f8BvgGziEe2h8Ngmez5xlQ" name="stage">
+        <packagedElement xmi:type="uml:Class" xmi:id="_gCu0cGziEe2h8Ngmez5xlQ" name="Stage"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_f8BvgWziEe2h8Ngmez5xlQ" name="scene">
+        <packagedElement xmi:type="uml:Package" xmi:id="_f8BvgmziEe2h8Ngmez5xlQ" name="layout">
+          <packagedElement xmi:type="uml:Class" xmi:id="_gC07EWziEe2h8Ngmez5xlQ" name="VBox"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_gDN8oWziEe2h8Ngmez5xlQ" name="HBox"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_f8PK4GziEe2h8Ngmez5xlQ" name="control">
+          <packagedElement xmi:type="uml:Class" xmi:id="_gDH2AGziEe2h8Ngmez5xlQ" name="Button"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_gDJEIWziEe2h8Ngmez5xlQ" name="ChoiceBox"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_gDJrMWziEe2h8Ngmez5xlQ" name="Label"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_gDNVkGziEe2h8Ngmez5xlQ" name="TextField"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_gCxQsWziEe2h8Ngmez5xlQ" name="Scene"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_gDBvYWziEe2h8Ngmez5xlQ" name="Group"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_gDELoWziEe2h8Ngmez5xlQ" name="Node"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_f8N8wWziEe2h8Ngmez5xlQ" name="event">
+        <packagedElement xmi:type="uml:Class" xmi:id="_gC5zkWziEe2h8Ngmez5xlQ" name="ActionEvent"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_f8Oj0GziEe2h8Ngmez5xlQ" name="geometry">
+        <packagedElement xmi:type="uml:Class" xmi:id="_gC-FAWziEe2h8Ngmez5xlQ" name="Insets"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_fbZusGziEe2h8Ngmez5xlQ">
+      <eAnnotations xmi:id="_fbvF4GziEe2h8Ngmez5xlQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_fb7TIGziEe2h8Ngmez5xlQ" base_Package="_epyEgGziEe2h8Ngmez5xlQ">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:Reference xmi:id="_gCp78GziEe2h8Ngmez5xlQ" base_Element="_gCnfsGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gCrxIGziEe2h8Ngmez5xlQ" base_Element="_gCrKEGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gCuNYGziEe2h8Ngmez5xlQ" base_Element="_gCsYMGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gCxQsGziEe2h8Ngmez5xlQ" base_Element="_gCu0cGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gC07EGziEe2h8Ngmez5xlQ" base_Element="_gCxQsWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gC1iIGziEe2h8Ngmez5xlQ" base_Element="_gC07EWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gC5zkGziEe2h8Ngmez5xlQ" base_Element="_gC5MgGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gC7BsGziEe2h8Ngmez5xlQ" base_Element="_gC5zkWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gC-FAGziEe2h8Ngmez5xlQ" base_Element="_gC7BsWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDBvYGziEe2h8Ngmez5xlQ" base_Element="_gC-FAWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDELoGziEe2h8Ngmez5xlQ" base_Element="_gDBvYWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDHO8GziEe2h8Ngmez5xlQ" base_Element="_gDELoWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDJEIGziEe2h8Ngmez5xlQ" base_Element="_gDH2AGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDJrMGziEe2h8Ngmez5xlQ" base_Element="_gDJEIWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDMugGziEe2h8Ngmez5xlQ" base_Element="_gDJrMWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDN8oGziEe2h8Ngmez5xlQ" base_Element="_gDNVkGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDOjsGziEe2h8Ngmez5xlQ" base_Element="_gDN8oWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDebUGziEe2h8Ngmez5xlQ" base_Element="_gDcmIWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gDfpcGziEe2h8Ngmez5xlQ" base_Element="_gDfCYGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gDmXIGziEe2h8Ngmez5xlQ" base_Element="_gDlwEGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Annotations xmi:id="_gDqBgGziEe2h8Ngmez5xlQ" base_Element="_gDlwEGziEe2h8Ngmez5xlQ">
+    <annotations xmi:id="_gDqBgWziEe2h8Ngmez5xlQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Generics xmi:id="_gDwIIGziEe2h8Ngmez5xlQ" genericsValue="String" base_Element="_gDu6BGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Generics xmi:id="_gDxWQGziEe2h8Ngmez5xlQ" genericsValue="String" base_Element="_gDvhEGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gD1nsGziEe2h8Ngmez5xlQ" base_Element="_gD0ZkGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Annotations xmi:id="_gD1nsWziEe2h8Ngmez5xlQ" base_Element="_gD0ZkGziEe2h8Ngmez5xlQ">
+    <annotations xmi:id="_gD1nsmziEe2h8Ngmez5xlQ" name="FXML"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gD6gMGziEe2h8Ngmez5xlQ" base_Element="_gD55IGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gD7HQGziEe2h8Ngmez5xlQ" base_Element="_gD6gMWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gD7uUGziEe2h8Ngmez5xlQ" base_Element="_gD7HQWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gD88cGziEe2h8Ngmez5xlQ" base_Element="_gD8VYWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gD-KkGziEe2h8Ngmez5xlQ" base_Element="_gD88cWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gD-xoGziEe2h8Ngmez5xlQ" base_Element="_gD-KkWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gEAm0GziEe2h8Ngmez5xlQ" base_Element="_gD_YsGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Annotations xmi:id="_gEBN4GziEe2h8Ngmez5xlQ" base_Element="_gD_YsGziEe2h8Ngmez5xlQ">
+    <annotations xmi:id="_gEBN4WziEe2h8Ngmez5xlQ" name="FXML"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Generics xmi:id="_gECcAGziEe2h8Ngmez5xlQ" genericsValue="String" base_Element="_gEB08GziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gECcAWziEe2h8Ngmez5xlQ" base_Element="_gEB08GziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Annotations xmi:id="_gEDDEGziEe2h8Ngmez5xlQ" base_Element="_gEB08GziEe2h8Ngmez5xlQ">
+    <annotations xmi:id="_gEDDEWziEe2h8Ngmez5xlQ" name="FXML"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gEDqIGziEe2h8Ngmez5xlQ" base_Element="_gEDDEmziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gEERMGziEe2h8Ngmez5xlQ" base_Element="_gEDqIWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gEFfUGziEe2h8Ngmez5xlQ" base_Element="_gEE4QGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gEGGYGziEe2h8Ngmez5xlQ" base_Element="_gEFfUWziEe2h8Ngmez5xlQ">
+    <associatedElement xmi:type="uml:Operation" xmi:id="_gEGGYWziEe2h8Ngmez5xlQ" name="getDuration" method="_gE7M0GziEe2h8Ngmez5xlQ">
+      <ownedParameter xmi:id="_gEHUgGziEe2h8Ngmez5xlQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </ownedParameter>
+    </associatedElement>
+    <associatedElement xmi:type="uml:Operation" xmi:id="_gEGtcGziEe2h8Ngmez5xlQ" name="setDuration" method="_gE7z4WziEe2h8Ngmez5xlQ" raisedException="_f9-3UGziEe2h8Ngmez5xlQ">
+      <ownedParameter xmi:id="_gEGtcWziEe2h8Ngmez5xlQ" name="dur">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </associatedElement>
+  </UMLLabProfile:LegacyStyledElement>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gEIioGziEe2h8Ngmez5xlQ" base_Element="_gEH7kGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gEJJsGziEe2h8Ngmez5xlQ" base_Element="_gEIioWziEe2h8Ngmez5xlQ"/>
+  <uml:OpaqueBehavior xmi:id="_gE7M0GziEe2h8Ngmez5xlQ" name="getDuration" specification="_gEGGYWziEe2h8Ngmez5xlQ">
+    <ownedParameter xmi:id="_gE7z4GziEe2h8Ngmez5xlQ" direction="return">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </ownedParameter>
+    <language>java</language>
+    <body>System.out.println(duration);&#xD;
+		return duration;&#xD;
+&#xD;
+	</body>
+  </uml:OpaqueBehavior>
+  <uml:OpaqueBehavior xmi:id="_gE7z4WziEe2h8Ngmez5xlQ" name="setDuration" specification="_gEGtcGziEe2h8Ngmez5xlQ">
+    <ownedParameter xmi:id="_gE7z4mziEe2h8Ngmez5xlQ" name="dur">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedParameter>
+    <language>java</language>
+    <body>try {&#xD;
+			duration = Long.parseLong(dur);&#xD;
+		} catch (NumberFormatException nfe) {&#xD;
+			throw new InvalidEntryException(String.format(&quot;Invalid Duration Entry. Enter a number.&quot;));&#xD;
+		}&#xD;
+	</body>
+  </uml:OpaqueBehavior>
+  <UMLLabProfile:Reference xmi:id="_gFLEcGziEe2h8Ngmez5xlQ" base_Element="_gFJ2UGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gFMSkGziEe2h8Ngmez5xlQ" base_Element="_gFLrgGziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gFM5oGziEe2h8Ngmez5xlQ" base_Element="_gFMSkWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gFNgsGziEe2h8Ngmez5xlQ" base_Element="_gFM5oWziEe2h8Ngmez5xlQ"/>
+  <UMLLabProfile:Reference xmi:id="_gFOHwGziEe2h8Ngmez5xlQ" base_Element="_gFNgsWziEe2h8Ngmez5xlQ"/>
+</xmi:XMI>
