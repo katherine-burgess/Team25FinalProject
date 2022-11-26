@@ -74,11 +74,9 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method will take in the user's input from the GUI and check if the user
-	 * has entered a number. The method will check if the user has entered a number,
-	 * if not the GUI will return a specific error message to the user. If there are
-	 * no error's in input the scene will change back to the user's main welcome
-	 * screen.
+	 * This method will take in the user's input from the GUI and check if the use has entered a number. The method will check 
+	 * if the user has entered a number, if not the GUI will return a specific error message to the user. If there are
+	 * no error's in input the scene will change back to the user's main welcome screen.
 	 * 
 	 * @param returnUserScene
 	 * @param viewUser
@@ -292,8 +290,7 @@ public class WorkoutAppController {
 	/**
 	 * This method generates a new scene based on the users interaction with the
 	 * Welcome Page ChoiceBox. Depending on the choice, the user can generate a new
-	 * user that will be added to the ChoiceBox for later entry or sign in as a
-	 * previous user.
+	 * user that will be added to the ChoiceBox for later entry or sign in as a previous user.
 	 * 
 	 * @param event
 	 */

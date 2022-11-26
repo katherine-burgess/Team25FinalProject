@@ -1,12 +1,9 @@
 package application;
 
 /**
- * This class will log the user's workout statistics. The class will check to
- * see that the user has entered a number, if not a specific error message will
- * be thrown. This class will compare the new workout statistics with the user's
- * goals. If the workout statistics are better than the goals, the user will
- * receive an achievement message. Each workout will be tracked and saved in an
- * ArrayList.
+ * This class will log the user's workout statistics. The class will check to see that the user has entered a number, 
+ * if not a specific error message will be thrown. This class will compare the new workout statistics with the user's goals.
+ *  If the workout statistics are better than the goals, the user will receive an achievement message.
  * 
  * @author CS219-user Katie Burgess
  *

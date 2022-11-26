@@ -1,11 +1,9 @@
 package application;
 
 /**
- * This class will take in the user's goals and save them. The goals will be
- * compared to the workout statistics entered and validate user goal entry. If
- * the user achieves a goal, the goal will be saved into an ArrayList of
- * achieved goals. This class will keep count of how many goals the user has
- * achieved and how many goals the user is working towards.
+ * This class will take in the user's goals and save them. If the user achieves a goal, the goal will 
+ * be saved into an ArrayList of achieved goals. This class will keep count of how many goals the user 
+ * has achieved and how many goals the user is working towards.
  * 
  * @author CS219-user Katie Burgess
  *
