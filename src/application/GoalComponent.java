@@ -31,11 +31,11 @@ public class GoalComponent {
 
 			if (this.durationGoal < 0 || this.durationGoal > durationGoalMax) {
 				throw new InvalidEntryException(
-						String.format("Duration of workout can only be between 0 and %d hours. ", durationGoalMax));
+						String.format("Duration of workout can only be between 0 and %d minutes", durationGoalMax));
 			}
 			if (targetWeight < 0 || targetWeight > targetWeightMax) {
 				throw new InvalidEntryException(
-						String.format("Target weight can only be between 0 and %d lbs. ", targetWeightMax));
+						String.format("Target weight can only be between 0 and %d lbs ", targetWeightMax));
 			}
 			if (lowerBodyPR < 0 || upperBodyPR < 0) {
 				throw new InvalidEntryException(String.format("A new personal record can't be less than 0 lbs. "));

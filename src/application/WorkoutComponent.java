@@ -17,7 +17,7 @@ public class WorkoutComponent {
 	private double weight;
 
 	// Maximum values for each numerical input
-	private double durationMax = 300;
+	private int durationMax = 300;
 	private int calorieMax = 1000;
 	private int weightMax = 300;
 
@@ -35,17 +35,17 @@ public class WorkoutComponent {
 
 			if (duration < 0 || duration > durationMax) {
 				throw new InvalidEntryException(
-						String.format("Invalid workout duration entry. Enter a number between 0 and %d ", durationMax));
+						String.format("Invalid workout duration entry. Enter a number between 0 and %d minutes ", durationMax));
 			}
 
 			if (caloriesBurned < 0 || caloriesBurned > calorieMax) {
 				throw new InvalidEntryException(
-						String.format("Invalid calorie entry. Enter a number between 0 and %d ", calorieMax));
+						String.format("Invalid calorie entry. Enter a number between 0 and %d calories ", calorieMax));
 			}
 
 			if (this.weight < 0 || this.weight > weightMax) {
 				throw new InvalidEntryException(
-						String.format("Invalid weight entry. Enter a number between 0 and %d ", weight));
+						String.format("Invalid weight entry. Enter a number between 0 and %d lbs ", weightMax));
 			}
 
 		} catch (NumberFormatException nfe) {
