@@ -32,6 +32,8 @@ public class WorkoutAppController {
 	private ChoiceBox<String> chooseUserChoiceBox;
 
 	Label userErrorLabel = new Label();
+	
+	Label printGoalsLabel = new Label();
 
 	Label userGoalLabel = new Label();
 
@@ -128,7 +130,8 @@ public class WorkoutAppController {
 
 		if (!error) {
 			applicationStage.setScene(returnUserScene);
-			userGoalLabel.setText("");
+			printGoalsLabel.setText(chooseUserChoiceBox.getValue() + "'s Goals: ");
+			userGoalLabel.setText(viewUser.getGoals());
 		}
 
 	}
@@ -248,7 +251,9 @@ public class WorkoutAppController {
 		HBox.setMargin(targetWeightLabel, new Insets(10, 10, 10, 10));
 		TextField targetWeightTextfield = new TextField();
 		HBox.setMargin(targetWeightTextfield, new Insets(10, 10, 10, 10));
-		targetWeightContainer.getChildren().addAll(targetWeightLabel, targetWeightTextfield);
+		Label unitsLabel = new Label("lbs");
+		HBox.setMargin(unitsLabel, new Insets(10,10,10,10));
+		targetWeightContainer.getChildren().addAll(targetWeightLabel, targetWeightTextfield, unitsLabel);
 
 		// Container for entering personal weight record upper body
 		HBox upperBodyPRContainer = new HBox();
@@ -256,15 +261,20 @@ public class WorkoutAppController {
 		HBox.setMargin(upperBodyPRLabel, new Insets(10, 10, 10, 10));
 		TextField upperBodyPRTextfield = new TextField();
 		HBox.setMargin(upperBodyPRTextfield, new Insets(10, 10, 10, 10));
-		upperBodyPRContainer.getChildren().addAll(upperBodyPRLabel, upperBodyPRTextfield);
+		Label unitsLabel1 = new Label("lbs");
+		HBox.setMargin(unitsLabel1, new Insets(10,10,10,10));
+		
+		upperBodyPRContainer.getChildren().addAll(upperBodyPRLabel, upperBodyPRTextfield, unitsLabel1);
 
 		// Container for entering personal weight record lower body
 		HBox lowerBodyPRContainer = new HBox();
 		Label lowerBodyPRLabel = new Label("Lower Body PR Goal");
 		HBox.setMargin(lowerBodyPRLabel, new Insets(10, 10, 10, 10));
 		TextField lowerBodyPRTextfield = new TextField();
+		Label unitsLabel2 = new Label("lbs");
+		HBox.setMargin(unitsLabel2, new Insets(10,10,10,10));
 		HBox.setMargin(lowerBodyPRTextfield, new Insets(10, 10, 10, 10));
-		lowerBodyPRContainer.getChildren().addAll(lowerBodyPRLabel, lowerBodyPRTextfield);
+		lowerBodyPRContainer.getChildren().addAll(lowerBodyPRLabel, lowerBodyPRTextfield, unitsLabel2);
 
 		Button submitGoals = new Button("Done");
 		VBox.setMargin(submitGoals, new Insets(10, 10, 10, 10));
@@ -366,15 +376,16 @@ public class WorkoutAppController {
 			HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
 			goalsButton.setOnAction(goalsEvent -> getGoalLog(event, returnUserScene, viewUser));
 			workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
+			
 
 			Button logOutButton = new Button("Log Out");
 			VBox.setMargin(logOutButton, new Insets(10, 10, 10, 10));
 			logOutButton.setOnAction(logOutEvent -> applicationStage.setScene(mainScene));
 
 			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, workoutContainer,
-					workoutGoalsContainer, logOutButton);
-
-			workoutGoalsContainer.getChildren().addAll(userGoalLabel);
+					workoutGoalsContainer, printGoalsLabel, userGoalLabel, logOutButton);
+			VBox.setMargin(printGoalsLabel, new Insets(0,0,0,10));
+			VBox.setMargin(userGoalLabel, new Insets(5,0,0,10));
 
 			applicationStage.setScene(returnUserScene);
 		}
