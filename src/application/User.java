@@ -22,7 +22,7 @@ public class User {
 	private GoalComponent goals;
 
 	// This constructor will set the instance variables for each new user
-	User(String name, double weight, double height) {
+	public User(String name, double weight, double height) {
 		this.name = name;
 		this.weight = weight;
 		this.height = height;
@@ -30,7 +30,7 @@ public class User {
 	}
 
 	// This constructor sets the name of a new User
-	User(String newName) {
+	public User(String newName) {
 		name = newName;
 		users = new ArrayList<User>();
 
@@ -89,6 +89,9 @@ public class User {
 
 	}
 
+	public String getGoals() {
+		return goals.toString();
+	}
 	// This method will compare the workout stats to the user's goals
 	public void compareTo(WorkoutComponent workoutStat) {
 		if (workoutStat.getDuration() >= (goals.getDurationGoal())) {
