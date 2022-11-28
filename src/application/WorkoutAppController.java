@@ -374,7 +374,7 @@ public class WorkoutAppController {
 			VBox returnUserContainer = new VBox();
 
 			// Title changes based on the user that is entered
-			applicationStage.setTitle(user);
+			applicationStage.setTitle(user + "'s Get Fit");
 
 			Scene returnUserScene = new Scene(returnUserContainer);
 
