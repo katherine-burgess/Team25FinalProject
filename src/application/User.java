@@ -107,6 +107,12 @@ public class User {
 		return workoutStats.toString();
 	}
 
+	public int getNumWorkouts() {
+		if (workoutStats == null) return 0;
+		// TODO Auto-generated method stub
+		return workoutStats.getNumWorkout();
+	}
+
 	
 
 }

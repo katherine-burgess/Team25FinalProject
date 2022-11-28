@@ -96,7 +96,7 @@ public class WorkoutComponent {
 	// Takes users workout statistics and returns them as a string
 	public String toString() {
 		String workout = new String();
-		workout += "Workout Type: " + getWorkoutType() + '\t' + "Duration:" + getDuration() + '\t' + "Intensity: "
+		workout += "Workout Type: " + getWorkoutType() + '\t' + "Duration: " + getDuration() + '\t' + "Intensity: "
 				+ getIntensity() + '\t' + " Calories Burned: " + getCalories() + '\t' + " Weight: " + getWeight() + '\n';
 	
 		return workout;

@@ -410,10 +410,11 @@ public class WorkoutAppController {
 			VBox.setMargin(userGoalLabel, new Insets(5,0,0,10));
 
 			// Check if the number of workouts entered is more than 1, if so you can see the workout log
-			if (viewUser.numWorkouts() > 1) {
+			if (viewUser.getNumWorkouts() >  0) {
 				Button seeWorkoutsButton = new Button("See previous workouts");
 				VBox.setMargin(seeWorkoutsButton, new Insets(10, 10, 10, 10));
 				seeWorkoutsButton.setOnAction(seeWorkoutEvent -> showLog(event, returnUserScene, viewUser));
+				returnUserContainer.getChildren().add(seeWorkoutsButton);
 			}
 			
 			Button logOutButton = new Button("Log Out");
