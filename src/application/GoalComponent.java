@@ -22,7 +22,7 @@ public class GoalComponent {
 	private int targetWeightMax = 300;
 
 	// This constructor takes in the four goal components and validates the input
-	GoalComponent(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
+	public GoalComponent(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
 		try {
 			this.durationGoal = Long.parseLong(duration);
 			targetWeight = Double.parseDouble(weight);

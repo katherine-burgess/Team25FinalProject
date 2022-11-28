@@ -69,8 +69,8 @@ public class User {
 		// check if the instance variable is null
 		if (goals != null) {
 			workoutStats.compareTo(goals); // will compare newly entered data to the goals (if user has entered goals
-											// previously)
 		}
+		
 
 	}
 
@@ -92,6 +92,7 @@ public class User {
 	public String getGoals() {
 		return goals.toString();
 	}
+	
 	// This method will compare the workout stats to the user's goals
 	public void compareTo(WorkoutComponent workoutStat) {
 		if (workoutStat.getDuration() >= (goals.getDurationGoal())) {
@@ -100,5 +101,12 @@ public class User {
 			System.out.println("Target Weight has been achieved, way to go!");
 		}
 	}
+
+	public String getWorkout() {
+		// TODO Auto-generated method stub
+		return workoutStats.toString();
+	}
+
+	
 
 }
