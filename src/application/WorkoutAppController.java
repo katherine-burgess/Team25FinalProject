@@ -36,6 +36,8 @@ public class WorkoutAppController {
 	Label printGoalsLabel = new Label();
 
 	Label userGoalLabel = new Label();
+	
+	Label userWorkoutLabel = new Label();
 
 	// Get a randomly generated quote and returns the string at the random index
 	// https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
@@ -48,6 +50,43 @@ public class WorkoutAppController {
 		// this function could be placed in a new class (inheritance call)
 	}
 
+	/**
+	 *  This method will get the user's workout history. 
+	 *  
+	 * @param event
+	 * @param returnUserScene
+	 * @param viewUser
+	 */
+	void showLog( ActionEvent event, Scene returnUserScene, User viewUser) {
+		userWorkoutLabel.setText(" ");
+		try {
+			
+			VBox statsContainer = new VBox();
+			Button exitButton = new Button("Exit");
+			VBox.setMargin(exitButton, new Insets(10,10,10,10));
+			statsContainer.getChildren().addAll(userWorkoutLabel, exitButton);
+			if (viewUser.getNumWorkouts() > 0) {
+				userWorkoutLabel.setText(viewUser.getWorkout());
+				
+				VBox.setMargin(userWorkoutLabel, new Insets(10,10,10,10));
+			} else {
+				userWorkoutLabel.setText("No Workout History. Exit and Log a Workout.");
+				VBox.setMargin(userWorkoutLabel, new Insets(10,10,10,10));
+			}
+			exitButton.setOnAction(exitEvent -> applicationStage.setScene(returnUserScene));
+			
+			Scene statsScene = new Scene(statsContainer);
+			applicationStage.setScene(statsScene);
+			
+		} catch (NullPointerException npe) {}
+		
+		
+		
+	}
+	
+	
+	
+	
 	/**
 	 * This method will set up a new user in the application. The method will
 	 * validate that the user name is alphabetic, if the user has entered a proper
@@ -123,7 +162,7 @@ public class WorkoutAppController {
 	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield,
 			TextField targetWeightTextfield, TextField upperBodyPRTextfield, TextField lowerBodyPRTextfield)
 			throws InvalidEntryException {
-
+		
 		boolean error = false;
 		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), upperBodyPRTextfield.getText(),
 				lowerBodyPRTextfield.getText());
@@ -214,7 +253,7 @@ public class WorkoutAppController {
 
 		Scene workoutStatsScene = new Scene(workoutStatsContainer);
 		applicationStage.setScene(workoutStatsScene);
-		;
+		
 	}
 
 	/**
@@ -323,20 +362,25 @@ public class WorkoutAppController {
 
 			HBox newUserTitle = new HBox();
 			Label newUserLabel = new Label("Add a New User");
+			HBox.setMargin(newUserLabel, new Insets(10,10,10,10));
 			newUserTitle.getChildren().add(newUserLabel);
 
 			// Container for entering user name
 			HBox userNameContainer = new HBox();
 			Label userNameLabel = new Label("Enter New Username:");
+			HBox.setMargin(userNameLabel, new Insets(10,10,10,10));
 			TextField newUserTextfield = new TextField();
+			HBox.setMargin(newUserTextfield, new Insets(10,10,10,10));
 			userNameContainer.getChildren().addAll(userNameLabel, newUserTextfield);
 
 			Button doneButton = new Button("Enter Here");
+			VBox.setMargin(doneButton, new Insets(10,10,10,10));
 			doneButton.setOnAction(doneEvent -> setNewUser(mainScene, newUserTextfield));
 
 			newUserContainer.getChildren().addAll(newUserTitle, userNameContainer, doneButton);
 
 			newUserContainer.getChildren().add(userErrorLabel);
+			VBox.setMargin(userErrorLabel, new Insets(10,10,10,10));
 			Scene addUserScene = new Scene(newUserContainer);
 			applicationStage.setScene(addUserScene); // places the new scene on the stage
 
@@ -348,7 +392,7 @@ public class WorkoutAppController {
 			VBox returnUserContainer = new VBox();
 
 			// Title changes based on the user that is entered
-			applicationStage.setTitle(user);
+			applicationStage.setTitle(user + "'s Get Fit");
 
 			Scene returnUserScene = new Scene(returnUserContainer);
 
@@ -377,19 +421,29 @@ public class WorkoutAppController {
 			goalsButton.setOnAction(goalsEvent -> getGoalLog(event, returnUserScene, viewUser));
 			workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
 			
-
-			Button logOutButton = new Button("Log Out");
-			VBox.setMargin(logOutButton, new Insets(10, 10, 10, 10));
-			logOutButton.setOnAction(logOutEvent -> applicationStage.setScene(mainScene));
-
+			
 			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, workoutContainer,
-					workoutGoalsContainer, printGoalsLabel, userGoalLabel, logOutButton);
+					workoutGoalsContainer, printGoalsLabel, userGoalLabel);
 			VBox.setMargin(printGoalsLabel, new Insets(0,0,0,10));
 			VBox.setMargin(userGoalLabel, new Insets(5,0,0,10));
 
+			
+			
+			Button seeWorkoutsButton = new Button("See previous workouts");
+			VBox.setMargin(seeWorkoutsButton, new Insets(10, 10, 10, 10));
+			seeWorkoutsButton.setOnAction(seeWorkoutEvent -> showLog(event, returnUserScene, viewUser));
+			returnUserContainer.getChildren().add(seeWorkoutsButton);
+			
+			
+			Button logOutButton = new Button("Log Out");
+			VBox.setMargin(logOutButton, new Insets(10, 10, 10, 10));
+			logOutButton.setOnAction(logOutEvent -> applicationStage.setScene(mainScene));
+			returnUserContainer.getChildren().add(logOutButton);
 			applicationStage.setScene(returnUserScene);
 		}
 
 	}
+
+	
 
 }

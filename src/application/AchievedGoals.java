@@ -19,6 +19,8 @@ public class AchievedGoals extends GoalComponent {
 
 	}
 	
+	
+
 	// this method will count the number of achieved goals
 	public int countAchieved() {
 		

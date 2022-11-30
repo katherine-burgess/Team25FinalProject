@@ -1,5 +1,8 @@
 package application;
 
+import java.util.ArrayList;
+
+
 /**
  * This class will log the user's workout statistics. The class will check to see that the user has entered a number, 
  * if not a specific error message will be thrown. This class will compare the new workout statistics with the user's goals.
@@ -15,6 +18,8 @@ public class WorkoutComponent {
 	private String intensity;
 	private int caloriesBurned;
 	private double weight;
+	
+	private int numWorkouts;
 
 	// Maximum values for each numerical input
 	private int durationMax = 300;
@@ -32,7 +37,10 @@ public class WorkoutComponent {
 			this.weight = Double.parseDouble(weight);
 			this.intensity = intensity;
 			workoutType = type;
+			
+			numWorkouts++;
 
+			
 			if (duration < 0 || duration > durationMax) {
 				throw new InvalidEntryException(
 						String.format("Invalid workout duration entry. Enter a number between 0 and %d minutes ", durationMax));
@@ -73,6 +81,10 @@ public class WorkoutComponent {
 	public double getWeight() {
 		return weight;
 	}
+	
+	public int getNumWorkout() {
+		return numWorkouts;
+	}
 
 	// Gets the duration length of workout in hours
 	public long durationInHours() {
@@ -84,23 +96,31 @@ public class WorkoutComponent {
 	// Takes users workout statistics and returns them as a string
 	public String toString() {
 		String workout = new String();
-		workout += "Workout Type: " + getWorkoutType() + '\t' + "Duration:" + getDuration() + '\t' + "Intensity: "
-				+ getIntensity() + '\t' + " Calories Burned: " + getCalories() + '\t' + " Weight: " + getWeight();
+		workout += "Workout Type: " + getWorkoutType() + '\t' + "Duration: " + getDuration() + '\t' + "Intensity: "
+				+ getIntensity() + '\t' + " Calories Burned: " + getCalories() + '\t' + " Weight: " + getWeight() + '\n';
+	
 		return workout;
 	}
 
 	// This method will compare the user's newest workout statistics to their goals.
 	// If a goal is met,
 	// an achievement message is printed.
+	
 	public void compareTo(GoalComponent goals) {
+		
 		if (getDuration() >= (goals.getDurationGoal())) {
-			System.out.println("Duration Goal has been met!");
+			System.out.println("Duration Goal has been met! " + getDuration());
+			
 		}
 		if (getWeight() < goals.getTargetWeight()) {
-			System.out.println("Weight Goal has been met!");
-
+			System.out.println("Weight Goal has been met! " + getWeight());
+			
 		}
-
+		
+		
+		
 	}
+	
+	
 
 }
