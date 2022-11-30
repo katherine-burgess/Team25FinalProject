@@ -71,7 +71,7 @@ public class GoalComponent {
 	// Will create a string containing all of the inputed goals
 	public String toString() {
 		goals = "Duration: " + getDurationGoal() + " minutes " + '\n' + "Target Weight: " + getTargetWeight() + " lbs " + '\n'
-				+ "Upper Body PR: " + getUpperBody() + " lbs " + '\n' + "Lower Body PR: " + getLowerBody() + " lbs ";
+				+ "Upper Body Lifting Goal: " + getUpperBody() + " lbs " + '\n' + "Lower Body Lifting Goal: " + getLowerBody() + " lbs ";
 
 		return goals;
 	}

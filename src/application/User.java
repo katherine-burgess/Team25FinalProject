@@ -14,25 +14,15 @@ public class User {
 
 	// Instance variables
 	private String name;
-	private double weight;
-	private double height;
-	private ArrayList<User> users;
 
 	private WorkoutComponent workoutStats;
 	private GoalComponent goals;
 
 	// This constructor will set the instance variables for each new user
-	public User(String name, double weight, double height) {
-		this.name = name;
-		this.weight = weight;
-		this.height = height;
-
-	}
 
 	// This constructor sets the name of a new User
 	public User(String newName) {
 		name = newName;
-		users = new ArrayList<User>();
 
 	}
 
@@ -45,11 +35,12 @@ public class User {
 			if (!Character.isAlphabetic(n)) {
 				validName = false;
 				errorMessage = String.format("Your username must use only letters", n);
-			}
+			} 
 		}
-
+		
 		if (validName) {
 			name = nameAsString;
+			
 		}
 
 		return errorMessage;
