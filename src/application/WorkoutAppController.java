@@ -50,7 +50,13 @@ public class WorkoutAppController {
 		// this function could be placed in a new class (inheritance call)
 	}
 
-	// This method will get the user's total workout log
+	/**
+	 *  This method will get the user's workout history. 
+	 *  
+	 * @param event
+	 * @param returnUserScene
+	 * @param viewUser
+	 */
 	void showLog( ActionEvent event, Scene returnUserScene, User viewUser) {
 		userWorkoutLabel.setText(" ");
 		try {
