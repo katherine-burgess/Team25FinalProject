@@ -43,7 +43,7 @@ public class WorkoutAppController {
 	// https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
 	public static String getRandomQuote() {
 		String[] quoteArray = new String[] { "Progress, not perfection.",
-				"It's our choices that show what we truly are, far more than our abilities.",
+				"Find your joy.", "This is the moment to begin.",
 				"Goal setting is the secret to a compelling future." };
 		int rndQuote = new Random().nextInt(quoteArray.length);
 		return quoteArray[rndQuote];
