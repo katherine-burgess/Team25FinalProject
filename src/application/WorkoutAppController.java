@@ -356,20 +356,25 @@ public class WorkoutAppController {
 
 			HBox newUserTitle = new HBox();
 			Label newUserLabel = new Label("Add a New User");
+			HBox.setMargin(newUserLabel, new Insets(10,10,10,10));
 			newUserTitle.getChildren().add(newUserLabel);
 
 			// Container for entering user name
 			HBox userNameContainer = new HBox();
 			Label userNameLabel = new Label("Enter New Username:");
+			HBox.setMargin(userNameLabel, new Insets(10,10,10,10));
 			TextField newUserTextfield = new TextField();
+			HBox.setMargin(newUserTextfield, new Insets(10,10,10,10));
 			userNameContainer.getChildren().addAll(userNameLabel, newUserTextfield);
 
 			Button doneButton = new Button("Enter Here");
+			VBox.setMargin(doneButton, new Insets(10,10,10,10));
 			doneButton.setOnAction(doneEvent -> setNewUser(mainScene, newUserTextfield));
 
 			newUserContainer.getChildren().addAll(newUserTitle, userNameContainer, doneButton);
 
 			newUserContainer.getChildren().add(userErrorLabel);
+			VBox.setMargin(userErrorLabel, new Insets(10,10,10,10));
 			Scene addUserScene = new Scene(newUserContainer);
 			applicationStage.setScene(addUserScene); // places the new scene on the stage
 
