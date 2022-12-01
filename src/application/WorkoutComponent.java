@@ -76,13 +76,6 @@ public class WorkoutComponent {
 	}
 	
 
-	// Gets the duration length of workout in hours
-	public long durationInHours() {
-		long hours = getDuration() / 60;
-		return hours;
-
-	}
-
 	// Takes users workout statistics and returns them as a string
 	public String toString() {
 		String workout = new String();

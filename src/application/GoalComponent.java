@@ -59,11 +59,6 @@ public class GoalComponent {
 		return upperBodyPR;
 	}
 
-	// Will get the duration goal length in hours
-	public long durationInHours() {
-		long hours = durationGoal / 60;
-		return hours;
-	}
 
 	// Will create a string containing all of the inputed goals
 	public String toString() {

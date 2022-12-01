@@ -105,11 +105,6 @@ public class User {
 		return goals.toString();
 	}
 	
-	public String getWorkout() {
-		// TODO Auto-generated method stub
-		return workoutStats.toString();
-	}
-	
 	public String toString() {
 		return history.toString();
 	}

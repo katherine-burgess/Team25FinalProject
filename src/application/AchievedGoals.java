@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class AchievedGoals extends GoalComponent {
 
-	private int numOfAchieved;
+	private int numOfAchieved = 0;
 	private ArrayList<GoalComponent> goalsAchieved;
 	
 	
@@ -20,10 +20,9 @@ public class AchievedGoals extends GoalComponent {
 	}
 	
 	
-
 	// this method will count the number of achieved goals
 	public int countAchieved() {
-		
+		numOfAchieved++;
 		return numOfAchieved;
 	}
 	
