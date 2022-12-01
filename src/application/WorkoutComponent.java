@@ -93,11 +93,16 @@ public class WorkoutComponent {
 		if (getDuration() >= (goals.getDurationGoal())) {
 			System.out.println("Duration Goal has been met! " + getDuration());
 			return true;
-		}
-		if (getWeight() < goals.getTargetWeight()) {
+		} else if (getWeight() < goals.getTargetWeight()) {
 			System.out.println("Weight Goal has been met! " + getWeight());
 			return true;
 			
+		} else if (getCalories() > goals.getCalorieGoal()) {
+			System.out.println("Calorie Goal has been achieved!");
+			return true;
+		} else if (getIntensity() == goals.getIntensityGoal()) {
+			System.out.println("Intensity Goal has been achieved");
+			return true;
 		}
 		
 		return false;
