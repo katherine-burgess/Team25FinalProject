@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class WorkoutHistory extends User{
 	
-	// Instance variables
-	private static int numWorkouts = 0;
+	
 	private ArrayList<WorkoutComponent> workoutHistory;
+	
 	
 	
 	public WorkoutHistory(String newName) {
@@ -25,8 +25,5 @@ public class WorkoutHistory extends User{
 		return new ArrayList<WorkoutComponent>();
 	}
 	
-	public int getNumWorkouts() {
-		numWorkouts++;
-		return numWorkouts;
-	}
+	
 }

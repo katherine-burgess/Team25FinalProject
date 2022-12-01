@@ -69,7 +69,7 @@ public class WorkoutAppController {
 				userWorkoutLabel.setText(viewUser.getWorkout());
 				
 				VBox.setMargin(userWorkoutLabel, new Insets(10,10,10,10));
-			} else {
+			} else if (viewUser.getNumWorkouts() == 0){
 				userWorkoutLabel.setText("No Workout History. Exit and Log a Workout.");
 				VBox.setMargin(userWorkoutLabel, new Insets(10,10,10,10));
 			}

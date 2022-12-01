@@ -18,6 +18,7 @@ public class User {
 	private WorkoutComponent workoutStats;
 	private GoalComponent goals;
 
+	private static int numWorkouts = 0;
 	// This constructor will set the instance variables for each new user
 
 	// This constructor sets the name of a new User
@@ -30,7 +31,12 @@ public class User {
 	public String setName(String nameAsString) {
 		String errorMessage = " ";
 		boolean validName = true;
-
+		
+		if (nameAsString == "") {
+			validName = false;
+			errorMessage = String.format("Your username cannot be blank, enter your name.");
+		}
+		
 		for (char n : nameAsString.toCharArray()) {
 			if (!Character.isAlphabetic(n)) {
 				validName = false;
@@ -56,14 +62,15 @@ public class User {
 			throws InvalidEntryException {
 		workoutStats = new WorkoutComponent(duration, calories, newWeight, intensity, type);
 		System.out.println(workoutStats);
-
+		
 		// check if the instance variable is null
 		if (goals != null) {
 			workoutStats.compareTo(goals); // will compare newly entered data to the goals (if user has entered goals
 		}
-		
+		numWorkouts++;
 
 	}
+
 
 	// This method will create a new Goal Component
 	// This method will take in a goalComponent
@@ -84,6 +91,11 @@ public class User {
 		return goals.toString();
 	}
 	
+	public String getWorkout() {
+		// TODO Auto-generated method stub
+		return workoutStats.toString();
+	}
+	
 	// This method will compare the workout stats to the user's goals
 	public void compareTo(WorkoutComponent workoutStat) {
 		if (workoutStat.getDuration() >= (goals.getDurationGoal())) {
@@ -93,13 +105,8 @@ public class User {
 		}
 	}
 
-	public String getWorkout() {
-		// TODO Auto-generated method stub
-		return workoutStats.toString();
-	}
-
 	public int getNumWorkouts() {
-		return  ;
+		return numWorkouts;
 	}
 
 	
