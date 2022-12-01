@@ -54,8 +54,8 @@ public class WorkoutAppController {
 	 *  This method will get the user's workout history. 
 	 *  
 	 * @param event
-	 * @param returnUserScene
-	 * @param viewUser
+	 * @param returnUserScene the current user's home page
+	 * @param viewUser the current user 
 	 */
 	void showLog( ActionEvent event, Scene returnUserScene, User viewUser) {
 		userWorkoutLabel.setText(" ");
@@ -66,7 +66,7 @@ public class WorkoutAppController {
 			VBox.setMargin(exitButton, new Insets(10,10,10,10));
 			statsContainer.getChildren().addAll(userWorkoutLabel, exitButton);
 			if (viewUser.getNumWorkouts() > 0) {
-				userWorkoutLabel.setText(viewUser.getWorkout());
+				userWorkoutLabel.setText(viewUser.toString());
 				
 				VBox.setMargin(userWorkoutLabel, new Insets(10,10,10,10));
 			} else if (viewUser.getNumWorkouts() == 0){
@@ -80,11 +80,7 @@ public class WorkoutAppController {
 			
 		} catch (NullPointerException npe) {}
 		
-		
-		
 	}
-	
-	
 	
 	
 	/**
@@ -387,6 +383,11 @@ public class WorkoutAppController {
 		} else {
 
 			User viewUser = new User(chooseUserChoiceBox.getValue());
+			
+			// Creates a new workout history for the user
+			// this does get reset to zero when you log out ( needs to be fixed so user doesn't lose their history 
+			// after pressing the log out button
+			viewUser.newHistory();
 
 			// will generate the returning user welcome page
 			VBox returnUserContainer = new VBox();

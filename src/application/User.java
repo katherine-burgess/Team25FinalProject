@@ -14,9 +14,9 @@ public class User {
 
 	// Instance variables
 	private String name;
-
 	private WorkoutComponent workoutStats;
 	private GoalComponent goals;
+	private WorkoutHistory history;
 
 	private static int numWorkouts = 0;
 	// This constructor will set the instance variables for each new user
@@ -25,6 +25,9 @@ public class User {
 	public User(String newName) {
 		name = newName;
 
+	}
+	public User() {
+		
 	}
 
 	// This method checks if the user name is an alphabetical letter
@@ -56,21 +59,32 @@ public class User {
 		return name;
 	}
 
+	public WorkoutHistory newHistory() {
+		history = new WorkoutHistory();
+		return history;
+	}
 	// This method will create a new workoutComponent
 	// This method will take in a workoutComponent
 	public void logWorkout(String calories, String duration, String intensity, String type, String newWeight)
 			throws InvalidEntryException {
 		workoutStats = new WorkoutComponent(duration, calories, newWeight, intensity, type);
-		System.out.println(workoutStats);
+		
+		// add new workout to workout history
+		history.addWorkout(workoutStats);
+		
 		
 		// check if the instance variable is null
 		if (goals != null) {
 			workoutStats.compareTo(goals); // will compare newly entered data to the goals (if user has entered goals
 		}
+		
+		// increment static variable
 		numWorkouts++;
 
 	}
 
+
+	
 
 	// This method will create a new Goal Component
 	// This method will take in a goalComponent
@@ -96,13 +110,8 @@ public class User {
 		return workoutStats.toString();
 	}
 	
-	// This method will compare the workout stats to the user's goals
-	public void compareTo(WorkoutComponent workoutStat) {
-		if (workoutStat.getDuration() >= (goals.getDurationGoal())) {
-			System.out.println("Duration Goal has been met!");
-		} else if (workoutStat.getWeight() < goals.getTargetWeight()) {
-			System.out.println("Target Weight has been achieved, way to go!");
-		}
+	public String toString() {
+		return history.toString();
 	}
 
 	public int getNumWorkouts() {
