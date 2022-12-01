@@ -86,14 +86,12 @@ public class WorkoutComponent {
 	}
 
 	// This method will compare the user's newest workout statistics to their goals.
-	// If a goal is met,
-	// an achievement message is printed.
+	// If a goal is met, an achievement message is printed.
 	
 	public void compareTo(GoalComponent goals) {
 		
 		if (getDuration() >= (goals.getDurationGoal())) {
 			System.out.println("Duration Goal has been met! " + getDuration());
-			
 		}
 		if (getWeight() < goals.getTargetWeight()) {
 			System.out.println("Weight Goal has been met! " + getWeight());
