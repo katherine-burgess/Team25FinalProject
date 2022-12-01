@@ -184,7 +184,7 @@ public class WorkoutAppController {
 	 * @param returnUserScene
 	 * @param viewUser
 	 */
-	void getWorkoutLog(ActionEvent event, Scene returnUserScene, User viewUser) {
+	void getWorkoutScene(ActionEvent event, Scene returnUserScene, User viewUser) {
 
 		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Workout Stats");
 
@@ -264,7 +264,7 @@ public class WorkoutAppController {
 	 * @param returnUserScene
 	 * @param viewUser
 	 */
-	void getGoalLog(ActionEvent event, Scene returnUserScene, User viewUser) {
+	void getGoalScene(ActionEvent event, Scene returnUserScene, User viewUser) {
 
 		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Goals");
 
@@ -408,7 +408,7 @@ public class WorkoutAppController {
 			HBox.setMargin(logWorkoutLabel, new Insets(10, 10, 10, 10));
 			Button doneButton = new Button("Enter Here");
 			HBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
-			doneButton.setOnAction(doneEvent -> getWorkoutLog(event, returnUserScene, viewUser));
+			doneButton.setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser));
 
 			workoutContainer.getChildren().addAll(logWorkoutLabel, doneButton);
 
@@ -418,7 +418,7 @@ public class WorkoutAppController {
 			HBox.setMargin(logGoalsLabel, new Insets(10, 10, 10, 10));
 			Button goalsButton = new Button("Enter Goals Here");
 			HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
-			goalsButton.setOnAction(goalsEvent -> getGoalLog(event, returnUserScene, viewUser));
+			goalsButton.setOnAction(goalsEvent -> getGoalScene(event, returnUserScene, viewUser));
 			workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
 			
 			
