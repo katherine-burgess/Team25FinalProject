@@ -75,9 +75,9 @@ public class User {
 		
 		// check if the instance variable is null
 		if (goals != null) {
-			workoutStats.compareTo(goals); // will compare newly entered data to the goals (if user has entered goals)
 			if (workoutStats.compareTo(goals) == true) {
 				// print out achievement to the user
+				
 			}
 		}
 		
@@ -85,8 +85,6 @@ public class User {
 		numWorkouts++;
 
 	}
-
-
 	
 
 	// This method will create a new Goal Component

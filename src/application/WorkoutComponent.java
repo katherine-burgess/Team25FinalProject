@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author CS219-user Katie Burgess
  *
  */
-public class WorkoutComponent {
+public class WorkoutComponent extends User {
 	// instance variables
 	private String workoutType;
 	private long duration;
@@ -20,6 +20,10 @@ public class WorkoutComponent {
 	private double weight;
 	
 
+	public WorkoutComponent(String userName) {
+		super(userName);
+	}
+	
 	// This constructor will check the user input for possible errors, if no errors
 	// in input the instance variables will be set.
 	// Otherwise an error will be thrown with a specific message to the user.
@@ -86,17 +90,16 @@ public class WorkoutComponent {
 	}
 
 	// This method will compare the user's newest workout statistics to their goals.
-	// If a goal is met, an achievement message is printed.
+	// If a goal is met, method will return true. If no goal is met, the method will return false.
 	
-	public boolean compareTo(GoalComponent goals) {
-		
+	public boolean compareTo(GoalComponent goals) {;
 		if (getDuration() >= (goals.getDurationGoal())) {
 			System.out.println("Duration Goal has been met! " + getDuration());
 			return true;
 		} else if (getWeight() < goals.getTargetWeight()) {
 			System.out.println("Weight Goal has been met! " + getWeight());
 			return true;
-			
+		
 		} else if (getCalories() > goals.getCalorieGoal()) {
 			System.out.println("Calorie Goal has been achieved!");
 			return true;
@@ -104,9 +107,8 @@ public class WorkoutComponent {
 			System.out.println("Intensity Goal has been achieved");
 			return true;
 		}
-		
+	
 		return false;
-		
 	}
 	
 	
