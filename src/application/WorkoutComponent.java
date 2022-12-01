@@ -19,12 +19,6 @@ public class WorkoutComponent {
 	private int caloriesBurned;
 	private double weight;
 	
-	private int numWorkouts;
-
-	// Maximum values for each numerical input
-	private int durationMax = 300;
-	private int calorieMax = 1000;
-	private int weightMax = 300;
 
 	// This constructor will check the user input for possible errors, if no errors
 	// in input the instance variables will be set.
@@ -38,26 +32,25 @@ public class WorkoutComponent {
 			this.intensity = intensity;
 			workoutType = type;
 			
-			numWorkouts++;
 
 			
-			if (duration < 0 || duration > durationMax) {
+			if (duration < 0 || duration > 300) {
 				throw new InvalidEntryException(
-						String.format("Invalid workout duration entry. Enter a number between 0 and %d minutes ", durationMax));
+						String.format("Invalid workout duration entry. Enter a number between 0 and 300 minutes "));
 			}
 
-			if (caloriesBurned < 0 || caloriesBurned > calorieMax) {
+			if (caloriesBurned < 0 || caloriesBurned > 1000) {
 				throw new InvalidEntryException(
-						String.format("Invalid calorie entry. Enter a number between 0 and %d calories ", calorieMax));
+						String.format("Invalid calorie entry. Enter a number between 0 and 1000 calories "));
 			}
 
-			if (this.weight < 0 || this.weight > weightMax) {
+			if (this.weight < 100 || this.weight > 300) {
 				throw new InvalidEntryException(
-						String.format("Invalid weight entry. Enter a number between 0 and %d lbs ", weightMax));
+						String.format("Invalid weight entry. Enter a number between 100 and 300 lbs "));
 			}
 
 		} catch (NumberFormatException nfe) {
-			throw new InvalidEntryException(String.format("Invalid Workout Entry. Enter a number."));
+			throw new InvalidEntryException(String.format("Invalid Workout Entry. Make sure to enter a number."));
 
 		}
 	}
@@ -82,9 +75,6 @@ public class WorkoutComponent {
 		return weight;
 	}
 	
-	public int getNumWorkout() {
-		return numWorkouts;
-	}
 
 	// Gets the duration length of workout in hours
 	public long durationInHours() {

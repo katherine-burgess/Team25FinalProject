@@ -17,9 +17,6 @@ public class GoalComponent {
 	private double upperBodyPR;
 	private String goals;
 
-	// Maximum entry for each numerical input
-	private int durationGoalMax = 300;
-	private int targetWeightMax = 300;
 
 	// This constructor takes in the four goal components and validates the input
 	public GoalComponent(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
@@ -29,13 +26,13 @@ public class GoalComponent {
 			lowerBodyPR = Double.parseDouble(lowerBody);
 			upperBodyPR = Double.parseDouble(upperBody);
 
-			if (this.durationGoal < 0 || this.durationGoal > durationGoalMax) {
+			if (this.durationGoal < 0 || this.durationGoal > 300) {
 				throw new InvalidEntryException(
-						String.format("Duration of workout can only be between 0 and %d minutes", durationGoalMax));
+						String.format("Duration of workout can only be between 0 and 300 minutes"));
 			}
-			if (targetWeight < 0 || targetWeight > targetWeightMax) {
+			if (targetWeight < 0 || targetWeight > 300) {
 				throw new InvalidEntryException(
-						String.format("Target weight can only be between 0 and %d lbs ", targetWeightMax));
+						String.format("Target weight can only be between 0 and 300 lbs"));
 			}
 			if (lowerBodyPR < 0 || upperBodyPR < 0) {
 				throw new InvalidEntryException(String.format("A new personal record can't be less than 0 lbs. "));
@@ -71,7 +68,7 @@ public class GoalComponent {
 	// Will create a string containing all of the inputed goals
 	public String toString() {
 		goals = "Duration: " + getDurationGoal() + " minutes " + '\n' + "Target Weight: " + getTargetWeight() + " lbs " + '\n'
-				+ "Upper Body PR: " + getUpperBody() + " lbs " + '\n' + "Lower Body PR: " + getLowerBody() + " lbs ";
+				+ "Upper Body Lifting Goal: " + getUpperBody() + " lbs " + '\n' + "Lower Body Lifting Goal: " + getLowerBody() + " lbs ";
 
 		return goals;
 	}

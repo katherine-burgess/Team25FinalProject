@@ -43,7 +43,7 @@ public class WorkoutAppController {
 	// https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
 	public static String getRandomQuote() {
 		String[] quoteArray = new String[] { "Progress, not perfection.",
-				"It's our choices that show what we truly are, far more than our abilities.",
+				"Find your joy.", "This is the moment to begin.",
 				"Goal setting is the secret to a compelling future." };
 		int rndQuote = new Random().nextInt(quoteArray.length);
 		return quoteArray[rndQuote];
@@ -54,8 +54,8 @@ public class WorkoutAppController {
 	 *  This method will get the user's workout history. 
 	 *  
 	 * @param event
-	 * @param returnUserScene
-	 * @param viewUser
+	 * @param returnUserScene the current user's home page
+	 * @param viewUser the current user 
 	 */
 	void showLog( ActionEvent event, Scene returnUserScene, User viewUser) {
 		userWorkoutLabel.setText(" ");
@@ -66,10 +66,10 @@ public class WorkoutAppController {
 			VBox.setMargin(exitButton, new Insets(10,10,10,10));
 			statsContainer.getChildren().addAll(userWorkoutLabel, exitButton);
 			if (viewUser.getNumWorkouts() > 0) {
-				userWorkoutLabel.setText(viewUser.getWorkout());
+				userWorkoutLabel.setText(viewUser.toString());
 				
 				VBox.setMargin(userWorkoutLabel, new Insets(10,10,10,10));
-			} else {
+			} else if (viewUser.getNumWorkouts() == 0){
 				userWorkoutLabel.setText("No Workout History. Exit and Log a Workout.");
 				VBox.setMargin(userWorkoutLabel, new Insets(10,10,10,10));
 			}
@@ -80,11 +80,7 @@ public class WorkoutAppController {
 			
 		} catch (NullPointerException npe) {}
 		
-		
-		
 	}
-	
-	
 	
 	
 	/**
@@ -184,7 +180,7 @@ public class WorkoutAppController {
 	 * @param returnUserScene
 	 * @param viewUser
 	 */
-	void getWorkoutLog(ActionEvent event, Scene returnUserScene, User viewUser) {
+	void getWorkoutScene(ActionEvent event, Scene returnUserScene, User viewUser) {
 
 		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Workout Stats");
 
@@ -264,7 +260,7 @@ public class WorkoutAppController {
 	 * @param returnUserScene
 	 * @param viewUser
 	 */
-	void getGoalLog(ActionEvent event, Scene returnUserScene, User viewUser) {
+	void getGoalScene(ActionEvent event, Scene returnUserScene, User viewUser) {
 
 		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Goals");
 
@@ -387,6 +383,11 @@ public class WorkoutAppController {
 		} else {
 
 			User viewUser = new User(chooseUserChoiceBox.getValue());
+			
+			// Creates a new workout history for the user
+			// this does get reset to zero when you log out ( needs to be fixed so user doesn't lose their history 
+			// after pressing the log out button
+			viewUser.newHistory();
 
 			// will generate the returning user welcome page
 			VBox returnUserContainer = new VBox();
@@ -408,7 +409,7 @@ public class WorkoutAppController {
 			HBox.setMargin(logWorkoutLabel, new Insets(10, 10, 10, 10));
 			Button doneButton = new Button("Enter Here");
 			HBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
-			doneButton.setOnAction(doneEvent -> getWorkoutLog(event, returnUserScene, viewUser));
+			doneButton.setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser));
 
 			workoutContainer.getChildren().addAll(logWorkoutLabel, doneButton);
 
@@ -418,7 +419,7 @@ public class WorkoutAppController {
 			HBox.setMargin(logGoalsLabel, new Insets(10, 10, 10, 10));
 			Button goalsButton = new Button("Enter Goals Here");
 			HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
-			goalsButton.setOnAction(goalsEvent -> getGoalLog(event, returnUserScene, viewUser));
+			goalsButton.setOnAction(goalsEvent -> getGoalScene(event, returnUserScene, viewUser));
 			workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
 			
 			
