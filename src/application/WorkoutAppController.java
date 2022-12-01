@@ -156,12 +156,12 @@ public class WorkoutAppController {
 	 * @throws InvalidEntryException
 	 */
 	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield,
-			TextField targetWeightTextfield, TextField upperBodyPRTextfield, TextField lowerBodyPRTextfield)
+			TextField targetWeightTextfield, TextField calorieGoalTextfield, ChoiceBox<String> intensityGoalChoiceBox)
 			throws InvalidEntryException {
 		
 		boolean error = false;
-		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), upperBodyPRTextfield.getText(),
-				lowerBodyPRTextfield.getText());
+		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), calorieGoalTextfield.getText(),
+				intensityGoalChoiceBox.getValue());
 
 		if (!error) {
 			applicationStage.setScene(returnUserScene);
@@ -272,7 +272,7 @@ public class WorkoutAppController {
 
 		// Container for entering duration target goals
 		HBox durationGoalContainer = new HBox();
-		Label durationGoalLabel = new Label("Workout Duration Goal");
+		Label durationGoalLabel = new Label("Workout Duration Goal: ");
 		HBox.setMargin(durationGoalLabel, new Insets(10, 10, 10, 10));
 		TextField durationTextfield = new TextField();
 		HBox.setMargin(durationTextfield, new Insets(10, 10, 10, 10));
@@ -282,7 +282,7 @@ public class WorkoutAppController {
 
 		// Container for entering target body weight
 		HBox targetWeightContainer = new HBox();
-		Label targetWeightLabel = new Label("Target Weight Goal");
+		Label targetWeightLabel = new Label("Target Weight Goal: ");
 		HBox.setMargin(targetWeightLabel, new Insets(10, 10, 10, 10));
 		TextField targetWeightTextfield = new TextField();
 		HBox.setMargin(targetWeightTextfield, new Insets(10, 10, 10, 10));
@@ -290,31 +290,33 @@ public class WorkoutAppController {
 		HBox.setMargin(unitsLabel, new Insets(10,10,10,10));
 		targetWeightContainer.getChildren().addAll(targetWeightLabel, targetWeightTextfield, unitsLabel);
 
-		// Container for entering personal weight record upper body
-		HBox upperBodyPRContainer = new HBox();
-		Label upperBodyPRLabel = new Label("Upper Body PR Goal");
-		HBox.setMargin(upperBodyPRLabel, new Insets(10, 10, 10, 10));
-		TextField upperBodyPRTextfield = new TextField();
-		HBox.setMargin(upperBodyPRTextfield, new Insets(10, 10, 10, 10));
-		Label unitsLabel1 = new Label("lbs");
+		// Container for entering the number of calories burned goal
+		HBox calorieGoalContainer = new HBox();
+		Label calorieGoalLabel = new Label("Calories Burned Goal: ");
+		HBox.setMargin(calorieGoalLabel, new Insets(10, 10, 10, 10));
+		TextField calorieGoalTextfield = new TextField();
+		HBox.setMargin(calorieGoalTextfield, new Insets(10, 10, 10, 10));
+		Label unitsLabel1 = new Label("calories");
 		HBox.setMargin(unitsLabel1, new Insets(10,10,10,10));
 		
-		upperBodyPRContainer.getChildren().addAll(upperBodyPRLabel, upperBodyPRTextfield, unitsLabel1);
+		calorieGoalContainer.getChildren().addAll(calorieGoalLabel, calorieGoalTextfield, unitsLabel1);
 
 		// Container for entering personal weight record lower body
-		HBox lowerBodyPRContainer = new HBox();
-		Label lowerBodyPRLabel = new Label("Lower Body PR Goal");
-		HBox.setMargin(lowerBodyPRLabel, new Insets(10, 10, 10, 10));
-		TextField lowerBodyPRTextfield = new TextField();
-		Label unitsLabel2 = new Label("lbs");
-		HBox.setMargin(unitsLabel2, new Insets(10,10,10,10));
-		HBox.setMargin(lowerBodyPRTextfield, new Insets(10, 10, 10, 10));
-		lowerBodyPRContainer.getChildren().addAll(lowerBodyPRLabel, lowerBodyPRTextfield, unitsLabel2);
+		HBox intensityGoalContainer = new HBox();
+		Label intensityGoalLabel = new Label("Intensity Goal: ");
+		HBox.setMargin(intensityGoalLabel, new Insets(10, 10, 10, 10));
+		ChoiceBox<String> intensityGoalChoiceBox = new ChoiceBox<String>(); // add padding to the ChoiceBox
+		HBox.setMargin(intensityGoalChoiceBox, new Insets(10, 10, 10, 10));
+		intensityGoalChoiceBox.getItems().add("Easy");
+		intensityGoalChoiceBox.getItems().add("Medium");
+		intensityGoalChoiceBox.getItems().add("Hard");
+		HBox.setMargin(intensityGoalChoiceBox, new Insets(10, 10, 10, 10));
+		intensityGoalContainer.getChildren().addAll(intensityGoalLabel, intensityGoalChoiceBox);
 
 		Button submitGoals = new Button("Done");
 		VBox.setMargin(submitGoals, new Insets(10, 10, 10, 10));
-		workoutGoalsContainer.getChildren().addAll(durationGoalContainer, targetWeightContainer, upperBodyPRContainer,
-				lowerBodyPRContainer, submitGoals);
+		workoutGoalsContainer.getChildren().addAll(durationGoalContainer, targetWeightContainer, calorieGoalContainer,
+				intensityGoalContainer, submitGoals);
 
 		workoutGoalsContainer.getChildren().add(userErrorLabel);
 
@@ -322,7 +324,7 @@ public class WorkoutAppController {
 		submitGoals.setOnAction(doneEvent -> {
 			try {
 				calculateGoals(returnUserScene, viewUser, durationTextfield, targetWeightTextfield,
-						upperBodyPRTextfield, lowerBodyPRTextfield);
+						calorieGoalTextfield, intensityGoalChoiceBox);
 			} catch (InvalidEntryException e) {
 				userErrorLabel.setText(e.getMessage());
 			}

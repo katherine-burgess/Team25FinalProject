@@ -75,7 +75,10 @@ public class User {
 		
 		// check if the instance variable is null
 		if (goals != null) {
-			workoutStats.compareTo(goals); // will compare newly entered data to the goals (if user has entered goals
+			workoutStats.compareTo(goals); // will compare newly entered data to the goals (if user has entered goals)
+			if (workoutStats.compareTo(goals) == true) {
+				// print out achievement to the user
+			}
 		}
 		
 		// increment static variable
@@ -88,11 +91,11 @@ public class User {
 
 	// This method will create a new Goal Component
 	// This method will take in a goalComponent
-	public void logGoals(String duration, String weight, String upperBody, String lowerBody)
+	public void logGoals(String duration, String weight, String calorie, String intensity)
 			throws InvalidEntryException {
 
 		// create a new goal component and save in instance variable
-		goals = new GoalComponent(duration, weight, upperBody, lowerBody);
+		goals = new GoalComponent(duration, weight, calorie, intensity);
 
 		// check if the instance variable is null
 		if (workoutStats != null) {
