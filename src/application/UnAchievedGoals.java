@@ -15,7 +15,6 @@ public class UnAchievedGoals extends GoalComponent {
 
 	// This method will count the number of goals the user is still working on. 
 	public int unAchievedCount() {
-		numOfUnachieved = super(getCount())
 		return numOfUnachieved;
 	}
 	
