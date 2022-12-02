@@ -41,7 +41,7 @@ public class WorkoutAppController {
 
 	// Get a randomly generated quote and returns the string at the random index
 	// https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
-	public static String getRandomQuote() {
+	public String getRandomQuote() {
 		String[] quoteArray = new String[] { "Progress, not perfection.",
 				"Find your joy.", "This is the moment to begin.",
 				"Goal setting is the secret to a compelling future." };
@@ -132,6 +132,7 @@ public class WorkoutAppController {
 		boolean error = false;
 		try {
 			// associate the workout stats with the user
+			
 			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
 					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
 

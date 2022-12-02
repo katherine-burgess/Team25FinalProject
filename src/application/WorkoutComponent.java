@@ -20,6 +20,9 @@ public class WorkoutComponent {
 	private double weight;
 	
 
+	public WorkoutComponent() {
+		
+	}
 	
 	// This constructor will check the user input for possible errors, if no errors
 	// in input the instance variables will be set.
