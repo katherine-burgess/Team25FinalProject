@@ -4,10 +4,7 @@ public class Duration extends WorkoutComponent{
 
 	private long length;
 	
-	public Duration(String dur, String calories, String weight, String intensity, String type)
-			throws InvalidEntryException {
-		super(dur, calories, weight, intensity, type);
-		// TODO Auto-generated constructor stub
+	public Duration() throws InvalidEntryException {
 	}
 
 	public void setLength(String duration) throws InvalidEntryException {

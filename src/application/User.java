@@ -67,6 +67,7 @@ public class User {
 	public void logWorkout(String calories, String duration, String intensity, String type, String newWeight)
 			throws InvalidEntryException {
 		Duration dur = new Duration();
+		dur.setLength(duration);
 		workoutStats = new WorkoutComponent(duration, calories, newWeight, intensity, type);
 		
 		// add new workout to workout history
