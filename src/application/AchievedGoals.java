@@ -16,13 +16,14 @@ public class AchievedGoals extends GoalComponent {
 	
 	public AchievedGoals(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
 		super(duration, weight, upperBody, lowerBody);
-
 	}
 	
-	
+	public AchievedGoals(GoalComponent goals) {
+		super(goals);
+	}
 	// this method will count the number of achieved goals
 	public int countAchieved() {
-		numOfAchieved++;
+		numOfAchieved = goalsAchieved.size();
 		return numOfAchieved;
 	}
 	
@@ -34,5 +35,9 @@ public class AchievedGoals extends GoalComponent {
 			return;
 		}
 		
+		goalsAchieved.add(goal);
+	}
+	public ArrayList<GoalComponent> getAchievedGoals(){
+		return new ArrayList<GoalComponent> (goalsAchieved);
 	}
 }

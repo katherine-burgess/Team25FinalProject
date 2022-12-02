@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+
 /**
  * This class will take in the user's goals and save them. If the user achieves a goal, the goal will 
  * be saved into an ArrayList of achieved goals. This class will keep count of how many goals the user 
@@ -16,8 +18,16 @@ public class GoalComponent {
 	private String intensityGoal;
 	private double calorieGoal;
 	private String goals;
+	private ArrayList<GoalComponent> achievedGoals;
+	private int numAchieved = 0;
 
-
+	public GoalComponent(GoalComponent goalList) {
+		achievedGoals = new ArrayList<GoalComponent>();
+	}
+	
+	public int getAchieved() {
+		return numAchieved;
+	}
 	// This constructor takes in the four goal components and validates the input
 	public GoalComponent(String duration, String weight, String calorie, String intensity) throws InvalidEntryException {
 		try {
@@ -66,6 +76,11 @@ public class GoalComponent {
 				+ "Intensity Goal: " + getIntensityGoal() + '\n' + "Calories Burned Goal: " + getCalorieGoal() + " calories ";
 
 		return goals;
+	}
+
+	public void compareTo(WorkoutComponent workoutStats) {
+		
+		
 	}
 
 }

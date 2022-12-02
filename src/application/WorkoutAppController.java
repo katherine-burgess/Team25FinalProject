@@ -17,7 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * This class will control the scene changes of the application.
+ * This class will control all of the scene changes of the application.
  * 
  * @author CS219-user Katie Burgess
  *
@@ -31,13 +31,13 @@ public class WorkoutAppController {
 	@FXML
 	private ChoiceBox<String> chooseUserChoiceBox;
 
-	Label userErrorLabel = new Label();
+	private Label userErrorLabel = new Label();
 	
-	Label printGoalsLabel = new Label();
+	private Label printGoalsLabel = new Label();
 
-	Label userGoalLabel = new Label();
+	private Label userGoalLabel = new Label();
 	
-	Label userWorkoutLabel = new Label();
+	private Label userWorkoutLabel = new Label();
 
 	// Get a randomly generated quote and returns the string at the random index
 	// https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
@@ -47,11 +47,13 @@ public class WorkoutAppController {
 				"Goal setting is the secret to a compelling future." };
 		int rndQuote = new Random().nextInt(quoteArray.length);
 		return quoteArray[rndQuote];
-		// this function could be placed in a new class (inheritance call)
+		// this function could be placed in a new class 
 	}
 
 	/**
-	 *  This method will get the user's workout history. 
+	 *  This method will get the user's workout history. If the user hasn't previously entered 
+	 *  any workout logs, a message will be printed to the user on the GUI. If the user has logged previous 
+	 *  workouts, the user will be able to see their history.
 	 *  
 	 * @param event
 	 * @param returnUserScene the current user's home page
@@ -143,9 +145,8 @@ public class WorkoutAppController {
 	}
 
 	/**
-	 * This method will return the user's goals and print the goals to the user.
-	 * This method will create a new Goal Component Object, and check to make sure
-	 * that the user has entered a number.
+	 * This method will take the user's input from the GUI and print the goals to the user. The method will 
+	 * check if the user has entered a number. If not an error message will be shown.
 	 * 
 	 * @param returnUserScene
 	 * @param viewUser
@@ -243,7 +244,7 @@ public class WorkoutAppController {
 
 		workoutStatsContainer.getChildren().add(userErrorLabel);
 
-		// when user is done inputting stats, return to user's home page
+		// when user is done inputting statistics, return to user's home page
 		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, viewUser, caloriesTextfield,
 				durationTextfield, workoutIntensityChoiceBox, workoutTypeChoiceBox, weightTextfield));
 
@@ -258,13 +259,13 @@ public class WorkoutAppController {
 	 * 
 	 * @param event
 	 * @param returnUserScene
-	 * @param viewUser
+	 * @param viewUser 
 	 */
 	void getGoalScene(ActionEvent event, Scene returnUserScene, User viewUser) {
 
+		// Set the title of the scene based on the user
 		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Goals");
 
-		// main container
 		VBox workoutGoalsContainer = new VBox();
 
 		// User can enter goals for target body weight, duration, personal weight record
@@ -301,7 +302,7 @@ public class WorkoutAppController {
 		
 		calorieGoalContainer.getChildren().addAll(calorieGoalLabel, calorieGoalTextfield, unitsLabel1);
 
-		// Container for entering personal weight record lower body
+		// Container for entering intensity goal
 		HBox intensityGoalContainer = new HBox();
 		Label intensityGoalLabel = new Label("Intensity Goal: ");
 		HBox.setMargin(intensityGoalLabel, new Insets(10, 10, 10, 10));
@@ -339,15 +340,14 @@ public class WorkoutAppController {
 	 * Welcome Page ChoiceBox. Depending on the choice, the user can generate a new
 	 * user that will be added to the ChoiceBox for later entry or sign in as a previous user.
 	 * 
-	 * @param event
+	 * @param event 
 	 */
 
 	@FXML
 	void chooseUser(ActionEvent event) {
 		Scene mainScene = applicationStage.getScene();
 
-		String inspirationQuote = getRandomQuote();
-		inspirationQuoteLabel.setText(inspirationQuote);
+		inspirationQuoteLabel.setText(getRandomQuote());
 
 		// Get the input from the user
 		String user = chooseUserChoiceBox.getValue();
@@ -387,8 +387,6 @@ public class WorkoutAppController {
 			User viewUser = new User(chooseUserChoiceBox.getValue());
 			
 			// Creates a new workout history for the user
-			// this does get reset to zero when you log out ( needs to be fixed so user doesn't lose their history 
-			// after pressing the log out button
 			viewUser.newHistory();
 
 			// will generate the returning user welcome page
@@ -411,8 +409,7 @@ public class WorkoutAppController {
 			HBox.setMargin(logWorkoutLabel, new Insets(10, 10, 10, 10));
 			Button doneButton = new Button("Enter Here");
 			HBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
-			doneButton.setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser));
-
+			doneButton.setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser)); 
 			workoutContainer.getChildren().addAll(logWorkoutLabel, doneButton);
 
 			// Container for workout goals
@@ -430,14 +427,13 @@ public class WorkoutAppController {
 			VBox.setMargin(printGoalsLabel, new Insets(0,0,0,10));
 			VBox.setMargin(userGoalLabel, new Insets(5,0,0,10));
 
-			
-			
+			// User can see previous workout history 
 			Button seeWorkoutsButton = new Button("See previous workouts");
 			VBox.setMargin(seeWorkoutsButton, new Insets(10, 10, 10, 10));
 			seeWorkoutsButton.setOnAction(seeWorkoutEvent -> showLog(event, returnUserScene, viewUser));
 			returnUserContainer.getChildren().add(seeWorkoutsButton);
 			
-			
+			// Allows the user to log out of their account and return to the mainScene
 			Button logOutButton = new Button("Log Out");
 			VBox.setMargin(logOutButton, new Insets(10, 10, 10, 10));
 			logOutButton.setOnAction(logOutEvent -> applicationStage.setScene(mainScene));

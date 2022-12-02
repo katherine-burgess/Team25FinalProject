@@ -91,7 +91,6 @@ public class WorkoutComponent extends User {
 
 	// This method will compare the user's newest workout statistics to their goals.
 	// If a goal is met, method will return true. If no goal is met, the method will return false.
-	
 	public boolean compareTo(GoalComponent goals) {;
 		if (getDuration() >= (goals.getDurationGoal())) {
 			System.out.println("Duration Goal has been met! " + getDuration());
