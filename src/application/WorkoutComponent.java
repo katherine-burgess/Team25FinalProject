@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author CS219-user Katie Burgess
  *
  */
-public class WorkoutComponent extends User {
+public class WorkoutComponent {
 	// instance variables
 	private String workoutType;
 	private long duration;
@@ -20,9 +20,6 @@ public class WorkoutComponent extends User {
 	private double weight;
 	
 
-	public WorkoutComponent(String userName) {
-		super(userName);
-	}
 	
 	// This constructor will check the user input for possible errors, if no errors
 	// in input the instance variables will be set.
