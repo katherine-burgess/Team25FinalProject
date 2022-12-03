@@ -92,12 +92,10 @@ public class WorkoutAppController {
 	 * 
 	 * @param mainScene 
 	 * @param newUserTextfield string value entered by the user
+	 * @param newUser 
 	 */
-	void setNewUser(Scene mainScene, TextField newUserTextfield) {
+	void setNewUser(Scene mainScene, TextField newUserTextfield, User newUser) {
 		userErrorLabel.setText(" ");
-
-		// creates a new user object
-		User newUser = new User(" ");
 
 		// validate that the user has entered a name
 		String errorMessage = newUser.setName(newUserTextfield.getText());
@@ -253,8 +251,8 @@ public class WorkoutAppController {
 
 	@FXML
 	void chooseUser(ActionEvent event) {
+		
 		Scene mainScene = applicationStage.getScene();
-
 		inspirationQuoteLabel.setText(getRandomQuote());
 
 		// Get the input from the user
@@ -263,27 +261,14 @@ public class WorkoutAppController {
 		// Change the scene to add a new user to the ChoiceBox
 		if (user.equals("Add a User")) {
 			applicationStage.setTitle("Get Fit");
-
+			User nu = new User();
+			
 			VBox newUserContainer = new VBox();
-
-			HBox newUserTitle = new HBox();
-			Label newUserLabel = new Label("Add a New User");
-			HBox.setMargin(newUserLabel, new Insets(10,10,10,10));
-			newUserTitle.getChildren().add(newUserLabel);
-
-			// Container for entering user name
-			HBox userNameContainer = new HBox();
-			Label userNameLabel = new Label("Enter New Username:");
-			HBox.setMargin(userNameLabel, new Insets(10,10,10,10));
-			TextField newUserTextfield = new TextField();
-			HBox.setMargin(newUserTextfield, new Insets(10,10,10,10));
-			userNameContainer.getChildren().addAll(userNameLabel, newUserTextfield);
-
 			Button doneButton = new Button("Enter Here");
 			VBox.setMargin(doneButton, new Insets(10,10,10,10));
-			doneButton.setOnAction(doneEvent -> setNewUser(mainScene, newUserTextfield));
+			doneButton.setOnAction(doneEvent -> setNewUser(mainScene, nu.getNewUserTextfield(), nu));
 
-			newUserContainer.getChildren().addAll(newUserTitle, userNameContainer, doneButton);
+			newUserContainer.getChildren().addAll(nu.setUserTitle(), nu.setUserNameContainer(), doneButton);
 
 			newUserContainer.getChildren().add(userErrorLabel);
 			VBox.setMargin(userErrorLabel, new Insets(10,10,10,10));
@@ -291,20 +276,15 @@ public class WorkoutAppController {
 			applicationStage.setScene(addUserScene); // places the new scene on the stage
 
 		} else {
-
 			User viewUser = new User(chooseUserChoiceBox.getValue());
 			// Creates a new workout history for the user
 			viewUser.newHistory();
 
-			// will generate the returning user welcome page
 			VBox returnUserContainer = new VBox();
-
-			// Title changes based on the user that is entered
 			applicationStage.setTitle(user + "'s Get Fit");
 
 			Scene returnUserScene = new Scene(returnUserContainer);
-			Label returnUserLabel = new Label("Welcome " + user + " !"); // this will change will change based on what
-																			// user is chosen
+			Label returnUserLabel = new Label("Welcome " + user + " !"); 
 			VBox.setMargin(returnUserLabel, new Insets(10, 10, 10, 10));
 			Label activityLabel = new Label("How were you active today?");
 			VBox.setMargin(activityLabel, new Insets(10, 10, 10, 10));

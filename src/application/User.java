@@ -4,6 +4,7 @@ package application;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
 /**
@@ -22,6 +23,7 @@ public class User {
 	private WorkoutHistory history;
 	private Button goalsButton;
 	private Button doneButton;
+	private TextField newUserTextfield;
 
 	private static int numWorkouts = 0;
 	
@@ -69,7 +71,34 @@ public class User {
 	public Button getGoalsButton() {
 		return goalsButton;
 	}
+	
+	// This method creates a container for new user name label
+	public HBox setUserTitle() {
+		HBox newUserTitle = new HBox();
+		Label newUserLabel = new Label("Add a New User");
+		HBox.setMargin(newUserLabel, new Insets(10,10,10,10));
+		newUserTitle.getChildren().add(newUserLabel);
+		
+		return newUserTitle;
+	}
 
+	// This method creates a container for a new user to set a username
+	public HBox setUserNameContainer() {
+		// Container for entering user name
+		HBox userNameContainer = new HBox();
+		Label userNameLabel = new Label("Enter New Username:");
+		HBox.setMargin(userNameLabel, new Insets(10,10,10,10));
+		newUserTextfield = new TextField();
+		HBox.setMargin(newUserTextfield, new Insets(10,10,10,10));
+		userNameContainer.getChildren().addAll(userNameLabel, newUserTextfield);
+		
+		return userNameContainer;
+	}
+	
+	public TextField getNewUserTextfield() {
+		return newUserTextfield;
+	}
+	
 	// This method checks if the user name is an alphabetical letter
 	public String setName(String nameAsString) {
 		String errorMessage = " ";
@@ -118,7 +147,6 @@ public class User {
 		if (goals != null) {
 			if (workoutStats.compareTo(goals) == true) {
 				// print out achievement to the user
-				
 			}
 		}
 		// increment static variable
