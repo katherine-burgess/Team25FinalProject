@@ -55,8 +55,8 @@ public class WorkoutAppController {
 	 *  any workout logs, a message will be printed to the user on the GUI. If the user has logged previous 
 	 *  workouts, the user will be able to see their history.
 	 *  
-	 * @param event
-	 * @param returnUserScene the current user's home page
+	 * @param event an Action Event that occurs when the user presses the exit button
+	 * @param returnUserScene the current user's main welcome scene
 	 * @param viewUser the current user 
 	 */
 	void showLog( ActionEvent event, Scene returnUserScene, User viewUser) {
@@ -90,8 +90,8 @@ public class WorkoutAppController {
 	 * validate that the user name is alphabetic, if the user has entered a proper
 	 * user name the application will add the new user to the ChoiceBox.
 	 * 
-	 * @param mainScene
-	 * @param newUserTextfield
+	 * @param mainScene 
+	 * @param newUserTextfield string value entered by the user
 	 */
 	void setNewUser(Scene mainScene, TextField newUserTextfield) {
 		userErrorLabel.setText(" ");
@@ -117,13 +117,13 @@ public class WorkoutAppController {
 	 * if the user has entered a number, if not the GUI will return a specific error message to the user. If there are
 	 * no error's in input the scene will change back to the user's main welcome screen.
 	 * 
-	 * @param returnUserScene
-	 * @param viewUser
-	 * @param caloriesTextfield
-	 * @param durationTextfield
-	 * @param workoutIntensityChoiceBox
-	 * @param workoutTypeChoiceBox
-	 * @param weightTextfield
+	 * @param returnUserScene the current user's main welcome scene
+	 * @param viewUser the current user
+	 * @param caloriesTextfield a string value entered by the user
+	 * @param durationTextfield a string value entered by the user
+	 * @param workoutIntensityChoiceBox a string value entered by the user
+	 * @param workoutTypeChoiceBox a string value entered by the user
+	 * @param weightTextfield a string value entered by the user
 	 */
 	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield,
 			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox,
@@ -150,13 +150,12 @@ public class WorkoutAppController {
 	 * This method will take the user's input from the GUI and print the goals to the user. The method will 
 	 * check if the user has entered a number. If not an error message will be shown.
 	 * 
-	 * @param returnUserScene
-	 * @param viewUser
-	 * @param durationTextfield
-	 * @param targetWeightTextfield
-	 * @param upperBodyPRTextfield
-	 * @param lowerBodyPRTextfield
-	 * @throws InvalidEntryException
+	 * @param returnUserScene the returning user's main welcome scene
+	 * @param viewUser the current user
+	 * @param durationTextfield string value entered by the user 
+	 * @param targetWeightTextfield string value entered by the user
+	 * @param calorieGoalTextfield string value entered by the user
+	 * @throws InvalidEntryException catches if the user enters anything not numerical
 	 */
 	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield,
 			TextField targetWeightTextfield, TextField calorieGoalTextfield)
@@ -179,9 +178,9 @@ public class WorkoutAppController {
 	 * their workout statistics. This method will create the containers for user
 	 * input.
 	 * 
-	 * @param event
-	 * @param returnUserScene
-	 * @param viewUser 
+	 * @param event an Action Event that occurs when the user presses the log workout button
+	 * @param returnUserScene the returning user's main welcome scene
+	 * @param viewUser the current user
 	 */
 	void getWorkoutScene(ActionEvent event, Scene returnUserScene, User viewUser) {
 
@@ -212,9 +211,9 @@ public class WorkoutAppController {
 	 * This method generates the scene change for goal input. The user will be able
 	 * to enter in their workout goals onto the GUI interface.
 	 * 
-	 * @param event holds the 
-	 * @param returnUserScene
-	 * @param viewUser 
+	 * @param event an Action Event that occurs when the user presses submit goals button
+	 * @param returnUserScene the returning user's main welcome scene
+	 * @param viewUser the current user
 	 */
 	void getGoalScene(ActionEvent event, Scene returnUserScene, User viewUser) {
 
