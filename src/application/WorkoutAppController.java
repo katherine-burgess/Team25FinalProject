@@ -223,56 +223,10 @@ public class WorkoutAppController {
 		VBox workoutGoalsContainer = new VBox();
 		
 		SetGoalsScene gs = new SetGoalsScene();
-//		// User can enter goals for target body weight, duration, personal weight record
-//		// for upper and lower body
-//
-//		// Container for entering duration target goals
-//		HBox durationGoalContainer = new HBox();
-//		Label durationGoalLabel = new Label("Workout Duration Goal: ");
-//		HBox.setMargin(durationGoalLabel, new Insets(10, 10, 10, 10));
-//		TextField durationTextfield = new TextField();
-//		HBox.setMargin(durationTextfield, new Insets(10, 10, 10, 10));
-//		Label durationMinLabel = new Label("minutes");
-//		HBox.setMargin(durationMinLabel, new Insets(10, 10, 10, 10));
-//		durationGoalContainer.getChildren().addAll(durationGoalLabel, durationTextfield, durationMinLabel);
-//
-//		// Container for entering target body weight
-//		HBox targetWeightContainer = new HBox();
-//		Label targetWeightLabel = new Label("Target Weight Goal: ");
-//		HBox.setMargin(targetWeightLabel, new Insets(10, 10, 10, 10));
-//		TextField targetWeightTextfield = new TextField();
-//		HBox.setMargin(targetWeightTextfield, new Insets(10, 10, 10, 10));
-//		Label unitsLabel = new Label("lbs");
-//		HBox.setMargin(unitsLabel, new Insets(10,10,10,10));
-//		targetWeightContainer.getChildren().addAll(targetWeightLabel, targetWeightTextfield, unitsLabel);
-//
-//		// Container for entering the number of calories burned goal
-//		HBox calorieGoalContainer = new HBox();
-//		Label calorieGoalLabel = new Label("Calories Burned Goal: ");
-//		HBox.setMargin(calorieGoalLabel, new Insets(10, 10, 10, 10));
-//		TextField calorieGoalTextfield = new TextField();
-//		HBox.setMargin(calorieGoalTextfield, new Insets(10, 10, 10, 10));
-//		Label unitsLabel1 = new Label("calories");
-//		HBox.setMargin(unitsLabel1, new Insets(10,10,10,10));
-//		
-//		calorieGoalContainer.getChildren().addAll(calorieGoalLabel, calorieGoalTextfield, unitsLabel1);
-//
-//		// Container for entering intensity goal
-//		HBox intensityGoalContainer = new HBox();
-//		Label intensityGoalLabel = new Label("Intensity Goal: ");
-//		HBox.setMargin(intensityGoalLabel, new Insets(10, 10, 10, 10));
-//		ChoiceBox<String> intensityGoalChoiceBox = new ChoiceBox<String>(); // add padding to the ChoiceBox
-//		HBox.setMargin(intensityGoalChoiceBox, new Insets(10, 10, 10, 10));
-//		intensityGoalChoiceBox.getItems().add("Easy");
-//		intensityGoalChoiceBox.getItems().add("Medium");
-//		intensityGoalChoiceBox.getItems().add("Hard");
-//		HBox.setMargin(intensityGoalChoiceBox, new Insets(10, 10, 10, 10));
-//		intensityGoalContainer.getChildren().addAll(intensityGoalLabel, intensityGoalChoiceBox);
-
+		
 		Button submitGoals = new Button("Done");
 		VBox.setMargin(submitGoals, new Insets(10, 10, 10, 10));
-		workoutGoalsContainer.getChildren().addAll(gs.getDurationGoalTextfield(), gs.getWeightGoalTextfield(), gs.getCalorieGoalTextfield(), submitGoals);
-
+		workoutGoalsContainer.getChildren().addAll(gs.setDurationGoal(), gs.setTargetWeight(), gs.setCalorieGoal(), submitGoals);
 		workoutGoalsContainer.getChildren().add(userErrorLabel);
 
 		// Validates and Changes Scene if the user enters proper input
