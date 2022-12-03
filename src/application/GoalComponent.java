@@ -15,7 +15,6 @@ public class GoalComponent {
 	// Instance Variables
 	private double targetWeight;
 	private long durationGoal;
-	private String intensityGoal;
 	private double calorieGoal;
 	private String goals;
 	private ArrayList<GoalComponent> achievedGoals;
@@ -29,12 +28,11 @@ public class GoalComponent {
 		return numAchieved;
 	}
 	// This constructor takes in the four goal components and validates the input
-	public GoalComponent(String duration, String weight, String calorie, String intensity) throws InvalidEntryException {
+	public GoalComponent(String duration, String weight, String calorie) throws InvalidEntryException {
 		try {
 			this.durationGoal = Long.parseLong(duration);
 			targetWeight = Double.parseDouble(weight);
 			calorieGoal = Double.parseDouble(calorie);
-			intensityGoal = intensity;
 
 			if (this.durationGoal < 0 || this.durationGoal > 300) {
 				throw new InvalidEntryException(
@@ -65,15 +63,11 @@ public class GoalComponent {
 		return calorieGoal;
 	}
 
-	public String getIntensityGoal() {
-		return intensityGoal;
-	}
-
 
 	// Will create a string containing all of the inputed goals
 	public String toString() {
 		goals = "Duration: " + getDurationGoal() + " minutes " + '\n' + "Target Weight: " + getTargetWeight() + " lbs " + '\n'
-				+ "Intensity Goal: " + getIntensityGoal() + '\n' + "Calories Burned Goal: " + getCalorieGoal() + " calories ";
+				+ '\n' + "Calories Burned Goal: " + getCalorieGoal() + " calories ";
 
 		return goals;
 	}

@@ -90,7 +90,7 @@ public class User {
 			throws InvalidEntryException {
 
 		// create a new goal component and save in instance variable
-		goals = new GoalComponent(duration, weight, calorie, intensity);
+		goals = new GoalComponent(duration, weight, calorie);
 
 		// check if the instance variable is null
 		if (workoutStats != null) {
