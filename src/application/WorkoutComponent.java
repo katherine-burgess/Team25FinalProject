@@ -100,9 +100,6 @@ public class WorkoutComponent {
 		} else if (getCalories() > goals.getCalorieGoal()) {
 			System.out.println("Calorie Goal has been achieved!");
 			return true;
-		} else if (getIntensity() == goals.getIntensityGoal()) {
-			System.out.println("Intensity Goal has been achieved");
-			return true;
 		}
 	
 		return false;

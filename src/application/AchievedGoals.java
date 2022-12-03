@@ -8,19 +8,12 @@ import java.util.ArrayList;
  * @author CS219-user
  *
  */
-public class AchievedGoals extends GoalComponent {
+public class AchievedGoals{
 
 	private int numOfAchieved = 0;
 	private ArrayList<GoalComponent> goalsAchieved;
 	
 	
-	public AchievedGoals(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
-		super(duration, weight, upperBody, lowerBody);
-	}
-	
-	public AchievedGoals(GoalComponent goals) {
-		super(goals);
-	}
 	// this method will count the number of achieved goals
 	public int countAchieved() {
 		numOfAchieved = goalsAchieved.size();
