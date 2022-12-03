@@ -68,7 +68,7 @@ public class User {
 			throws InvalidEntryException {
 		Duration dur = new Duration();
 		dur.setLength(duration);
-		workoutStats = new WorkoutComponent(duration, calories, newWeight, intensity, type);
+		
 		
 		// add new workout to workout history
 		history.addWorkout(workoutStats);
@@ -86,7 +86,7 @@ public class User {
 	
 
 	// This method will create a new Goal Component
-	public void logGoals(String duration, String weight, String calorie, String intensity)
+	public void logGoals(String duration, String weight, String calorie)
 			throws InvalidEntryException {
 
 		// create a new goal component and save in instance variable

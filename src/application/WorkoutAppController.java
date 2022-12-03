@@ -132,9 +132,10 @@ public class WorkoutAppController {
 		boolean error = false;
 		try {
 			// associate the workout stats with the user
-			
-			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
+			WorkoutComponent workout = new WorkoutComponent(caloriesTextfield.getText(), durationTextfield.getText(),
 					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
+//			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
+//					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
 
 		} catch (InvalidEntryException e) {
 			userErrorLabel.setText(e.getMessage()); // shows error message to the user
@@ -158,12 +159,11 @@ public class WorkoutAppController {
 	 * @throws InvalidEntryException
 	 */
 	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield,
-			TextField targetWeightTextfield, TextField calorieGoalTextfield, ChoiceBox<String> intensityGoalChoiceBox)
+			TextField targetWeightTextfield, TextField calorieGoalTextfield)
 			throws InvalidEntryException {
 		
 		boolean error = false;
-		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), calorieGoalTextfield.getText(),
-				intensityGoalChoiceBox.getValue());
+		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), calorieGoalTextfield.getText());
 
 		if (!error) {
 			applicationStage.setScene(returnUserScene);
@@ -180,7 +180,7 @@ public class WorkoutAppController {
 	 * 
 	 * @param event
 	 * @param returnUserScene
-	 * @param viewUser
+	 * @param viewUser 
 	 */
 	void getWorkoutScene(ActionEvent event, Scene returnUserScene, User viewUser) {
 
@@ -189,65 +189,18 @@ public class WorkoutAppController {
 		// main container
 		VBox workoutStatsContainer = new VBox();
 
-		// Container for choosing a workout type
-		HBox workoutTypeContainer = new HBox();
-		Label workoutTypeLabel = new Label("Workout Type : ");
-		HBox.setMargin(workoutTypeLabel, new Insets(10, 10, 10, 10));
-		ChoiceBox<String> workoutTypeChoiceBox = new ChoiceBox<String>(); // add padding to the ChoiceBox
-		HBox.setMargin(workoutTypeChoiceBox, new Insets(10, 10, 10, 10));
-		workoutTypeChoiceBox.getItems().add("Cardio");
-		workoutTypeChoiceBox.getItems().add("Weight Training");
-		workoutTypeContainer.getChildren().addAll(workoutTypeLabel, workoutTypeChoiceBox);
-
-		// Container for duration of workout
-		HBox durationContainer = new HBox();
-		Label durationLabel = new Label("Duration : ");
-		HBox.setMargin(durationLabel, new Insets(10, 10, 10, 10));
-		TextField durationTextfield = new TextField();
-		HBox.setMargin(durationTextfield, new Insets(10, 10, 10, 10));
-		Label durationMinLabel = new Label("minutes");
-		HBox.setMargin(durationMinLabel, new Insets(10, 10, 10, 10));
-		durationContainer.getChildren().addAll(durationLabel, durationTextfield, durationMinLabel);
-
-		// Container for workout intensity
-		HBox workoutIntensityContainer = new HBox();
-		Label workoutIntensityLabel = new Label("Intensity : ");
-		HBox.setMargin(workoutIntensityLabel, new Insets(10, 10, 10, 10));
-		ChoiceBox<String> workoutIntensityChoiceBox = new ChoiceBox<String>(); // add padding to the ChoiceBox
-		HBox.setMargin(workoutIntensityChoiceBox, new Insets(10, 10, 10, 10));
-		workoutIntensityChoiceBox.getItems().add("Easy");
-		workoutIntensityChoiceBox.getItems().add("Medium");
-		workoutIntensityChoiceBox.getItems().add("Hard");
-		workoutIntensityContainer.getChildren().addAll(workoutIntensityLabel, workoutIntensityChoiceBox);
-
-		// Container for calories burned
-		HBox caloriesContainer = new HBox();
-		Label caloriesBurnedLabel = new Label("Calories Burned :");
-		HBox.setMargin(caloriesBurnedLabel, new Insets(10, 10, 10, 10));
-		TextField caloriesTextfield = new TextField();
-		HBox.setMargin(caloriesTextfield, new Insets(10, 10, 10, 10));
-		Label caloriesLabel = new Label("calories");
-		HBox.setMargin(caloriesLabel, new Insets(10, 10, 10, 10));
-		caloriesContainer.getChildren().addAll(caloriesBurnedLabel, caloriesTextfield, caloriesLabel);
-
-		// Container for weight entry
-		HBox weightContainer = new HBox();
-		Label weightLabel = new Label("Weight :");
-		HBox.setMargin(weightLabel, new Insets(10, 10, 10, 10));
-		TextField weightTextfield = new TextField();
-		HBox.setMargin(weightTextfield, new Insets(10, 10, 10, 10));
-		weightContainer.getChildren().addAll(weightLabel, weightTextfield);
+		SetWorkoutScene ws = new SetWorkoutScene();
 
 		Button submitStats = new Button("Done");
 		VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
-		workoutStatsContainer.getChildren().addAll(workoutTypeContainer, durationContainer, workoutIntensityContainer,
-				caloriesContainer, weightContainer, submitStats);
+		workoutStatsContainer.getChildren().addAll(ws.setWorkoutType(), ws.setDuration(), ws.setIntensity(),
+				ws.setCalories(), ws.setWeight(), submitStats);
 
 		workoutStatsContainer.getChildren().add(userErrorLabel);
 
 		// when user is done inputting statistics, return to user's home page
-		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, viewUser, caloriesTextfield,
-				durationTextfield, workoutIntensityChoiceBox, workoutTypeChoiceBox, weightTextfield));
+		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, viewUser, ws.getCaloriesTextfield(),
+				ws.getDurationTextField(), ws.getIntensityChoiceBox(), ws.getWorkoutChoiceBox(), ws.getWeightTextfield()));
 
 		Scene workoutStatsScene = new Scene(workoutStatsContainer);
 		applicationStage.setScene(workoutStatsScene);
@@ -258,7 +211,7 @@ public class WorkoutAppController {
 	 * This method generates the scene change for goal input. The user will be able
 	 * to enter in their workout goals onto the GUI interface.
 	 * 
-	 * @param event
+	 * @param event holds the 
 	 * @param returnUserScene
 	 * @param viewUser 
 	 */
@@ -268,65 +221,65 @@ public class WorkoutAppController {
 		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Goals");
 
 		VBox workoutGoalsContainer = new VBox();
-
-		// User can enter goals for target body weight, duration, personal weight record
-		// for upper and lower body
-
-		// Container for entering duration target goals
-		HBox durationGoalContainer = new HBox();
-		Label durationGoalLabel = new Label("Workout Duration Goal: ");
-		HBox.setMargin(durationGoalLabel, new Insets(10, 10, 10, 10));
-		TextField durationTextfield = new TextField();
-		HBox.setMargin(durationTextfield, new Insets(10, 10, 10, 10));
-		Label durationMinLabel = new Label("minutes");
-		HBox.setMargin(durationMinLabel, new Insets(10, 10, 10, 10));
-		durationGoalContainer.getChildren().addAll(durationGoalLabel, durationTextfield, durationMinLabel);
-
-		// Container for entering target body weight
-		HBox targetWeightContainer = new HBox();
-		Label targetWeightLabel = new Label("Target Weight Goal: ");
-		HBox.setMargin(targetWeightLabel, new Insets(10, 10, 10, 10));
-		TextField targetWeightTextfield = new TextField();
-		HBox.setMargin(targetWeightTextfield, new Insets(10, 10, 10, 10));
-		Label unitsLabel = new Label("lbs");
-		HBox.setMargin(unitsLabel, new Insets(10,10,10,10));
-		targetWeightContainer.getChildren().addAll(targetWeightLabel, targetWeightTextfield, unitsLabel);
-
-		// Container for entering the number of calories burned goal
-		HBox calorieGoalContainer = new HBox();
-		Label calorieGoalLabel = new Label("Calories Burned Goal: ");
-		HBox.setMargin(calorieGoalLabel, new Insets(10, 10, 10, 10));
-		TextField calorieGoalTextfield = new TextField();
-		HBox.setMargin(calorieGoalTextfield, new Insets(10, 10, 10, 10));
-		Label unitsLabel1 = new Label("calories");
-		HBox.setMargin(unitsLabel1, new Insets(10,10,10,10));
 		
-		calorieGoalContainer.getChildren().addAll(calorieGoalLabel, calorieGoalTextfield, unitsLabel1);
-
-		// Container for entering intensity goal
-		HBox intensityGoalContainer = new HBox();
-		Label intensityGoalLabel = new Label("Intensity Goal: ");
-		HBox.setMargin(intensityGoalLabel, new Insets(10, 10, 10, 10));
-		ChoiceBox<String> intensityGoalChoiceBox = new ChoiceBox<String>(); // add padding to the ChoiceBox
-		HBox.setMargin(intensityGoalChoiceBox, new Insets(10, 10, 10, 10));
-		intensityGoalChoiceBox.getItems().add("Easy");
-		intensityGoalChoiceBox.getItems().add("Medium");
-		intensityGoalChoiceBox.getItems().add("Hard");
-		HBox.setMargin(intensityGoalChoiceBox, new Insets(10, 10, 10, 10));
-		intensityGoalContainer.getChildren().addAll(intensityGoalLabel, intensityGoalChoiceBox);
+		SetGoalsScene gs = new SetGoalsScene();
+//		// User can enter goals for target body weight, duration, personal weight record
+//		// for upper and lower body
+//
+//		// Container for entering duration target goals
+//		HBox durationGoalContainer = new HBox();
+//		Label durationGoalLabel = new Label("Workout Duration Goal: ");
+//		HBox.setMargin(durationGoalLabel, new Insets(10, 10, 10, 10));
+//		TextField durationTextfield = new TextField();
+//		HBox.setMargin(durationTextfield, new Insets(10, 10, 10, 10));
+//		Label durationMinLabel = new Label("minutes");
+//		HBox.setMargin(durationMinLabel, new Insets(10, 10, 10, 10));
+//		durationGoalContainer.getChildren().addAll(durationGoalLabel, durationTextfield, durationMinLabel);
+//
+//		// Container for entering target body weight
+//		HBox targetWeightContainer = new HBox();
+//		Label targetWeightLabel = new Label("Target Weight Goal: ");
+//		HBox.setMargin(targetWeightLabel, new Insets(10, 10, 10, 10));
+//		TextField targetWeightTextfield = new TextField();
+//		HBox.setMargin(targetWeightTextfield, new Insets(10, 10, 10, 10));
+//		Label unitsLabel = new Label("lbs");
+//		HBox.setMargin(unitsLabel, new Insets(10,10,10,10));
+//		targetWeightContainer.getChildren().addAll(targetWeightLabel, targetWeightTextfield, unitsLabel);
+//
+//		// Container for entering the number of calories burned goal
+//		HBox calorieGoalContainer = new HBox();
+//		Label calorieGoalLabel = new Label("Calories Burned Goal: ");
+//		HBox.setMargin(calorieGoalLabel, new Insets(10, 10, 10, 10));
+//		TextField calorieGoalTextfield = new TextField();
+//		HBox.setMargin(calorieGoalTextfield, new Insets(10, 10, 10, 10));
+//		Label unitsLabel1 = new Label("calories");
+//		HBox.setMargin(unitsLabel1, new Insets(10,10,10,10));
+//		
+//		calorieGoalContainer.getChildren().addAll(calorieGoalLabel, calorieGoalTextfield, unitsLabel1);
+//
+//		// Container for entering intensity goal
+//		HBox intensityGoalContainer = new HBox();
+//		Label intensityGoalLabel = new Label("Intensity Goal: ");
+//		HBox.setMargin(intensityGoalLabel, new Insets(10, 10, 10, 10));
+//		ChoiceBox<String> intensityGoalChoiceBox = new ChoiceBox<String>(); // add padding to the ChoiceBox
+//		HBox.setMargin(intensityGoalChoiceBox, new Insets(10, 10, 10, 10));
+//		intensityGoalChoiceBox.getItems().add("Easy");
+//		intensityGoalChoiceBox.getItems().add("Medium");
+//		intensityGoalChoiceBox.getItems().add("Hard");
+//		HBox.setMargin(intensityGoalChoiceBox, new Insets(10, 10, 10, 10));
+//		intensityGoalContainer.getChildren().addAll(intensityGoalLabel, intensityGoalChoiceBox);
 
 		Button submitGoals = new Button("Done");
 		VBox.setMargin(submitGoals, new Insets(10, 10, 10, 10));
-		workoutGoalsContainer.getChildren().addAll(durationGoalContainer, targetWeightContainer, calorieGoalContainer,
-				intensityGoalContainer, submitGoals);
+		workoutGoalsContainer.getChildren().addAll(gs.getDurationGoalTextfield(), gs.getWeightGoalTextfield(), gs.getCalorieGoalTextfield(), submitGoals);
 
 		workoutGoalsContainer.getChildren().add(userErrorLabel);
 
 		// Validates and Changes Scene if the user enters proper input
 		submitGoals.setOnAction(doneEvent -> {
 			try {
-				calculateGoals(returnUserScene, viewUser, durationTextfield, targetWeightTextfield,
-						calorieGoalTextfield, intensityGoalChoiceBox);
+				calculateGoals(returnUserScene, viewUser, gs.getDurationGoalTextfield(), gs.getWeightGoalTextfield(),
+						gs.getCalorieGoalTextfield());
 			} catch (InvalidEntryException e) {
 				userErrorLabel.setText(e.getMessage());
 			}
@@ -341,7 +294,7 @@ public class WorkoutAppController {
 	 * Welcome Page ChoiceBox. Depending on the choice, the user can generate a new
 	 * user that will be added to the ChoiceBox for later entry or sign in as a previous user.
 	 * 
-	 * @param event 
+	 * @param event holds the input from the ChoiceBox entered by the user
 	 */
 
 	@FXML

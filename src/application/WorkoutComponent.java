@@ -30,18 +30,15 @@ public class WorkoutComponent {
 	public WorkoutComponent(String dur, String calories, String weight, String intensity, String type)
 			throws InvalidEntryException {
 		try {
+			System.out.println(calories);
 			duration = Long.parseLong(dur);
 			caloriesBurned = Integer.parseInt(calories);
 			this.weight = Double.parseDouble(weight);
 			this.intensity = intensity;
 			workoutType = type;
 			
-
 			
-			if (duration < 0 || duration > 300) {
-				throw new InvalidEntryException(
-						String.format("Invalid workout duration entry. Enter a number between 0 and 300 minutes "));
-			}
+		
 
 			if (caloriesBurned < 0 || caloriesBurned > 1000) {
 				throw new InvalidEntryException(
@@ -55,12 +52,13 @@ public class WorkoutComponent {
 
 		} catch (NumberFormatException nfe) {
 			throw new InvalidEntryException(String.format("Invalid Workout Entry. Make sure to enter a number."));
-
+			
 		}
 	}
-
+	
+	// return the duration of workout in hours and minutes 
 	public long getDuration() {
-		return duration;
+		return 0;
 	}
 
 	public int getCalories() {
