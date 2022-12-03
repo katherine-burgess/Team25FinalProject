@@ -1,6 +1,10 @@
 
 package application;
 
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 
 /**
  * This class will generate a new user. Each new user object will contain methods for 
@@ -16,6 +20,8 @@ public class User {
 	private WorkoutComponent workoutStats;
 	private GoalComponent goals;
 	private WorkoutHistory history;
+	private Button goalsButton;
+	private Button doneButton;
 
 	private static int numWorkouts = 0;
 	
@@ -28,6 +34,40 @@ public class User {
 	public User(String newName) {
 		name = newName;
 
+	}
+	
+	// This method will create a container for workout statistics
+	public HBox setWorkoutContainer(){
+	
+		HBox workoutContainer = new HBox();
+		Label logWorkoutLabel = new Label("Log your new workout");
+		HBox.setMargin(logWorkoutLabel, new Insets(10, 10, 10, 10));
+		doneButton = new Button("Enter Here");
+		HBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
+		workoutContainer.getChildren().addAll(logWorkoutLabel, doneButton);
+		
+		return workoutContainer;
+	}
+	
+	public Button getDoneButton() {
+		return doneButton;
+	}
+	
+	// This method will create a container for workout goals
+	public HBox setGoalsContainer() {
+		
+		HBox workoutGoalsContainer = new HBox();
+		Label logGoalsLabel = new Label("Log your workout goals");
+		HBox.setMargin(logGoalsLabel, new Insets(10, 10, 10, 10));
+		goalsButton = new Button("Enter Goals Here");
+		HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
+		workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
+
+		return workoutGoalsContainer;
+	}
+	
+	public Button getGoalsButton() {
+		return goalsButton;
 	}
 
 	// This method checks if the user name is an alphabetical letter
@@ -57,6 +97,8 @@ public class User {
 	public String getName() {
 		return name;
 	}
+
+	
 
 	public WorkoutHistory newHistory() {
 		history = new WorkoutHistory();

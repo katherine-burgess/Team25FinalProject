@@ -173,6 +173,7 @@ public class WorkoutAppController {
 
 	}
 
+	
 	/**
 	 * This method will generate a scene change for the returning user to input
 	 * their workout statistics. This method will create the containers for user
@@ -293,7 +294,6 @@ public class WorkoutAppController {
 		} else {
 
 			User viewUser = new User(chooseUserChoiceBox.getValue());
-			
 			// Creates a new workout history for the user
 			viewUser.newHistory();
 
@@ -304,34 +304,17 @@ public class WorkoutAppController {
 			applicationStage.setTitle(user + "'s Get Fit");
 
 			Scene returnUserScene = new Scene(returnUserContainer);
-
 			Label returnUserLabel = new Label("Welcome " + user + " !"); // this will change will change based on what
 																			// user is chosen
 			VBox.setMargin(returnUserLabel, new Insets(10, 10, 10, 10));
 			Label activityLabel = new Label("How were you active today?");
 			VBox.setMargin(activityLabel, new Insets(10, 10, 10, 10));
 
-			// Container for logging workout
-			HBox workoutContainer = new HBox();
-			Label logWorkoutLabel = new Label("Log your new workout");
-			HBox.setMargin(logWorkoutLabel, new Insets(10, 10, 10, 10));
-			Button doneButton = new Button("Enter Here");
-			HBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
-			doneButton.setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser)); 
-			workoutContainer.getChildren().addAll(logWorkoutLabel, doneButton);
-
-			// Container for workout goals
-			HBox workoutGoalsContainer = new HBox();
-			Label logGoalsLabel = new Label("Log your workout goals");
-			HBox.setMargin(logGoalsLabel, new Insets(10, 10, 10, 10));
-			Button goalsButton = new Button("Enter Goals Here");
-			HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
-			goalsButton.setOnAction(goalsEvent -> getGoalScene(event, returnUserScene, viewUser));
-			workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
+			viewUser.getDoneButton().setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser)); 
+			viewUser.getGoalsButton().setOnAction(goalsEvent -> getGoalScene(event, returnUserScene, viewUser));
 			
-			
-			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, workoutContainer,
-					workoutGoalsContainer, printGoalsLabel, userGoalLabel);
+			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, viewUser.setWorkoutContainer(),
+					viewUser.setGoalsContainer(), printGoalsLabel, userGoalLabel);
 			VBox.setMargin(printGoalsLabel, new Insets(0,0,0,10));
 			VBox.setMargin(userGoalLabel, new Insets(5,0,0,10));
 
