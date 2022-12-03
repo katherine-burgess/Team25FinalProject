@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /** 
  * This class will keep count of the number of achieved goals the user has. 
  * 
- * @author CS219-user
+ * @author CS219-user Katie Burgess
  *
  */
 public class AchievedGoals{

@@ -6,6 +6,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
+/** 
+ * This class creates the containers for the workout scene. User's will be able to enter in their 
+ * numerical and ChoiceBox input based on their workout statistics. 
+ * 
+ * @author CS219-user Katie Burgess
+ *
+ */
 public class SetWorkoutScene {
 	
 	private ChoiceBox<String> workoutTypeChoiceBox;

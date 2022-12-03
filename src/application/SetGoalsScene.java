@@ -5,6 +5,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
+/**
+ * This class creates the containers for the entering goals scene. The Users will be able to enter
+ * their numerical goal input on the GUI. 
+ * 
+ * @author CS219-user Katie Burgess
+ *
+ */
 public class SetGoalsScene {
 	private TextField durationGoalTextfield;
 	private TextField targetWeightTextfield;

@@ -1,5 +1,12 @@
 package application;
 
+/**
+ * This class will take a Duration object and validate its input, the length of the duration will 
+ * be checked and converted into hours and minutes.
+ * 
+ * @author CS219-user Katie Burgess
+ *
+ */
 public class Duration extends WorkoutComponent{
 
 	private long length;

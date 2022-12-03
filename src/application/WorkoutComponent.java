@@ -38,8 +38,6 @@ public class WorkoutComponent {
 			workoutType = type;
 			
 			
-		
-
 			if (caloriesBurned < 0 || caloriesBurned > 1000) {
 				throw new InvalidEntryException(
 						String.format("Invalid calorie entry. Enter a number between 0 and 1000 calories "));
@@ -77,7 +75,7 @@ public class WorkoutComponent {
 		return weight;
 	}
 	
-
+	
 	// Takes users workout statistics and returns them as a string
 	public String toString() {
 		String workout = new String();

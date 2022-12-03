@@ -27,7 +27,7 @@ public class GoalComponent {
 	public int getAchieved() {
 		return numAchieved;
 	}
-	// This constructor takes in the four goal components and validates the input
+	// This constructor takes in the three goal components and validates the input
 	public GoalComponent(String duration, String weight, String calorie) throws InvalidEntryException {
 		try {
 			this.durationGoal = Long.parseLong(duration);
@@ -47,7 +47,7 @@ public class GoalComponent {
 			}
 
 		} catch (NumberFormatException e) {
-			throw new InvalidEntryException(String.format("Invalid Goal Entry. Make sure to enter a number."));
+			throw new InvalidEntryException(String.format("Invalid Goal Entry %d. Make sure to enter a number."));
 		}
 	}
 
@@ -62,7 +62,6 @@ public class GoalComponent {
 	public double getCalorieGoal() {
 		return calorieGoal;
 	}
-
 
 	// Will create a string containing all of the inputed goals
 	public String toString() {
