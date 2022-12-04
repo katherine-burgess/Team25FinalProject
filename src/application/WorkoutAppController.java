@@ -120,23 +120,16 @@ public class WorkoutAppController {
 	 * @param caloriesTextfield a string value entered by the user
 	 * @param durationTextfield a string value entered by the user
 	 * @param workoutIntensityChoiceBox a string value entered by the user
-	 * @param workoutTypeChoiceBox a string value entered by the user
-	 * @param weightTextfield a string value entered by the user
 	 */
 	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield,
-			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox,
-			ChoiceBox<String> workoutTypeChoiceBox, TextField weightTextfield) {
+			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox) {
 
 		boolean error = false;
 		try {
 			// associate the workout stats with the user
-			WorkoutComponent workout = new WorkoutComponent(caloriesTextfield.getText(), durationTextfield.getText(),
-					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
+			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
+					workoutIntensityChoiceBox.getValue());
 			
-			viewUser.logWorkout(workout);
-			
-//			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
-//					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
 
 		} catch (InvalidEntryException e) {
 			userErrorLabel.setText(e.getMessage()); // shows error message to the user
@@ -182,30 +175,44 @@ public class WorkoutAppController {
 	 * @param event an Action Event that occurs when the user presses the log workout button
 	 * @param returnUserScene the returning user's main welcome scene
 	 * @param viewUser the current user
+	 * @param typeChoiceBox 
 	 */
-	void getWorkoutScene(ActionEvent event, Scene returnUserScene, User viewUser) {
+	void getWorkoutScene(ActionEvent event, Scene returnUserScene, User viewUser, ChoiceBox<String> typeChoiceBox) {
 
-		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Workout Stats");
-
-		// main container
+		// main container and set a new scene
 		VBox workoutStatsContainer = new VBox();
-
 		SetWorkoutScene ws = new SetWorkoutScene();
-
-		Button submitStats = new Button("Done");
-		VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
-		workoutStatsContainer.getChildren().addAll(ws.setWorkoutType(), ws.setDuration(), ws.setIntensity(),
-				ws.setCalories(), ws.setWeight(), submitStats);
-
 		workoutStatsContainer.getChildren().add(userErrorLabel);
-
-		// when user is done inputting statistics, return to user's home page
-		submitStats.setOnAction(doneEvent -> calculateWorkout(returnUserScene, viewUser, ws.getCaloriesTextfield(),
-				ws.getDurationTextField(), ws.getIntensityChoiceBox(), ws.getWorkoutChoiceBox(), ws.getWeightTextfield()));
+		VBox.setMargin(userErrorLabel, new Insets(10,10,10,10));
+				
+		if (typeChoiceBox.getValue() == "Cardio") {
+			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " " + "Cardio Workout");
+			Button submitStats = new Button("Done");
+			VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
+			workoutStatsContainer.getChildren().addAll(ws.setDistance(), ws.setDuration(), ws.setCalories(), submitStats);
+			
+			submitStats.setOnAction(cardioEvent -> calculateCardio(returnUserScene, viewUser, ws.getDistance(), ws.getDurationTextField(), ws.getCaloriesTextfield()));
+			
+			
+		} else if (typeChoiceBox.getValue() == "Weight Training") {
+			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " " + "Strength Workout");
+			Button submitWeightStats = new Button("Done");
+			VBox.setMargin(submitWeightStats, new Insets(10, 10, 10, 10));
+			workoutStatsContainer.getChildren().addAll(ws.setCalories(),ws.setDuration(), ws.setIntensity(), submitWeightStats);
+			
+			submitWeightStats.setOnAction(weightEvent -> calculateWorkout(returnUserScene, viewUser, ws.getCaloriesTextfield(),
+				ws.getDurationTextField(), ws.getIntensityChoiceBox()));
+		}
 
 		Scene workoutStatsScene = new Scene(workoutStatsContainer);
 		applicationStage.setScene(workoutStatsScene);
 		
+	}
+
+	private Object calculateCardio(Scene returnUserScene, User viewUser, TextField distance,
+			TextField durationTextField, TextField caloriesTextfield) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/**
@@ -295,7 +302,10 @@ public class WorkoutAppController {
 			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, viewUser.setWorkoutContainer(),
 					viewUser.setGoalsContainer(), printGoalsLabel, userGoalLabel);
 			
-			viewUser.getDoneButton().setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser)); 
+			// This will change the scene for user to enter stats depending on the user's workout type choice
+			viewUser.getDoneButton().setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser, viewUser.getTypeChoiceBox())); 
+			
+			// This will change scene so user can enter goals
 			viewUser.getGoalsButton().setOnAction(goalsEvent -> getGoalScene(event, returnUserScene, viewUser));
 			
 

@@ -3,6 +3,7 @@ package application;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -24,6 +25,7 @@ public class User {
 	private Button goalsButton;
 	private Button doneButton;
 	private TextField newUserTextfield;
+	private ChoiceBox<String> workoutTypeChoiceBox;
 
 	private static int numWorkouts = 0;
 	
@@ -43,11 +45,19 @@ public class User {
 		HBox workoutContainer = new HBox();
 		Label logWorkoutLabel = new Label("Log your new workout");
 		HBox.setMargin(logWorkoutLabel, new Insets(10, 10, 10, 10));
+		workoutTypeChoiceBox = new ChoiceBox();
+		workoutTypeChoiceBox.getItems().add("Cardio");
+		workoutTypeChoiceBox.getItems().add("Weight Training");
+		HBox.setMargin(workoutTypeChoiceBox, new Insets(10,10,10,10));
 		doneButton = new Button("Enter Here");
 		HBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
-		workoutContainer.getChildren().addAll(logWorkoutLabel, doneButton);
+		workoutContainer.getChildren().addAll(logWorkoutLabel, workoutTypeChoiceBox, doneButton);
 		
 		return workoutContainer;
+	}
+	
+	public ChoiceBox<String> getTypeChoiceBox(){
+		return workoutTypeChoiceBox;
 	}
 	
 	public Button getDoneButton() {
@@ -132,12 +142,15 @@ public class User {
 	}
 	
 	
-	public void logWorkout(WorkoutComponent workout) {
+	public void logWorkout(String cal, String dur, String intense) throws InvalidEntryException {
+		System.out.println(stats);
+		stats = new WorkoutComponent(cal, dur, intense);
+		
 		// add new workout to workout history
-		history.addWorkout(workout);
+		history.addWorkout(stats);
 		
 		if (goals != null) {
-			if (workout.compareTo(goals) == true) {
+			if (stats.compareTo(goals) == true) {
 				System.out.println("Goal was achieved");
 			}
 		}
@@ -153,9 +166,9 @@ public class User {
 		goals = new GoalComponent(duration, weight, calorie);
 
 		// check if the instance variable is null
-//		if ( != null) {
-//			goals.compareTo(getStats());
-//		}
+		if ( stats != null) {
+			goals.compareTo(stats);
+		}
 	}
 
 	public String getGoals() {
@@ -169,6 +182,8 @@ public class User {
 	public int getNumWorkouts() {
 		return numWorkouts;
 	}
+
+	
 	
 
 }

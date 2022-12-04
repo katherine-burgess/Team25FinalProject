@@ -15,16 +15,13 @@ public class WorkoutComponent {
 	
 	// instance variables
 	private String workoutType;
-	private Duration duration;
+	private double duration;
 	private String intensity;
-	private Calories caloriesBurned;
+	private int caloriesBurned;
 	private double weight;
 	
 	private WorkoutComponent stats;
 	
-	public WorkoutComponent() {
-		// TODO Auto-generated constructor stub
-	}
 	
 	public WorkoutComponent(WorkoutComponent toCopy) {
 		if (toCopy != null) {
@@ -36,17 +33,11 @@ public class WorkoutComponent {
 		}
 	}
 	
-	public WorkoutComponent(String dur, String cal, String intense, String type, String lbs) throws InvalidEntryException {
+	public WorkoutComponent(String cal, String dur, String intense) throws InvalidEntryException {
 		try {
-			duration = new Duration();
-			duration.setLength(dur);
 			
-			caloriesBurned = new Calories();
-			caloriesBurned.setCalories(cal);
-			
-			weight = Double.parseDouble(lbs);
 			intensity = intense;
-			workoutType = type;
+		
 		
 			if (this.weight < 100 || this.weight > 300) {
 				throw new InvalidEntryException(
@@ -59,14 +50,7 @@ public class WorkoutComponent {
 		
 	}
 
-	// return the duration of workout in hours and minutes 
-	public Duration getDuration() { // this will be a privacy leak
-		return duration;
-	}
-
-	public Calories getCalories() { // this will be a privacy leak
-		return caloriesBurned;
-	}
+	
 
 	private String getIntensity() {
 		return intensity;
