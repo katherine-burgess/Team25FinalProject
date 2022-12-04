@@ -16,17 +16,9 @@ public class GoalComponent {
 	private double targetWeight;
 	private long durationGoal;
 	private double calorieGoal;
-	private String goals;
-	private ArrayList<GoalComponent> achievedGoals;
-	private int numAchieved = 0;
-
-	public GoalComponent(GoalComponent goalList) {
-		achievedGoals = new ArrayList<GoalComponent>();
-	}
 	
-	public int getAchieved() {
-		return numAchieved;
-	}
+	private GoalComponent goals;
+	
 	// This constructor takes in the three goal components and validates the input
 	public GoalComponent(String duration, String weight, String calorie) throws InvalidEntryException {
 		try {
@@ -51,6 +43,11 @@ public class GoalComponent {
 		}
 	}
 
+	// Copy constructor 
+	public GoalComponent(GoalComponent newGoal) {
+		goals = newGoal.goals;
+	}
+
 	public long getDurationGoal() {
 		return this.durationGoal;
 	}
@@ -63,16 +60,33 @@ public class GoalComponent {
 		return calorieGoal;
 	}
 
-	// Will create a string containing all of the inputed goals
-	public String toString() {
-		goals = "Duration: " + getDurationGoal() + " minutes " + '\n' + "Target Weight: " + getTargetWeight() + " lbs " + '\n'
-				+ '\n' + "Calories Burned Goal: " + getCalorieGoal() + " calories ";
-
+	
+	// This method will log the goals 
+	public void setGoals(GoalComponent newGoal) {
+		goals = new GoalComponent(newGoal);		
+	}
+	
+	public GoalComponent getGoals() {
 		return goals;
 	}
+	
 
-	public void compareTo(Workout workoutStats) {	
+//			// check if the instance variable is null
+//			if ( stats != null) {
+//				goals.compareTo(stats);
+//			}
+//		}
 		
+	// Will create a string containing all of the inputed goals
+	public String toString() {
+		String goal = "Duration: " + getDurationGoal() + " minutes " + '\n' + "Target Weight: " + getTargetWeight() + " lbs " + '\n'
+				+ "Calories Burned Goal: " + getCalorieGoal() + " calories ";
+
+		return goal;
 	}
+
+	
+
+	
 
 }

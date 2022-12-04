@@ -31,7 +31,7 @@ public class User {
 	
 	// need to add functionality to this constructor
 	public User() {
-		
+		name = " ";
 	}
 	
 	// This constructor sets the name of a new User
@@ -39,6 +39,36 @@ public class User {
 		name = value;
 	}
 
+	// This method checks if the user name is an alphabetical letter
+	public String setName(String nameAsString) {
+		String errorMessage = " ";
+		boolean validName = true;
+		
+		if (nameAsString == "") {
+			validName = false;
+			errorMessage = String.format("Your username cannot be blank, enter your name.");
+		}
+		// Check if the username is alphabetical
+		for (char n : nameAsString.toCharArray()) {
+			if (!Character.isAlphabetic(n)) {
+				validName = false;
+				errorMessage = String.format("Your username must use only letters", n);
+			} 
+		}
+		if (validName) {
+			name = nameAsString;	
+		}
+		
+		return errorMessage;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	// This part of the class will generate the containers for user scene changes 
+	
+	// This will generate the containers for returning user scene change
 	// This method will create a container for workout statistics
 	public HBox setWorkoutContainer(){
 	
@@ -81,6 +111,8 @@ public class User {
 		return goalsButton;
 	}
 	
+	// This generates the containers for generating a new user scene change on GUI
+	
 	// This method creates a container for new user name label
 	public HBox setUserTitle() {
 		HBox newUserTitle = new HBox();
@@ -105,36 +137,11 @@ public class User {
 	}
 	
 	// This method will get the new username textfield
-	public TextField getNewUserTextfield() {
+	public TextField setNewUserTextfield() {
 		return newUserTextfield;
 	}
 	
-	// This method checks if the user name is an alphabetical letter
-	public String setName(String nameAsString) {
-		String errorMessage = " ";
-		boolean validName = true;
-		
-		if (nameAsString == "") {
-			validName = false;
-			errorMessage = String.format("Your username cannot be blank, enter your name.");
-		}
-		// Check if the username is alphabetical
-		for (char n : nameAsString.toCharArray()) {
-			if (!Character.isAlphabetic(n)) {
-				validName = false;
-				errorMessage = String.format("Your username must use only letters", n);
-			} 
-		}
-		if (validName) {
-			name = nameAsString;	
-		}
-		
-		return errorMessage;
-	}
 
-	public String getName() {
-		return name;
-	}
 
 	// Generates a new workout history for the user
 	public void newHistory() {
@@ -158,27 +165,27 @@ public class User {
 //	}
 //	
 
-	// This method will create a new Goal Component
-	public void logGoals(String duration, String weight, String calorie)
-			throws InvalidEntryException {
+//	// This method will create a new Goal Component
+//	public void logGoals(String duration, String weight, String calorie)
+//			throws InvalidEntryException {
+//
+//		// create a new goal component and save in instance variable
+//		goals = new GoalComponent(duration, weight, calorie);
+//
+//		// check if the instance variable is null
+//		if ( stats != null) {
+//			goals.compareTo(stats);
+//		}
+//	}
 
-		// create a new goal component and save in instance variable
-		goals = new GoalComponent(duration, weight, calorie);
-
-		// check if the instance variable is null
-		if ( stats != null) {
-			goals.compareTo(stats);
-		}
-	}
-
-	public String getGoals() {
-		return goals.toString();
-	}
-	
-	public String toString() {
-		return history.toString();
-	}
-
+//	public String getGoals() {
+//		return goals.toString();
+//	}
+//	
+//	public String toString() {
+//		return history.toString();
+//	}
+//
 	public int getNumWorkouts() {
 		return numWorkouts;
 	}

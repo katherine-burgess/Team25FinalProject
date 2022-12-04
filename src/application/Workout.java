@@ -15,22 +15,23 @@ public class Workout {
 	
 	// instance variables
 	private String workoutType;
-	private Cardio cardioWorkout;
-	private Strength strengthWorkout;
+	private Workout newWorkout;
 	
 	//private Workout stats;
 	
-	public Workout() {}
+	public Workout() {
+		workoutType = new String();
+	}
 	
 	// Copy constructor 
 	public Workout(Workout toCopy) {
 		if (toCopy != null) {
 			workoutType = toCopy.workoutType;
-			cardioWorkout = toCopy.cardioWorkout;
-			strengthWorkout = toCopy.strengthWorkout;
+			newWorkout = toCopy.newWorkout;
 		}
 	}
 	
+	// sets the new incoming workoutType
 	public void setWorkoutType(String type) {
 		workoutType = type;
 	}
@@ -38,7 +39,13 @@ public class Workout {
 		return workoutType;
 	}
 
-
+	public void setWorkout(Workout component) {
+		newWorkout = new Workout(component);
+	}
+	
+	public Workout getWorkout() {
+		return newWorkout;
+	}
 	
 	// Takes users workout statistics and returns them as a string
 //	public String toString() {

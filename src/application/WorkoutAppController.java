@@ -128,12 +128,16 @@ public class WorkoutAppController {
 			throws InvalidEntryException {
 		
 		boolean error = false;
-		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), calorieGoalTextfield.getText());
+		GoalComponent goal = new GoalComponent(durationTextfield.getText(), targetWeightTextfield.getText(), calorieGoalTextfield.getText());
+		goal.setGoals(goal);
+		// Retrieve goals and show to user
+		userGoalLabel.setText(goal.getGoals().toString());
+		//		viewUser.logGoals(durationTextfield.getText(), targetWeightTextfield.getText(), calorieGoalTextfield.getText());
 
 		if (!error) {
 			applicationStage.setScene(returnUserScene);
 			printGoalsLabel.setText(chooseUserChoiceBox.getValue() + "'s Goals: ");
-			userGoalLabel.setText(viewUser.getGoals());
+			
 		}
 
 	}
@@ -189,6 +193,9 @@ public class WorkoutAppController {
 		
 		try {
 			Cardio cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(), caloriesTextfield.getText());
+			cardioWorkout.setWorkout(cardioWorkout);
+			
+			
 		} catch (InvalidEntryException e) {
 			error = true;
 			userErrorLabel.setText(e.getMessage()); // shows error message to the user
@@ -217,13 +224,10 @@ public class WorkoutAppController {
 		
 		boolean error = false;
 		try {
-			Strength strworkout = new Strength(durationTextfield.getText(),caloriesTextfield.getText(),
+			Strength strWorkout = new Strength(durationTextfield.getText(),caloriesTextfield.getText(),
 					workoutIntensityChoiceBox.getValue());
-			
-//			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
-//					workoutIntensityChoiceBox.getValue());
-			
-
+			strWorkout.setWorkout(strWorkout);
+		
 		} catch (InvalidEntryException e) {
 			userErrorLabel.setText(e.getMessage()); // shows error message to the user
 			error = true;
@@ -294,7 +298,7 @@ public class WorkoutAppController {
 			VBox newUserContainer = new VBox();
 			Button doneButton = new Button("Enter Here");
 			VBox.setMargin(doneButton, new Insets(10,10,10,10));
-			doneButton.setOnAction(doneEvent -> setNewUser(mainScene, nu.getNewUserTextfield(), nu));
+			doneButton.setOnAction(doneEvent -> setNewUser(mainScene, nu.setNewUserTextfield(), nu));
 
 			newUserContainer.getChildren().addAll(nu.setUserTitle(), nu.setUserNameContainer(), doneButton);
 
