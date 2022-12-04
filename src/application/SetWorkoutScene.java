@@ -6,44 +6,44 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
-/** 
- * This class creates the containers for the workout scene. User's will be able to enter in their 
- * numerical and ChoiceBox input based on their workout statistics. 
+/**
+ * This class creates the containers for the workout scene. User's will be able
+ * to enter in their numerical and ChoiceBox input based on their workout
+ * statistics.
  * 
  * @author CS219-user Katie Burgess
  *
  */
 public class SetWorkoutScene {
-	
+
 	// Instance variables for strength workout entry
 	private TextField durationTextfield;
 	private ChoiceBox<String> intensityChoiceBox;
 	private TextField caloriesTextfield;
-	
+
 	// Instance variables for cardio workout entry
 	private TextField distanceTextfield;
-	
-	
+
 	// This method will create a container for the user to enter distance
 	public HBox setDistance() {
 		HBox cardioDistanceContainer = new HBox();
 		Label cardioDistanceLabel = new Label("Distance: ");
-		HBox.setMargin(cardioDistanceLabel, new Insets(10,10,10,10));
+		HBox.setMargin(cardioDistanceLabel, new Insets(10, 10, 10, 10));
 		distanceTextfield = new TextField();
-		HBox.setMargin(distanceTextfield, new Insets(10,10,10,10));
+		HBox.setMargin(distanceTextfield, new Insets(10, 10, 10, 10));
 		Label cardioUnitsLabel = new Label("Km");
-		HBox.setMargin(cardioUnitsLabel, new Insets(10,10,10,10));
+		HBox.setMargin(cardioUnitsLabel, new Insets(10, 10, 10, 10));
 		cardioDistanceContainer.getChildren().addAll(cardioDistanceLabel, distanceTextfield, cardioUnitsLabel);
 		return cardioDistanceContainer;
 	}
-	
+
 	public TextField getDistance() {
 		return distanceTextfield;
 	}
-	
+
 	// This method will create a container for the user to choose a workoutType
-	//public HBox setWorkoutType() {
-	
+	// public HBox setWorkoutType() {
+
 //		HBox workoutTypeContainer = new HBox();
 //		Label workoutTypeLabel = new Label("Workout Type : ");
 //		HBox.setMargin(workoutTypeLabel, new Insets(10, 10, 10, 10));
@@ -54,12 +54,11 @@ public class SetWorkoutScene {
 //		workoutTypeContainer.getChildren().addAll(workoutTypeLabel, workoutTypeChoiceBox);
 //		
 //		return workoutTypeContainer;
-	
-	
+
 //	public ChoiceBox<String> getWorkoutChoiceBox(){
 //		return workoutTypeChoiceBox;
 //	}
-	
+
 	// This method will create a container for the duration of a workout
 	public HBox setDuration() {
 		// Container for duration of workout
@@ -71,18 +70,18 @@ public class SetWorkoutScene {
 		Label durationMinLabel = new Label("minutes");
 		HBox.setMargin(durationMinLabel, new Insets(10, 10, 10, 10));
 		durationContainer.getChildren().addAll(durationLabel, durationTextfield, durationMinLabel);
-		
+
 		return durationContainer;
-			
+
 	}
-	
+
 	public TextField getDurationTextField() {
 		return durationTextfield;
 	}
-	
+
 	// This method will create a container for the workout intensity
 	public HBox setIntensity() {
-		
+
 		HBox workoutIntensityContainer = new HBox();
 		Label workoutIntensityLabel = new Label("Intensity : ");
 		HBox.setMargin(workoutIntensityLabel, new Insets(10, 10, 10, 10));
@@ -91,18 +90,18 @@ public class SetWorkoutScene {
 		intensityChoiceBox.getItems().add("Easy");
 		intensityChoiceBox.getItems().add("Medium");
 		intensityChoiceBox.getItems().add("Hard");
-		workoutIntensityContainer.getChildren().addAll(workoutIntensityLabel, intensityChoiceBox);	
-		
+		workoutIntensityContainer.getChildren().addAll(workoutIntensityLabel, intensityChoiceBox);
+
 		return workoutIntensityContainer;
 	}
-	
-	public ChoiceBox<String> getIntensityChoiceBox(){
+
+	public ChoiceBox<String> getIntensityChoiceBox() {
 		return intensityChoiceBox;
 	}
-	
+
 	// This method will create a container for calories burned
 	public HBox setCalories() {
-		
+
 		HBox caloriesContainer = new HBox();
 		Label caloriesBurnedLabel = new Label("Calories Burned :");
 		HBox.setMargin(caloriesBurnedLabel, new Insets(10, 10, 10, 10));
@@ -112,14 +111,13 @@ public class SetWorkoutScene {
 		HBox.setMargin(caloriesLabel, new Insets(10, 10, 10, 10));
 		caloriesContainer.getChildren().addAll(caloriesBurnedLabel, caloriesTextfield, caloriesLabel);
 
-		
 		return caloriesContainer;
 	}
-	
+
 	public TextField getCaloriesTextfield() {
 		return caloriesTextfield;
 	}
-	
+
 //	// This method will create a container for weight entry
 //	public HBox setWeight() {
 //		
