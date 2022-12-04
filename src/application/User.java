@@ -18,8 +18,8 @@ public class User {
 
 	// Instance variables
 	private String name;
-	private WorkoutComponent workoutStats;
 	private GoalComponent goals;
+	private WorkoutComponent stats;
 	private WorkoutHistory history;
 	private Button goalsButton;
 	private Button doneButton;
@@ -33,11 +33,10 @@ public class User {
 	}
 	
 	// This constructor sets the name of a new User
-	public User(String newName) {
-		name = newName;
-
+	public User(String value) {
+		name = value;
 	}
-	
+
 	// This method will create a container for workout statistics
 	public HBox setWorkoutContainer(){
 	
@@ -95,6 +94,7 @@ public class User {
 		return userNameContainer;
 	}
 	
+	// This method will get the new username textfield
 	public TextField getNewUserTextfield() {
 		return newUserTextfield;
 	}
@@ -115,11 +115,10 @@ public class User {
 				errorMessage = String.format("Your username must use only letters", n);
 			} 
 		}
-		
 		if (validName) {
-			name = nameAsString;
-			
+			name = nameAsString;	
 		}
+		
 		return errorMessage;
 	}
 
@@ -127,28 +126,22 @@ public class User {
 		return name;
 	}
 
-	
-
-	public WorkoutHistory newHistory() {
+	// Generates a new workout history for the user
+	public void newHistory() {
 		history = new WorkoutHistory();
-		return history;
 	}
-
 	
-	public void logWorkout(String calories, String duration, String intensity, String type, String newWeight)
-			throws InvalidEntryException {
-		
+	
+	public void logWorkout(WorkoutComponent workout) {
 		// add new workout to workout history
-		history.addWorkout(workoutStats);
+		history.addWorkout(workout);
 		
 		if (goals != null) {
-			if (workoutStats.compareTo(goals) == true) {
-				// print out achievement to the user
+			if (workout.compareTo(goals) == true) {
+				System.out.println("Goal was achieved");
 			}
 		}
-		// increment static variable
 		numWorkouts++;
-
 	}
 	
 
@@ -160,10 +153,9 @@ public class User {
 		goals = new GoalComponent(duration, weight, calorie);
 
 		// check if the instance variable is null
-		if (workoutStats != null) {
-			goals.compareTo(workoutStats);
-		}
-
+//		if ( != null) {
+//			goals.compareTo(getStats());
+//		}
 	}
 
 	public String getGoals() {
@@ -177,7 +169,6 @@ public class User {
 	public int getNumWorkouts() {
 		return numWorkouts;
 	}
-
 	
 
 }

@@ -20,10 +20,23 @@ public class WorkoutComponent {
 	private Calories caloriesBurned;
 	private double weight;
 	
-
-	public WorkoutComponent() {}
+	private WorkoutComponent stats;
 	
-	public void logWorkout(String dur, String cal, String intense, String type, String lbs) throws InvalidEntryException {
+	public WorkoutComponent() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public WorkoutComponent(WorkoutComponent toCopy) {
+		if (toCopy != null) {
+			workoutType = toCopy.workoutType;
+			duration = toCopy.duration;
+			intensity = toCopy.intensity;
+			caloriesBurned = toCopy.caloriesBurned;
+			weight = toCopy.weight;
+		}
+	}
+	
+	public WorkoutComponent(String dur, String cal, String intense, String type, String lbs) throws InvalidEntryException {
 		try {
 			duration = new Duration();
 			duration.setLength(dur);
@@ -42,10 +55,10 @@ public class WorkoutComponent {
 
 		} catch (NumberFormatException nfe) {
 			throw new InvalidEntryException(String.format("Invalid Workout Entry. Make sure to enter a number."));
+		}
 		
 	}
-}
-	
+
 	// return the duration of workout in hours and minutes 
 	public Duration getDuration() { // this will be a privacy leak
 		return duration;
@@ -67,7 +80,6 @@ public class WorkoutComponent {
 		return weight;
 	}
 	
-	
 	// Takes users workout statistics and returns them as a string
 	public String toString() {
 		String workout = new String();
@@ -81,10 +93,10 @@ public class WorkoutComponent {
 	// If a goal is met, method will return true. If no goal is met, the method will return false.
 	public boolean compareTo(GoalComponent goals) {;
 		if (duration.getLength() >= (goals.getDurationGoal())) {
-			System.out.println("Duration Goal has been met! " + getDuration());
+			System.out.println("Duration Goal has been met!");
 			return true;
 		} else if (getWeight() < goals.getTargetWeight()) {
-			System.out.println("Weight Goal has been met! " + getWeight());
+			System.out.println("Weight Goal has been met! ");
 			return true;
 		
 		} else if (caloriesBurned.getCal() > goals.getCalorieGoal()) {
@@ -94,6 +106,12 @@ public class WorkoutComponent {
 	
 		return false;
 	}
+
+	public WorkoutComponent getWorkout(WorkoutComponent workout) {
+		stats = workout;
+		return stats;
+	}
+
 
 	
 	

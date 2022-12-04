@@ -130,9 +130,11 @@ public class WorkoutAppController {
 		boolean error = false;
 		try {
 			// associate the workout stats with the user
-			WorkoutComponent workout = new WorkoutComponent();
-			workout.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
+			WorkoutComponent workout = new WorkoutComponent(caloriesTextfield.getText(), durationTextfield.getText(),
 					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
+			
+			viewUser.logWorkout(workout);
+			
 //			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
 //					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
 

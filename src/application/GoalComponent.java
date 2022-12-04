@@ -71,8 +71,7 @@ public class GoalComponent {
 		return goals;
 	}
 
-	public void compareTo(WorkoutComponent workoutStats) {
-		
+	public void compareTo(WorkoutComponent workoutStats) {	
 		
 	}
 

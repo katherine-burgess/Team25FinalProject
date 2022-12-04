@@ -20,22 +20,22 @@ public class WorkoutHistory {
 
 	// This method will add each new workout component to the ArrayList
 	public void addWorkout(WorkoutComponent component) {
-		if (workoutHistory.isEmpty()){
-			workoutHistory.add(component);
-			return;
-		}
+//		if (workoutHistory.isEmpty()){
+//			workoutHistory.add(component);
+//			return;
+//		}
 		workoutHistory.add(component);
-		System.out.println(workoutHistory);
 	}
 	
 	
 	public ArrayList<WorkoutComponent> getWorkoutHistory() {
-		return new ArrayList<WorkoutComponent>();
+		return workoutHistory;
 	}
 	
 	// This method will generate a workout history in a string format
 	public String toString() {
 		String w = new String();
+		System.out.println(w);
 		for (int i = 0; i < workoutHistory.size(); i++) {
 			w += "Log: " + (i) + '\t' + ( workoutHistory.get(i)) + '\n' ;
 		}
