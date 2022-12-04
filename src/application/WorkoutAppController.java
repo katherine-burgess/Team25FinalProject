@@ -209,10 +209,12 @@ public class WorkoutAppController {
 		
 	}
 
-	private Object calculateCardio(Scene returnUserScene, User viewUser, TextField distance,
+	private void calculateCardio(Scene returnUserScene, User viewUser, TextField distance,
 			TextField durationTextField, TextField caloriesTextfield) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Cardio cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(), caloriesTextfield.getText());
+		
+		
 	}
 
 	/**

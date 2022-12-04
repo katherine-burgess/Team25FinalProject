@@ -11,19 +11,19 @@ import java.util.ArrayList;
  * @author CS219-user Katie Burgess
  *
  */
-public class WorkoutComponent {
+public class Workout {
 	
 	// instance variables
 	private String workoutType;
-	private double duration;
-	private String intensity;
+	private Cardio cardioWorkout;
+	private Strength strengthWorkout;
 	private int caloriesBurned;
 	private double weight;
 	
-	private WorkoutComponent stats;
+	private Workout stats;
 	
 	
-	public WorkoutComponent(WorkoutComponent toCopy) {
+	public Workout(Workout toCopy) {
 		if (toCopy != null) {
 			workoutType = toCopy.workoutType;
 			duration = toCopy.duration;
@@ -33,7 +33,7 @@ public class WorkoutComponent {
 		}
 	}
 	
-	public WorkoutComponent(String cal, String dur, String intense) throws InvalidEntryException {
+	public Workout(String cal, String dur, String intense) throws InvalidEntryException {
 		try {
 			
 			intensity = intense;
@@ -91,7 +91,7 @@ public class WorkoutComponent {
 		return false;
 	}
 
-	public WorkoutComponent getWorkout(WorkoutComponent workout) {
+	public Workout getWorkout(Workout workout) {
 		stats = workout;
 		return stats;
 	}

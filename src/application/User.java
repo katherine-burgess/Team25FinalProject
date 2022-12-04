@@ -20,7 +20,7 @@ public class User {
 	// Instance variables
 	private String name;
 	private GoalComponent goals;
-	private WorkoutComponent stats;
+	private Workout stats;
 	private WorkoutHistory history;
 	private Button goalsButton;
 	private Button doneButton;
@@ -144,7 +144,7 @@ public class User {
 	
 	public void logWorkout(String cal, String dur, String intense) throws InvalidEntryException {
 		System.out.println(stats);
-		stats = new WorkoutComponent(cal, dur, intense);
+		stats = new Workout(cal, dur, intense);
 		
 		// add new workout to workout history
 		history.addWorkout(stats);

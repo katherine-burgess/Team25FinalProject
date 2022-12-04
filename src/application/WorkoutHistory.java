@@ -11,20 +11,20 @@ import java.util.ArrayList;
  */
 public class WorkoutHistory {
 	
-	private ArrayList<WorkoutComponent> workoutHistory;
+	private ArrayList<Workout> workoutHistory;
 	
 	public WorkoutHistory() {
 		// creation of a new workout history with a new user
-		workoutHistory = new ArrayList<WorkoutComponent>();
+		workoutHistory = new ArrayList<Workout>();
 	}
 
 	// This method will add each new workout component to the ArrayList
-	public void addWorkout(WorkoutComponent component) {
+	public void addWorkout(Workout component) {
 		workoutHistory.add(component);
 	}
 	
 	
-	public ArrayList<WorkoutComponent> getWorkoutHistory() {
+	public ArrayList<Workout> getWorkoutHistory() {
 		return workoutHistory;
 	}
 	
