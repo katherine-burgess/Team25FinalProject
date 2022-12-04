@@ -141,22 +141,22 @@ public class User {
 		history = new WorkoutHistory();
 	}
 	
-	
-	public void logWorkout(String cal, String dur, String intense) throws InvalidEntryException {
-		System.out.println(stats);
-		stats = new Workout(cal, dur, intense);
-		
-		// add new workout to workout history
-		history.addWorkout(stats);
-		
-		if (goals != null) {
-			if (stats.compareTo(goals) == true) {
-				System.out.println("Goal was achieved");
-			}
-		}
-		numWorkouts++;
-	}
-	
+//	
+//	public void logWorkout(String cal, String dur, String intense) throws InvalidEntryException {
+//		System.out.println(stats);
+//		stats = new Workout(cal, dur, intense);
+//		
+//		// add new workout to workout history
+//		history.addWorkout(stats);
+//		
+//		if (goals != null) {
+//			if (stats.compareTo(goals) == true) {
+//				System.out.println("Goal was achieved");
+//			}
+//		}
+//		numWorkouts++;
+//	}
+//	
 
 	// This method will create a new Goal Component
 	public void logGoals(String duration, String weight, String calorie)

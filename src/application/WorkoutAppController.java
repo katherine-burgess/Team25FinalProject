@@ -110,35 +110,7 @@ public class WorkoutAppController {
 
 	}
 
-	/**
-	 * This method will take in the user's input from the GUI and check if the use has entered a number. The method will check 
-	 * if the user has entered a number, if not the GUI will return a specific error message to the user. If there are
-	 * no error's in input the scene will change back to the user's main welcome screen.
-	 * 
-	 * @param returnUserScene the current user's main welcome scene
-	 * @param viewUser the current user
-	 * @param caloriesTextfield a string value entered by the user
-	 * @param durationTextfield a string value entered by the user
-	 * @param workoutIntensityChoiceBox a string value entered by the user
-	 */
-	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield,
-			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox) {
 
-		boolean error = false;
-		try {
-			// associate the workout stats with the user
-			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
-					workoutIntensityChoiceBox.getValue());
-			
-
-		} catch (InvalidEntryException e) {
-			userErrorLabel.setText(e.getMessage()); // shows error message to the user
-			error = true;
-		}
-		if (!error) {
-			applicationStage.setScene(returnUserScene);
-		}
-	}
 
 	/**
 	 * This method will take the user's input from the GUI and print the goals to the user. The method will 
@@ -187,6 +159,7 @@ public class WorkoutAppController {
 				
 		if (typeChoiceBox.getValue() == "Cardio") {
 			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " " + "Cardio Workout");
+			userErrorLabel.setText("Enter Cardio Workout Stats: ");
 			Button submitStats = new Button("Done");
 			VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
 			workoutStatsContainer.getChildren().addAll(ws.setDistance(), ws.setDuration(), ws.setCalories(), submitStats);
@@ -196,6 +169,7 @@ public class WorkoutAppController {
 			
 		} else if (typeChoiceBox.getValue() == "Weight Training") {
 			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " " + "Strength Workout");
+			userErrorLabel.setText("Enter Strength Workout Stats: ");
 			Button submitWeightStats = new Button("Done");
 			VBox.setMargin(submitWeightStats, new Insets(10, 10, 10, 10));
 			workoutStatsContainer.getChildren().addAll(ws.setCalories(),ws.setDuration(), ws.setIntensity(), submitWeightStats);
@@ -211,10 +185,52 @@ public class WorkoutAppController {
 
 	private void calculateCardio(Scene returnUserScene, User viewUser, TextField distance,
 			TextField durationTextField, TextField caloriesTextfield) {
+		boolean error = false;
 		
-		Cardio cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(), caloriesTextfield.getText());
+		try {
+			Cardio cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(), caloriesTextfield.getText());
+		} catch (InvalidEntryException e) {
+			error = true;
+			userErrorLabel.setText(e.getMessage()); // shows error message to the user
+		}
 		
+		if (!error) {
+			applicationStage.setScene(returnUserScene);
+		}
+
+	}
+	
+	/**
+	 * This method will take in the user's input from the GUI and check if the use has entered a number. The method will check 
+	 * if the user has entered a number, if not the GUI will return a specific error message to the user. If there are
+	 * no error's in input the scene will change back to the user's main welcome screen.
+	 * 
+	 * @param returnUserScene the current user's main welcome scene
+	 * @param viewUser the current user
+	 * @param caloriesTextfield a string value entered by the user
+	 * @param durationTextfield a string value entered by the user
+	 * @param workoutIntensityChoiceBox a string value entered by the user
+	 */
+	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield,
+			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox) {
+
 		
+		boolean error = false;
+		try {
+			Strength strworkout = new Strength(durationTextfield.getText(),caloriesTextfield.getText(),
+					workoutIntensityChoiceBox.getValue());
+			
+//			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
+//					workoutIntensityChoiceBox.getValue());
+			
+
+		} catch (InvalidEntryException e) {
+			userErrorLabel.setText(e.getMessage()); // shows error message to the user
+			error = true;
+		}
+		if (!error) {
+			applicationStage.setScene(returnUserScene);
+		}
 	}
 
 	/**

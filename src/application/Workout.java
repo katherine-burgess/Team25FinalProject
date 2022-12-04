@@ -17,84 +17,60 @@ public class Workout {
 	private String workoutType;
 	private Cardio cardioWorkout;
 	private Strength strengthWorkout;
-	private int caloriesBurned;
-	private double weight;
 	
-	private Workout stats;
+	//private Workout stats;
 	
+	public Workout() {}
 	
+	// Copy constructor 
 	public Workout(Workout toCopy) {
 		if (toCopy != null) {
 			workoutType = toCopy.workoutType;
-			duration = toCopy.duration;
-			intensity = toCopy.intensity;
-			caloriesBurned = toCopy.caloriesBurned;
-			weight = toCopy.weight;
+			cardioWorkout = toCopy.cardioWorkout;
+			strengthWorkout = toCopy.strengthWorkout;
 		}
 	}
 	
-	public Workout(String cal, String dur, String intense) throws InvalidEntryException {
-		try {
-			
-			intensity = intense;
-		
-		
-			if (this.weight < 100 || this.weight > 300) {
-				throw new InvalidEntryException(
-					String.format("Invalid weight entry. Enter a number between 100 and 300 lbs "));
-			}
-
-		} catch (NumberFormatException nfe) {
-			throw new InvalidEntryException(String.format("Invalid Workout Entry. Make sure to enter a number."));
-		}
-		
+	public void setWorkoutType(String type) {
+		workoutType = type;
 	}
-
-	
-
-	private String getIntensity() {
-		return intensity;
-	}
-
-	private String getWorkoutType() {
+	public String getWorkoutType() {
 		return workoutType;
 	}
 
-	public double getWeight() {
-		return weight;
-	}
+
 	
 	// Takes users workout statistics and returns them as a string
-	public String toString() {
-		String workout = new String();
-		workout += "Workout Type: " + getWorkoutType() + '\t' + "Duration: " + getDuration() + '\t' + "Intensity: "
-				+ getIntensity() + '\t' + " Calories Burned: " + getCalories() + '\t' + " Weight: " + getWeight() + '\n';
-	
-		return workout;
-	}
+//	public String toString() {
+//		String workout = new String();
+//		workout += "Workout Type: " + getWorkoutType() + '\t' + "Duration: " + getDuration() + '\t' + "Intensity: "
+//				+ getIntensity() + '\t' + " Calories Burned: " + getCalories() + '\t' + " Weight: " + getWeight() + '\n';
+//	
+//		return workout;
+//	}
 
 	// This method will compare the user's newest workout statistics to their goals.
 	// If a goal is met, method will return true. If no goal is met, the method will return false.
-	public boolean compareTo(GoalComponent goals) {;
-		if (duration.getLength() >= (goals.getDurationGoal())) {
-			System.out.println("Duration Goal has been met!");
-			return true;
-		} else if (getWeight() < goals.getTargetWeight()) {
-			System.out.println("Weight Goal has been met! ");
-			return true;
-		
-		} else if (caloriesBurned.getCal() > goals.getCalorieGoal()) {
-			System.out.println("Calorie Goal has been achieved!");
-			return true;
-		}
-	
-		return false;
-	}
+//	public boolean compareTo(GoalComponent goals) {;
+//		if (duration.getLength() >= (goals.getDurationGoal())) {
+//			System.out.println("Duration Goal has been met!");
+//			return true;
+//		} else if (getWeight() < goals.getTargetWeight()) {
+//			System.out.println("Weight Goal has been met! ");
+//			return true;
+//		
+//		} else if (caloriesBurned.getCal() > goals.getCalorieGoal()) {
+//			System.out.println("Calorie Goal has been achieved!");
+//			return true;
+//		}
+//	
+//		return false;
+//	}
 
-	public Workout getWorkout(Workout workout) {
-		stats = workout;
-		return stats;
-	}
+//	public Workout getWorkout(Workout workout) {
+//		stats = workout;
+//		return stats;
+//	}
 
 
 	
