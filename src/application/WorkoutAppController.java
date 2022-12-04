@@ -130,7 +130,8 @@ public class WorkoutAppController {
 		boolean error = false;
 		try {
 			// associate the workout stats with the user
-			WorkoutComponent workout = new WorkoutComponent(caloriesTextfield.getText(), durationTextfield.getText(),
+			WorkoutComponent workout = new WorkoutComponent();
+			workout.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
 					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
 //			viewUser.logWorkout(caloriesTextfield.getText(), durationTextfield.getText(),
 //					workoutIntensityChoiceBox.getValue(), workoutTypeChoiceBox.getValue(), weightTextfield.getText());
@@ -288,12 +289,14 @@ public class WorkoutAppController {
 			VBox.setMargin(returnUserLabel, new Insets(10, 10, 10, 10));
 			Label activityLabel = new Label("How were you active today?");
 			VBox.setMargin(activityLabel, new Insets(10, 10, 10, 10));
-
-			viewUser.getDoneButton().setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser)); 
-			viewUser.getGoalsButton().setOnAction(goalsEvent -> getGoalScene(event, returnUserScene, viewUser));
 			
 			returnUserContainer.getChildren().addAll(returnUserLabel, activityLabel, viewUser.setWorkoutContainer(),
 					viewUser.setGoalsContainer(), printGoalsLabel, userGoalLabel);
+			
+			viewUser.getDoneButton().setOnAction(doneEvent -> getWorkoutScene(event, returnUserScene, viewUser)); 
+			viewUser.getGoalsButton().setOnAction(goalsEvent -> getGoalScene(event, returnUserScene, viewUser));
+			
+
 			VBox.setMargin(printGoalsLabel, new Insets(0,0,0,10));
 			VBox.setMargin(userGoalLabel, new Insets(5,0,0,10));
 

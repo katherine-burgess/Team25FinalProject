@@ -11,11 +11,7 @@ public class Duration extends WorkoutComponent{
 
 	private long length;
 	
-	public Duration() {}
-	
-	public Duration(Duration toCopy) throws InvalidEntryException {
-		length = toCopy.length;
-	}
+
 
 	public void setLength(String duration) throws InvalidEntryException {
 		try {
@@ -32,7 +28,7 @@ public class Duration extends WorkoutComponent{
 		
 	}
 	
-	public long getDuration() {
+	public long getLength() {
 		return length;
 	}
 

@@ -12,54 +12,46 @@ import java.util.ArrayList;
  *
  */
 public class WorkoutComponent {
+	
 	// instance variables
 	private String workoutType;
-	private long duration;
+	private Duration duration;
 	private String intensity;
-	private int caloriesBurned;
+	private Calories caloriesBurned;
 	private double weight;
 	
 
-	public WorkoutComponent() {
-		
-	}
+	public WorkoutComponent() {}
 	
-	// This constructor will check the user input for possible errors, if no errors
-	// in input the instance variables will be set.
-	// Otherwise an error will be thrown with a specific message to the user.
-	public WorkoutComponent(String dur, String calories, String weight, String intensity, String type)
-			throws InvalidEntryException {
+	public void logWorkout(String dur, String cal, String intense, String type, String lbs) throws InvalidEntryException {
 		try {
-			System.out.println(calories);
-			duration = Long.parseLong(dur);
-			caloriesBurned = Integer.parseInt(calories);
-			this.weight = Double.parseDouble(weight);
-			this.intensity = intensity;
+			duration = new Duration();
+			duration.setLength(dur);
+			
+			caloriesBurned = new Calories();
+			caloriesBurned.setCalories(cal);
+			
+			weight = Double.parseDouble(lbs);
+			intensity = intense;
 			workoutType = type;
-			
-			
-			if (caloriesBurned < 0 || caloriesBurned > 1000) {
-				throw new InvalidEntryException(
-						String.format("Invalid calorie entry. Enter a number between 0 and 1000 calories "));
-			}
-
+		
 			if (this.weight < 100 || this.weight > 300) {
 				throw new InvalidEntryException(
-						String.format("Invalid weight entry. Enter a number between 100 and 300 lbs "));
+					String.format("Invalid weight entry. Enter a number between 100 and 300 lbs "));
 			}
 
 		} catch (NumberFormatException nfe) {
 			throw new InvalidEntryException(String.format("Invalid Workout Entry. Make sure to enter a number."));
-			
-		}
+		
 	}
+}
 	
 	// return the duration of workout in hours and minutes 
-	public long getDuration() {
-		return 0;
+	public Duration getDuration() { // this will be a privacy leak
+		return duration;
 	}
 
-	public int getCalories() {
+	public Calories getCalories() { // this will be a privacy leak
 		return caloriesBurned;
 	}
 
@@ -88,20 +80,22 @@ public class WorkoutComponent {
 	// This method will compare the user's newest workout statistics to their goals.
 	// If a goal is met, method will return true. If no goal is met, the method will return false.
 	public boolean compareTo(GoalComponent goals) {;
-		if (getDuration() >= (goals.getDurationGoal())) {
+		if (duration.getLength() >= (goals.getDurationGoal())) {
 			System.out.println("Duration Goal has been met! " + getDuration());
 			return true;
 		} else if (getWeight() < goals.getTargetWeight()) {
 			System.out.println("Weight Goal has been met! " + getWeight());
 			return true;
 		
-		} else if (getCalories() > goals.getCalorieGoal()) {
+		} else if (caloriesBurned.getCal() > goals.getCalorieGoal()) {
 			System.out.println("Calorie Goal has been achieved!");
 			return true;
 		}
 	
 		return false;
 	}
+
+	
 	
 	
 
