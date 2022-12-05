@@ -3,10 +3,8 @@ package application;
 import java.util.ArrayList;
 
 /**
- * This class will take in the user's goals and save them. If the user achieves
- * a goal, the goal will be saved into an ArrayList of achieved goals. This
- * class will keep count of how many goals the user has achieved and how many
- * goals the user is working towards.
+ * This class will take in the user's goals and save them for 
+ * later comparison with the user's incoming workout stats. 
  * 
  * @author CS219-user Katie Burgess
  *
@@ -70,11 +68,6 @@ public class GoalComponent {
 		return goals;
 	}
 
-//			// check if the instance variable is null
-//			if ( stats != null) {
-//				goals.compareTo(stats);
-//			}
-//		}
 
 	// Will create a string containing all of the inputed goals
 	public String toString() {

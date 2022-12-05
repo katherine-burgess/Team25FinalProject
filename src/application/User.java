@@ -19,8 +19,6 @@ public class User {
 
 	// Instance variables
 	private String name;
-	private GoalComponent goals;
-	private Workout stats;
 	private WorkoutHistory history;
 	private Button goalsButton;
 	private Button doneButton;

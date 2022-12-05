@@ -1,7 +1,8 @@
 package application;
 
 /**
- * This class will track the user's strength workouts.
+ * This class will track the user's strength workouts. It will check if the user has 
+ * entered in a number, if not an invalid entry exception will be thrown. 
  * 
  * @author CS219-user Katie Burgess
  *

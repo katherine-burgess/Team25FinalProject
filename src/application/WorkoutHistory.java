@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * This class will keep track of the user's workout history. When a new workout
  * is logged, it will be added to the workoutHistory ArrayList.
  * 
- * @author CS219-user
+ * @author CS219-user Katie Burgess
  *
  */
 public class WorkoutHistory {

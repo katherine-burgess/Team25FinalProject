@@ -1,13 +1,10 @@
 package application;
 
-import java.util.ArrayList;
 
 /**
- * This class will log the user's workout statistics. The class will check to
- * see that the user has entered a number, if not a specific error message will
- * be thrown. This class will compare the new workout statistics with the user's
- * goals. If the workout statistics are better than the goals, the user will
- * receive an achievement message.
+ * This class will set the name of the new incoming workoutType and compare it to the 
+ * users goals. This class will also calculate the duration in hours for further 
+ * workout based calculations.
  * 
  * @author CS219-user Katie Burgess
  *
@@ -18,8 +15,6 @@ public abstract class Workout {
 	private String workoutType;
 	private Workout newWorkout;
 	private double duration;
-
-	// private Workout stats;
 
 	public Workout() {
 		workoutType = new String();
@@ -43,7 +38,6 @@ public abstract class Workout {
 	}
 
 	public void setWorkout(Workout component) {
-		System.out.println(component);
 		newWorkout = component;
 	}
 

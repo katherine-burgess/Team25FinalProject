@@ -41,24 +41,6 @@ public class SetWorkoutScene {
 		return distanceTextfield;
 	}
 
-	// This method will create a container for the user to choose a workoutType
-	// public HBox setWorkoutType() {
-
-//		HBox workoutTypeContainer = new HBox();
-//		Label workoutTypeLabel = new Label("Workout Type : ");
-//		HBox.setMargin(workoutTypeLabel, new Insets(10, 10, 10, 10));
-//		workoutTypeChoiceBox = new ChoiceBox<String>(); // add padding to the ChoiceBox
-//		HBox.setMargin(workoutTypeChoiceBox, new Insets(10, 10, 10, 10));
-//		workoutTypeChoiceBox.getItems().add("Cardio");
-//		workoutTypeChoiceBox.getItems().add("Weight Training");
-//		workoutTypeContainer.getChildren().addAll(workoutTypeLabel, workoutTypeChoiceBox);
-//		
-//		return workoutTypeContainer;
-
-//	public ChoiceBox<String> getWorkoutChoiceBox(){
-//		return workoutTypeChoiceBox;
-//	}
-
 	// This method will create a container for the duration of a workout
 	public HBox setDuration() {
 		// Container for duration of workout
@@ -118,20 +100,4 @@ public class SetWorkoutScene {
 		return caloriesTextfield;
 	}
 
-//	// This method will create a container for weight entry
-//	public HBox setWeight() {
-//		
-//		HBox weightContainer = new HBox();
-//		Label weightLabel = new Label("Weight :");
-//		HBox.setMargin(weightLabel, new Insets(10, 10, 10, 10));
-//		weightTextfield = new TextField();
-//		HBox.setMargin(weightTextfield, new Insets(10, 10, 10, 10));
-//		weightContainer.getChildren().addAll(weightLabel, weightTextfield);
-//		
-//		return weightContainer;
-//	}
-//	
-//	public TextField getWeightTextfield() {
-//		return weightTextfield;
-//	}
 }
