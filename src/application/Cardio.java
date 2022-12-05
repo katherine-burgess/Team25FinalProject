@@ -42,7 +42,29 @@ public class Cardio extends Workout {
 		}
 	}
 
-	public int minDistance() {
-		return 0;
+	public double getDuration() {
+		return duration;
+	}
+	
+	public double getCaloriesBurned() {
+		return caloriesBurned;
+	}
+	public double getDistance() {
+		return distance;
+		
+	}
+	
+	@Override
+	public String compareTo(GoalComponent goal) {
+		String message = "";
+		if (getDuration() > goal.getDurationGoal()) {
+			message = "New Cardio Duration goal has been achieved!";
+			AchievedGoals achGoal = new AchievedGoals(goal);
+			
+		} else if (getCaloriesBurned() > goal.getCalorieGoal()) {
+			message = "New Cardio Calorie goal has been achieved!";
+		}
+		
+		return message;
 	}
 }

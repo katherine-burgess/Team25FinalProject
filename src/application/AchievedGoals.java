@@ -10,13 +10,11 @@ import java.util.ArrayList;
  */
 public class AchievedGoals {
 
-	private int numOfAchieved = 0;
 	private ArrayList<GoalComponent> goalsAchieved;
 
-	// this method will count the number of achieved goals
-	public int countAchieved() {
-		numOfAchieved = goalsAchieved.size();
-		return numOfAchieved;
+	
+	public AchievedGoals(GoalComponent achGoal) {
+		addAchievedGoal(achGoal);
 	}
 
 	// this method will add the achieved goals to an ArrayList, if the goals is a
@@ -27,8 +25,14 @@ public class AchievedGoals {
 			goalsAchieved.add(goal);
 			return;
 		}
-
-		goalsAchieved.add(goal);
+		
+		for (int i = 0; i < goalsAchieved.size(); i++) {
+			if (!(goal.getDurationGoal() == goalsAchieved.get(i).getDurationGoal()) 
+					&& (!(goal.getCalorieGoal() == goalsAchieved.get(i).getCalorieGoal()))) {
+				goalsAchieved.add(i,goal);
+				
+			} 
+		}
 	}
 
 	public ArrayList<GoalComponent> getAchievedGoals() {

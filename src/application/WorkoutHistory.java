@@ -13,14 +13,27 @@ public class WorkoutHistory {
 
 	private ArrayList<Workout> workoutHistory;
 
+	
 	public WorkoutHistory() {
 		// creation of a new workout history with a new user
 		workoutHistory = new ArrayList<Workout>();
 	}
+	public WorkoutHistory(Workout component) {
+		workoutHistory = new ArrayList<Workout>();
+		
+	}
 
 	// This method will add each new workout component to the ArrayList
+	// will sort based on duration and calories
 	public void addWorkout(Workout component) {
-		workoutHistory.add(component);
+		if (workoutHistory.isEmpty()) {
+			workoutHistory.add(component);
+			return;
+		}
+		for (int i = 0; i < workoutHistory.size(); i++) {
+			workoutHistory.add(i, component);
+		}
+		
 	}
 
 	public ArrayList<Workout> getWorkoutHistory() {

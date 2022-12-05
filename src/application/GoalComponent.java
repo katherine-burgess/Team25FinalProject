@@ -15,7 +15,7 @@ public class GoalComponent {
 
 	// Instance Variables
 	private double targetWeight;
-	private long durationGoal;
+	private double durationGoal;
 	private double calorieGoal;
 
 	private GoalComponent goals;
@@ -23,7 +23,7 @@ public class GoalComponent {
 	// This constructor takes in the three goal components and validates the input
 	public GoalComponent(String duration, String weight, String calorie) throws InvalidEntryException {
 		try {
-			this.durationGoal = Long.parseLong(duration);
+			this.durationGoal = Double.parseDouble(duration);
 			targetWeight = Double.parseDouble(weight);
 			calorieGoal = Double.parseDouble(calorie);
 
@@ -49,7 +49,7 @@ public class GoalComponent {
 		goals = newGoal.goals;
 	}
 
-	public long getDurationGoal() {
+	public double getDurationGoal() {
 		return this.durationGoal;
 	}
 

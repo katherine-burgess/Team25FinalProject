@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author CS219-user Katie Burgess
  *
  */
-public class Workout {
+public abstract class Workout {
 
 	// instance variables
 	private String workoutType;
@@ -42,12 +42,14 @@ public class Workout {
 	}
 
 	public void setWorkout(Workout component) {
-		newWorkout = new Workout(component);
+		newWorkout = component;
 	}
 
 	public Workout getWorkout() {
 		return newWorkout;
 	}
+
+	public abstract String compareTo(GoalComponent goal);
 
 	// Takes users workout statistics and returns them as a string
 //	public String toString() {

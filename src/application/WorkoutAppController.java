@@ -122,11 +122,12 @@ public class WorkoutAppController {
 	 * @param calorieGoalTextfield string value entered by the user
 	 * @throws InvalidEntryException catches if the user enters anything not numerical
 	 */
+	private GoalComponent goal;
 	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield,
 			TextField targetWeightTextfield, TextField calorieGoalTextfield) throws InvalidEntryException {
 
 		boolean error = false;
-		GoalComponent goal = new GoalComponent(durationTextfield.getText(), targetWeightTextfield.getText(),
+		goal = new GoalComponent(durationTextfield.getText(), targetWeightTextfield.getText(),
 				calorieGoalTextfield.getText());
 		goal.setGoals(goal);
 		// Retrieve goals and show to user
@@ -193,8 +194,10 @@ public class WorkoutAppController {
 		try {
 			Cardio cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(),
 					caloriesTextfield.getText());
+			
 			cardioWorkout.setWorkoutType(typeChoiceBox.getValue());
 			cardioWorkout.setWorkout(cardioWorkout);
+			cardioWorkout.compareTo(goal);
 
 		} catch (InvalidEntryException e) {
 			error = true;
