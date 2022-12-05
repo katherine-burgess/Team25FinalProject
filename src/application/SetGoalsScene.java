@@ -14,7 +14,7 @@ import javafx.scene.layout.HBox;
  */
 public class SetGoalsScene {
 	private TextField durationGoalTextfield;
-	private TextField targetWeightTextfield;
+	private TextField distanceTextfield;
 	private TextField calorieGoalTextfield;
 
 	// This method creates a container for setting user's duration goals
@@ -40,19 +40,19 @@ public class SetGoalsScene {
 	public HBox setTargetWeight() {
 
 		HBox targetWeightContainer = new HBox();
-		Label targetWeightLabel = new Label("Target Weight Goal: ");
+		Label targetWeightLabel = new Label("Target Distance Goal: ");
 		HBox.setMargin(targetWeightLabel, new Insets(10, 10, 10, 10));
-		targetWeightTextfield = new TextField();
-		HBox.setMargin(targetWeightTextfield, new Insets(10, 10, 10, 10));
-		Label unitsLabel = new Label("lbs");
+		distanceTextfield = new TextField();
+		HBox.setMargin(distanceTextfield, new Insets(10, 10, 10, 10));
+		Label unitsLabel = new Label("km");
 		HBox.setMargin(unitsLabel, new Insets(10, 10, 10, 10));
-		targetWeightContainer.getChildren().addAll(targetWeightLabel, targetWeightTextfield, unitsLabel);
+		targetWeightContainer.getChildren().addAll(targetWeightLabel, distanceTextfield, unitsLabel);
 
 		return targetWeightContainer;
 	}
 
 	public TextField getWeightGoalTextfield() {
-		return targetWeightTextfield;
+		return distanceTextfield;
 	}
 
 	// This method creates a container for setting the user's calorie goal
