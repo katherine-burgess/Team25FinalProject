@@ -131,13 +131,14 @@ public class WorkoutAppController {
 		goal = new GoalComponent(durationTextfield.getText(), targetWeightTextfield.getText(),
 				calorieGoalTextfield.getText());
 		goal.setGoals(goal);
+		String goalList = goal.getGoals().toString();
 		// Retrieve goals and show to user
 		
 
 		if (!error) {
 			applicationStage.setScene(returnUserScene);
 			printGoalsLabel.setText(chooseUserChoiceBox.getValue() + "'s Goals: ");
-			userGoalLabel.setText(goal.getGoals().toString());
+			userGoalLabel.setText(goalList);
 		}
 
 	}
@@ -187,7 +188,18 @@ public class WorkoutAppController {
 		applicationStage.setScene(workoutStatsScene);
 
 	}
-
+	/**
+	 * This method will create a new Cardio object. The new cardio workout will be compared
+	 * to the goals entered by the user. If a goal is achieved the achievement message will 
+	 * be printed to the user on the GUI.
+	 * 
+	 * @param returnUserScene the current user's main scene
+	 * @param viewUser the current user
+	 * @param distance string value entered by the user
+	 * @param durationTextField string value entered by the user
+	 * @param caloriesTextfield string value entered by the user
+	 * @param typeChoiceBox the type of workout chosen by the user
+	 */
 	private void calculateCardio(Scene returnUserScene, User viewUser, TextField distance, TextField durationTextField,
 			TextField caloriesTextfield, ChoiceBox<String> typeChoiceBox) {
 		boolean error = false;
@@ -229,7 +241,7 @@ public class WorkoutAppController {
 	 * @param caloriesTextfield a string value entered by the user
 	 * @param durationTextfield a string value entered by the user
 	 * @param workoutIntensityChoiceBox a string value entered by the user
-	 * @param typeChoiceBox 
+	 * @param typeChoiceBox the type of workout chosen by the user
 	 */
 	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield,
 			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> typeChoiceBox) {
@@ -268,7 +280,7 @@ public class WorkoutAppController {
 	 * @param viewUser the current user
 	 */
 	void getGoalScene(ActionEvent event, Scene returnUserScene, User viewUser) {
-
+		userErrorLabel.setText("");
 		// Set the title of the scene based on the user
 		applicationStage.setTitle("Log" + " " + chooseUserChoiceBox.getValue() + " " + "Goals");
 
