@@ -217,6 +217,8 @@ public class WorkoutAppController {
 				// sets the goal label on home screen to indicate achievement to user
 				if (!(message.equals(""))) {
 					userGoalLabel.setText(message);
+				} else {
+					userGoalLabel.setText(goal.getGoals().toString());
 				}
 			}
 
@@ -259,6 +261,8 @@ public class WorkoutAppController {
 				// sets the goal label on home screen to indicate achievement to user
 				if (!(message.equals(""))) {
 					userGoalLabel.setText(message);
+				} else {
+					userGoalLabel.setText(goal.getGoals().toString());
 				}
 			}
 			

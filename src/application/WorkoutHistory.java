@@ -30,9 +30,7 @@ public class WorkoutHistory {
 			workoutHistory.add(component);
 			return;
 		}
-		for (int i = 0; i < workoutHistory.size(); i++) {
-			workoutHistory.add(i, component);
-		}
+		workoutHistory.add(component);
 		
 	}
 

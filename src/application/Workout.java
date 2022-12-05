@@ -51,37 +51,6 @@ public abstract class Workout {
 
 	public abstract String compareTo(GoalComponent goal);
 
-	// Takes users workout statistics and returns them as a string
-//	public String toString() {
-//		String workout = new String();
-//		workout += "Workout Type: " + getWorkoutType() + '\t' + "Duration: " + getDuration() + '\t' + "Intensity: "
-//				+ getIntensity() + '\t' + " Calories Burned: " + getCalories() + '\t' + " Weight: " + getWeight() + '\n';
-//	
-//		return workout;
-//	}
 
-	// This method will compare the user's newest workout statistics to their goals.
-	// If a goal is met, method will return true. If no goal is met, the method will
-	// return false.
-//	public boolean compareTo(GoalComponent goals) {;
-//		if (duration.getLength() >= (goals.getDurationGoal())) {
-//			System.out.println("Duration Goal has been met!");
-//			return true;
-//		} else if (getWeight() < goals.getTargetWeight()) {
-//			System.out.println("Weight Goal has been met! ");
-//			return true;
-//		
-//		} else if (caloriesBurned.getCal() > goals.getCalorieGoal()) {
-//			System.out.println("Calorie Goal has been achieved!");
-//			return true;
-//		}
-//	
-//		return false;
-//	}
-
-//	public Workout getWorkout(Workout workout) {
-//		stats = workout;
-//		return stats;
-//	}
 
 }

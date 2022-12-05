@@ -146,40 +146,7 @@ public class User {
 		history = new WorkoutHistory();
 	}
 
-//	
-//	public void logWorkout(String cal, String dur, String intense) throws InvalidEntryException {
-//		System.out.println(stats);
-//		stats = new Workout(cal, dur, intense);
-//		
-//		// add new workout to workout history
-//		history.addWorkout(stats);
-//		
-//		if (goals != null) {
-//			if (stats.compareTo(goals) == true) {
-//				System.out.println("Goal was achieved");
-//			}
-//		}
-//		numWorkouts++;
-//	}
-//	
 
-//	// This method will create a new Goal Component
-//	public void logGoals(String duration, String weight, String calorie)
-//			throws InvalidEntryException {
-//
-//		// create a new goal component and save in instance variable
-//		goals = new GoalComponent(duration, weight, calorie);
-//
-//		// check if the instance variable is null
-//		if ( stats != null) {
-//			goals.compareTo(stats);
-//		}
-//	}
-
-//	public String getGoals() {
-//		return goals.toString();
-//	}
-//	
 //	public String toString() {
 //		return history.toString();
 //	}
