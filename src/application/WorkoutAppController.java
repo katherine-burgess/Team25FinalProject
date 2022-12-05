@@ -167,7 +167,7 @@ public class WorkoutAppController {
 					submitStats);
 
 			submitStats.setOnAction(cardioEvent -> calculateCardio(returnUserScene, viewUser, ws.getDistance(),
-					ws.getDurationTextField(), ws.getCaloriesTextfield()));
+					ws.getDurationTextField(), ws.getCaloriesTextfield(), typeChoiceBox));
 
 		} else if (typeChoiceBox.getValue() == "Weight Training") {
 			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " " + "Strength Workout");
@@ -178,7 +178,7 @@ public class WorkoutAppController {
 					submitWeightStats);
 
 			submitWeightStats.setOnAction(weightEvent -> calculateWorkout(returnUserScene, viewUser,
-					ws.getCaloriesTextfield(), ws.getDurationTextField(), ws.getIntensityChoiceBox()));
+					ws.getCaloriesTextfield(), ws.getDurationTextField(), ws.getIntensityChoiceBox(), typeChoiceBox));
 		}
 
 		Scene workoutStatsScene = new Scene(workoutStatsContainer);
@@ -187,12 +187,13 @@ public class WorkoutAppController {
 	}
 
 	private void calculateCardio(Scene returnUserScene, User viewUser, TextField distance, TextField durationTextField,
-			TextField caloriesTextfield) {
+			TextField caloriesTextfield, ChoiceBox<String> typeChoiceBox) {
 		boolean error = false;
 
 		try {
 			Cardio cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(),
 					caloriesTextfield.getText());
+			cardioWorkout.setWorkoutType(typeChoiceBox.getValue());
 			cardioWorkout.setWorkout(cardioWorkout);
 
 		} catch (InvalidEntryException e) {
@@ -216,14 +217,16 @@ public class WorkoutAppController {
 	 * @param caloriesTextfield a string value entered by the user
 	 * @param durationTextfield a string value entered by the user
 	 * @param workoutIntensityChoiceBox a string value entered by the user
+	 * @param typeChoiceBox 
 	 */
 	void calculateWorkout(Scene returnUserScene, User viewUser, TextField caloriesTextfield,
-			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox) {
+			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> typeChoiceBox) {
 
 		boolean error = false;
 		try {
 			Strength strWorkout = new Strength(durationTextfield.getText(), caloriesTextfield.getText(),
 					workoutIntensityChoiceBox.getValue());
+			strWorkout.setWorkoutType(typeChoiceBox.getValue());
 			strWorkout.setWorkout(strWorkout);
 
 		} catch (InvalidEntryException e) {
