@@ -42,11 +42,23 @@ public class Strength extends Workout {
 	
 	@Override
 	public String compareTo(GoalComponent goal) {
-		String message = "";
+		
+		String durMessage = " ", calMessage = "";
+		
 		if (getDuration() > goal.getDurationGoal()) {
-			AchievedGoals ag = new AchievedGoals(goal);
-			
+			durMessage = "New Strength Duration goal has been achieved!  " + goal.getDurationGoal() + "  minutes "+ '\n';
+			//AchievedGoals achGoal = new AchievedGoals(goal);
+		} 
+		if (getCalories() > goal.getCalorieGoal()) {
+			calMessage = "New Strength Calorie goal has been achieved!  " + goal.getCalorieGoal() + "  calories ";
 		}
-		return message;
+		
+		if (!(durMessage == "" && calMessage == "")) {
+			return durMessage + calMessage;	
+		} else if ((durMessage != "") &&( calMessage == "")) {
+			return durMessage;
+		} else {
+			return calMessage;
+		}
 	}
 }

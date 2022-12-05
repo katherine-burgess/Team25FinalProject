@@ -123,6 +123,7 @@ public class WorkoutAppController {
 	 * @throws InvalidEntryException catches if the user enters anything not numerical
 	 */
 	private GoalComponent goal;
+	
 	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield,
 			TextField targetWeightTextfield, TextField calorieGoalTextfield) throws InvalidEntryException {
 
@@ -131,12 +132,12 @@ public class WorkoutAppController {
 				calorieGoalTextfield.getText());
 		goal.setGoals(goal);
 		// Retrieve goals and show to user
-		userGoalLabel.setText(goal.getGoals().toString());
+		
 
 		if (!error) {
 			applicationStage.setScene(returnUserScene);
 			printGoalsLabel.setText(chooseUserChoiceBox.getValue() + "'s Goals: ");
-
+			userGoalLabel.setText(goal.getGoals().toString());
 		}
 
 	}
@@ -197,7 +198,15 @@ public class WorkoutAppController {
 			
 			cardioWorkout.setWorkoutType(typeChoiceBox.getValue());
 			cardioWorkout.setWorkout(cardioWorkout);
-			cardioWorkout.compareTo(goal);
+			
+			if (goal != null) {
+				String message = cardioWorkout.compareTo(goal);
+			
+				// sets the goal label on home screen to indicate achievement to user
+				if (!(message.equals(""))) {
+					userGoalLabel.setText(message);
+				}
+			}
 
 		} catch (InvalidEntryException e) {
 			error = true;
@@ -230,8 +239,17 @@ public class WorkoutAppController {
 			Strength strWorkout = new Strength(durationTextfield.getText(), caloriesTextfield.getText(),
 					workoutIntensityChoiceBox.getValue());
 			strWorkout.setWorkoutType(typeChoiceBox.getValue());
+			
 			strWorkout.setWorkout(strWorkout);
-
+			if (goal != null) {
+				String message = strWorkout.compareTo(goal);
+				
+				// sets the goal label on home screen to indicate achievement to user
+				if (!(message.equals(""))) {
+					userGoalLabel.setText(message);
+				}
+			}
+			
 		} catch (InvalidEntryException e) {
 			userErrorLabel.setText(e.getMessage()); // shows error message to the user
 			error = true;

@@ -56,15 +56,23 @@ public class Cardio extends Workout {
 	
 	@Override
 	public String compareTo(GoalComponent goal) {
-		String message = "";
+		String durMessage = " ", calMessage = "";
+		
 		if (getDuration() > goal.getDurationGoal()) {
-			message = "New Cardio Duration goal has been achieved!";
-			AchievedGoals achGoal = new AchievedGoals(goal);
-			
-		} else if (getCaloriesBurned() > goal.getCalorieGoal()) {
-			message = "New Cardio Calorie goal has been achieved!";
+			durMessage = "New Cardio Duration goal has been achieved!  " + goal.getDurationGoal() + "  minutes "+ '\n';
+			//AchievedGoals achGoal = new AchievedGoals(goal);
+		} 
+		if (getCaloriesBurned() > goal.getCalorieGoal()) {
+			calMessage = "New Cardio Calorie goal has been achieved!  " + goal.getCalorieGoal() + "  calories ";
 		}
 		
-		return message;
+		if (!(durMessage == "" && calMessage == "")) {
+			return durMessage + calMessage;	
+		} else if ((durMessage != "") &&( calMessage == "")) {
+			return durMessage;
+		} else {
+			return calMessage;
+		}
+		
 	}
 }
