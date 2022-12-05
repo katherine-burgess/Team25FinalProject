@@ -9,8 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
 /**
- * This class will generate a new user. Each new user object will contain
- * methods for logging both workout statistics and goals.
+ * This class will generate a new user. It will check if the user has entered a correct username 
+ * containing only letters. This class will also contain helper methods to create the user scene changes.
  * 
  * @author CS219-user Katie Burgess
  *
@@ -29,7 +29,7 @@ public class User {
 
 	private static int numWorkouts = 0;
 
-	// need to add functionality to this constructor
+	// This constructors sets the name to empty
 	public User() {
 		name = " ";
 	}
@@ -145,12 +145,23 @@ public class User {
 	public void newHistory() {
 		history = new WorkoutHistory();
 	}
+	
+	// This method will add a new strength workout to the user's workout history
+	public void setStrengthHistory(Strength newStr) {
+		history.addWorkout(newStr);
+		numWorkouts++;
+	}
+	
+	// This method will add a new cardio workout to the user's workout history
+	public void setCardioHistory(Cardio newCardio) {
+		history.addWorkout(newCardio);
+		numWorkouts++;
+	}
 
+	public String getHistory() {
+		return history.toString();
+	}
 
-//	public String toString() {
-//		return history.toString();
-//	}
-//
 	public int getNumWorkouts() {
 		return numWorkouts;
 	}

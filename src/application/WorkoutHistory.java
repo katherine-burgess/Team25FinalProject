@@ -44,7 +44,13 @@ public class WorkoutHistory {
 	public String toString() {
 		String w = new String();
 		for (int i = 0; i < workoutHistory.size(); i++) {
-			w += "Log: " + (i) + '\t' + (workoutHistory.get(i)) + '\n';
+			if (workoutHistory.get(i).getWorkoutType() == "Cardio") {
+				w +=  " Cardio Log: "  + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + " minutes" + '\n';
+				
+			} else if (workoutHistory.get(i).getWorkoutType() == "Weight Training") {
+				w +=  " Strength Log: "  + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + " minutes" + '\n';
+				
+			}
 		}
 		System.out.println(w);
 		return w;

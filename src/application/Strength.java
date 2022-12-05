@@ -10,6 +10,7 @@ public class Strength extends Workout {
 	private double duration;
 	private double caloriesBurned;
 	private String intensity;
+	private Strength newStr;
 
 	public Strength(String dur, String cal, String intense) throws InvalidEntryException {
 		try {
@@ -31,7 +32,8 @@ public class Strength extends Workout {
 			throw new InvalidEntryException("Invalid Strength Workout Entry. Make sure to enter a number");
 		}
 	}
-	
+
+
 	@Override
 	public double getDuration() {
 		return duration;

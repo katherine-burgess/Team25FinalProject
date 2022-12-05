@@ -43,6 +43,7 @@ public abstract class Workout {
 	}
 
 	public void setWorkout(Workout component) {
+		System.out.println(component);
 		newWorkout = component;
 	}
 

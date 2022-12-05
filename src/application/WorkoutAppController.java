@@ -39,8 +39,8 @@ public class WorkoutAppController {
 
 	private Label userWorkoutLabel = new Label();
 	
-	Label paceLabel = new Label("");
-	Label mileageLabel = new Label("");
+	
+	Label resultsLabel = new Label("");
 	
 	// Get a randomly generated quote and returns the string at the random index
 	// https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
@@ -70,7 +70,7 @@ public class WorkoutAppController {
 			VBox.setMargin(exitButton, new Insets(10, 10, 10, 10));
 			statsContainer.getChildren().addAll(userWorkoutLabel, exitButton);
 			if (viewUser.getNumWorkouts() > 0) {
-				userWorkoutLabel.setText(viewUser.toString());
+				userWorkoutLabel.setText(viewUser.getHistory());
 
 				VBox.setMargin(userWorkoutLabel, new Insets(10, 10, 10, 10));
 			} else if (viewUser.getNumWorkouts() == 0) {
@@ -194,8 +194,8 @@ public class WorkoutAppController {
 	 */
 	void getWorkoutScene(ActionEvent event, Scene returnUserScene, User viewUser, ChoiceBox<String> typeChoiceBox) {
 		// resetting the results labels
-		paceLabel.setText("");
-		mileageLabel.setText("");
+		
+		resultsLabel.setText("");
 		
 		// main container and set a new scene
 		VBox workoutStatsContainer = new VBox();
@@ -209,7 +209,7 @@ public class WorkoutAppController {
 			Button submitStats = new Button("Submit Cardio Stats");
 			VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
 			workoutStatsContainer.getChildren().addAll(ws.setDistance(), ws.setDuration(), ws.setCalories(),
-					submitStats, paceLabel, mileageLabel);
+					submitStats, resultsLabel);
 
 			submitStats.setOnAction(cardioEvent -> calculateCardio( viewUser, ws.getDistance(),
 					ws.getDurationTextField(), ws.getCaloriesTextfield(), typeChoiceBox));
@@ -220,14 +220,12 @@ public class WorkoutAppController {
 			Button submitWeightStats = new Button("Submit Strength Stats");
 			VBox.setMargin(submitWeightStats, new Insets(10, 10, 10, 10));
 			workoutStatsContainer.getChildren().addAll(ws.setCalories(), ws.setDuration(), ws.setIntensity(),
-					submitWeightStats, paceLabel);
+					submitWeightStats, resultsLabel);
 
 			submitWeightStats.setOnAction(weightEvent -> calculateWorkout( viewUser,
 					ws.getCaloriesTextfield(), ws.getDurationTextField(), ws.getIntensityChoiceBox(), typeChoiceBox));
 		}
-		//workoutStatsContainer.getChildren().addAll(paceLabel, mileageLabel);
-		VBox.setMargin(paceLabel, new Insets(10, 10, 10, 10));
-		VBox.setMargin(mileageLabel, new Insets(10, 10, 10, 10));
+		VBox.setMargin(resultsLabel, new Insets(10, 10, 10, 10));
 		Button doneButton = new Button("Done");
 		VBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
 		workoutStatsContainer.getChildren().add(doneButton);
@@ -252,19 +250,19 @@ public class WorkoutAppController {
 	private void calculateCardio(User viewUser, TextField distance, TextField durationTextField,
 			TextField caloriesTextfield, ChoiceBox<String> typeChoiceBox) {
 		boolean error = false;
-
+		
 		try {
 			cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(),
 					caloriesTextfield.getText());
 			
 			cardioWorkout.setWorkoutType(typeChoiceBox.getValue());
 			cardioWorkout.setWorkout(cardioWorkout);
-			// Calculate the mileage and pace
 			
+			// add the new cardio workout to user's history
+			viewUser.setCardioHistory(cardioWorkout);
 			
 			if (goal != null) {
 				String message = cardioWorkout.compareTo(goal);
-			
 				// sets the goal label on home screen to indicate achievement to user
 				if (!(message.equals(""))) {
 					userGoalLabel.setText(message);
@@ -279,12 +277,8 @@ public class WorkoutAppController {
 		}
 
 		if (!error) {
-			// Calculate the mileage and pace 
-			// Print results to user
-			paceLabel.setText(cardioWorkout.toString());
-			mileageLabel.setText(cardioWorkout.calculateMileage());
-			
-			//applicationStage.setScene(returnUserScene);
+			// Calculate the mileage/pace and prints results to user
+			resultsLabel.setText(cardioWorkout.calculateMileage());
 		}
 
 	}
@@ -309,8 +303,11 @@ public class WorkoutAppController {
 			strWorkout = new Strength(durationTextfield.getText(), caloriesTextfield.getText(),
 					workoutIntensityChoiceBox.getValue());
 			strWorkout.setWorkoutType(typeChoiceBox.getValue());
-			
 			strWorkout.setWorkout(strWorkout);
+			
+			// add the new strength workout to user's history
+			viewUser.setStrengthHistory(strWorkout);
+			
 			if (goal != null) {
 				String message = strWorkout.compareTo(goal);
 				
@@ -328,7 +325,7 @@ public class WorkoutAppController {
 		}
 		if (!error) {
 			// calculate the calories burned per hour
-			paceLabel.setText(strWorkout.caloriesPerHour());
+			resultsLabel.setText(strWorkout.caloriesPerHour());
 		}
 	}
 
