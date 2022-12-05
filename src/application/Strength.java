@@ -32,6 +32,7 @@ public class Strength extends Workout {
 		}
 	}
 	
+	@Override
 	public double getDuration() {
 		return duration;
 	}
@@ -39,6 +40,10 @@ public class Strength extends Workout {
 		return caloriesBurned;
 	}
 	
+	public String caloriesPerHour() {
+		int caloriesHour = (int) (caloriesBurned / durationInHours());
+		return "Calories burned per hour: " +  caloriesHour ;
+	}
 	
 	@Override
 	public String compareTo(GoalComponent goal) {

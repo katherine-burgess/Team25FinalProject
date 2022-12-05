@@ -13,6 +13,7 @@ import javafx.scene.layout.HBox;
  *
  */
 public class SetGoalsScene {
+	// Instance Variables
 	private TextField durationGoalTextfield;
 	private TextField distanceTextfield;
 	private TextField calorieGoalTextfield;

@@ -18,7 +18,7 @@ public class Cardio extends Workout {
 	public Cardio(String dist, String dur, String cal) throws InvalidEntryException {
 		try {
 			distance = Double.parseDouble(dist);
-			duration = Double.parseDouble(dist);
+			duration = Double.parseDouble(dur);
 			caloriesBurned = Double.parseDouble(cal);
 
 			if (distance < 0 || distance > 50) {
@@ -53,6 +53,22 @@ public class Cardio extends Workout {
 		return distance;
 		
 	}
+	
+	// This method will calculate the pace (seconds/km)
+	public double calculatePace() {
+		double pace = getDuration() / getDistance();
+		return  pace;
+	}
+	
+	public String toString() {
+		return "Pace: " + calculatePace() + " minutes per kilometer";
+	}
+	// This method will calculate the mileage 
+	public String calculateMileage() {
+		double mileage = getDuration() / calculatePace();
+		return "Mileage: " + mileage + " kilometers";
+	}
+	
 	
 	@Override
 	public String compareTo(GoalComponent goal) {

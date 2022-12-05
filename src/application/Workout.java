@@ -17,6 +17,7 @@ public abstract class Workout {
 	// instance variables
 	private String workoutType;
 	private Workout newWorkout;
+	private double duration;
 
 	// private Workout stats;
 
@@ -48,8 +49,16 @@ public abstract class Workout {
 	public Workout getWorkout() {
 		return newWorkout;
 	}
-
+	
+	public abstract double getDuration();
+	
 	public abstract String compareTo(GoalComponent goal);
+	
+	// This method takes the duration in minutes and converts it to seconds
+	public double durationInHours() {
+		duration = getDuration() / 60;
+		return duration;
+	}
 
 
 

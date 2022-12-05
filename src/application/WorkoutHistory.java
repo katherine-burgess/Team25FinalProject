@@ -18,6 +18,8 @@ public class WorkoutHistory {
 		// creation of a new workout history with a new user
 		workoutHistory = new ArrayList<Workout>();
 	}
+	
+	// copy constructor 
 	public WorkoutHistory(Workout component) {
 		workoutHistory = new ArrayList<Workout>();
 		
