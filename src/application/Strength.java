@@ -51,6 +51,8 @@ public class Strength extends Workout {
 	}
 	
 	@Override
+	// This method will compare the newest incoming workout to the user's entered goals.
+	// If a goal is achieved an achievement message will be returned.
 	public String compareTo(GoalComponent goal) {
 		
 		String durMessage = " ", calMessage = "";
