@@ -47,6 +47,10 @@ public abstract class Workout {
 	
 	public abstract double getDuration();
 	
+	public abstract double getCalories();
+	
+	public abstract double getDistance();
+	
 	public abstract String compareTo(GoalComponent goal);
 	
 	// This method takes the duration in minutes and converts it to seconds

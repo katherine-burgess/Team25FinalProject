@@ -46,7 +46,7 @@ public class Cardio extends Workout {
 		return duration;
 	}
 	
-	public double getCaloriesBurned() {
+	public double getCalories() {
 		return caloriesBurned;
 	}
 	public double getDistance() {
@@ -79,7 +79,7 @@ public class Cardio extends Workout {
 			durMessage = "New Cardio Duration goal has been achieved!  " + goal.getDurationGoal() + "  minutes "+ '\n';
 			//AchievedGoals achGoal = new AchievedGoals(goal);
 		} 
-		if (getCaloriesBurned() > goal.getCalorieGoal()) {
+		if (getCalories() > goal.getCalorieGoal()) {
 			calMessage = "New Cardio Calorie goal has been achieved!  " + goal.getCalorieGoal() + "  calories ";
 		}
 		

@@ -11,7 +11,7 @@ public class Strength extends Workout {
 	private double duration;
 	private double caloriesBurned;
 	private String intensity;
-	private Strength newStr;
+	
 
 	public Strength(String dur, String cal, String intense) throws InvalidEntryException {
 		try {
@@ -68,5 +68,12 @@ public class Strength extends Workout {
 		} else {
 			return calMessage;
 		}
+	}
+
+	// find a way to not need this 
+	@Override
+	public double getDistance() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
