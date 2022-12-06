@@ -170,7 +170,11 @@ public class WorkoutAppController {
 		goal.setGoals(goal);
 		String goalList = goal.getGoals().toString();
 		// Retrieve goals and show to user
-		
+		if (cardioWorkout != null) {
+			cardioWorkout.compareTo(goal);
+		} else if (strWorkout != null) {
+			 strWorkout.compareTo(goal);
+		}
 
 		if (!error) {
 			applicationStage.setScene(returnUserScene);

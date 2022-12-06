@@ -39,6 +39,8 @@ public class Strength extends Workout {
 	public double getDuration() {
 		return duration;
 	}
+	
+	@Override
 	public double getCalories() {
 		return caloriesBurned;
 	}
@@ -58,7 +60,7 @@ public class Strength extends Workout {
 			//AchievedGoals achGoal = new AchievedGoals(goal);
 		} 
 		if (getCalories() > goal.getCalorieGoal()) {
-			calMessage = "New Strength Calorie goal has been achieved!  " + goal.getCalorieGoal() + "  calories ";
+			calMessage = "New Strength Calories Burned goal has been achieved!  " + goal.getCalorieGoal() + "  calories ";
 		}
 		
 		if (!(durMessage == "" && calMessage == "")) {

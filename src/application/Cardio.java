@@ -21,7 +21,7 @@ public class Cardio extends Workout {
 			duration = Double.parseDouble(dur);
 			caloriesBurned = Double.parseDouble(cal);
 
-			if (distance < 0 || distance > 50) {
+			if (distance < 0 || distance > 80) {
 				throw new InvalidEntryException(
 						String.format("Make sure to enter a distance number between 0 and 80 km.", dist));
 			}
@@ -83,23 +83,20 @@ public class Cardio extends Workout {
 	
 	@Override
 	public String compareTo(GoalComponent goal) {
-		String durMessage = " ", calMessage = "";
+		String durMessage = " ", calMessage = "", distMessage = "";
 		
 		if (getDuration() > goal.getDurationGoal()) {
-			durMessage = "New Cardio Duration goal has been achieved!  " + goal.getDurationGoal() + "  minutes "+ '\n';
+			 return durMessage = "Cardio Duration goal has been achieved!  " + goal.getDurationGoal() + "  minutes "+ '\n';
 			//AchievedGoals achGoal = new AchievedGoals(goal);
 		} 
 		if (getCalories() > goal.getCalorieGoal()) {
-			calMessage = "New Cardio Calorie goal has been achieved!  " + goal.getCalorieGoal() + "  calories ";
+			return calMessage = "Cardio Calories Burned goal has been achieved!  " + goal.getCalorieGoal() + "  calories " + '\n';
+		}
+		if (getDistance() > goal.getDistanceGoal()) {
+			return distMessage = "Cardio Distance goal has been achieved!  " + goal.getDistanceGoal() + " km";
 		}
 		
-		if (!(durMessage == "" && calMessage == "")) {
-			return durMessage + calMessage;	
-		} else if ((durMessage != "") &&( calMessage == "")) {
-			return durMessage;
-		} else {
-			return calMessage;
-		}
+		return " ";
 		
 	}
 }
