@@ -13,7 +13,6 @@ public class WorkoutHistory {
 
 	private ArrayList<Workout> workoutHistory;
 
-	
 	public WorkoutHistory() {
 		// creation of a new workout history with a new user
 		workoutHistory = new ArrayList<Workout>();
@@ -45,14 +44,15 @@ public class WorkoutHistory {
 		String w = new String();
 		for (int i = 0; i < workoutHistory.size(); i++) {
 			if (workoutHistory.get(i).getWorkoutType() == "Cardio") {
-				w +=  " Cardio Log: "  + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + " minutes" + '\n';
+				w +=  " Cardio Log: "  + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + " minutes" + '\t'
+						+ "Calories Burned: " + workoutHistory.get(i).getCalories() + " calories " + '\t'
+						+ " Distance: " + workoutHistory.get(i).getDistance() + " km "+ '\n';
 				
 			} else if (workoutHistory.get(i).getWorkoutType() == "Weight Training") {
-				w +=  " Strength Log: "  + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + " minutes" + '\n';
-				
+				w +=  " Strength Log: "  + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + " minutes" + '\t'
+						+ "Calories Burned: " + workoutHistory.get(i).getCalories() + " calories " + '\n';	
 			}
 		}
-		System.out.println(w);
 		return w;
 	}
 

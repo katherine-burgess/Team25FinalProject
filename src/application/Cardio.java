@@ -64,9 +64,9 @@ public class Cardio extends Workout {
 	public String calculateMileage() {
 		double mileage = getDuration() / calculatePace();
 		if (calculatePace() > 1) {
-			return  "Pace: " + calculatePace() + " minutes per kilometer" + '\n' + "Mileage: " + mileage + " kilometers";
+			return  String.format("Pace: %.2f minutes per kilometer" + '\n' + "Mileage: " + mileage + " kilometers", calculatePace());
 		} else {
-			return "Pace: " + calculatePace() + " minute per kilometer" + '\n' + "Mileage: " + mileage + " kilometers";
+			return String.format("Pace: %.2f minute per kilometer" + '\n' + "Mileage: " + mileage + " kilometers", calculatePace());
 		}
 	}
 	
