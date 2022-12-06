@@ -38,7 +38,7 @@ public class SetGoalsScene {
 	}
 
 	// This method creates a container for setting user's weight goal
-	public HBox setTargetWeight() {
+	public HBox setTargetDistance() {
 
 		HBox targetWeightContainer = new HBox();
 		Label targetWeightLabel = new Label("Target Distance Goal: ");
@@ -52,7 +52,7 @@ public class SetGoalsScene {
 		return targetWeightContainer;
 	}
 
-	public TextField getWeightGoalTextfield() {
+	public TextField getDistanceGoalTextfield() {
 		return distanceTextfield;
 	}
 

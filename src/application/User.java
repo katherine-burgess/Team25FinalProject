@@ -135,7 +135,7 @@ public class User {
 	}
 
 	// This method will get the new username textfield
-	public TextField setNewUserTextfield() {
+	public TextField getNewUserTextfield() {
 		return newUserTextfield;
 	}
 

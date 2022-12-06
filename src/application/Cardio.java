@@ -89,7 +89,6 @@ public class Cardio extends Workout {
 		
 		if (getDuration() > goal.getDurationGoal()) {
 			 return durMessage = "Cardio Duration goal has been achieved!  " + goal.getDurationGoal() + "  minutes "+ '\n';
-			//AchievedGoals achGoal = new AchievedGoals(goal);
 		} 
 		if (getCalories() > goal.getCalorieGoal()) {
 			return calMessage = "Cardio Calories Burned goal has been achieved!  " + goal.getCalorieGoal() + "  calories " + '\n';

@@ -28,14 +28,11 @@ public class WorkoutAppController {
 	@FXML
 	private ChoiceBox<String> chooseUserChoiceBox;
 
-	private Label userErrorLabel = new Label();
-
-	private Label printGoalsLabel = new Label();
-
-	private Label userGoalLabel = new Label();
-
-	private Label userWorkoutLabel = new Label();
-	
+	// results and error labels for GUI
+	Label userErrorLabel = new Label();
+	Label printGoalsLabel = new Label();
+	Label userGoalLabel = new Label();
+	Label userWorkoutLabel = new Label();
 	Label mileageLabel = new Label("");
 	Label resultsLabel = new Label("");
 	
@@ -128,7 +125,7 @@ public class WorkoutAppController {
 
 		Button submitGoals = new Button("Done");
 		VBox.setMargin(submitGoals, new Insets(10, 10, 10, 10));
-		workoutGoalsContainer.getChildren().addAll(gs.setDurationGoal(), gs.setTargetWeight(), gs.setCalorieGoal(),
+		workoutGoalsContainer.getChildren().addAll(gs.setDurationGoal(), gs.setTargetDistance(), gs.setCalorieGoal(),
 				submitGoals);
 		workoutGoalsContainer.getChildren().add(userErrorLabel);
 		VBox.setMargin(userErrorLabel, new Insets(10,10,10,10));
@@ -136,7 +133,7 @@ public class WorkoutAppController {
 		// Validates and Changes Scene if the user enters proper input
 		submitGoals.setOnAction(doneEvent -> {
 			try {
-				calculateGoals(returnUserScene, viewUser, gs.getDurationGoalTextfield(), gs.getWeightGoalTextfield(),
+				calculateGoals(returnUserScene, viewUser, gs.getDurationGoalTextfield(), gs.getDistanceGoalTextfield(),
 						gs.getCalorieGoalTextfield());
 			} catch (InvalidEntryException e) {
 				userErrorLabel.setText(e.getMessage());
@@ -162,10 +159,10 @@ public class WorkoutAppController {
 	private GoalComponent goal;
 	
 	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield,
-			TextField targetWeightTextfield, TextField calorieGoalTextfield) throws InvalidEntryException {
+			TextField distanceTextfield, TextField calorieGoalTextfield) throws InvalidEntryException {
 
 		boolean error = false;
-		goal = new GoalComponent(durationTextfield.getText(), targetWeightTextfield.getText(),
+		goal = new GoalComponent(durationTextfield.getText(), distanceTextfield.getText(),
 				calorieGoalTextfield.getText());
 		goal.setGoals(goal);
 		String goalList = goal.getGoals().toString();
@@ -360,7 +357,7 @@ public class WorkoutAppController {
 			VBox newUserContainer = new VBox();
 			Button doneButton = new Button("Enter Here");
 			VBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
-			doneButton.setOnAction(doneEvent -> setNewUser(mainScene, nu.setNewUserTextfield(), nu));
+			doneButton.setOnAction(doneEvent -> setNewUser(mainScene, nu.getNewUserTextfield(), nu));
 
 			newUserContainer.getChildren().addAll(nu.setUserTitle(), nu.setUserNameContainer(), doneButton);
 
