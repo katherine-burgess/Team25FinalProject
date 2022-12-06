@@ -23,7 +23,7 @@ public class Cardio extends Workout {
 
 			if (distance < 0 || distance > 50) {
 				throw new InvalidEntryException(
-						String.format("Make sure to enter a distance number between 0 and 50 km.", dist));
+						String.format("Make sure to enter a distance number between 0 and 80 km.", dist));
 			}
 
 			if (duration < 0 || duration > 200) {
@@ -41,14 +41,17 @@ public class Cardio extends Workout {
 					String.format("Invalid Cardio Workout Entry. Make sure to enter a number. "));
 		}
 	}
-
+	@Override
 	public double getDuration() {
 		return duration;
 	}
 	
+	@Override
 	public double getCalories() {
 		return caloriesBurned;
 	}
+	
+	@Override
 	public double getDistance() {
 		return distance;
 		

@@ -28,8 +28,8 @@ public class GoalComponent {
 				throw new InvalidEntryException(
 						String.format("Duration of workout can only be between 0 and 300 minutes. "));
 			}
-			if (distanceGoal < 0 || distanceGoal > 50) {
-				throw new InvalidEntryException(String.format("Target distance can only be between 0 and 50 km. "));
+			if (distanceGoal < 0 || distanceGoal > 80) {
+				throw new InvalidEntryException(String.format("Target distance can only be between 0 and 80 km. "));
 			}
 			if (calorieGoal < 0 || calorieGoal > 1000) {
 				throw new InvalidEntryException(
