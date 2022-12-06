@@ -25,7 +25,6 @@ public class WorkoutHistory {
 	}
 
 	// This method will add each new workout component to the ArrayList
-	// will sort based on duration and calories
 	public void addWorkout(Workout component) {
 		if (workoutHistory.isEmpty()) {
 			workoutHistory.add(component);

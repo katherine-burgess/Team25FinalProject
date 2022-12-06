@@ -12,25 +12,25 @@ import java.util.ArrayList;
 public class GoalComponent {
 
 	// Instance Variables
-	private double targetWeight;
+	private double distanceGoal;
 	private double durationGoal;
 	private double calorieGoal;
 
 	private GoalComponent goals;
 
 	// This constructor takes in the three goal components and validates the input
-	public GoalComponent(String duration, String weight, String calorie) throws InvalidEntryException {
+	public GoalComponent(String duration, String distance, String calorie) throws InvalidEntryException {
 		try {
-			this.durationGoal = Double.parseDouble(duration);
-			targetWeight = Double.parseDouble(weight);
+			durationGoal = Double.parseDouble(duration);
+			distanceGoal = Double.parseDouble(distance);
 			calorieGoal = Double.parseDouble(calorie);
 
-			if (this.durationGoal < 0 || this.durationGoal > 300) {
+			if (durationGoal < 0 || durationGoal > 300) {
 				throw new InvalidEntryException(
-						String.format("Duration of workout can only be between 0 and 300 minutes"));
+						String.format("Duration of workout can only be between 0 and 300 minutes. "));
 			}
-			if (targetWeight < 0 || targetWeight > 300) {
-				throw new InvalidEntryException(String.format("Target weight can only be between 0 and 300 lbs"));
+			if (distanceGoal < 0 || distanceGoal > 50) {
+				throw new InvalidEntryException(String.format("Target distance can only be between 0 and 50 km. "));
 			}
 			if (calorieGoal < 0 || calorieGoal > 1000) {
 				throw new InvalidEntryException(
@@ -38,7 +38,7 @@ public class GoalComponent {
 			}
 
 		} catch (NumberFormatException e) {
-			throw new InvalidEntryException(String.format("Invalid Goal Entry %d. Make sure to enter a number."));
+			throw new InvalidEntryException(String.format("Invalid Goal Entry. Make sure to enter a number."));
 		}
 	}
 
@@ -48,11 +48,11 @@ public class GoalComponent {
 	}
 
 	public double getDurationGoal() {
-		return this.durationGoal;
+		return durationGoal;
 	}
 
-	public double getTargetWeight() {
-		return targetWeight;
+	public double getDistanceGoal() {
+		return distanceGoal;
 	}
 
 	public double getCalorieGoal() {
@@ -61,7 +61,7 @@ public class GoalComponent {
 
 	// This method will log the goals
 	public void setGoals(GoalComponent newGoal) {
-		goals = new GoalComponent(newGoal);
+		goals = newGoal;
 	}
 
 	public GoalComponent getGoals() {
@@ -71,8 +71,8 @@ public class GoalComponent {
 
 	// Will create a string containing all of the inputed goals
 	public String toString() {
-		String goal = "Duration: " + getDurationGoal() + " minutes " + '\n' + "Target Weight: " + getTargetWeight()
-				+ " lbs " + '\n' + "Calories Burned Goal: " + getCalorieGoal() + " calories ";
+		String goal = '\t' + "Target Duration: " + getDurationGoal() + " minutes " + '\t' + "Target Distance: " + getDistanceGoal()
+				+ " km " + '\t' + "Target Calories Burned: " + getCalorieGoal() + " calories " + '\t';
 
 		return goal;
 	}

@@ -5,14 +5,11 @@ import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -39,7 +36,7 @@ public class WorkoutAppController {
 
 	private Label userWorkoutLabel = new Label();
 	
-	
+	Label mileageLabel = new Label("");
 	Label resultsLabel = new Label("");
 	
 	// Get a randomly generated quote and returns the string at the random index
@@ -194,8 +191,8 @@ public class WorkoutAppController {
 	 */
 	void getWorkoutScene(ActionEvent event, Scene returnUserScene, User viewUser, ChoiceBox<String> typeChoiceBox) {
 		// resetting the results labels
-		
 		resultsLabel.setText("");
+		mileageLabel.setText("");
 		
 		// main container and set a new scene
 		VBox workoutStatsContainer = new VBox();
@@ -209,7 +206,7 @@ public class WorkoutAppController {
 			Button submitStats = new Button("Submit Cardio Stats");
 			VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
 			workoutStatsContainer.getChildren().addAll(ws.setDistance(), ws.setDuration(), ws.setCalories(),
-					submitStats, resultsLabel);
+					submitStats, resultsLabel, mileageLabel);
 
 			submitStats.setOnAction(cardioEvent -> calculateCardio( viewUser, ws.getDistance(),
 					ws.getDurationTextField(), ws.getCaloriesTextfield(), typeChoiceBox));
@@ -225,7 +222,8 @@ public class WorkoutAppController {
 			submitWeightStats.setOnAction(weightEvent -> calculateWorkout( viewUser,
 					ws.getCaloriesTextfield(), ws.getDurationTextField(), ws.getIntensityChoiceBox(), typeChoiceBox));
 		}
-		VBox.setMargin(resultsLabel, new Insets(10, 10, 10, 10));
+		VBox.setMargin(resultsLabel, new Insets(10, 10, 0, 10));
+		VBox.setMargin(mileageLabel, new Insets(10, 0, 10,10));
 		Button doneButton = new Button("Done");
 		VBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
 		workoutStatsContainer.getChildren().add(doneButton);
@@ -278,7 +276,8 @@ public class WorkoutAppController {
 
 		if (!error) {
 			// Calculate the mileage/pace and prints results to user
-			resultsLabel.setText(cardioWorkout.calculateMileage());
+			resultsLabel.setText(cardioWorkout.paceToString());
+			mileageLabel.setText(cardioWorkout.calculateMileage());
 		}
 
 	}

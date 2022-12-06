@@ -60,13 +60,20 @@ public class Cardio extends Workout {
 		return  pace;
 	}
 	
+	public String paceToString() {
+		if (calculatePace() > 1) {
+			return  String.format("Pace: %.2f minutes per kilometer", calculatePace());
+		} else {
+			return String.format("Pace: %.2f minute per kilometer", calculatePace());
+		}
+	}
 	// This method will calculate the mileage 
 	public String calculateMileage() {
 		double mileage = getDuration() / calculatePace();
-		if (calculatePace() > 1) {
-			return  String.format("Pace: %.2f minutes per kilometer" + '\n' + "Mileage: " + mileage + " kilometers", calculatePace());
+		if (mileage > 1) {
+			return  String.format("Mileage: %.2f kilometers", mileage);
 		} else {
-			return String.format("Pace: %.2f minute per kilometer" + '\n' + "Mileage: " + mileage + " kilometers", calculatePace());
+			return String.format( "Mileage: %.2f kilometer", mileage);
 		}
 	}
 	
