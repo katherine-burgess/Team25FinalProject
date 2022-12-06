@@ -131,6 +131,7 @@ public class WorkoutAppController {
 		workoutGoalsContainer.getChildren().addAll(gs.setDurationGoal(), gs.setTargetWeight(), gs.setCalorieGoal(),
 				submitGoals);
 		workoutGoalsContainer.getChildren().add(userErrorLabel);
+		VBox.setMargin(userErrorLabel, new Insets(10,10,10,10));
 
 		// Validates and Changes Scene if the user enters proper input
 		submitGoals.setOnAction(doneEvent -> {

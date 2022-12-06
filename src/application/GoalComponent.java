@@ -1,6 +1,5 @@
 package application;
 
-import java.util.ArrayList;
 
 /**
  * This class will take in the user's goals and save them for 
@@ -71,9 +70,8 @@ public class GoalComponent {
 
 	// Will create a string containing all of the inputed goals
 	public String toString() {
-		String goal = '\t' + "Target Duration: " + getDurationGoal() + " minutes " + '\t' + "Target Distance: " + getDistanceGoal()
-				+ " km " + '\t' + "Target Calories Burned: " + getCalorieGoal() + " calories " + '\t';
-
+		String goal = "Target Duration: " + getDurationGoal() + " minutes " + '\n' + "Target Distance: " + getDistanceGoal()
+				+ " km " + '\n' + "Target Calories Burned: " + getCalorieGoal() + " calories " ;
 		return goal;
 	}
 
