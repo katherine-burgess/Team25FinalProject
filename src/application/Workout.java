@@ -23,7 +23,6 @@ public abstract class Workout {
 	// Copy constructor
 	public Workout(Workout toCopy) {
 		if (toCopy != null) {
-			workoutType = toCopy.workoutType;
 			newWorkout = toCopy.newWorkout;
 		}
 	}
@@ -37,13 +36,6 @@ public abstract class Workout {
 		return workoutType;
 	}
 
-	public void setWorkout(Workout component) {
-		newWorkout = component;
-	}
-
-	public Workout getWorkout() {
-		return newWorkout;
-	}
 	
 	public abstract double getDuration();
 	
@@ -51,6 +43,7 @@ public abstract class Workout {
 	
 	public abstract double getDistance();
 	
+	// This method will compare the newly entered workout with the user's goals
 	public abstract String compareTo(GoalComponent goal);
 	
 	// This method takes the duration in minutes and converts it to seconds

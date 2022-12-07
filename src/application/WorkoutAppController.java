@@ -39,11 +39,10 @@ public class WorkoutAppController {
 	// Get a randomly generated quote and returns the string at the random index
 	// https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
 	public String getRandomQuote() {
-		String[] quoteArray = new String[] { "Progress, not perfection.", "Find your joy.",
+		String[] quoteArray = new String[] { "Progress, not perfection.", 
 				"This is the moment to begin.", "Goal setting is the secret to a compelling future." };
 		int rndQuote = new Random().nextInt(quoteArray.length);
 		return quoteArray[rndQuote];
-		// this function could be placed in a new class
 	}
 
 	/**
@@ -86,9 +85,9 @@ public class WorkoutAppController {
 	 * validate that the user name is alphabetic, if the user has entered a proper
 	 * user name the application will add the new user to the ChoiceBox.
 	 * 
-	 * @param mainScene
+	 * @param mainScene the main welcome scene user can choose a participant
 	 * @param newUserTextfield string value entered by the user
-	 * @param newUser 
+	 * @param newUser a new participant
 	 */
 	void setNewUser(Scene mainScene, TextField newUserTextfield, User newUser) {
 		userErrorLabel.setText(" ");
@@ -157,15 +156,18 @@ public class WorkoutAppController {
 	 * @throws InvalidEntryException catches if the user enters anything not numerical
 	 */
 	private GoalComponent goal;
-	
 	void calculateGoals(Scene returnUserScene, User viewUser, TextField durationTextfield,
 			TextField distanceTextfield, TextField calorieGoalTextfield) throws InvalidEntryException {
 
 		boolean error = false;
 		goal = new GoalComponent(durationTextfield.getText(), distanceTextfield.getText(),
 				calorieGoalTextfield.getText());
+		
 		goal.setGoals(goal);
 		String goalList = goal.getGoals().toString();
+		
+		
+	
 		// Retrieve goals and show to user
 		if (cardioWorkout != null) {
 			cardioWorkout.compareTo(goal);
@@ -189,7 +191,7 @@ public class WorkoutAppController {
 	 * @param event an Action Event that occurs when the user presses the log workout button
 	 * @param returnUserScene the returning user's main welcome scene
 	 * @param viewUser the current user
-	 * @param typeChoiceBox
+	 * @param typeChoiceBox contains the type of workout chosen by the user
 	 */
 	void getWorkoutScene(ActionEvent event, Scene returnUserScene, User viewUser, ChoiceBox<String> typeChoiceBox) {
 		// resetting the results labels
@@ -203,7 +205,7 @@ public class WorkoutAppController {
 		VBox.setMargin(userErrorLabel, new Insets(10, 10, 10, 10));
 
 		if (typeChoiceBox.getValue() == "Cardio") {
-			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " " + "Cardio Workout");
+			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " 's" + " Cardio Workout");
 			userErrorLabel.setText("Enter Cardio Workout Stats: ");
 			Button submitStats = new Button("Submit Cardio Stats");
 			VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
@@ -214,7 +216,7 @@ public class WorkoutAppController {
 					ws.getDurationTextField(), ws.getCaloriesTextfield(), typeChoiceBox));
 
 		} else if (typeChoiceBox.getValue() == "Weight Training") {
-			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " " + "Strength Workout");
+			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " 's" + "Strength Workout");
 			userErrorLabel.setText("Enter Strength Workout Stats: ");
 			Button submitWeightStats = new Button("Submit Strength Stats");
 			VBox.setMargin(submitWeightStats, new Insets(10, 10, 10, 10));
@@ -252,11 +254,12 @@ public class WorkoutAppController {
 		boolean error = false;
 		
 		try {
+			// This instance variable is an allowed privacy leak
 			cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(),
 					caloriesTextfield.getText());
 			
 			cardioWorkout.setWorkoutType(typeChoiceBox.getValue());
-			cardioWorkout.setWorkout(cardioWorkout);
+			//cardioWorkout.setWorkout(cardioWorkout);
 			
 			// add the new cardio workout to user's history
 			viewUser.setCardioHistory(cardioWorkout);
@@ -301,10 +304,12 @@ public class WorkoutAppController {
 
 		boolean error = false;
 		try {
+			// this can be reset each time (not a privacy leak)
+			
 			strWorkout = new Strength(durationTextfield.getText(), caloriesTextfield.getText(),
 					workoutIntensityChoiceBox.getValue());
 			strWorkout.setWorkoutType(typeChoiceBox.getValue());
-			strWorkout.setWorkout(strWorkout);
+			
 			
 			// add the new strength workout to user's history
 			viewUser.setStrengthHistory(strWorkout);
@@ -326,7 +331,7 @@ public class WorkoutAppController {
 		}
 		if (!error) {
 			// calculate the calories burned per hour
-			resultsLabel.setText(strWorkout.caloriesPerHour());
+			resultsLabel.setText(" Strength workout has been submitted");
 		}
 	}
 

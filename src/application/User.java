@@ -96,7 +96,7 @@ public class User {
 	public HBox setGoalsContainer() {
 
 		HBox workoutGoalsContainer = new HBox();
-		Label logGoalsLabel = new Label("Log your workout goals");
+		Label logGoalsLabel = new Label("Log your fitness goals");
 		HBox.setMargin(logGoalsLabel, new Insets(10, 10, 10, 10));
 		goalsButton = new Button("Enter Goals Here");
 		HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
@@ -156,6 +156,7 @@ public class User {
 		numWorkouts++;
 	}
 
+	// This method will get the user's fitness history as a string
 	public String getHistory() {
 		return history.toString();
 	}

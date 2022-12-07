@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 
 /**
  * This class will take in the user's goals and save them for 
@@ -17,7 +18,16 @@ public class GoalComponent {
 
 	private GoalComponent goals;
 
-	// This constructor takes in the three goal components and validates the input
+	/**
+	 *  This constructor takes in the three goal components and validates the input. If the 
+	 *  input is not a number an Invalid Entry Exception will be thrown with a specific error 
+	 *  message to the user.
+	 *  
+	 * @param duration a string duration goal value entered by the user
+	 * @param distance a string distance goal value entered by the user
+	 * @param calorie a string calorie goal value entered by the user
+	 * @throws InvalidEntryException
+	 */
 	public GoalComponent(String duration, String distance, String calorie) throws InvalidEntryException {
 		try {
 			durationGoal = Double.parseDouble(duration);
@@ -43,7 +53,9 @@ public class GoalComponent {
 
 	// Copy constructor
 	public GoalComponent(GoalComponent newGoal) {
-		goals = newGoal.goals;
+		if (newGoal != null) {
+			goals = newGoal.goals;
+		}
 	}
 
 	public double getDurationGoal() {
@@ -64,7 +76,7 @@ public class GoalComponent {
 	}
 
 	public GoalComponent getGoals() {
-		return goals;
+		return new GoalComponent(goals);
 	}
 
 

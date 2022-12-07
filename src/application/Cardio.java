@@ -1,7 +1,8 @@
 package application;
 
 /**
- * This class will track cardio workouts entered by the user.
+ * This class will track cardio workouts entered by the user. If the user has entered an invalid fitness log, 
+ * an InvalidEntryException will be thrown.
  * 
  * @author CS219-user Katie Burgess
  *
@@ -13,8 +14,15 @@ public class Cardio extends Workout {
 	private double distance;
 	private double duration;
 
-	// This constructor will check for valid cardio workout entries, if entry is
-	// invalid an invalid entry exception will be thrown
+	/**
+	 *  This constructor will check for valid cardio workout entries, if entry is
+	 *  not a number an invalid entry exception will be thrown. 
+	 *  
+	 * @param dist a string distance value entered by the user
+	 * @param dur a string duration value entered by the user
+	 * @param cal a string calorie value entered by the user
+	 * @throws InvalidEntryException when user input is not a number
+	 */
 	public Cardio(String dist, String dur, String cal) throws InvalidEntryException {
 		try {
 			distance = Double.parseDouble(dist);
@@ -63,6 +71,7 @@ public class Cardio extends Workout {
 		return  pace;
 	}
 	
+	// This method will take the results from the calculate pace method and return it in a string format
 	public String paceToString() {
 		if (calculatePace() > 1) {
 			return  String.format("Pace: %.2f minutes per kilometer", calculatePace());
@@ -70,7 +79,7 @@ public class Cardio extends Workout {
 			return String.format("Pace: %.2f minute per kilometer", calculatePace());
 		}
 	}
-	// This method will calculate the mileage 
+	// This method will calculate the mileage and return in a string format
 	public String calculateMileage() {
 		double mileage = getDuration() / calculatePace();
 		if (mileage > 1) {
@@ -82,22 +91,34 @@ public class Cardio extends Workout {
 	
 	
 	@Override
-	// This method will compare the newest incoming workout to the user's entered goals.
-	// If a goal is achieved an achievement message will be returned.
+	/**
+	 * This method will compare the newest incoming workout to the user's entered goals.
+	 * If a goal is achieved an achievement message will be returned to display to the user.
+	 * 
+	 * @param goal the goals inputed by the user on the GUI
+	 */
 	public String compareTo(GoalComponent goal) {
 		String durMessage = " ", calMessage = "", distMessage = "";
 		
 		if (getDuration() > goal.getDurationGoal()) {
-			 return durMessage = "Cardio Duration goal has been achieved!  " + goal.getDurationGoal() + "  minutes "+ '\n';
+			durMessage = "Cardio Duration goal has been achieved!  " + goal.getDurationGoal() + "  minutes "+ '\n'; 
 		} 
 		if (getCalories() > goal.getCalorieGoal()) {
-			return calMessage = "Cardio Calories Burned goal has been achieved!  " + goal.getCalorieGoal() + "  calories " + '\n';
+			calMessage = "Cardio Calories Burned goal has been achieved!  " + goal.getCalorieGoal() + "  calories " + '\n';
 		}
 		if (getDistance() > goal.getDistanceGoal()) {
-			return distMessage = "Cardio Distance goal has been achieved!  " + goal.getDistanceGoal() + " km";
+			distMessage = "Cardio Distance goal has been achieved!  " + goal.getDistanceGoal() + " km";
 		}
 		
-		return " ";
-		
+		// If more than one goal is achieved at once, display multiple to user
+		if (!(durMessage == "" || calMessage == "" || distMessage == "")) {
+			return durMessage + calMessage + distMessage;	
+		} else {
+			return "";
+		}
 	}
+	
+	
+	
+	
 }

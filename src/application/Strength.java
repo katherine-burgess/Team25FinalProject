@@ -12,7 +12,15 @@ public class Strength extends Workout {
 	private double caloriesBurned;
 	private String intensity;
 	
-
+	/**
+	 * This constructor will take in the strength fitness input by the user on the GUI and check if 
+	 * the user has entered a number. If not an Invalid Entry Exception will be thrown.
+	 * 
+	 * @param dur a string duration value entered by the user 
+	 * @param cal a string calorie value entered by the user
+	 * @param intense a string value entered by the user
+	 * @throws InvalidEntryException when user input is not a number
+	 */
 	public Strength(String dur, String cal, String intense) throws InvalidEntryException {
 		try {
 			duration = Double.parseDouble(dur);
@@ -35,6 +43,7 @@ public class Strength extends Workout {
 	}
 
 
+
 	@Override
 	public double getDuration() {
 		return duration;
@@ -45,14 +54,14 @@ public class Strength extends Workout {
 		return caloriesBurned;
 	}
 	
-	public String caloriesPerHour() {
-		int caloriesHour = (int) (caloriesBurned / durationInHours());
-		return "Calories burned per hour: " +  caloriesHour ;
-	}
 	
 	@Override
-	// This method will compare the newest incoming workout to the user's entered goals.
-	// If a goal is achieved an achievement message will be returned.
+	/**
+	 * This method will compare the newest incoming workout to the user's entered goals.
+	 * If a goal is achieved an achievement message will be returned to display to the user.
+	 * 
+	 * @param goal the goals inputed by the user on the GUI
+	 */
 	public String compareTo(GoalComponent goal) {
 		
 		String durMessage = " ", calMessage = "";
