@@ -393,7 +393,7 @@ public class WorkoutAppController {
 			applicationStage.setTitle(user + "'s Get Fit");
 
 			Scene returnUserScene = new Scene(returnUserContainer);
-			Label returnUserLabel = new Label("Welcome " + user + " !");
+			Label returnUserLabel = new Label("Welcome to Get Fit" + user + " !");
 			VBox.setMargin(returnUserLabel, new Insets(10, 10, 10, 10));
 			Label activityLabel = new Label("How were you active today?");
 			VBox.setMargin(activityLabel, new Insets(10, 10, 10, 10));
