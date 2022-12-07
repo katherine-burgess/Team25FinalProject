@@ -29,7 +29,8 @@ public class WorkoutHistory {
 	}
 
 	/**
-	 *  This method will add each new workout component to the ArrayList
+	 *  This method will add each new workout component to the ArrayList. The dates will be compared 
+	 *  using a comparator to place workout history in the correct order. 
 	 *  
 	 * @param component new fitness log from user input
 	 */
