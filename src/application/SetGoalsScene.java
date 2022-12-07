@@ -18,7 +18,10 @@ public class SetGoalsScene {
 	private TextField distanceTextfield;
 	private TextField calorieGoalTextfield;
 
-	// This method creates a container for setting user's duration goals
+	/**
+	 *  This method creates a container for setting user's duration goals
+	 * @return durationGoalContainer holds widgets for user input
+	 */
 	public HBox setDurationGoal() {
 
 		HBox durationGoalContainer = new HBox();
@@ -37,26 +40,32 @@ public class SetGoalsScene {
 		return durationGoalTextfield;
 	}
 
-	// This method creates a container for setting user's weight goal
+	/**
+	 *  This method creates a container for setting user's weight goal
+	 * @return targetDistanceContainer holds widgets for user input 
+	 */
 	public HBox setTargetDistance() {
 
-		HBox targetWeightContainer = new HBox();
+		HBox targetDistanceContainer = new HBox();
 		Label targetWeightLabel = new Label("Target Distance Goal: ");
 		HBox.setMargin(targetWeightLabel, new Insets(10, 10, 10, 10));
 		distanceTextfield = new TextField();
 		HBox.setMargin(distanceTextfield, new Insets(10, 10, 10, 10));
 		Label unitsLabel = new Label("km");
 		HBox.setMargin(unitsLabel, new Insets(10, 10, 10, 10));
-		targetWeightContainer.getChildren().addAll(targetWeightLabel, distanceTextfield, unitsLabel);
+		targetDistanceContainer.getChildren().addAll(targetWeightLabel, distanceTextfield, unitsLabel);
 
-		return targetWeightContainer;
+		return targetDistanceContainer;
 	}
 
 	public TextField getDistanceGoalTextfield() {
 		return distanceTextfield;
 	}
 
-	// This method creates a container for setting the user's calorie goal
+	/**
+	 * This method creates a container for setting the user's calorie goal
+	 * @return calorieGoalContainer holds widgets for user input of calories
+	 */
 	public HBox setCalorieGoal() {
 
 		HBox calorieGoalContainer = new HBox();

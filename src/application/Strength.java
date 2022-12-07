@@ -8,6 +8,7 @@ package application;
  *
  */
 public class Strength extends Workout {
+	// Instance variables
 	private double duration;
 	private double caloriesBurned;
 	private String intensity;
@@ -19,7 +20,7 @@ public class Strength extends Workout {
 	 * @param dur a string duration value entered by the user 
 	 * @param cal a string calorie value entered by the user
 	 * @param intense a string value entered by the user
-	 * @throws InvalidEntryException when user input is not a number
+	 * @throws InvalidEntryException when non numerical input is entered
 	 */
 	public Strength(String dur, String cal, String intense) throws InvalidEntryException {
 		try {

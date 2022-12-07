@@ -26,7 +26,7 @@ public class GoalComponent {
 	 * @param duration a string duration goal value entered by the user
 	 * @param distance a string distance goal value entered by the user
 	 * @param calorie a string calorie goal value entered by the user
-	 * @throws InvalidEntryException
+	 * @throws InvalidEntryException when non numerical input is entered
 	 */
 	public GoalComponent(String duration, String distance, String calorie) throws InvalidEntryException {
 		try {
@@ -80,7 +80,9 @@ public class GoalComponent {
 	}
 
 
-	// Will create a string containing all of the inputed goals
+	/** 
+	 * Will create a string containing all of the inputed goals by user
+	 */
 	public String toString() {
 		String goal = "Target Duration: " + getDurationGoal() + " minutes " + '\n' + "Target Distance: " + getDistanceGoal()
 				+ " km " + '\n' + "Target Calories Burned: " + getCalorieGoal() + " calories " ;

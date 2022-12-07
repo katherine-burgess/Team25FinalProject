@@ -66,8 +66,10 @@ public class User {
 
 	// This part of the class will generate the containers for user scene changes
 
-	// This will generate the containers for returning user scene change
-	// This method will create a container for workout statistics
+	/**
+	 * This method will create a container for workout statistics
+	 * @return workoutContainer holds widgets for user to enter workouts
+	 */
 	public HBox setWorkoutContainer() {
 
 		HBox workoutContainer = new HBox();
@@ -92,7 +94,10 @@ public class User {
 		return doneButton;
 	}
 
-	// This method will create a container for workout goals
+	/** 
+	 * This method will create a container for workout goals
+	 * @return workoutGoalsContainer holds the widgets for user to enter goals
+	 */
 	public HBox setGoalsContainer() {
 
 		HBox workoutGoalsContainer = new HBox();
@@ -111,7 +116,10 @@ public class User {
 
 	// This generates the containers for generating a new user scene change on GUI
 
-	// This method creates a container for new user name label
+	/**
+	 *  This method creates a container for new user name label
+	 * @return newUserTitle  holds the widgets for label 
+	 */
 	public HBox setUserTitle() {
 		HBox newUserTitle = new HBox();
 		Label newUserLabel = new Label("Add a New User");
@@ -121,7 +129,10 @@ public class User {
 		return newUserTitle;
 	}
 
-	// This method creates a container for a new user to set a username
+	/**
+	 *  This method creates a container for a new user to set a username
+	 * @return userNameContainer holds the widgets for user to enter a new username
+	 */
 	public HBox setUserNameContainer() {
 		// Container for entering user name
 		HBox userNameContainer = new HBox();

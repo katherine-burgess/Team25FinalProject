@@ -10,11 +10,13 @@ import java.util.ArrayList;
  *
  */
 public class WorkoutHistory {
-
+	// Instance Variable
 	private ArrayList<Workout> workoutHistory;
 
+	/**
+	 * This constructor will create a new workout history with a new user
+	 */
 	public WorkoutHistory() {
-		// creation of a new workout history with a new user
 		workoutHistory = new ArrayList<Workout>();
 	}
 	

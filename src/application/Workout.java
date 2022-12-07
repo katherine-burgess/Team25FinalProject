@@ -1,7 +1,6 @@
 package application;
 
-import java.util.Calendar;
-import java.util.Date;
+
 
 /**
  * This class will set the name of the new incoming workoutType and compare it to the 
@@ -48,8 +47,7 @@ public abstract class Workout {
 	  * @param newYear a year string value entered by the user
 	  * @param newMonth a month string value entered by the user
 	  * @param newDay a day string value entered by the user
-	  * @return the calendar date
-	  * @throws InvalidEntryException
+	  * @throws InvalidEntryException when non numerical input in entered
 	  */
 	public void setDate(String newYear, String newMonth, String newDay) throws InvalidEntryException {
 		try {
@@ -96,7 +94,10 @@ public abstract class Workout {
 	// This method will compare the newly entered workout with the user's goals
 	public abstract String compareTo(GoalComponent goal);
 	
-	// This method takes the duration in minutes and converts it to seconds
+	/**
+	 *  This method takes the duration in minutes and converts it to hours
+	 * @return duration of the workout in hours
+	 */
 	public double durationInHours() {
 		duration = getDuration() / 60;
 		return duration;

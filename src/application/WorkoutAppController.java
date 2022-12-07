@@ -14,7 +14,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * This class will control all of the scene changes of the application.
+ * This class will control all of the scene changes of the application and will log both the goals and 
+ * fitness logs inputed by the user.
  * 
  * @author CS219-user Katie Burgess
  *
@@ -35,6 +36,7 @@ public class WorkoutAppController {
 	Label userWorkoutLabel = new Label();
 	Label mileageLabel = new Label("");
 	Label resultsLabel = new Label("");
+	
 	
 	// Get a randomly generated quote and returns the string at the random index
 	// https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
@@ -150,9 +152,9 @@ public class WorkoutAppController {
 	 * 
 	 * @param returnUserScene the returning user's main welcome scene
 	 * @param viewUser the current user
-	 * @param durationTextfield string value entered by the user
-	 * @param targetWeightTextfield string value entered by the user
-	 * @param calorieGoalTextfield string value entered by the user
+	 * @param durationTextfield string duration value entered by the user
+	 * @param distanceTextfield string distance value entered by the user
+	 * @param calorieGoalTextfield string calorie value entered by the user
 	 * @throws InvalidEntryException catches if the user enters anything not numerical
 	 */
 	private GoalComponent goal;
@@ -165,9 +167,7 @@ public class WorkoutAppController {
 		
 		goal.setGoals(goal);
 		String goalList = goal.getGoals().toString();
-		
-		
-	
+
 		// Retrieve goals and show to user
 		if (cardioWorkout != null) {
 			cardioWorkout.compareTo(goal);
@@ -224,7 +224,7 @@ public class WorkoutAppController {
 			workoutStatsContainer.getChildren().addAll(ws.setCalories(), ws.setDuration(), ws.setIntensity(), ws.setFitnessDate(),
 					submitWeightStats, resultsLabel);
 
-			submitWeightStats.setOnAction(weightEvent -> calculateWorkout( viewUser,
+			submitWeightStats.setOnAction(weightEvent -> calculateStrength( viewUser,
 					ws.getCaloriesTextfield(), ws.getDurationTextField(), ws.getIntensityChoiceBox(),
 					typeChoiceBox, ws.getYear(), ws.getMonth(), ws.getDay()));
 		}
@@ -239,26 +239,31 @@ public class WorkoutAppController {
 		applicationStage.setScene(workoutStatsScene);
 
 	}
+	
+	 
+	private Cardio cardioWorkout;
 	/**
-	 * This method will create a new Cardio object. The new cardio workout will be compared
+	 *  This method will create a new Cardio object. The new cardio workout will be compared
 	 * to the goals entered by the user. If a goal is achieved the achievement message will 
 	 * be printed to the user on the GUI.
 	 * 
 	 * @param viewUser the current user
-	 * @param distance string value entered by the user
-	 * @param durationTextField string value entered by the user
-	 * @param caloriesTextfield string value entered by the user
-	 * @param typeChoiceBox the type of workout chosen by the user
+	 * @param distanceTextField a string distance value entered by the user on the GUI
+	 * @param durationTextField a string duration value entered by the user on the GUI
+	 * @param caloriesTextfield a string calorie value entered by the user on the GUI
+	 * @param typeChoiceBox a string workout type value entered by the user on the GUI
+	 * @param yearTextField a string year value entered by the user on the GUI
+	 * @param monthTextField a string month value entered by the user on the GUI
+	 * @param dayTextField a string day value entered by the user on the GUI
 	 */
-	private Cardio cardioWorkout;
-	private void calculateCardio(User viewUser, TextField distance, TextField durationTextField,
+	private void calculateCardio(User viewUser, TextField distanceTextField, TextField durationTextField,
 			TextField caloriesTextfield, ChoiceBox<String> typeChoiceBox, TextField yearTextField, TextField monthTextField, TextField dayTextField) {
 		boolean error = false;
 		
 		try {
 			// This instance variable is an allowed privacy leak
 			
-			cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(),
+			cardioWorkout = new Cardio(distanceTextField.getText(), durationTextField.getText(),
 					caloriesTextfield.getText());
 			cardioWorkout.setDate(yearTextField.getText(), monthTextField.getText(), dayTextField.getText());
 			
@@ -291,19 +296,23 @@ public class WorkoutAppController {
 
 	}
 
+	
+	private Strength strWorkout;
 	/**
 	 * This method will take in the user's input from the GUI and check if the use
 	 * has entered a number.If there are no error's in input the scene will 
 	 * change back to the user's main scene.
 	 * 
 	 * @param viewUser the current user
-	 * @param caloriesTextfield a string value entered by the user
-	 * @param durationTextfield a string value entered by the user
-	 * @param workoutIntensityChoiceBox a string value entered by the user
-	 * @param typeChoiceBox the type of workout chosen by the user
+	 * @param caloriesTextfield a string calorie value entered by the user on the GUI
+	 * @param durationTextfield a string duration value entered by the user on the GUI
+	 * @param workoutIntensityChoiceBox a string intensity value entered by the user on the GUI
+	 * @param typeChoiceBox a string workout type value entered by the user on the GUI
+	 * @param yearTextfield a string year value entered by the user on the GUI
+	 * @param monthTextfield a string month value entered by the user on the GUI
+	 * @param dayTextField a string day value entered by the user on the GUI
 	 */
-	private Strength strWorkout;
-	void calculateWorkout(User viewUser, TextField caloriesTextfield,
+	void calculateStrength(User viewUser, TextField caloriesTextfield,
 			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> typeChoiceBox, TextField yearTextfield, TextField monthTextfield, TextField dayTextField) {
 
 		boolean error = false;

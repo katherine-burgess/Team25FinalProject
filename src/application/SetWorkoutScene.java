@@ -27,7 +27,10 @@ public class SetWorkoutScene {
 	// Instance variables for cardio workout entry
 	private TextField distanceTextfield;
 
-	// This method will create a container for the user to enter distance
+	/**
+	 *  This method will create a container for the user to enter distance
+	 * @return cardioDistanceContainer
+	 */
 	public HBox setDistance() {
 		HBox cardioDistanceContainer = new HBox();
 		Label cardioDistanceLabel = new Label("Distance: ");
@@ -44,7 +47,10 @@ public class SetWorkoutScene {
 		return distanceTextfield;
 	}
 
-	// This method will create a container for the duration of a workout
+	/**
+	 *  This method will create a container for the duration of a workout
+	 * @return durationContainer
+	 */
 	public HBox setDuration() {
 		// Container for duration of workout
 		HBox durationContainer = new HBox();
@@ -64,7 +70,10 @@ public class SetWorkoutScene {
 		return durationTextfield;
 	}
 
-	// This method will create a container for the workout intensity
+	/**
+	 *  This method will create a container for the workout intensity. 
+	 * @return workoutIntensityContainer
+	 */
 	public HBox setIntensity() {
 
 		HBox workoutIntensityContainer = new HBox();
@@ -84,7 +93,10 @@ public class SetWorkoutScene {
 		return intensityChoiceBox;
 	}
 
-	// This method will create a container for calories burned
+	/**
+	 *  This method will create a container for calories burned
+	 * @return caloriesContainer
+	 */
 	public HBox setCalories() {
 
 		HBox caloriesContainer = new HBox();
@@ -103,7 +115,12 @@ public class SetWorkoutScene {
 		return caloriesTextfield;
 	}
 
-	
+	/**
+	 * This method creates the container for the user to enter in dates associated with 
+	 * the workout log
+	 * 
+	 * @return fitnessDateContainer 
+	 */
 	public HBox setFitnessDate() {
 		
 		HBox fitnessDateContainer = new HBox();

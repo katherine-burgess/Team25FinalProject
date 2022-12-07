@@ -21,7 +21,7 @@ public class Cardio extends Workout {
 	 * @param dist a string distance value entered by the user
 	 * @param dur a string duration value entered by the user
 	 * @param cal a string calorie value entered by the user
-	 * @throws InvalidEntryException when user input is not a number
+	 * @throws InvalidEntryException when non numerical input is entered
 	 */
 	public Cardio(String dist, String dur, String cal) throws InvalidEntryException {
 		try {
