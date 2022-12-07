@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+
 /**
  * This class will take in the user's goals and save them. If the user achieves a goal, the goal will 
  * be saved into an ArrayList of achieved goals. This class will keep count of how many goals the user 
@@ -13,18 +15,24 @@ public class GoalComponent {
 	// Instance Variables
 	private double targetWeight;
 	private long durationGoal;
-	private double lowerBodyPR;
-	private double upperBodyPR;
+	private double calorieGoal;
 	private String goals;
+	private ArrayList<GoalComponent> achievedGoals;
+	private int numAchieved = 0;
 
-
-	// This constructor takes in the four goal components and validates the input
-	public GoalComponent(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
+	public GoalComponent(GoalComponent goalList) {
+		achievedGoals = new ArrayList<GoalComponent>();
+	}
+	
+	public int getAchieved() {
+		return numAchieved;
+	}
+	// This constructor takes in the three goal components and validates the input
+	public GoalComponent(String duration, String weight, String calorie) throws InvalidEntryException {
 		try {
 			this.durationGoal = Long.parseLong(duration);
 			targetWeight = Double.parseDouble(weight);
-			lowerBodyPR = Double.parseDouble(lowerBody);
-			upperBodyPR = Double.parseDouble(upperBody);
+			calorieGoal = Double.parseDouble(calorie);
 
 			if (this.durationGoal < 0 || this.durationGoal > 300) {
 				throw new InvalidEntryException(
@@ -34,12 +42,12 @@ public class GoalComponent {
 				throw new InvalidEntryException(
 						String.format("Target weight can only be between 0 and 300 lbs"));
 			}
-			if (lowerBodyPR < 0 || upperBodyPR < 0) {
-				throw new InvalidEntryException(String.format("A new personal record can't be less than 0 lbs. "));
+			if (calorieGoal < 0 || calorieGoal > 1000) {
+				throw new InvalidEntryException(String.format("A new calorie goal can't be less than 0 or greater than 1000 calories. "));
 			}
 
 		} catch (NumberFormatException e) {
-			throw new InvalidEntryException(String.format("Invalid Goal Entry. Make sure to enter a number."));
+			throw new InvalidEntryException(String.format("Invalid Goal Entry %d. Make sure to enter a number."));
 		}
 	}
 
@@ -51,26 +59,20 @@ public class GoalComponent {
 		return targetWeight;
 	}
 
-	public double getLowerBody() {
-		return lowerBodyPR;
-	}
-
-	public double getUpperBody() {
-		return upperBodyPR;
-	}
-
-	// Will get the duration goal length in hours
-	public long durationInHours() {
-		long hours = durationGoal / 60;
-		return hours;
+	public double getCalorieGoal() {
+		return calorieGoal;
 	}
 
 	// Will create a string containing all of the inputed goals
 	public String toString() {
 		goals = "Duration: " + getDurationGoal() + " minutes " + '\n' + "Target Weight: " + getTargetWeight() + " lbs " + '\n'
-				+ "Upper Body Lifting Goal: " + getUpperBody() + " lbs " + '\n' + "Lower Body Lifting Goal: " + getLowerBody() + " lbs ";
+				+ '\n' + "Calories Burned Goal: " + getCalorieGoal() + " calories ";
 
 		return goals;
+	}
+
+	public void compareTo(WorkoutComponent workoutStats) {	
+		
 	}
 
 }

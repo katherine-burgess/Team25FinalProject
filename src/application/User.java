@@ -1,11 +1,15 @@
 
 package application;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 
 /**
- * This class will generate a new user.
+ * This class will generate a new user. Each new user object will contain methods for 
+ * logging both workout statistics and goals. 
  * 
  * @author CS219-user Katie Burgess
  *
@@ -14,22 +18,87 @@ public class User {
 
 	// Instance variables
 	private String name;
-	private WorkoutComponent workoutStats;
 	private GoalComponent goals;
+	private WorkoutComponent stats;
 	private WorkoutHistory history;
+	private Button goalsButton;
+	private Button doneButton;
+	private TextField newUserTextfield;
 
 	private static int numWorkouts = 0;
-	// This constructor will set the instance variables for each new user
-
-	// This constructor sets the name of a new User
-	public User(String newName) {
-		name = newName;
-
-	}
+	
+	// need to add functionality to this constructor
 	public User() {
 		
 	}
+	
+	// This constructor sets the name of a new User
+	public User(String value) {
+		name = value;
+	}
 
+	// This method will create a container for workout statistics
+	public HBox setWorkoutContainer(){
+	
+		HBox workoutContainer = new HBox();
+		Label logWorkoutLabel = new Label("Log your new workout");
+		HBox.setMargin(logWorkoutLabel, new Insets(10, 10, 10, 10));
+		doneButton = new Button("Enter Here");
+		HBox.setMargin(doneButton, new Insets(10, 10, 10, 10));
+		workoutContainer.getChildren().addAll(logWorkoutLabel, doneButton);
+		
+		return workoutContainer;
+	}
+	
+	public Button getDoneButton() {
+		return doneButton;
+	}
+	
+	// This method will create a container for workout goals
+	public HBox setGoalsContainer() {
+		
+		HBox workoutGoalsContainer = new HBox();
+		Label logGoalsLabel = new Label("Log your workout goals");
+		HBox.setMargin(logGoalsLabel, new Insets(10, 10, 10, 10));
+		goalsButton = new Button("Enter Goals Here");
+		HBox.setMargin(goalsButton, new Insets(10, 10, 10, 10));
+		workoutGoalsContainer.getChildren().addAll(logGoalsLabel, goalsButton);
+
+		return workoutGoalsContainer;
+	}
+	
+	public Button getGoalsButton() {
+		return goalsButton;
+	}
+	
+	// This method creates a container for new user name label
+	public HBox setUserTitle() {
+		HBox newUserTitle = new HBox();
+		Label newUserLabel = new Label("Add a New User");
+		HBox.setMargin(newUserLabel, new Insets(10,10,10,10));
+		newUserTitle.getChildren().add(newUserLabel);
+		
+		return newUserTitle;
+	}
+
+	// This method creates a container for a new user to set a username
+	public HBox setUserNameContainer() {
+		// Container for entering user name
+		HBox userNameContainer = new HBox();
+		Label userNameLabel = new Label("Enter New Username:");
+		HBox.setMargin(userNameLabel, new Insets(10,10,10,10));
+		newUserTextfield = new TextField();
+		HBox.setMargin(newUserTextfield, new Insets(10,10,10,10));
+		userNameContainer.getChildren().addAll(userNameLabel, newUserTextfield);
+		
+		return userNameContainer;
+	}
+	
+	// This method will get the new username textfield
+	public TextField getNewUserTextfield() {
+		return newUserTextfield;
+	}
+	
 	// This method checks if the user name is an alphabetical letter
 	public String setName(String nameAsString) {
 		String errorMessage = " ";
@@ -39,19 +108,17 @@ public class User {
 			validName = false;
 			errorMessage = String.format("Your username cannot be blank, enter your name.");
 		}
-		
+		// Check if the username is alphabetical
 		for (char n : nameAsString.toCharArray()) {
 			if (!Character.isAlphabetic(n)) {
 				validName = false;
 				errorMessage = String.format("Your username must use only letters", n);
 			} 
 		}
-		
 		if (validName) {
-			name = nameAsString;
-			
+			name = nameAsString;	
 		}
-
+		
 		return errorMessage;
 	}
 
@@ -59,55 +126,40 @@ public class User {
 		return name;
 	}
 
-	public WorkoutHistory newHistory() {
+	// Generates a new workout history for the user
+	public void newHistory() {
 		history = new WorkoutHistory();
-		return history;
 	}
-	// This method will create a new workoutComponent
-	// This method will take in a workoutComponent
-	public void logWorkout(String calories, String duration, String intensity, String type, String newWeight)
-			throws InvalidEntryException {
-		workoutStats = new WorkoutComponent(duration, calories, newWeight, intensity, type);
-		
+	
+	
+	public void logWorkout(WorkoutComponent workout) {
 		// add new workout to workout history
-		history.addWorkout(workoutStats);
+		history.addWorkout(workout);
 		
-		
-		// check if the instance variable is null
 		if (goals != null) {
-			workoutStats.compareTo(goals); // will compare newly entered data to the goals (if user has entered goals
+			if (workout.compareTo(goals) == true) {
+				System.out.println("Goal was achieved");
+			}
 		}
-		
-		// increment static variable
 		numWorkouts++;
-
 	}
-
-
 	
 
 	// This method will create a new Goal Component
-	// This method will take in a goalComponent
-	public void logGoals(String duration, String weight, String upperBody, String lowerBody)
+	public void logGoals(String duration, String weight, String calorie)
 			throws InvalidEntryException {
 
 		// create a new goal component and save in instance variable
-		goals = new GoalComponent(duration, weight, upperBody, lowerBody);
+		goals = new GoalComponent(duration, weight, calorie);
 
 		// check if the instance variable is null
-		if (workoutStats != null) {
-			workoutStats.compareTo(goals);
-		}
-
+//		if ( != null) {
+//			goals.compareTo(getStats());
+//		}
 	}
 
 	public String getGoals() {
 		return goals.toString();
-	}
-	
-	public String getWorkout() {
-		// TODO Auto-generated method stub
-		return workoutStats.toString();
 	}
 	
 	public String toString() {
@@ -117,7 +169,6 @@ public class User {
 	public int getNumWorkouts() {
 		return numWorkouts;
 	}
-
 	
 
 }

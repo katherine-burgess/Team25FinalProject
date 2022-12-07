@@ -5,25 +5,18 @@ import java.util.ArrayList;
 /** 
  * This class will keep count of the number of achieved goals the user has. 
  * 
- * @author CS219-user
+ * @author CS219-user Katie Burgess
  *
  */
-public class AchievedGoals extends GoalComponent {
+public class AchievedGoals{
 
-	private int numOfAchieved;
+	private int numOfAchieved = 0;
 	private ArrayList<GoalComponent> goalsAchieved;
 	
 	
-	public AchievedGoals(String duration, String weight, String upperBody, String lowerBody) throws InvalidEntryException {
-		super(duration, weight, upperBody, lowerBody);
-
-	}
-	
-	
-
 	// this method will count the number of achieved goals
 	public int countAchieved() {
-		
+		numOfAchieved = goalsAchieved.size();
 		return numOfAchieved;
 	}
 	
@@ -35,5 +28,9 @@ public class AchievedGoals extends GoalComponent {
 			return;
 		}
 		
+		goalsAchieved.add(goal);
+	}
+	public ArrayList<GoalComponent> getAchievedGoals(){
+		return new ArrayList<GoalComponent> (goalsAchieved);
 	}
 }
