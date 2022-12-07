@@ -25,10 +25,13 @@ public class Cardio extends Workout {
 	 */
 	public Cardio(String dist, String dur, String cal) throws InvalidEntryException {
 		try {
+			
+			
 			distance = Double.parseDouble(dist);
 			duration = Double.parseDouble(dur);
 			caloriesBurned = Double.parseDouble(cal);
 
+			
 			if (distance < 0 || distance > 80) {
 				throw new InvalidEntryException(
 						String.format("Make sure to enter a distance number between 0 and 80 km.", dist));
@@ -43,10 +46,11 @@ public class Cardio extends Workout {
 				throw new InvalidEntryException(
 						String.format("Make sure to enter a duration number between 0 and 500 calories.", cal));
 			}
-
+			
+			
 		} catch (NumberFormatException npe) {
 			throw new InvalidEntryException(
-					String.format("Invalid Cardio Workout Entry. Make sure to enter a number. "));
+					String.format("Invalid Cardio Workout Entry. Make sure to enter a number and fill in all the boxes. "));
 		}
 	}
 	@Override

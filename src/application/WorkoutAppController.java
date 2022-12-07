@@ -209,22 +209,24 @@ public class WorkoutAppController {
 			userErrorLabel.setText("Enter Cardio Workout Stats: ");
 			Button submitStats = new Button("Submit Cardio Stats");
 			VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
-			workoutStatsContainer.getChildren().addAll(ws.setDistance(), ws.setDuration(), ws.setCalories(),
+			workoutStatsContainer.getChildren().addAll(ws.setDistance(), ws.setDuration(), ws.setCalories(), ws.setFitnessDate(),
 					submitStats, resultsLabel, mileageLabel);
 
 			submitStats.setOnAction(cardioEvent -> calculateCardio( viewUser, ws.getDistance(),
-					ws.getDurationTextField(), ws.getCaloriesTextfield(), typeChoiceBox));
+					ws.getDurationTextField(), ws.getCaloriesTextfield(), typeChoiceBox, 
+					ws.getYear(), ws.getMonth(), ws.getDay()));
 
 		} else if (typeChoiceBox.getValue() == "Weight Training") {
 			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " 's" + "Strength Workout");
 			userErrorLabel.setText("Enter Strength Workout Stats: ");
 			Button submitWeightStats = new Button("Submit Strength Stats");
 			VBox.setMargin(submitWeightStats, new Insets(10, 10, 10, 10));
-			workoutStatsContainer.getChildren().addAll(ws.setCalories(), ws.setDuration(), ws.setIntensity(),
+			workoutStatsContainer.getChildren().addAll(ws.setCalories(), ws.setDuration(), ws.setIntensity(), ws.setFitnessDate(),
 					submitWeightStats, resultsLabel);
 
 			submitWeightStats.setOnAction(weightEvent -> calculateWorkout( viewUser,
-					ws.getCaloriesTextfield(), ws.getDurationTextField(), ws.getIntensityChoiceBox(), typeChoiceBox));
+					ws.getCaloriesTextfield(), ws.getDurationTextField(), ws.getIntensityChoiceBox(),
+					typeChoiceBox, ws.getYear(), ws.getMonth(), ws.getDay()));
 		}
 		VBox.setMargin(resultsLabel, new Insets(10, 10, 0, 10));
 		VBox.setMargin(mileageLabel, new Insets(10, 0, 10,10));
@@ -250,13 +252,15 @@ public class WorkoutAppController {
 	 */
 	private Cardio cardioWorkout;
 	private void calculateCardio(User viewUser, TextField distance, TextField durationTextField,
-			TextField caloriesTextfield, ChoiceBox<String> typeChoiceBox) {
+			TextField caloriesTextfield, ChoiceBox<String> typeChoiceBox, TextField yearTextField, TextField monthTextField, TextField dayTextField) {
 		boolean error = false;
 		
 		try {
 			// This instance variable is an allowed privacy leak
+			
 			cardioWorkout = new Cardio(distance.getText(), durationTextField.getText(),
 					caloriesTextfield.getText());
+			cardioWorkout.setDate(yearTextField.getText(), monthTextField.getText(), dayTextField.getText());
 			
 			cardioWorkout.setWorkoutType(typeChoiceBox.getValue());
 			//cardioWorkout.setWorkout(cardioWorkout);
@@ -300,14 +304,14 @@ public class WorkoutAppController {
 	 */
 	private Strength strWorkout;
 	void calculateWorkout(User viewUser, TextField caloriesTextfield,
-			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> typeChoiceBox) {
+			TextField durationTextfield, ChoiceBox<String> workoutIntensityChoiceBox, ChoiceBox<String> typeChoiceBox, TextField yearTextfield, TextField monthTextfield, TextField dayTextField) {
 
 		boolean error = false;
 		try {
 			// this can be reset each time (not a privacy leak)
-			
 			strWorkout = new Strength(durationTextfield.getText(), caloriesTextfield.getText(),
 					workoutIntensityChoiceBox.getValue());
+			strWorkout.setDate(yearTextfield.getText(), monthTextfield.getText(), dayTextField.getText());
 			strWorkout.setWorkoutType(typeChoiceBox.getValue());
 			
 			

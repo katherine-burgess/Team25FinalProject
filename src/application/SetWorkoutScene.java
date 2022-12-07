@@ -20,7 +20,10 @@ public class SetWorkoutScene {
 	private TextField durationTextfield;
 	private ChoiceBox<String> intensityChoiceBox;
 	private TextField caloriesTextfield;
-
+	private TextField yearTextfield;
+	private TextField monthTextfield;
+	private TextField dayTextfield;
+	
 	// Instance variables for cardio workout entry
 	private TextField distanceTextfield;
 
@@ -100,4 +103,31 @@ public class SetWorkoutScene {
 		return caloriesTextfield;
 	}
 
+	
+	public HBox setFitnessDate() {
+		
+		HBox fitnessDateContainer = new HBox();
+		Label dateLabel = new Label("Enter Date (Year/Month/Day) : ");
+		HBox.setMargin(dateLabel, new Insets(10,10,10,10));
+		yearTextfield = new TextField();
+		HBox.setMargin(yearTextfield, new Insets(10,10,10,10));
+		monthTextfield = new TextField();
+		HBox.setMargin(monthTextfield, new Insets(10,10,10,10));
+		dayTextfield = new TextField();
+		HBox.setMargin(dayTextfield, new Insets(10,10,10,10));
+		fitnessDateContainer.getChildren().addAll(dateLabel, yearTextfield, monthTextfield, dayTextfield);
+		return fitnessDateContainer;
+	}
+	
+	public TextField getYear() {
+		return yearTextfield;
+	}
+	
+	public TextField getMonth() {
+		return monthTextfield;
+	}
+	
+	public TextField getDay() {
+		return dayTextfield;
+	}
 }

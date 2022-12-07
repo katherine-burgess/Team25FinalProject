@@ -24,7 +24,11 @@ public class WorkoutHistory {
 		
 	}
 
-	// This method will add each new workout component to the ArrayList
+	/**
+	 *  This method will add each new workout component to the ArrayList
+	 *  
+	 * @param component new fitness log from user input
+	 */
 	public void addWorkout(Workout component) {
 		if (workoutHistory.isEmpty()) {
 			workoutHistory.add(component);
@@ -38,18 +42,24 @@ public class WorkoutHistory {
 		return workoutHistory;
 	}
 
-	// This method will generate a workout history in a string format
+	/**
+	 * This method will generate a workout history in a string format containing all inputed workout statistics
+	 *  and the date of the workout
+	 */
 	public String toString() {
+		
 		String w = new String();
 		for (int i = 0; i < workoutHistory.size(); i++) {
 			if (workoutHistory.get(i).getWorkoutType() == "Cardio") {
-				w +=  " Cardio Log: "  + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + " minutes" + '\t'
+				w +=  " Cardio Log: "  + '\t' + "Date: " + workoutHistory.get(i).getYear()+ "/"+ workoutHistory.get(i).getMonth()+ 
+						"/" + workoutHistory.get(i).getDay() + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + " minutes" + '\t'
 						+ "Calories Burned: " + workoutHistory.get(i).getCalories() + " calories " + '\t'
 						+ " Distance: " + workoutHistory.get(i).getDistance() + " km "+ '\n';
 				
 			} else if (workoutHistory.get(i).getWorkoutType() == "Weight Training") {
-				w +=  " Strength Log: "  + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + " minutes" + '\t'
-						+ "Calories Burned: " + workoutHistory.get(i).getCalories() + " calories " + '\n';	
+				w +=  " Strength Log: " + "Date: " + workoutHistory.get(i).getYear()+ "/"+ workoutHistory.get(i).getMonth()+ 
+						"/" + workoutHistory.get(i).getDay() + '\t' + "Duration: " + (workoutHistory.get(i).getDuration()) + 
+						" minutes" + '\t' + "Calories Burned: " + workoutHistory.get(i).getCalories() + " calories " + '\n';	
 			}
 		}
 		return w;

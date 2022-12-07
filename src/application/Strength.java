@@ -38,7 +38,7 @@ public class Strength extends Workout {
 			}
 
 		} catch (NumberFormatException npe) {
-			throw new InvalidEntryException("Invalid Strength Workout Entry. Make sure to enter a number");
+			throw new InvalidEntryException("Invalid Strength Workout Entry. Make sure to enter a number and fill in all the boxes");
 		}
 	}
 
