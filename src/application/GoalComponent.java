@@ -76,7 +76,7 @@ public class GoalComponent {
 	}
 
 	public GoalComponent getGoals() {
-		return new GoalComponent(goals);
+		return goals;
 	}
 
 
