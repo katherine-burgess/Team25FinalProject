@@ -1,6 +1,7 @@
 package application;
 
-
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * This class will set the name of the new incoming workoutType and compare it to the 
@@ -19,6 +20,7 @@ public abstract class Workout {
 	private int year;
 	private int month;
 	private int day;
+	private Date workoutDate;
 
 	public Workout() {
 		workoutType = new String();
@@ -57,6 +59,8 @@ public abstract class Workout {
 			month = Integer.parseInt(newMonth);
 			day = Integer.parseInt(newDay);
 			
+			workoutDate = getDate(year, month, day);
+			
 			if (month < 0 || month > 12) {
 				throw new InvalidEntryException("Invalid Date entered. Make sure to enter a month between 1 and 12.");
 			}
@@ -72,6 +76,18 @@ public abstract class Workout {
 			throw new InvalidEntryException("Invalid Date entered. Make sure to enter a whole number.");
 		}
 	}
+	
+	public Date getDate(int year, int month, int day) {
+		Calendar cal = Calendar.getInstance();
+		cal.clear();
+		cal.set(year, month, day);
+		return cal.getTime();
+	}
+	
+	public Date getWorkDate() {
+		return workoutDate;
+	}
+	
 	
 	public int getYear() {
 		return year;
