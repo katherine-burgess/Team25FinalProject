@@ -38,15 +38,7 @@ public class WorkoutAppController {
 	Label resultsLabel = new Label("");
 	
 	
-	// Get a randomly generated quote and returns the string at the random index
-	// https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
-	public String getRandomQuote() {
-		String[] quoteArray = new String[] { "Progress, not perfection.", 
-				"This is the moment to begin.", "Goal setting is the secret to a compelling future." };
-		int rndQuote = new Random().nextInt(quoteArray.length);
-		return quoteArray[rndQuote];
-	}
-
+	
 	/**
 	 * This method will get the user's workout history. If the user hasn't
 	 * previously entered any workouts a message will be printed to the user on the GUI.
@@ -362,7 +354,6 @@ public class WorkoutAppController {
 	void chooseUser(ActionEvent event) {
 
 		Scene mainScene = applicationStage.getScene();
-		inspirationQuoteLabel.setText(getRandomQuote());
 
 		// Get the input from the user
 		String user = chooseUserChoiceBox.getValue();
@@ -393,7 +384,7 @@ public class WorkoutAppController {
 			applicationStage.setTitle(user + "'s Get Fit");
 
 			Scene returnUserScene = new Scene(returnUserContainer);
-			Label returnUserLabel = new Label("Welcome to Get Fit" + user + " !");
+			Label returnUserLabel = new Label("Welcome to Get Fit " + user + " !");
 			VBox.setMargin(returnUserLabel, new Insets(10, 10, 10, 10));
 			Label activityLabel = new Label("How were you active today?");
 			VBox.setMargin(activityLabel, new Insets(10, 10, 10, 10));
