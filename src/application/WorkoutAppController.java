@@ -102,7 +102,7 @@ public class WorkoutAppController {
 			} 
 		
 			// Check to see if user name is already in the system
-			if (!(names.contains(newUser.getName()))) {
+			if (!(names.contains(newUser.getName()))) {  // https://www.geeksforgeeks.org/how-to-prevent-the-addition-of-duplicate-elements-to-the-java-arraylist/
 					names.add(newUser.getName());
 					chooseUserChoiceBox.getItems().add(newUser.getName());  // https://jenkov.com/tutorials/javafx/choicebox.html
 					applicationStage.setScene(mainScene);

@@ -77,6 +77,15 @@ public abstract class Workout {
 		}
 	}
 	
+	/**
+	 * This method will take the date components and set them as a calendar time.
+	 * This method was taken from the ItinerayTest java code and manipulated.
+	 * 
+	 * @param year entered by the user
+	 * @param month entered by the user
+	 * @param day entered by the user
+	 * @return
+	 */
 	public Date getDate(int year, int month, int day) {
 		Calendar cal = Calendar.getInstance();
 		cal.clear();
@@ -84,6 +93,7 @@ public abstract class Workout {
 		return cal.getTime();
 	}
 	
+	// This will get the set calendar date 
 	public Date getWorkDate() {
 		return workoutDate;
 	}
