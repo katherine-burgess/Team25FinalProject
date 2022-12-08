@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import javafx.event.ActionEvent;
@@ -83,16 +84,32 @@ public class WorkoutAppController {
 	 * @param newUserTextfield string value entered by the user
 	 * @param newUser a new participant
 	 */
+	ArrayList<String> names = new ArrayList<String>();
 	void setNewUser(Scene mainScene, TextField newUserTextfield, User newUser) {
 		userErrorLabel.setText(" ");
 
 		// validate that the user has entered a name
 		String errorMessage = newUser.setName(newUserTextfield.getText());
-
+		System.out.println(names);
 		// Check if error message (if so show an error message to the user)
 		if (errorMessage.equals(" ")) {
-			chooseUserChoiceBox.getItems().add(newUser.getName()); // https://jenkov.com/tutorials/javafx/choicebox.html
-			applicationStage.setScene(mainScene);
+			if (names.isEmpty()) {
+				names.add(newUser.getName());
+				System.out.println(names);
+				chooseUserChoiceBox.getItems().add(newUser.getName());
+				applicationStage.setScene(mainScene);
+				return;
+			} 
+		
+			// Check to see if user name is already in the system
+			if (!(names.contains(newUser.getName()))) {  // https://www.geeksforgeeks.org/how-to-prevent-the-addition-of-duplicate-elements-to-the-java-arraylist/
+					names.add(newUser.getName());
+					chooseUserChoiceBox.getItems().add(newUser.getName());  // https://jenkov.com/tutorials/javafx/choicebox.html
+					applicationStage.setScene(mainScene);
+			} else {
+					userErrorLabel.setText("This username is already taken, choose another.");
+				}
+	
 		} else {
 			userErrorLabel.setText(errorMessage);
 		}
@@ -197,7 +214,7 @@ public class WorkoutAppController {
 		VBox.setMargin(userErrorLabel, new Insets(10, 10, 10, 10));
 
 		if (typeChoiceBox.getValue() == "Cardio") {
-			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " 's" + " Cardio Workout");
+			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " 's " + " Cardio Workout");
 			userErrorLabel.setText("Enter Cardio Workout Stats: ");
 			Button submitStats = new Button("Submit Cardio Stats");
 			VBox.setMargin(submitStats, new Insets(10, 10, 10, 10));
@@ -209,7 +226,7 @@ public class WorkoutAppController {
 					ws.getYear(), ws.getMonth(), ws.getDay()));
 
 		} else if (typeChoiceBox.getValue() == "Weight Training") {
-			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " 's" + "Strength Workout");
+			applicationStage.setTitle("Log " + " " + chooseUserChoiceBox.getValue() + " 's " + "Strength Workout");
 			userErrorLabel.setText("Enter Strength Workout Stats: ");
 			Button submitWeightStats = new Button("Submit Strength Stats");
 			VBox.setMargin(submitWeightStats, new Insets(10, 10, 10, 10));
@@ -352,7 +369,9 @@ public class WorkoutAppController {
 
 	@FXML
 	void chooseUser(ActionEvent event) {
-
+		// This user addition is static as Joe is always an example user
+		names.add("Joe");
+		
 		Scene mainScene = applicationStage.getScene();
 
 		// Get the input from the user

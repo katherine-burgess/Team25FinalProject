@@ -1,6 +1,8 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * This class will keep track of the user's workout history. When a new workout
@@ -27,7 +29,8 @@ public class WorkoutHistory {
 	}
 
 	/**
-	 *  This method will add each new workout component to the ArrayList
+	 *  This method will add each new workout component to the ArrayList. The dates will be compared 
+	 *  using a comparator to place workout history in the correct order. 
 	 *  
 	 * @param component new fitness log from user input
 	 */
@@ -36,10 +39,20 @@ public class WorkoutHistory {
 			workoutHistory.add(component);
 			return;
 		}
-		workoutHistory.add(component);
-		
-	}
 
+		workoutHistory.add( component);
+		
+		//https://javatechonline.com/how-to-sort-list-by-date-in-java-8/#Sort_List_by_LocalDate_in_Java_8_with_Method_Reference
+		// Got comparator for arraylist sorting dates from website above 
+		Comparator<Workout> comparator = (c1, c2) -> {
+			return c1.getWorkDate().compareTo(c2.getWorkDate());
+		};
+		Collections.sort(workoutHistory, comparator);
+		
+		}
+
+		
+	
 	public ArrayList<Workout> getWorkoutHistory() {
 		return workoutHistory;
 	}
