@@ -40,7 +40,7 @@ public class WorkoutHistory {
 			return;
 		}
 
-		workoutHistory.add( component);
+		workoutHistory.add(component);
 		
 		//https://javatechonline.com/how-to-sort-list-by-date-in-java-8/#Sort_List_by_LocalDate_in_Java_8_with_Method_Reference
 		// Got comparator for arraylist sorting dates from website above 

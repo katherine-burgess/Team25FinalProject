@@ -33,7 +33,10 @@ public abstract class Workout {
 		}
 	}
 
-	// sets the new incoming workoutType
+	/**
+	 * This method sets the new incoming workoutType
+	 * @param type as a string 
+	 */
 	public void setWorkoutType(String type) {
 		workoutType = type;
 	}
@@ -84,7 +87,7 @@ public abstract class Workout {
 	 * @param year entered by the user
 	 * @param month entered by the user
 	 * @param day entered by the user
-	 * @return
+	 * @return the calendar object as a time
 	 */
 	public Date getDate(int year, int month, int day) {
 		Calendar cal = Calendar.getInstance();
@@ -117,7 +120,11 @@ public abstract class Workout {
 	
 	public abstract double getDistance();
 	
-	// This method will compare the newly entered workout with the user's goals
+	/**
+	 *  This method will compare the newly entered workout with the user's goals
+	 * @param goal the user's goals
+	 * @return the achievement message
+	 */
 	public abstract String compareTo(GoalComponent goal);
 	
 	/**

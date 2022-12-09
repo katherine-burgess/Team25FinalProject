@@ -44,6 +44,17 @@ public class Strength extends Workout {
 	}
 
 
+	/** 
+	 * This constructor copies all the instance variables to a new Strength object.
+	 * @param toCopy new strength object
+	 */
+	public Strength(Strength toCopy) {
+		duration = toCopy.duration;
+		caloriesBurned = toCopy.caloriesBurned;
+		intensity = toCopy.intensity;
+	}
+
+
 
 	@Override
 	public double getDuration() {

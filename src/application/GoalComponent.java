@@ -53,9 +53,11 @@ public class GoalComponent {
 
 	// Copy constructor
 	public GoalComponent(GoalComponent newGoal) {
-		if (newGoal != null) {
-			goals = newGoal.goals;
-		}
+		goals = newGoal.goals;
+		durationGoal = newGoal.durationGoal;
+		calorieGoal = newGoal.calorieGoal;
+		distanceGoal = newGoal.distanceGoal;
+		
 	}
 
 	public double getDurationGoal() {
@@ -72,7 +74,7 @@ public class GoalComponent {
 
 	// This method will log the goals
 	public void setGoals(GoalComponent newGoal) {
-		goals = newGoal;
+		goals = new GoalComponent( newGoal);
 	}
 
 	public GoalComponent getGoals() {
