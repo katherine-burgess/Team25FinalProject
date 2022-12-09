@@ -53,6 +53,16 @@ public class Cardio extends Workout {
 					String.format("Invalid Cardio Workout Entry. Make sure to enter a number and fill in all the boxes. "));
 		}
 	}
+	/**
+	 * This constructor copies all the instance variables values over to a new object
+	 * @param newCardio new cardio object
+	 */
+	public Cardio(Cardio newCardio) {
+		duration = newCardio.duration;
+		distance = newCardio.distance;
+		caloriesBurned = newCardio.caloriesBurned;
+	}
+	
 	@Override
 	public double getDuration() {
 		return duration;

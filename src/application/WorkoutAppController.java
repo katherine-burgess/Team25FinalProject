@@ -174,6 +174,7 @@ public class WorkoutAppController {
 		goal = new GoalComponent(durationTextfield.getText(), distanceTextfield.getText(),
 				calorieGoalTextfield.getText());
 		
+		// not a privacy leak, the goals can change
 		goal.setGoals(goal);
 		String goalList = goal.getGoals().toString();
 
